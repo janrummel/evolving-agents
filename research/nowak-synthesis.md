@@ -8,6 +8,25 @@
 **Datum:** März 2026
 **Status:** Initiale Synthese — wird erweitert
 
+> **Transparenzhinweis zur Recherche-Tiefe:** Dieses Dokument basiert auf Paper-Abstracts, Summaries und Drittquellen (EmergentMind, alphaXiv, GitHub). Kein Paper wurde im Volltext gelesen. Zahlen (z.B. "12.4% der Kosten") stammen aus Abstracts und wurden über mindestens 2 unabhängige Quellen geprüft. Alle arXiv-IDs sind verlinkt und direkt prüfbar. Die Synthese in Abschnitt 4 ist unsere eigene Interpretation — keine publizierte Erkenntnis.
+
+---
+
+## Glossar
+
+| Begriff | Erklärung |
+|---------|-----------|
+| **Originator-Gleichung** | Nowaks mathematisches Modell für den Übergang von "Prelife" (Chemie ohne Vererbung) zu "Life" (Evolution mit Vererbung). Beschreibt, ab welcher Replikationsrate Selektion greift. |
+| **Prelife** | Zustand eines Systems, das Variation und Selektion hat, aber keine Vererbung (Replikation). Es generiert Neues, verbessert sich aber nicht kumulativ. |
+| **Error Threshold** | Aus der Quasispezies-Theorie: Die maximale Mutationsrate, bei der Information noch erhalten bleibt. Darüber → "mutational meltdown", alle Information geht verloren. |
+| **Quality-Diversity (QD)** | Optimierungsparadigma: Statt die EINE beste Lösung zu suchen, wird ein diverses Repertoire hochperformanter Lösungen gepflegt. |
+| **MAP-Elites** | QD-Algorithmus: Diskretisiert den Verhaltensraum in Nischen und speichert pro Nische nur die beste Lösung ("Elite"). Neue Lösungen konkurrieren innerhalb ihrer Nische. |
+| **Niching** | Evolutionäre Strategie zur Diversitätserhaltung: Individuen werden nach Ähnlichkeit gruppiert, Selektion findet innerhalb der Gruppen statt — verhindert, dass eine Lösung die ganze Population dominiert. |
+| **Fitness-Landschaft** | Metapher: Lösungen als Punkte auf einer Landschaft, Höhe = Qualität. Hügel = lokale Optima, Täler = schlechte Lösungen. Evolution "klettert" diese Landschaft. |
+| **Pareto-Front** | Menge aller Lösungen, bei denen man eine Dimension (z.B. Qualität) nicht verbessern kann ohne eine andere (z.B. Kosten) zu verschlechtern. |
+| **TextGrad** | Optimierungsverfahren für natürliche Sprache: Nutzt Backpropagation-ähnliche Mechanismen, um Prompts iterativ zu verfeinern. |
+| **Collaboration Gain (Γ)** | Metrik: Misst den echten Kooperationsgewinn eines Multi-Agent-Systems = Qualität(Multi-Agent) − Qualität(Single-Agent bei gleichem Token-Budget). |
+
 ---
 
 ## 1. Nowaks Mathematik — Die Originator-Gleichung
@@ -174,9 +193,11 @@ Neue Metriken erfassen Kooperation über: Kooperations- und Koordinationsraten, 
 
 ## 4. Synthese — Die Brücke von Nowak zu Agent-Architekturen
 
-### 4.1 Formale Isomorphie
+### 4.1 Strukturelle Analogie
 
-Nowaks Konzepte lassen sich erstaunlich direkt auf KI-Agent-Systeme abbilden:
+> **Transparenzhinweis:** Die folgende Tabelle zeigt *strukturelle Analogien*, keine mathematisch bewiesene Isomorphie. Die Zuordnungen sind plausibel und heuristisch nützlich, aber nicht formal verifiziert. Ob die Strukturen tatsächlich isomorph sind, ist eine offene Forschungsfrage.
+
+Nowaks Konzepte lassen sich auf KI-Agent-Systeme abbilden — als Denkhilfe, nicht als Beweis:
 
 | Nowak (Biologie) | KI-Agent-System | Beispiel |
 |---|---|---|
@@ -196,7 +217,7 @@ Nowaks Konzepte lassen sich erstaunlich direkt auf KI-Agent-Systeme abbilden:
 
 **Prinzip 1 — Evolvierbarkeit vor Performance**
 
-Nowak zeigt, dass Systeme, deren Evolvierbarkeit *selbst evolviert* (experimenteller Beweis: Max-Planck-Institut für Evolutionsbiologie, 2024), langfristig erfolgreicher sind als solche, die nur auf momentane Fitness optimieren. Bakterielle Abstammungslinien entwickelten mutationsanfällige Sequenzen in Schlüsselgenen, die schnelle Zustandswechsel ermöglichten.
+Nowak zeigt, dass Systeme, deren Evolvierbarkeit *selbst evolviert*, langfristig erfolgreicher sind als solche, die nur auf momentane Fitness optimieren. Experimenteller Beweis: [Barnett, Meister & Rainey, *Science*, 2024](https://www.biorxiv.org/content/10.1101/2024.05.01.592015v2) am Max-Planck-Institut für Evolutionsbiologie in Plön zeigten, dass bakterielle Abstammungslinien unter Selektionsdruck mutationsanfällige Sequenzen in einem Schlüsselgen entwickelten — mit einer bis zu 10.000-fach erhöhten lokalen Mutationsrate, die schnelle phänotypische Zustandswechsel ermöglichte.
 
 *Übertragung:* Ein Agent-System sollte nicht nur für die aktuelle Aufgabe optimiert sein, sondern architektonisch so gebaut, dass es sich leicht an neue Aufgabentypen anpassen kann. Progressive Disclosure (AGENTS.md als Inhaltsverzeichnis) und modulare Skills sind genau diese Eigenschaft — sie machen das System *evolvierbar*, nicht nur performant.
 
@@ -257,32 +278,40 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 
 ## 6. Quellen
 
+> Alle arXiv-Links sind direkt klickbar. Quellen ohne Link konnten nicht mit einem eindeutigen URL versehen werden — diese sind mit ⚠ markiert.
+
 ### Nowak — Kernwerke
-- Nowak, M.A. (2006). *Evolutionary Dynamics: Exploring the Equations of Life*. Harvard University Press.
-- Nowak, M.A. & Ohtsuki, H. (2008). "Prevolutionary dynamics and the origin of evolution." *PNAS*, 105(39), 14924–14927.
-- Manapat, M., Ohtsuki, H., Bürger, R. & Nowak, M.A. (2009). "Originator dynamics." *Journal of Theoretical Biology*, 256(4), 586–595.
+- Nowak, M.A. (2006). *Evolutionary Dynamics: Exploring the Equations of Life*. Harvard University Press. [Harvard UP](https://www.hup.harvard.edu/books/9780674023383)
+- Nowak, M.A. & Ohtsuki, H. (2008). "Prevolutionary dynamics and the origin of evolution." *PNAS*, 105(39), 14924–14927. [DOI:10.1073/pnas.0806714105](https://www.pnas.org/doi/10.1073/pnas.0806714105)
+- Manapat, M., Ohtsuki, H., Bürger, R. & Nowak, M.A. (2009). "Originator dynamics." *Journal of Theoretical Biology*, 256(4), 586–595. ⚠ Kein Open-Access-Link verfügbar
+- Barnett, M., Meister, L. & Rainey, P. (2024). "Experimental evolution of evolvability." *Science*. [bioRxiv:2024.05.01.592015](https://www.biorxiv.org/content/10.1101/2024.05.01.592015v2) | [MPI-Pressemitteilung](https://www.evolbio.mpg.de/3807853/news_publication_24229222_transferred)
 
 ### Evolvierbarkeit in der KI
-- Gajewski, A., Clune, J., Stanley, K.O. & Lehman, J. (2019). "Evolvability ES: Scalable and Direct Optimization of Evolvability." *GECCO 2019*. arXiv:1907.06077
-- Mouret, J.-B. & Clune, J. (2015). "Illuminating search spaces by mapping elites." arXiv:1504.04909
-- Pugh, J.K., Soros, L.B. & Stanley, K.O. (2016). "Quality Diversity: A New Frontier for Evolutionary Computation." *Frontiers in Robotics and AI*, 3:40.
+- Gajewski, A., Clune, J., Stanley, K.O. & Lehman, J. (2019). "Evolvability ES: Scalable and Direct Optimization of Evolvability." *GECCO 2019*. [arXiv:1907.06077](https://arxiv.org/abs/1907.06077)
+- Mouret, J.-B. & Clune, J. (2015). "Illuminating search spaces by mapping elites." [arXiv:1504.04909](https://arxiv.org/abs/1504.04909)
+- Pugh, J.K., Soros, L.B. & Stanley, K.O. (2016). "Quality Diversity: A New Frontier for Evolutionary Computation." *Frontiers in Robotics and AI*, 3:40. ⚠ Kein direkter Link verifiziert
 
 ### Self-Evolving Agents
-- Gao, H. et al. (2025/2026). "A Survey of Self-Evolving Agents: What, When, How, and Where to Evolve." arXiv:2507.21046
-- Fang, J. et al. (2025). "A Comprehensive Survey of Self-Evolving AI Agents." arXiv:2508.07407
-- Wang, Y. et al. (2025). "EvoAgentX: An Automated Framework for Evolving Agentic Workflows." *EMNLP 2025 Demos*.
-- Liu, S. et al. (2025). "SEW: Self-Evolving Agentic Workflows for Automated Code Generation." arXiv:2505.18646
+- Gao, H. et al. (2025). "A Survey of Self-Evolving Agents." [arXiv:2507.21046](https://arxiv.org/abs/2507.21046)
+- Fang, J. et al. (2025). "A Comprehensive Survey of Self-Evolving AI Agents." [arXiv:2508.07407](https://arxiv.org/abs/2508.07407) | [GitHub: Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents)
+- Wang, Y. et al. (2025). "EvoAgentX: An Automated Framework for Evolving Agentic Workflows." *EMNLP 2025 Demos*. [arXiv:2507.03616](https://arxiv.org/abs/2507.03616) | [GitHub](https://github.com/EvoAgentX/EvoAgentX)
+- Liu, S. et al. (2025). "SEW: Self-Evolving Agentic Workflows for Automated Code Generation." [arXiv:2505.18646](https://arxiv.org/abs/2505.18646)
+
+### Evolving Agent Workflows (Kern unseres Themas)
+- Zhang, G. et al. (2025). "EvoFlow: Evolving Diverse Agentic Workflows On The Fly." [arXiv:2502.07373](https://arxiv.org/abs/2502.07373) | [OpenReview](https://openreview.net/forum?id=gdmiLfXZG5)
+- Ye, H. et al. (2026). "Meta Context Engineering via Agentic Skill Evolution." [arXiv:2601.21557](https://arxiv.org/abs/2601.21557)
+- Zhang, Z. et al. (2026). "AgentFactory: Self-Evolving via Executable Subagent Accumulation." [arXiv:2603.18000](https://arxiv.org/abs/2603.18000)
 
 ### Multi-Agent-Systeme — Wissenschaftliche Grundlagen
-- "Towards a Science of Collective AI" (2026). arXiv:2602.05289 — Collaboration Gain Metric und Factor Attribution
-- Zhu, K. et al. (2025). "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents." *ACL 2025*.
-- Tran, K.-T. et al. (2025). "Multi-Agent Collaboration Mechanisms: A Survey of LLMs." arXiv:2501.06322
-- Cemri, M. et al. (2025). "Why Do Multi-Agent LLM Systems Fail?" (MAST taxonomy). arXiv:2503.13657
-- Google Cloud (2025). "Lessons from 2025 on Agents and Trust."
+- "Towards a Science of Collective AI" (2026). [arXiv:2602.05289](https://arxiv.org/abs/2602.05289) — Collaboration Gain Metric und Factor Attribution
+- Zhu, K. et al. (2025). "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents." *ACL 2025*. ⚠ arXiv-ID nicht verifiziert
+- Tran, K.-T. et al. (2025). "Multi-Agent Collaboration Mechanisms: A Survey of LLMs." [arXiv:2501.06322](https://arxiv.org/abs/2501.06322)
+- Cemri, M. et al. (2025). "Why Do Multi-Agent LLM Systems Fail?" (MAST taxonomy). [arXiv:2503.13657](https://arxiv.org/abs/2503.13657)
+- Google Cloud (2025). "Lessons from 2025 on Agents and Trust." ⚠ Kein permanenter Link verfügbar
 
 ### Quality-Diversity
-- Flageat, M. et al. (2023). "Evolving Populations of Diverse RL Agents with MAP-Elites." arXiv:2303.12803
-- Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*.
+- Flageat, M. et al. (2023). "Evolving Populations of Diverse RL Agents with MAP-Elites." [arXiv:2303.12803](https://arxiv.org/abs/2303.12803)
+- Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. ⚠ arXiv-ID nicht verifiziert
 
 ---
 

@@ -112,10 +112,34 @@ specs/              Engineering specs (Phase 1 feedback loop)
 meta/               Research methodology, toolkit audit, learnings, monitoring
 ```
 
+## What You Can Do With This
+
+**If you build agent systems:** The 5 principles give you a checklist. Are you optimizing for evolvability or just current performance? Do you have a feedback loop? Are you changing more than you can measure? Start with [Phase 1](specs/phase-1-feedback-loop.md) — it's a SQL schema and 3 views.
+
+**If you research agent evolution:** The [paper registry](research/paper-registry.md) organizes 55+ papers into 9 categories with priority ratings. The [open questions](research/open-questions.md) identify 7 tractable research directions, starting with the error threshold for agentic workflows.
+
+**If you're curious about the intersection of biology and AI:** The [synthesis](research/nowak-synthesis.md) walks through Nowak's math and maps it to agent systems — with a glossary that explains every term.
+
+## Limitations and Honest Assessment
+
+**What this is:** A structured research collection with actionable engineering output, built in one intensive session.
+
+**What this is NOT:** A peer-reviewed publication or rigorous formal proof.
+
+Specific limitations:
+
+- **No paper was read in full.** All analysis is based on abstracts, summaries, and third-party reviews (EmergentMind, alphaXiv). Numbers from papers were cross-checked against 2+ sources.
+- **The "structural analogy" between Nowak and agent systems is our interpretation**, not a published result. The mappings are plausible heuristics, not mathematical proofs. Whether the structures are truly isomorphic is an open question.
+- **~15 papers in the registry have incomplete metadata** (missing authors, IDs). These are marked. Sources without verified links are flagged with ⚠.
+- **Chinese-language sources were found but not read in depth.** We confirmed their existence and relevance, but the actual content was not translated or analyzed.
+- **No counter-arguments were actively sought.** We searched for papers supporting the evolutionary analogy, not papers critiquing it. This is a known bias.
+- **The 5 principles are derived, not empirically validated.** They're useful design heuristics, but their effectiveness has not been measured.
+
 ## Contributing
 
 This is a living research collection. If you're working at the intersection of evolutionary computation and LLM-based agent systems, open an issue or PR. Especially interested in:
 
+- **Counter-arguments:** Papers or reasoning that challenge the Nowak-agent analogy
 - Empirical measurements of the error threshold for agentic workflows
 - Quality-diversity applications to prompt/skill optimization
 - Multi-lingual research leads (especially Chinese and Japanese sources)

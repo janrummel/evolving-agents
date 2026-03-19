@@ -10,7 +10,7 @@ Each principle follows the format: **What** (the rule), **Why** (the evolutionar
 
 **What:** Optimize your agent architecture for adaptability, not just current task performance.
 
-**Why:** Nowak shows that systems whose evolvability itself evolves are more successful long-term. Bacterial lineages develop mutation-prone sequences in key genes to enable rapid state switching (Max Planck Institute, 2024). QD algorithms (MAP-Elites) outperform pure fitness optimization in complex landscapes.
+**Why:** Nowak shows that systems whose evolvability itself evolves are more successful long-term. [Barnett, Meister & Rainey (*Science*, 2024)](https://www.biorxiv.org/content/10.1101/2024.05.01.592015v2) demonstrated at the Max Planck Institute that bacterial lineages under selection pressure developed mutation-prone sequences in a key gene — with up to 10,000x higher local mutation rates enabling rapid state switching. QD algorithms ([MAP-Elites](https://arxiv.org/abs/1504.04909)) outperform pure fitness optimization in complex landscapes.
 
 **How:**
 - Modular skills (SKILL.md) over monolithic prompts
@@ -66,7 +66,7 @@ Each principle follows the format: **What** (the rule), **Why** (the evolutionar
 
 **What:** Multi-agent setups must prove they produce genuine cooperation gain, not just resource accumulation.
 
-**Why:** The Collaboration Gain Metric (Γ) from arXiv:2602.05289 shows that conventional metrics conflate intrinsic cooperation gain with improvements from more compute. Many multi-agent systems underperform a single agent with equivalent token budget.
+**Why:** The [Collaboration Gain Metric (Γ)](https://arxiv.org/abs/2602.05289) shows that conventional metrics conflate intrinsic cooperation gain with improvements from more compute. Many multi-agent systems underperform a single agent with equivalent token budget.
 
 **How:**
 - For every multi-agent workflow, ask: "Would a single agent with 2x tokens do the same?"
