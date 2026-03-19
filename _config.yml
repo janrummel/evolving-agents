@@ -14,6 +14,9 @@ search_enabled: true
 
 heading_anchors: true
 
+mermaid:
+  version: "10.9.0"
+
 back_to_top: true
 back_to_top_text: "Back to top"
 
@@ -27,5 +30,14 @@ callouts:
     title: Note
     color: blue
   transparency:
-    title: Transparency
+    title: Transparency Note
     color: purple
+  key-insight:
+    title: Key Insight
+    color: green
+  counter:
+    title: Counter-Argument
+    color: red
+  principle:
+    title: Design Principle
+    color: blue
