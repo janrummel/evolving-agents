@@ -17,9 +17,10 @@
 
 A living research collection and practical design principles at the intersection of evolutionary dynamics, self-evolving agents, and multi-agent systems.
 
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://janrummel.github.io/evolving-agents/)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Papers](https://img.shields.io/badge/Papers-55%2B-blue)]()
-[![Principles](https://img.shields.io/badge/Principles-5-green)]()
+[![Papers](https://img.shields.io/badge/Papers-55%2B-blue)](https://janrummel.github.io/evolving-agents/research/)
+[![Principles](https://img.shields.io/badge/Principles-5-green)](https://janrummel.github.io/evolving-agents/principles/)
 
 ---
 
@@ -27,8 +28,8 @@ A living research collection and practical design principles at the intersection
 
 Current AI agent systems are fundamentally static. Martin Nowak's work on evolutionary dynamics provides a mathematical framework to understand **when** and **how** agent systems can evolve — and what breaks when they try.
 
-> There is a formal isomorphism between biological evolution and agent system improvement.
-> Replication, mutation, and selection map directly onto workflow reuse, prompt variation, and evaluation.
+> There is a structural analogy between biological evolution and agent system improvement.
+> Replication, mutation, and selection map onto workflow reuse, prompt variation, and evaluation.
 
 This repo connects the math to the practice — through 55+ papers, 5 actionable principles, and a concrete engineering spec for making agent systems evolvable.
 
