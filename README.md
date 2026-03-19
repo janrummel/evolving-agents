@@ -15,7 +15,7 @@
 
 **From Nowak's Evolvability Equations to AI Agent Architectures**
 
-A living research collection and practical design principles at the intersection of evolutionary dynamics, self-evolving agents, and multi-agent systems.
+**[janrummel.github.io/evolving-agents](https://janrummel.github.io/evolving-agents/)** — Living research + design principles
 
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://janrummel.github.io/evolving-agents/)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
