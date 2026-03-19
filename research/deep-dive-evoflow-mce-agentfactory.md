@@ -7,6 +7,9 @@ nav_order: 3
 
 # Deep Dive: EvoFlow, MCE, AgentFactory — und was AgentField daraus lernen kann
 
+{: .note }
+> **Reading: 3 of 5** · After reading this, you'll understand how EvoFlow implements niching selection for workflows, how MCE formalizes skill co-evolution, and a concrete 4-phase upgrade path from Prelife to full agent evolution.
+
 **Datum:** 2026-03-19
 **Typ:** Vergleichsanalyse (3 Papers → 1 System)
 

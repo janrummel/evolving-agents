@@ -1,6 +1,31 @@
 // Apple HIG-inspired customizations for Evolving Agents
 // More whitespace, better typography, visual hierarchy
 
+// --- Section Color Labels (sidebar nav) ---
+// Research = blue, Principles = green, Engineering = purple, Meta = gray
+.nav-list .nav-list-item {
+  // Research section
+  &:nth-child(2) > .nav-list-link {
+    border-left: 3px solid #60a5fa;
+    padding-left: 0.5rem;
+  }
+  // Principles section
+  &:nth-child(3) > .nav-list-link {
+    border-left: 3px solid #34d399;
+    padding-left: 0.5rem;
+  }
+  // Engineering section
+  &:nth-child(4) > .nav-list-link {
+    border-left: 3px solid #a78bfa;
+    padding-left: 0.5rem;
+  }
+  // Meta section
+  &:nth-child(5) > .nav-list-link {
+    border-left: 3px solid #6b7280;
+    padding-left: 0.5rem;
+  }
+}
+
 // --- Whitespace & Breathing Room ---
 .main-content {
   h1 { margin-top: 2.5rem; margin-bottom: 1.25rem; }

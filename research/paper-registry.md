@@ -7,6 +7,9 @@ nav_order: 2
 
 # Paper Registry
 
+{: .note }
+> **Reading: 2 of 5** · After browsing this, you'll have a categorized map of the field — 55+ papers across 9 categories, with priority ratings to guide what to read first.
+
 Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 
 **Legende:**

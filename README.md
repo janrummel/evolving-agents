@@ -31,7 +31,21 @@ Current AI agent systems are fundamentally static. Martin Nowak's work on evolut
 > There is a structural analogy between biological evolution and agent system improvement.
 > Replication, mutation, and selection map onto workflow reuse, prompt variation, and evaluation.
 
-This repo connects the math to the practice — through 55+ papers, 5 actionable principles, and a concrete engineering spec for making agent systems evolvable.
+This repo connects the math to the practice — through 55+ papers, 6 actionable principles, and a concrete engineering spec for making agent systems evolvable.
+
+## Who Is This For?
+
+| You are... | You'll get... | Start here |
+|:---|:---|:---|
+| **An agent system builder** | Design checklist + engineering spec | [6 Principles](principles/README.md) → [Phase 1 Spec](specs/phase-1-feedback-loop.md) |
+| **An AI/ML researcher** | 55+ categorized papers + open questions | [Paper Registry](research/paper-registry.md) → [Open Questions](research/open-questions.md) |
+| **Curious about biology × AI** | Accessible synthesis with glossary | [Nowak Synthesis](research/nowak-synthesis.md) |
+
+**Prerequisites:** None for the principles and synthesis (glossary included). Familiarity with LLM-based agent systems helps for the engineering spec. No math background needed — the equations are explained in plain language.
+
+## FAQ
+
+See the [full FAQ on the website](https://janrummel.github.io/evolving-agents/#faq) — covers: "Is this a formal proof?", "Were papers actually read?", "What can I DO with this?", "Why counter-arguments?", "Is this just an awesome list?"
 
 ## The Bridge: Nowak to Agent Architectures
 

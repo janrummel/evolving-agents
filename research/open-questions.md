@@ -7,6 +7,9 @@ nav_order: 4
 
 # Open Questions
 
+{: .note }
+> **Reading: 4 of 5** · After reading this, you'll know the 7 most tractable research questions at the intersection of evolutionary dynamics and agent systems — and which ones you could start working on today.
+
 Research questions that need investigation. Prioritized by tractability and relevance.
 
 ## Priority 1 — Directly Tractable

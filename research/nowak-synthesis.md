@@ -7,6 +7,9 @@ nav_order: 1
 
 # Von Nowaks Evolvierbarkeits-Gleichung zu KI-Agent-Architekturen
 
+{: .note }
+> **Reading: 1 of 5** · After reading this, you'll understand Nowak's Originator equation, the phase transition from Prelife to Life, the error threshold concept, and how these map structurally onto AI agent systems.
+
 ## Eine Recherche an der Schnittstelle von Evolutionsdynamik, Self-Evolving Agents und Multi-Agent-Systemen
 
 ---
