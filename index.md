@@ -137,6 +137,45 @@ The bridge from Nowak to agent systems is not theoretical — it has been built:
 
 ---
 
+## Why This Exists
+
+I build AI agent systems. One day I read Martin Nowak's work on evolutionary dynamics and realized: the problems I hit daily — when to change workflows, how to balance exploration and exploitation, why some agent setups get worse when you add more agents — are the **same problems** Nowak formalized for biological systems in the 2000s.
+
+The math already exists. The bridge papers already exist ([EvoFlow](https://arxiv.org/abs/2502.07373) implements it). But nobody had mapped the territory in one place — connecting the biology, the papers, and the engineering into something you can actually use.
+
+So I did. And then I stress-tested my own conclusions: the [counter-arguments](/evolving-agents/research/counter-arguments) page exists because the strongest version of an idea is the one that knows its own weaknesses.
+
+---
+
+## FAQ
+
+<details>
+<summary><strong>Is this a formal proof that agent systems are evolutionary?</strong></summary>
+<p>No. It's a structural analogy — useful as a design heuristic, not a mathematical proof. Agent evolution is <a href="/evolving-agents/research/counter-arguments#g1-agent-systeme-sind-lamarckisch-nicht-darwinistisch-stark">Lamarckian, not Darwinian</a>. See <a href="/evolving-agents/research/counter-arguments">Counter-Arguments</a> for the full critique.</p>
+</details>
+
+<details>
+<summary><strong>Were these papers actually read?</strong></summary>
+<p>Abstracts and summaries — no full-text reads. All numbers were cross-checked against 2+ sources. This is documented transparently in the <a href="/evolving-agents/meta/limitations">Limitations</a> page.</p>
+</details>
+
+<details>
+<summary><strong>What can I actually DO with this?</strong></summary>
+<p>Three things: (1) Use the <a href="/evolving-agents/principles/">6 principles</a> as a design checklist for your agent system. (2) Implement the <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase 1 feedback loop</a> — it's a SQL schema you can run today. (3) Use the <a href="/evolving-agents/research/paper-registry">paper registry</a> to find what to read next.</p>
+</details>
+
+<details>
+<summary><strong>Why include counter-arguments against your own thesis?</strong></summary>
+<p>Because a thesis that hasn't been stress-tested isn't worth sharing. Three of the eight counter-arguments are rated STRONG. One of them (<a href="/evolving-agents/research/counter-arguments#g4-künstliche-selektion--natürliche-selektion-stark">artificial ≠ natural selection</a>) was strong enough to produce a new design principle (P6).</p>
+</details>
+
+<details>
+<summary><strong>Is this just another "awesome list"?</strong></summary>
+<p>No. Awesome lists collect links. This repo synthesizes — it maps concepts across fields (biology → AI), derives actionable principles, identifies where the analogy breaks, and includes an engineering spec you can implement.</p>
+</details>
+
+---
+
 ## Limitations
 
 {: .warning }
