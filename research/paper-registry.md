@@ -13,7 +13,7 @@ nav_order: 2
 Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 
 **Legende:**
-- **!!!** = Muss gelesen werden (direkt relevant für unser Thema)
+- **!!!** = Muss gelesen werden (direkt relevant)
 - **!!** = Wichtig (relevante Methodik oder Erkenntnis)
 - **!** = Hintergrund (nützlicher Kontext)
 - CN = Chinesische Autor:innen / Institutionen
@@ -51,7 +51,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !!! | Foundation Agents: Brain-Inspired to Evolutionary, Collaborative, Safe | MetaGPT + Mila + 20 inst. (CN) | arXiv | 2025 | — |
 | !! | 智能体技术和应用研究报告 (Agent Tech Report) | CAICT + Huawei (CN) | Report | 2025 | — |
 
-## Kategorie 4: Evolving Agent Workflows (Kern unseres Themas)
+## Kategorie 4: Evolving Agent Workflows (Kernthema)
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|

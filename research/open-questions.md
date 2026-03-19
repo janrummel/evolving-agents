@@ -26,9 +26,9 @@ Research questions that need investigation. Prioritized by tractability and rele
 **Approach:** Observational study on AgentField usage patterns. Track when skills stabilize vs. keep changing.
 **Status:** Not started
 
-### Q3: Collaboration Gain vs. Resource Accumulation in Our Multi-Agent Setup
+### Q3: Collaboration Gain vs. Resource Accumulation in Multi-Agent Setups
 **Source:** arXiv:2602.05289 — Collaboration Gain Metric Γ
-**Question:** Do our subagent workflows (quality-gate, research-pipeline) produce genuine cooperation gain, or would a single agent with more tokens achieve the same result?
+**Question:** Do typical subagent workflows (quality-gate, research-pipeline) produce genuine cooperation gain, or would a single agent with more tokens achieve the same result?
 **Approach:** Controlled experiment — same task, single-agent vs. multi-agent, measure quality + token cost.
 **Status:** Not started
 
@@ -48,7 +48,7 @@ Research questions that need investigation. Prioritized by tractability and rele
 
 ### Q6: Self-Evolving AgentField
 **Question:** Can AgentField evolve its own skill library? Skills that perform well get reinforced, poor performers get mutated or removed, new skills emerge from combinations.
-**Connection:** This is the full loop — Nowak's evolution applied to our own system.
+**Connection:** This is the full loop — Nowak's evolution applied to a live agent system.
 
 ### Q7: Cross-System Evolvability
 **Question:** How do design choices in one project (C2C, CloakCode) transfer evolutionary fitness to another? Is there an "ecosystem fitness" beyond individual project fitness?

@@ -78,7 +78,7 @@ Each principle follows the format: **What** (the rule), **Why** (the evolutionar
 - For every multi-agent workflow, ask: "Would a single agent with 2x tokens do the same?"
 - Track Γ: cooperation gain = multi-agent quality minus single-agent quality at same cost
 - If Γ ≤ 0, simplify to single agent
-- Measure: "What is the Γ for each of our multi-agent workflows?"
+- Measure: "What is the Γ for each multi-agent workflow?"
 
 ---
 
@@ -94,7 +94,7 @@ Each principle follows the format: **What** (the rule), **Why** (the evolutionar
 - Regularly question your metrics: "Would gaming this metric produce a bad outcome?"
 - Use multiple metrics (Pareto) rather than a single fitness score
 - Keep human review in the loop — humans catch what metrics miss
-- Measure: "When was the last time we questioned whether our quality metric is still valid?"
+- Measure: "When was the last time the quality metric was questioned for validity?"
 
 ---
 

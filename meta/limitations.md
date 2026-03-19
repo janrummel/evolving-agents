@@ -32,10 +32,10 @@ Numbers cited from papers (e.g., "12.4% of inference cost" for EvoFlow) were cro
 
 ### The Structural Analogy
 
-The mapping between Nowak's evolutionary dynamics and agent systems is **our interpretation**, not a published result. The mappings are plausible and heuristically useful, but:
+The mapping between Nowak's evolutionary dynamics and agent systems is **this project's interpretation**, not a published result. The mappings are plausible and heuristically useful, but:
 - No mathematical proof exists that the structures are isomorphic
-- The analogy may break down in ways we haven't explored
-- We have not actively searched for counter-arguments or failure cases
+- The analogy may break down in unexplored ways
+- Counter-arguments have since been [researched and documented](/evolving-agents/research/counter-arguments)
 
 ### Paper Registry Completeness
 
@@ -53,7 +53,7 @@ Chinese-language sources were found via WebSearch with Chinese characters (è‡ªè¿
 
 ### Selection Bias
 
-We searched for papers supporting the evolutionary analogy for agent systems. We did **not** systematically search for:
+The initial research searched for papers supporting the evolutionary analogy. It did **not** systematically search for:
 - Papers critiquing evolutionary metaphors in AI
 - Cases where evolutionary approaches failed for agent systems
 - Alternative frameworks that explain agent improvement without evolutionary analogies
@@ -64,7 +64,7 @@ The 5 design principles are **derived from theory, not empirically validated**. 
 
 ## What Would Make This More Rigorous
 
-1. **Read the 15 must-read papers in full** and verify our abstract-based summaries
+1. **Read the 15 must-read papers in full** and verify the abstract-based summaries
 2. **Actively search for counter-arguments** to the Nowak-agent analogy
 3. **Verify all 55+ paper registry entries** with full metadata (authors, venues, DOIs)
 4. **Translate and analyze the Chinese-language sources** in depth

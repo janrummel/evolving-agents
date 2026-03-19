@@ -86,7 +86,7 @@ Five actionable design principles derived from evolutionary theory: [principles/
 | Document | What It Contains |
 |----------|-----------------|
 | [Phase 1 Spec: Feedback Loop](specs/phase-1-feedback-loop.md) | SQL schema, Pareto views, alert triggers — closing the evolutionary loop |
-| [Research Toolkit Audit](meta/research-toolkit.md) | What tools we have, what's missing, blind spots |
+| [Research Toolkit Audit](meta/research-toolkit.md) | Available tools, gaps, and blind spots |
 | [Monitoring Keywords](meta/monitoring-keywords.md) | arXiv queries, CJK keywords, tracked authors |
 
 ### Learnings
@@ -107,7 +107,7 @@ This is not theoretical. The bridge from Nowak to agent systems has been built. 
 
 ## The Upgrade Path: Prelife → Life
 
-Most agent systems (including ours) are in Nowak's **"Prelife" phase**: diversity and selection exist, but there's no closed evolutionary loop. The feedback dies after evaluation.
+Most agent systems are in Nowak's **"Prelife" phase**: diversity and selection exist, but there's no closed evolutionary loop. The feedback dies after evaluation.
 
 ```
 Phase 0 (most systems): Prelife — manual curation, no inheritance
@@ -145,9 +145,9 @@ meta/               Research methodology, toolkit audit, learnings, monitoring
 Specific limitations:
 
 - **No paper was read in full.** All analysis is based on abstracts, summaries, and third-party reviews (EmergentMind, alphaXiv). Numbers from papers were cross-checked against 2+ sources.
-- **The "structural analogy" between Nowak and agent systems is our interpretation**, not a published result. The mappings are plausible heuristics, not mathematical proofs. Whether the structures are truly isomorphic is an open question.
+- **The "structural analogy" between Nowak and agent systems is this project's interpretation**, not a published result. The mappings are plausible heuristics, not mathematical proofs. Whether the structures are truly isomorphic is an open question.
 - **~15 papers in the registry have incomplete metadata** (missing authors, IDs). These are marked. Sources without verified links are flagged with ⚠.
-- **Chinese-language sources were found but not read in depth.** We confirmed their existence and relevance, but the actual content was not translated or analyzed.
+- **Chinese-language sources were found but not read in depth.** Their existence and relevance is confirmed, but the actual content was not translated or analyzed.
 - **Counter-arguments have been researched and documented.** See [Counter-Arguments](research/counter-arguments.md) for 8 critiques — the 3 strongest: agent evolution is Lamarckian not Darwinian, there's no true reproduction, and artificial selection is only as good as the fitness function.
 - **The 5 principles are derived, not empirically validated.** They're useful design heuristics, but their effectiveness has not been measured.
 

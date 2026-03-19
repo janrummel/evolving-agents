@@ -18,7 +18,7 @@ nav_order: 1
 **Datum:** März 2026
 **Status:** Initiale Synthese — wird erweitert
 
-> **Transparenzhinweis zur Recherche-Tiefe:** Dieses Dokument basiert auf Paper-Abstracts, Summaries und Drittquellen (EmergentMind, alphaXiv, GitHub). Kein Paper wurde im Volltext gelesen. Zahlen (z.B. "12.4% der Kosten") stammen aus Abstracts und wurden über mindestens 2 unabhängige Quellen geprüft. Alle arXiv-IDs sind verlinkt und direkt prüfbar. Die Synthese in Abschnitt 4 ist unsere eigene Interpretation — keine publizierte Erkenntnis.
+> **Transparenzhinweis zur Recherche-Tiefe:** Dieses Dokument basiert auf Paper-Abstracts, Summaries und Drittquellen (EmergentMind, alphaXiv, GitHub). Kein Paper wurde im Volltext gelesen. Zahlen (z.B. "12.4% der Kosten") stammen aus Abstracts und wurden über mindestens 2 unabhängige Quellen geprüft. Alle arXiv-IDs sind verlinkt und direkt prüfbar. Die Synthese in Abschnitt 4 ist eine eigenständige Interpretation — keine publizierte Erkenntnis.
 
 ---
 

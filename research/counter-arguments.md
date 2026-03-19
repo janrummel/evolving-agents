@@ -11,9 +11,9 @@ nav_order: 5
 > **Reading: 5 of 5** · After reading this, you'll know the 8 strongest objections to the evolutionary analogy — including 3 rated STRONG — and where the thesis survives vs. where it needs correction.
 
 **Datum:** 2026-03-19
-**Zweck:** Ehrlichkeitstest. Wir haben gezielt nach Gegenargumenten zu unserer eigenen These gesucht. Dieses Dokument sammelt die stärksten Einwände.
+**Zweck:** Ehrlichkeitstest — gezielte Suche nach Gegenargumenten zur eigenen These. Dieses Dokument sammelt die stärksten Einwände.
 
-> Ohne dieses Dokument wäre das gesamte Repo confirmation-biased. Die These wird stärker, wenn sie die Gegenargumente kennt — oder sie korrigiert sich.
+> Ohne dieses Dokument wäre das Repo confirmation-biased. Eine These wird stärker, wenn sie ihre Gegenargumente kennt — oder sie korrigiert sich.
 
 ---
 

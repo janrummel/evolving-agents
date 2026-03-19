@@ -122,7 +122,7 @@ graph LR
 ```
 
 {: .note }
-> Most agent systems (including ours) are in **Phase 0**. [Phase 1 is specified and implemented](/evolving-agents/specs/phase-1-feedback-loop).
+> Most agent systems are in **Phase 0**. [Phase 1 is specified and ready to implement](/evolving-agents/specs/phase-1-feedback-loop).
 
 ---
 
@@ -139,11 +139,11 @@ The bridge from Nowak to agent systems is not theoretical — it has been built:
 
 ## Why This Exists
 
-I build AI agent systems. One day I read Martin Nowak's work on evolutionary dynamics and realized: the problems I hit daily — when to change workflows, how to balance exploration and exploitation, why some agent setups get worse when you add more agents — are the **same problems** Nowak formalized for biological systems in the 2000s.
+Anyone building AI agent systems hits the same problems: when to change workflows, how to balance exploration and exploitation, why some multi-agent setups get worse when you add more agents. These are the **same problems** Martin Nowak formalized for biological systems in the 2000s.
 
-The math already exists. The bridge papers already exist ([EvoFlow](https://arxiv.org/abs/2502.07373) implements it). But nobody had mapped the territory in one place — connecting the biology, the papers, and the engineering into something you can actually use.
+The math already exists. The bridge papers already exist ([EvoFlow](https://arxiv.org/abs/2502.07373) implements it). But nobody had mapped the territory in one place — connecting the biology, the papers, and the engineering into something practitioners can actually use.
 
-So I did. And then I stress-tested my own conclusions: the [counter-arguments](/evolving-agents/research/counter-arguments) page exists because the strongest version of an idea is the one that knows its own weaknesses.
+This repo does that. And it stress-tests its own conclusions: the [counter-arguments](/evolving-agents/research/counter-arguments) page exists because the strongest version of an idea is the one that knows its own weaknesses.
 
 ---
 
@@ -179,4 +179,4 @@ So I did. And then I stress-tested my own conclusions: the [counter-arguments](/
 ## Limitations
 
 {: .warning }
-> **No paper was read in full.** Analysis is based on abstracts and summaries. The structural analogy is our interpretation, not a published result. Counter-arguments have been [documented](/evolving-agents/research/counter-arguments). See [full limitations](/evolving-agents/meta/limitations).
+> **No paper was read in full.** Analysis is based on abstracts and summaries. The structural analogy is an interpretation, not a published result. Counter-arguments have been [documented](/evolving-agents/research/counter-arguments). See [full limitations](/evolving-agents/meta/limitations).
