@@ -1,3 +1,10 @@
+---
+layout: default
+title: Research Toolkit Audit
+parent: Meta
+nav_order: 1
+---
+
 # Research Toolkit Audit
 
 What we have, what we're missing, and what we need to build for serious cross-disciplinary research on evolving agent systems.

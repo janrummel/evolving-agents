@@ -1,3 +1,10 @@
+---
+layout: default
+title: Nowak Synthesis
+parent: Research
+nav_order: 1
+---
+
 # Von Nowaks Evolvierbarkeits-Gleichung zu KI-Agent-Architekturen
 
 ## Eine Recherche an der Schnittstelle von Evolutionsdynamik, Self-Evolving Agents und Multi-Agent-Systemen

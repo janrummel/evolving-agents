@@ -1,3 +1,10 @@
+---
+layout: default
+title: Research Learnings
+parent: Meta
+nav_order: 2
+---
+
 # Research Process Learnings
 
 Erkenntnisse aus der ersten Recherche-Runde (2026-03-19).

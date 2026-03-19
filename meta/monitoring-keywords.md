@@ -1,3 +1,10 @@
+---
+layout: default
+title: Monitoring Keywords
+parent: Meta
+nav_order: 4
+---
+
 # Research Monitoring Keywords
 
 Suchbegriffe für regelmäßiges Paper-Tracking. Ziel: Wöchentlicher arXiv-Scan.

@@ -3,3 +3,7 @@
 *.swo
 *~
 .env
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock

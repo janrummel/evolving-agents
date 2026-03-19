@@ -1,3 +1,10 @@
+---
+layout: default
+title: "AgentField = Prelife"
+parent: Meta
+nav_order: 3
+---
+
 # Learning L9: AgentField ist in der Prelife-Phase
 
 **Erkannt:** 2026-03-19, während EvoFlow/MCE/AgentFactory Deep Dive

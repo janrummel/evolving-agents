@@ -1,3 +1,10 @@
+---
+layout: default
+title: Open Questions
+parent: Research
+nav_order: 4
+---
+
 # Open Questions
 
 Research questions that need investigation. Prioritized by tractability and relevance.

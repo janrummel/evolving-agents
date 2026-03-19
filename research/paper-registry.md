@@ -1,3 +1,10 @@
+---
+layout: default
+title: Paper Registry
+parent: Research
+nav_order: 2
+---
+
 # Paper Registry
 
 Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.

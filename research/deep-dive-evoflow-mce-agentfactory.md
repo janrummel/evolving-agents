@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Deep Dive: EvoFlow, MCE, AgentFactory"
+parent: Research
+nav_order: 3
+---
+
 # Deep Dive: EvoFlow, MCE, AgentFactory — und was AgentField daraus lernen kann
 
 **Datum:** 2026-03-19

@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Phase 1: Feedback Loop"
+parent: Engineering
+nav_order: 1
+---
+
 # Phase 1 Spec: Feedback-Loop schließen
 
 **Ziel:** Den evolutionären Loop von "Prelife" (Feedback stirbt nach Quality-Gate) zu "Proto-Life" (Feedback fließt in Skill-Bewertung und triggert Verbesserung) bringen.

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Principles
+nav_order: 3
+---
+
 # Design Principles
 
 Actionable principles derived from evolutionary dynamics research, applicable to agent architectures.
