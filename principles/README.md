@@ -82,4 +82,20 @@ Each principle follows the format: **What** (the rule), **Why** (the evolutionar
 
 ---
 
-*These principles are living documents. They evolve as the research base grows.*
+---
+
+## P6: The Fitness Function Is the Most Fragile Part
+
+**What:** In agent systems, evolution is artificial selection — you design the fitness function. If the function measures the wrong thing, the system evolves in the wrong direction, fast.
+
+**Why:** In biological evolution, the environment IS the selector — there's no designer who can be wrong. In agent systems, humans design the Quality Gate, the benchmarks, the metrics. This makes the fitness function the single point of failure. [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law): "When a measure becomes a target, it ceases to be a good measure." See also: [Counter-Arguments G4](../research/counter-arguments#g4-künstliche-selektion--natürliche-selektion-stark).
+
+**How:**
+- Regularly question your metrics: "Would gaming this metric produce a bad outcome?"
+- Use multiple metrics (Pareto) rather than a single fitness score
+- Keep human review in the loop — humans catch what metrics miss
+- Measure: "When was the last time we questioned whether our quality metric is still valid?"
+
+---
+
+*These principles are living documents. They evolve as the research base grows. See [Counter-Arguments](../research/counter-arguments) for where the evolutionary analogy breaks.*

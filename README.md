@@ -20,7 +20,7 @@ A living research collection and practical design principles at the intersection
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://janrummel.github.io/evolving-agents/)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Papers](https://img.shields.io/badge/Papers-55%2B-blue)](https://janrummel.github.io/evolving-agents/research/)
-[![Principles](https://img.shields.io/badge/Principles-5-green)](https://janrummel.github.io/evolving-agents/principles/)
+[![Principles](https://img.shields.io/badge/Principles-6-green)](https://janrummel.github.io/evolving-agents/principles/)
 
 ---
 
@@ -65,6 +65,7 @@ Five actionable design principles derived from evolutionary theory: [principles/
 3. **Feedback Loops as Selection Pressure** — Without evaluation-as-architecture, only random drift
 4. **Respect the Error Threshold** — Never change more than you can measure
 5. **Cooperation Must Be Measured** — Multi-agent setups must prove genuine cooperation gain (Γ)
+6. **The Fitness Function Is the Most Fragile Part** — Artificial selection is only as good as your metrics
 
 ### Engineering
 
@@ -133,7 +134,7 @@ Specific limitations:
 - **The "structural analogy" between Nowak and agent systems is our interpretation**, not a published result. The mappings are plausible heuristics, not mathematical proofs. Whether the structures are truly isomorphic is an open question.
 - **~15 papers in the registry have incomplete metadata** (missing authors, IDs). These are marked. Sources without verified links are flagged with ⚠.
 - **Chinese-language sources were found but not read in depth.** We confirmed their existence and relevance, but the actual content was not translated or analyzed.
-- **No counter-arguments were actively sought.** We searched for papers supporting the evolutionary analogy, not papers critiquing it. This is a known bias.
+- **Counter-arguments have been researched and documented.** See [Counter-Arguments](research/counter-arguments.md) for 8 critiques — the 3 strongest: agent evolution is Lamarckian not Darwinian, there's no true reproduction, and artificial selection is only as good as the fitness function.
 - **The 5 principles are derived, not empirically validated.** They're useful design heuristics, but their effectiveness has not been measured.
 
 ## Contributing
