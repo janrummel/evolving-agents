@@ -1,0 +1,19 @@
+<style>
+/* Language Toggle */
+.lang-toggle{position:fixed;top:12px;right:12px;z-index:1000;display:flex;gap:0;border-radius:6px;overflow:hidden;border:1px solid #30363d}
+.lang-btn{background:#21262d;color:#8b949e;border:none;padding:6px 12px;font-size:13px;font-weight:600;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.lang-btn:hover{background:#30363d}
+.lang-btn.active{background:#1f6feb;color:#fff}
+/* Block elements */
+div[lang="de"],section[lang="de"],p[lang="de"],blockquote[lang="de"],ul[lang="de"],ol[lang="de"],table[lang="de"],h1[lang="de"],h2[lang="de"],h3[lang="de"],h4[lang="de"],details[lang="de"]{display:none}
+html[data-lang="de"] div[lang="de"],html[data-lang="de"] section[lang="de"],html[data-lang="de"] p[lang="de"],html[data-lang="de"] blockquote[lang="de"],html[data-lang="de"] ul[lang="de"],html[data-lang="de"] ol[lang="de"],html[data-lang="de"] table[lang="de"],html[data-lang="de"] h1[lang="de"],html[data-lang="de"] h2[lang="de"],html[data-lang="de"] h3[lang="de"],html[data-lang="de"] h4[lang="de"],html[data-lang="de"] details[lang="de"]{display:block}
+html[data-lang="de"] div[lang="en"],html[data-lang="de"] section[lang="en"],html[data-lang="de"] p[lang="en"],html[data-lang="de"] blockquote[lang="en"],html[data-lang="de"] ul[lang="en"],html[data-lang="de"] ol[lang="en"],html[data-lang="de"] table[lang="en"],html[data-lang="de"] h1[lang="en"],html[data-lang="de"] h2[lang="en"],html[data-lang="de"] h3[lang="en"],html[data-lang="de"] h4[lang="en"],html[data-lang="de"] details[lang="en"]{display:none}
+/* Inline elements */
+span[lang="de"]{display:none}
+html[data-lang="de"] span[lang="de"]{display:inline}
+html[data-lang="de"] span[lang="en"]{display:none}
+</style>
+<script>
+function setLang(l){document.documentElement.setAttribute('data-lang',l);localStorage.setItem('ea-lang',l);document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.dataset.lang===l)})}
+!function(){var s=localStorage.getItem('ea-lang'),l=s||(navigator.language.startsWith('de')?'de':'en');setLang(l)}();
+</script>
