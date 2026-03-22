@@ -24,7 +24,7 @@ nav_order: 5
 # Gegenargumente: Wo die Nowak-Agent-Analogie bricht
 
 {: .counter }
-> **Reading: 5 of 5** · After reading this, you'll know the 9 strongest objections to the evolutionary analogy — including 3 rated STRONG — and where the thesis survives vs. where it needs correction.
+> **Lesehinweis: 5 von 5** · Nach der Lektüre kennst du die 9 stärksten Einwände gegen die Evolutions-Analogie — darunter 3 als STARK bewertet — und wo die These standhält vs. wo sie korrigiert werden muss.
 
 **Datum:** 2026-03-19
 **Zweck:** Ehrlichkeitstest — gezielte Suche nach Gegenargumenten zur eigenen These. Dieses Dokument sammelt die stärksten Einwände.
