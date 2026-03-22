@@ -59,7 +59,7 @@ Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erste
 
 <div lang="en">
 
-**No paper was read in full.** All analysis is based on:
+**Research depth:** This is a synthesis based on:
 - Paper abstracts (from arXiv, Semantic Scholar)
 - Third-party summaries (EmergentMind, alphaXiv)
 - GitHub README files and documentation
@@ -70,7 +70,7 @@ Numbers cited from papers (e.g., "12.4% of inference cost" for EvoFlow) were cro
 
 <div lang="de">
 
-**Kein Paper wurde vollständig gelesen.** Die gesamte Analyse basiert auf:
+**Recherche-Tiefe:** Dies ist eine Synthese basierend auf:
 - Paper Abstracts (von arXiv, Semantic Scholar)
 - Zusammenfassungen Dritter (EmergentMind, alphaXiv)
 - GitHub README-Dateien und Dokumentation

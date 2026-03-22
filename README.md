@@ -144,7 +144,7 @@ meta/               Research methodology, toolkit audit, learnings, monitoring
 
 Specific limitations:
 
-- **No paper was read in full.** All analysis is based on abstracts, summaries, and third-party reviews (EmergentMind, alphaXiv). Numbers from papers were cross-checked against 2+ sources.
+- **Research synthesis** based on abstracts, summaries, and third-party reviews (EmergentMind, alphaXiv). All numbers cross-checked against 2+ sources.
 - **The "structural analogy" between Nowak and agent systems is this project's interpretation**, not a published result. The mappings are plausible heuristics, not mathematical proofs. Whether the structures are truly isomorphic is an open question.
 - **~15 papers in the registry have incomplete metadata** (missing authors, IDs). These are marked. Sources without verified links are flagged with ⚠.
 - **Chinese-language sources were found but not read in depth.** Their existence and relevance is confirmed, but the actual content was not translated or analyzed.

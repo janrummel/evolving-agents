@@ -20,7 +20,7 @@ nav_order: 1
 **Date:** March 2026
 **Status:** Initial synthesis — to be expanded
 
-> **Transparency note on research depth:** This document is based on paper abstracts, summaries, and third-party sources (EmergentMind, alphaXiv, GitHub). No paper was read in full text. Numbers (e.g., "12.4% of costs") come from abstracts and were verified across at least 2 independent sources. All arXiv IDs are linked and directly verifiable. The synthesis in Section 4 is an independent interpretation — not a published finding.
+> **Transparency note on research depth:** This document is based on paper abstracts, summaries, and third-party sources (EmergentMind, alphaXiv, GitHub). Analysis is based on abstracts, summaries, and third-party reviews. Numbers (e.g., "12.4% of costs") come from abstracts and were verified across at least 2 independent sources. All arXiv IDs are linked and directly verifiable. The synthesis in Section 4 is an independent interpretation — not a published finding.
 
 </div>
 
@@ -39,7 +39,7 @@ nav_order: 1
 **Datum:** März 2026
 **Status:** Initiale Synthese — wird erweitert
 
-> **Transparenzhinweis zur Recherche-Tiefe:** Dieses Dokument basiert auf Paper-Abstracts, Summaries und Drittquellen (EmergentMind, alphaXiv, GitHub). Kein Paper wurde im Volltext gelesen. Zahlen (z.B. "12.4% der Kosten") stammen aus Abstracts und wurden über mindestens 2 unabhängige Quellen geprüft. Alle arXiv-IDs sind verlinkt und direkt prüfbar. Die Synthese in Abschnitt 4 ist eine eigenständige Interpretation — keine publizierte Erkenntnis.
+> **Transparenzhinweis zur Recherche-Tiefe:** Dieses Dokument basiert auf Paper-Abstracts, Summaries und Drittquellen (EmergentMind, alphaXiv, GitHub). Die Analyse basiert auf Abstracts, Summaries und Drittquellen-Reviews. Zahlen (z.B. "12.4% der Kosten") stammen aus Abstracts und wurden über mindestens 2 unabhängige Quellen geprüft. Alle arXiv-IDs sind verlinkt und direkt prüfbar. Die Synthese in Abschnitt 4 ist eine eigenständige Interpretation — keine publizierte Erkenntnis.
 
 </div>
 

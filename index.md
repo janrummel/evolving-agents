@@ -379,11 +379,11 @@ nav_order: 1
 ---
 
 <div lang="en" markdown="1">
-> **No paper was read in full.** This is a synthesis, not a review. Counter-arguments [documented](/evolving-agents/research/counter-arguments). [Full limitations →](/evolving-agents/meta/limitations)
+> This is a **research synthesis**, not a systematic review. Analysis is based on abstracts, summaries, and cross-verified data from 55+ papers. Counter-arguments [documented](/evolving-agents/research/counter-arguments). [Full limitations →](/evolving-agents/meta/limitations)
 {: .warning }
 </div>
 <div lang="de" markdown="1">
-> **Kein Paper wurde im Volltext gelesen.** Dies ist eine Synthese, kein Review. Gegenargumente [dokumentiert](/evolving-agents/research/counter-arguments). [Vollständige Limitationen →](/evolving-agents/meta/limitations)
+> Dies ist eine **Forschungssynthese**, kein systematisches Review. Die Analyse basiert auf Abstracts, Zusammenfassungen und kreuzverifizierten Daten aus 55+ Papers. Gegenargumente [dokumentiert](/evolving-agents/research/counter-arguments). [Vollständige Limitationen →](/evolving-agents/meta/limitations)
 {: .warning }
 </div>
 
