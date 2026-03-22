@@ -308,6 +308,54 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
+<div lang="en" markdown="1">
+
+## Trade-offs: Where Principles Collide
+
+These principles are not independent — they create productive tensions:
+
+<div class="key-box amber">
+<h4>P1 (Evolvability) vs. P4 (Error Threshold)</h4>
+<p>P1 says: build for change. P4 says: don't change too much at once. The resolution: make the <em>architecture</em> evolvable (P1) while keeping each <em>iteration</em> within measurement capacity (P4). Evolvability is about structure, Error Threshold is about cadence.</p>
+</div>
+
+<div class="key-box amber">
+<h4>P2 (Diversity) vs. P6 (Fitness Function)</h4>
+<p>Maintaining diverse solutions (P2) costs resources — and G6 (Counter-Arguments) warns that evolutionary approaches are expensive. P6 adds: if your fitness function is wrong, diverse solutions just give you more wrong answers, faster. The resolution: diversity pays off only when evaluation is trustworthy.</p>
+</div>
+
+<div class="key-box amber">
+<h4>P3 (Feedback Loops) vs. P5 (Cooperation Must Be Measured)</h4>
+<p>P3 says every output needs evaluation. But P5 reveals that evaluation itself can be misleading — multi-agent metrics often conflate cooperation gain with resource accumulation. The resolution: don't just measure, measure the <em>right thing</em>. Γ (cooperation gain) over raw accuracy.</p>
+</div>
+
+</div>
+
+<div lang="de" markdown="1">
+
+## Trade-offs: Wo Prinzipien kollidieren
+
+Diese Prinzipien sind nicht unabhängig — sie erzeugen produktive Spannungen:
+
+<div class="key-box amber">
+<h4>P1 (Evolvierbarkeit) vs. P4 (Error Threshold)</h4>
+<p>P1 sagt: baue für Veränderung. P4 sagt: ändere nicht zu viel auf einmal. Die Auflösung: Mach die <em>Architektur</em> evolvierbar (P1), aber halte jede <em>Iteration</em> innerhalb der Messkapazität (P4). Evolvierbarkeit ist Struktur, Error Threshold ist Takt.</p>
+</div>
+
+<div class="key-box amber">
+<h4>P2 (Diversität) vs. P6 (Fitness-Funktion)</h4>
+<p>Diverse Lösungen pflegen (P2) kostet Ressourcen — und G6 (Gegenargumente) warnt, dass evolutionäre Ansätze teuer sind. P6 ergänzt: wenn die Fitness-Funktion falsch ist, liefern diverse Lösungen nur mehr falsche Antworten, schneller. Die Auflösung: Diversität lohnt sich nur, wenn die Evaluation vertrauenswürdig ist.</p>
+</div>
+
+<div class="key-box amber">
+<h4>P3 (Feedback Loops) vs. P5 (Kooperation muss gemessen werden)</h4>
+<p>P3 sagt: jeder Output braucht Evaluation. Aber P5 zeigt, dass Evaluation selbst irreführend sein kann — Multi-Agent-Metriken vermischen oft Kooperationsgewinn mit Ressourcenakkumulation. Die Auflösung: nicht nur messen, sondern das <em>Richtige</em> messen. Γ (Kooperationsgewinn) statt roher Accuracy.</p>
+</div>
+
+</div>
+
+---
+
 *These principles are living documents. They evolve as the research base grows. See [Counter-Arguments](../research/counter-arguments) for where the evolutionary analogy breaks.*
 
 *Diese Prinzipien sind lebende Dokumente. Sie entwickeln sich weiter, wenn die Forschungsbasis wächst. Siehe [Counter-Arguments](../research/counter-arguments) für die Grenzen der evolutionären Analogie.*

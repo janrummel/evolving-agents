@@ -15,6 +15,19 @@ nav_order: 3
 **Date:** 2026-03-19
 **Type:** Comparative Analysis (3 Papers → 1 System)
 
+<details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
+<summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 On this page</summary>
+<div style="font-size:0.85em;margin-top:8px">
+
+1. [The Three Papers at a Glance](#1-the-three-papers-at-a-glance) — Comparison table
+2. [EvoFlow](#evoflow-250207373--population-based-workflow-evolution) — Niching selection for workflows
+3. [MCE](#mce-260121557--meta-context-engineering) — Skill co-evolution
+4. [AgentFactory](#agentfactory-260318000--executable-subagent-accumulation) — Code-based replication
+5. [Synthesis for AgentField](#4-synthesis-for-agentfield) — 4-phase upgrade path
+
+</div>
+</details>
+
 </div>
 
 <div lang='de' markdown='1'>
@@ -27,6 +40,19 @@ nav_order: 3
 **Datum:** 2026-03-19
 **Typ:** Vergleichsanalyse (3 Papers → 1 System)
 
+<details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
+<summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 Auf dieser Seite</summary>
+<div style="font-size:0.85em;margin-top:8px">
+
+1. [Die drei Papers im Überblick](#1-die-drei-papers-im-überblick) — Vergleichstabelle
+2. [EvoFlow](#evoflow-250207373--populationsbasierte-workflow-evolution) — Niching-Selektion für Workflows
+3. [MCE](#mce-260121557--meta-context-engineering) — Skill-Ko-Evolution
+4. [AgentFactory](#agentfactory-260318000--ausführbare-subagent-akkumulation) — Code-basierte Replikation
+5. [Synthese für AgentField](#4-synthese-für-agentfield) — 4-Phasen-Upgrade-Pfad
+
+</div>
+</details>
+
 </div>
 
 ---
@@ -38,6 +64,20 @@ nav_order: 3
 <div class="section-summary">
 <h4>Section Summary</h4>
 <p><strong>EvoFlow</strong> evolves a population of workflows (beat o1-preview at 12.4% cost). <strong>MCE</strong> co-evolves skills via meta-agent (+16.9% avg). <strong>AgentFactory</strong> stores solutions as executable code, not text. Together they show three independent paths from manual to evolutionary agent design.</p>
+</div>
+
+| | **EvoFlow** | **MCE** | **AgentFactory** |
+|---|---|---|---|
+| **What evolves** | Workflow graphs (operator DAGs) | Skills (prompt + tool configs) | Subagent code modules |
+| **Evolution mechanism** | Crossover + mutation + niching | Meta-agent co-evolution | Accumulate & reuse executable subagents |
+| **Selection** | Pareto (quality vs. cost) | Meta-agent evaluation (+16.9%) | Task performance filtering |
+| **Diversity strategy** | Niching / MAP-Elites style | Skill specialization | Code library growth |
+| **Storage format** | Text (prompts + graph) | Text (SKILL.md style) | Executable code |
+| **Best result** | Beat o1-preview at 12.4% cost | +16.9% avg improvement | Autonomous skill accumulation |
+| **Nowak analogy** | Population with selection (P2+P3) | Heredity via meta-agent (P7) | Replicator accumulation (P1) |
+| **arXiv** | [2502.07373](https://arxiv.org/abs/2502.07373) | [2601.21557](https://arxiv.org/abs/2601.21557) | [2603.18000](https://arxiv.org/abs/2603.18000) |
+
+<div class="section-summary" style="display:none">
 </div>
 
 ### EvoFlow (2502.07373) — Population-Based Workflow Evolution
@@ -142,6 +182,20 @@ Base-Agent (lower level)
 <div class="section-summary">
 <h4>Abschnitt-Zusammenfassung</h4>
 <p><strong>EvoFlow</strong> evolviert eine Population von Workflows (o1-preview geschlagen bei 12,4% der Kosten). <strong>MCE</strong> ko-evolviert Skills via Meta-Agent (+16,9% Ø). <strong>AgentFactory</strong> speichert Lösungen als ausführbaren Code, nicht Text. Zusammen zeigen sie drei unabhängige Wege von manuellem zu evolutionärem Agent-Design.</p>
+</div>
+
+| | **EvoFlow** | **MCE** | **AgentFactory** |
+|---|---|---|---|
+| **Was evolviert** | Workflow-Graphen (Operator-DAGs) | Skills (Prompt + Tool-Configs) | Subagent-Code-Module |
+| **Evolutionsmechanismus** | Crossover + Mutation + Niching | Meta-Agent-Ko-Evolution | Akkumuliere & nutze ausführbare Subagents |
+| **Selektion** | Pareto (Qualität vs. Kosten) | Meta-Agent-Evaluation (+16,9%) | Task-Performance-Filtering |
+| **Diversitätsstrategie** | Niching / MAP-Elites-Stil | Skill-Spezialisierung | Code-Library-Wachstum |
+| **Speicherformat** | Text (Prompts + Graph) | Text (SKILL.md-Stil) | Ausführbarer Code |
+| **Bestes Ergebnis** | o1-preview geschlagen bei 12,4% Kosten | +16,9% Ø Verbesserung | Autonome Skill-Akkumulation |
+| **Nowak-Analogie** | Population mit Selektion (P2+P3) | Vererbung via Meta-Agent (P7) | Replikator-Akkumulation (P1) |
+| **arXiv** | [2502.07373](https://arxiv.org/abs/2502.07373) | [2601.21557](https://arxiv.org/abs/2601.21557) | [2603.18000](https://arxiv.org/abs/2603.18000) |
+
+<div class="section-summary" style="display:none">
 </div>
 
 ### EvoFlow (2502.07373) — Populationsbasierte Workflow-Evolution

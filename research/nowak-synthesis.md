@@ -221,6 +221,11 @@ rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
 
 Beyond the Originator Equation, Nowak's framework offers a range of analytical tools: fitness landscapes, mutation matrices, genomic sequence space, random drift, quasispecies, replicator dynamics, the Prisoner's Dilemma, games in finite and infinite populations, evolutionary graph theory, games on lattices, evolutionary kaleidoscopes, fractals, and spatial chaos.
 
+<div class="key-box" style="margin-top:2em">
+<h4>🔗 Where this is going</h4>
+<p>Sections 2–3 survey how AI research has <em>independently</em> arrived at similar concepts (evolvability, selection pressure, diversity maintenance). Section 4 then maps Nowak's biology directly onto agent architectures — <a href="#4-synthesis--the-bridge-from-nowak-to-agent-architectures">jump to the bridge →</a></p>
+</div>
+
 </div>
 
 <div lang="de" markdown="1">
@@ -314,6 +319,11 @@ rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
 ### 1.5 Nowaks Werkzeugkasten
 
 Über die Originator-Gleichung hinaus bietet Nowaks Framework eine Reihe analytischer Werkzeuge: Fitness-Landschaften, Mutationsmatrizen, genomischer Sequenzraum, Random Drift, Quasispezies, Replikator-Dynamik, das Prisoner's Dilemma, Spiele in endlichen und unendlichen Populationen, evolutionäre Graphentheorie, Spiele auf Gittern, evolutionäre Kaleidoskope, Fraktale und räumliches Chaos.
+
+<div class="key-box" style="margin-top:2em">
+<h4>🔗 Wohin das führt</h4>
+<p>Abschnitte 2–3 zeigen, wie die KI-Forschung <em>unabhängig</em> zu ähnlichen Konzepten gekommen ist (Evolvierbarkeit, Selektionsdruck, Diversitätserhaltung). Abschnitt 4 bildet dann Nowaks Biologie direkt auf Agent-Architekturen ab — <a href="#4-synthese--die-brücke-von-nowak-zu-agent-architekturen">zur Brücke springen →</a></p>
+</div>
 
 </div>
 
