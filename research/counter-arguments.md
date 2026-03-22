@@ -19,6 +19,24 @@ nav_order: 5
 
 <div class='section-summary'><h4>Section Summary</h4><p>9 counter-arguments tested against the Nowak-Agent analogy. 3 rated <strong>STRONG</strong> (Lamarckian dynamics, no true reproduction, artificial selection), 3 <strong>MEDIUM</strong> (wishful mnemonics, open-ended evolution, cost), 1 <strong>LOW</strong> (bad outcomes), 1 <strong>META</strong> (Evo-Devo), 1 <strong>MEDIUM-STRONG</strong> (population size). The structural analogy survives as a design heuristic but requires explicit corrections — especially a new principle: "The fitness function is the most fragile part."</p></div>
 
+<details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
+<summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 On this page</summary>
+<div style="font-size:0.85em;margin-top:8px">
+
+- 🔴 [G1: Lamarckian, not Darwinian](#g1-agent-systems-are-lamarckian-not-darwinian-strong) — STRONG
+- 🔴 [G2: No True Reproduction](#g2-no-true-reproduction-strong) — STRONG
+- 🟡 [G3: Wishful Mnemonics](#g3-wishful-mnemonics--metaphor-inflation-medium) — MEDIUM
+- 🔴 [G4: Artificial ≠ Natural Selection](#g4-artificial-selection--natural-selection-strong) — STRONG
+- 🟡 [G5: Open-Ended Evolution](#g5-open-ended-evolution-is-biologically-unique-medium) — MEDIUM
+- 🟡 [G6: Expensive](#g6-evolutionary-approaches-are-expensive-medium) — MEDIUM
+- 🟢 [G7: Bad Outcomes](#g7-darwinian-logic-also-predicts-bad-outcomes-low) — LOW
+- 🟡 [G8: Evo-Devo](#g8-the-analogy-could-work-in-both-directions-meta) — META
+- 🔴 [G9: Population Size](#g9-population-size--nowaks-equations-assume-large-populations-medium-strong) — MEDIUM-STRONG
+- [Summary](#summary-what-remains-of-our-thesis)
+
+</div>
+</details>
+
 </div>
 
 <div lang="de" markdown="1">
@@ -34,6 +52,24 @@ nav_order: 5
 > Ohne dieses Dokument wäre das Repo confirmation-biased. Eine These wird stärker, wenn sie ihre Gegenargumente kennt — oder sie korrigiert sich.
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>9 Gegenargumente gegen die Nowak-Agent-Analogie geprüft. 3 als <strong>STARK</strong> bewertet (Lamarcksche Dynamik, keine echte Reproduktion, künstliche Selektion), 3 <strong>MITTEL</strong> (Wishful Mnemonics, Open-Ended Evolution, Kosten), 1 <strong>NIEDRIG</strong> (schlechte Outcomes), 1 <strong>META</strong> (Evo-Devo), 1 <strong>MITTEL-STARK</strong> (Populationsgröße). Die strukturelle Analogie überlebt als Design-Heuristik, erfordert aber explizite Korrekturen — insbesondere ein neues Prinzip: „Die Fitness-Funktion ist der fragilste Teil."</p></div>
+
+<details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
+<summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 Auf dieser Seite</summary>
+<div style="font-size:0.85em;margin-top:8px">
+
+- 🔴 [G1: Lamarckisch, nicht Darwinistisch](#g1-agent-systeme-sind-lamarckisch-nicht-darwinistisch-stark) — STARK
+- 🔴 [G2: Keine echte Reproduktion](#g2-keine-echte-reproduktion-stark) — STARK
+- 🟡 [G3: Wishful Mnemonics](#g3-wishful-mnemonics--metaphern-inflation-mittel) — MITTEL
+- 🔴 [G4: Künstliche ≠ Natürliche Selektion](#g4-künstliche-selektion--natürliche-selektion-stark) — STARK
+- 🟡 [G5: Open-Ended Evolution](#g5-open-ended-evolution-ist-biologisch-einzigartig-mittel) — MITTEL
+- 🟡 [G6: Teuer](#g6-evolutionäre-ansätze-sind-teuer-mittel) — MITTEL
+- 🟢 [G7: Schlechte Outcomes](#g7-darwinistische-logik-sagt-auch-schlechte-outcomes-voraus-niedrig) — NIEDRIG
+- 🟡 [G8: Evo-Devo](#g8-die-analogie-könnte-in-beide-richtungen-funktionieren-meta) — META
+- 🔴 [G9: Populationsgröße](#g9-populationsgröße--nowaks-gleichungen-setzen-große-populationen-voraus-mittel-stark) — MITTEL-STARK
+- [Zusammenfassung](#zusammenfassung-was-bleibt-von-unserer-these)
+
+</div>
+</details>
 
 </div>
 

@@ -21,8 +21,14 @@
     canvas = document.getElementById('originator-canvas');
     if (!canvas) { console.warn('Originator sim: canvas not found'); return; }
     ctx = canvas.getContext('2d');
-    canvas.width = W;
-    canvas.height = H;
+
+    // Retina / HiDPI support
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.scale(dpr, dpr);
 
     slider = document.getElementById('r-slider');
     rLabel = document.getElementById('r-value');

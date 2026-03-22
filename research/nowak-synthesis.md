@@ -728,7 +728,7 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 <summary>6. Sources — All referenced papers with links</summary>
 <div class="disclosure-body" markdown="1">
 
-> All arXiv links are directly clickable. Sources without a link could not be assigned a unique URL — these are marked with ⚠.
+> All links verified as of March 2026. One source (Manapat 2009) has no open-access link — marked with ⚠.
 
 ### Nowak — Core Works
 - Nowak, M.A. (2006). *Evolutionary Dynamics: Exploring the Equations of Life*. Harvard University Press. [Harvard UP](https://www.hup.harvard.edu/books/9780674023383)
@@ -739,7 +739,7 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 ### Evolvability in AI
 - Gajewski, A., Clune, J., Stanley, K.O. & Lehman, J. (2019). "Evolvability ES: Scalable and Direct Optimization of Evolvability." *GECCO 2019*. [arXiv:1907.06077](https://arxiv.org/abs/1907.06077)
 - Mouret, J.-B. & Clune, J. (2015). "Illuminating search spaces by mapping elites." [arXiv:1504.04909](https://arxiv.org/abs/1504.04909)
-- Pugh, J.K., Soros, L.B. & Stanley, K.O. (2016). "Quality Diversity: A New Frontier for Evolutionary Computation." *Frontiers in Robotics and AI*, 3:40. ⚠ No direct link verified
+- Pugh, J.K., Soros, L.B. & Stanley, K.O. (2016). "Quality Diversity: A New Frontier for Evolutionary Computation." *Frontiers in Robotics and AI*, 3:40. [DOI:10.3389/frobt.2016.00040](https://doi.org/10.3389/frobt.2016.00040)
 
 ### Self-Evolving Agents
 - Gao, H. et al. (2025). "A Survey of Self-Evolving Agents." [arXiv:2507.21046](https://arxiv.org/abs/2507.21046)
@@ -754,14 +754,14 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 
 ### Multi-Agent Systems — Scientific Foundations
 - "Towards a Science of Collective AI" (2026). [arXiv:2602.05289](https://arxiv.org/abs/2602.05289) — Collaboration Gain Metric and Factor Attribution
-- Zhu, K. et al. (2025). "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents." *ACL 2025*. ⚠ arXiv ID not verified
+- Zhu, K. et al. (2025). "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents." *ACL 2025*. [arXiv:2503.01935](https://arxiv.org/abs/2503.01935)
 - Tran, K.-T. et al. (2025). "Multi-Agent Collaboration Mechanisms: A Survey of LLMs." [arXiv:2501.06322](https://arxiv.org/abs/2501.06322)
 - Cemri, M. et al. (2025). "Why Do Multi-Agent LLM Systems Fail?" (MAST taxonomy). [arXiv:2503.13657](https://arxiv.org/abs/2503.13657)
-- Google Cloud (2025). "Lessons from 2025 on Agents and Trust." ⚠ No permanent link available
+- Google Cloud (2025). "Lessons from 2025 on Agents and Trust." [Google Cloud Blog](https://cloud.google.com/transform/ai-grew-up-and-got-a-job-lessons-from-2025-on-agents-and-trust)
 
 ### Quality-Diversity
 - Flageat, M. et al. (2023). "Evolving Populations of Diverse RL Agents with MAP-Elites." [arXiv:2303.12803](https://arxiv.org/abs/2303.12803)
-- Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. ⚠ arXiv ID not verified
+- Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. [arXiv:2003.01825](https://arxiv.org/abs/2003.01825)
 
 </div>
 </details>
@@ -774,7 +774,7 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 <summary>6. Quellen — Alle referenzierten Papers mit Links</summary>
 <div class="disclosure-body" markdown="1">
 
-> Alle arXiv-Links sind direkt klickbar. Quellen ohne Link konnten nicht mit einem eindeutigen URL versehen werden — diese sind mit ⚠ markiert.
+> Alle Links verifiziert, Stand März 2026. Eine Quelle (Manapat 2009) hat keinen Open-Access-Link — mit ⚠ markiert.
 
 ### Nowak — Kernwerke
 - Nowak, M.A. (2006). *Evolutionary Dynamics: Exploring the Equations of Life*. Harvard University Press. [Harvard UP](https://www.hup.harvard.edu/books/9780674023383)
@@ -785,7 +785,7 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 ### Evolvierbarkeit in der KI
 - Gajewski, A., Clune, J., Stanley, K.O. & Lehman, J. (2019). "Evolvability ES: Scalable and Direct Optimization of Evolvability." *GECCO 2019*. [arXiv:1907.06077](https://arxiv.org/abs/1907.06077)
 - Mouret, J.-B. & Clune, J. (2015). "Illuminating search spaces by mapping elites." [arXiv:1504.04909](https://arxiv.org/abs/1504.04909)
-- Pugh, J.K., Soros, L.B. & Stanley, K.O. (2016). "Quality Diversity: A New Frontier for Evolutionary Computation." *Frontiers in Robotics and AI*, 3:40. ⚠ Kein direkter Link verifiziert
+- Pugh, J.K., Soros, L.B. & Stanley, K.O. (2016). "Quality Diversity: A New Frontier for Evolutionary Computation." *Frontiers in Robotics and AI*, 3:40. [DOI:10.3389/frobt.2016.00040](https://doi.org/10.3389/frobt.2016.00040)
 
 ### Self-Evolving Agents
 - Gao, H. et al. (2025). "A Survey of Self-Evolving Agents." [arXiv:2507.21046](https://arxiv.org/abs/2507.21046)
@@ -800,14 +800,14 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 
 ### Multi-Agent-Systeme — Wissenschaftliche Grundlagen
 - "Towards a Science of Collective AI" (2026). [arXiv:2602.05289](https://arxiv.org/abs/2602.05289) — Collaboration Gain Metric und Factor Attribution
-- Zhu, K. et al. (2025). "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents." *ACL 2025*. ⚠ arXiv-ID nicht verifiziert
+- Zhu, K. et al. (2025). "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents." *ACL 2025*. [arXiv:2503.01935](https://arxiv.org/abs/2503.01935)
 - Tran, K.-T. et al. (2025). "Multi-Agent Collaboration Mechanisms: A Survey of LLMs." [arXiv:2501.06322](https://arxiv.org/abs/2501.06322)
 - Cemri, M. et al. (2025). "Why Do Multi-Agent LLM Systems Fail?" (MAST taxonomy). [arXiv:2503.13657](https://arxiv.org/abs/2503.13657)
-- Google Cloud (2025). "Lessons from 2025 on Agents and Trust." ⚠ Kein permanenter Link verfügbar
+- Google Cloud (2025). "Lessons from 2025 on Agents and Trust." [Google Cloud Blog](https://cloud.google.com/transform/ai-grew-up-and-got-a-job-lessons-from-2025-on-agents-and-trust)
 
 ### Quality-Diversity
 - Flageat, M. et al. (2023). "Evolving Populations of Diverse RL Agents with MAP-Elites." [arXiv:2303.12803](https://arxiv.org/abs/2303.12803)
-- Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. ⚠ arXiv-ID nicht verifiziert
+- Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. [arXiv:2003.01825](https://arxiv.org/abs/2003.01825)
 
 </div>
 </details>
