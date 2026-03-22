@@ -781,6 +781,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">If others think similarly: validation. If nobody has the same angle: opportunity.</div>
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>Convergent thinking from independent groups = strong validation. Unique angle within that convergence = publishable contribution.</p>
+</div>
+
 </div>
 
 <span class="lang-toggle lang-de">DE</span>
@@ -800,6 +805,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">Wenn andere ähnliches denken: Validierung. Wenn niemand den gleichen Winkel hat: Chance.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Konvergentes Denken unabhängiger Gruppen = starke Validierung. Einzigartiger Winkel innerhalb dieser Konvergenz = publizierbare Contribution.</p>
+</div>
+
 </div>
 
 </div>
@@ -809,6 +819,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <!-- ═══════════════════════════════════════════ SUMMARY ═══ -->
 
 ## Summary / Zusammenfassung
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> 8 learnings distilled into 5 pipeline improvements, 4 new tool requirements, and 4 design principles. The core theme: build monitoring systems, not static reports.<br/>
+<strong>DE:</strong> 8 Learnings destilliert in 5 Pipeline-Verbesserungen, 4 neue Werkzeug-Anforderungen und 4 Designprinzipien. Das Kernthema: Baue Monitoring-Systeme, keine statischen Reports.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 

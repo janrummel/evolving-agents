@@ -101,6 +101,8 @@ Was wir haben, was uns fehlt und was wir für seriöse interdisziplinäre Forsch
 
 <div lang="en" markdown="1">
 
+<div class="key-box green"><h4>✅ Available</h4><p>5 Obsidian Vaults (MCP), Knowledge DB (SQLite), Episodic Memory (semantic search), Memory System (file-based, cross-session)</p></div>
+
 | Tool | What It Stores | Access |
 |------|---------------|--------|
 | **Obsidian Vaults** (5x) | Structured notes, concepts, links | MCP servers per vault |
@@ -111,6 +113,8 @@ Was wir haben, was uns fehlt und was wir für seriöse interdisziplinäre Forsch
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box green"><h4>✅ Verfügbar</h4><p>5 Obsidian Vaults (MCP), Knowledge DB (SQLite), Episodic Memory (semantische Suche), Memory System (dateibasiert, session-übergreifend)</p></div>
 
 | Tool | Was es speichert | Zugriff |
 |------|-----------------|---------|
@@ -139,9 +143,19 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 ## Blind Spots — What's Missing / Blinde Flecken — Was fehlt
 
+<div lang="en" markdown="1">
+<div class="section-summary"><h4>Section Summary</h4><p>Five critical gaps identified: (1) Multi-lingual research coverage — we're missing ~30–50% of relevant work from CJK sources, (2) No native academic paper infrastructure (citation graphs, arXiv API), (3) No automated research monitoring/alerting, (4) Missing code reproducibility pipeline, (5) No community discourse tracking. Priorities: Semantic Scholar + arXiv via WebFetch this week, MCP integrations this month, full CJK pipeline Q2 2026.</p></div>
+</div>
+
+<div lang="de" markdown="1">
+<div class="section-summary"><h4>Abschnitt-Zusammenfassung</h4><p>Fünf kritische Lücken identifiziert: (1) Multilinguale Forschungsabdeckung — ~30–50 % relevanter Arbeiten aus CJK-Quellen fehlen, (2) Keine native akademische Paper-Infrastruktur (Citation Graphs, arXiv API), (3) Kein automatisiertes Research-Monitoring/Alerting, (4) Fehlende Code-Reproduzierbarkeitspipeline, (5) Kein Community-Discourse-Tracking. Prioritäten: Semantic Scholar + arXiv via WebFetch diese Woche, MCP-Integrationen diesen Monat, volle CJK-Pipeline Q2 2026.</p></div>
+</div>
+
 ### 1. Multi-Lingual Research (CRITICAL)
 
 <div lang="en" markdown="1">
+
+<div class="key-box amber"><h4>⚠️ Gap</h4><p>No CJK language support. Missing CNKI, Wanfang, Baidu Scholar, CiNii, J-STAGE, RISS. Estimated 30–50% of relevant work invisible.</p></div>
 
 **Problem:** Our entire research pipeline is English/German. This topic spans communities that publish heavily in Chinese, Japanese, and Korean.
 
@@ -164,6 +178,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Keine CJK-Sprachunterstützung. CNKI, Wanfang, Baidu Scholar, CiNii, J-STAGE, RISS fehlen. Geschätzt 30–50 % relevanter Arbeiten unsichtbar.</p></div>
 
 **Problem:** Unsere gesamte Research-Pipeline ist Englisch/Deutsch. Das Thema umfasst Communities, die stark auf Chinesisch, Japanisch und Koreanisch publizieren.
 
@@ -189,6 +205,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
+<div class="key-box amber"><h4>⚠️ Gap</h4><p>No Semantic Scholar, arXiv API, or Google Scholar integration. No citation graph traversal, no PDF pipeline, no reference management.</p></div>
+
 **Problem:** No native integration with academic search systems. We rely on WebSearch to find papers, which is imprecise and misses citation context.
 
 **What we're missing:**
@@ -210,6 +228,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Kein Semantic Scholar, arXiv API oder Google Scholar. Kein Citation Graph Traversal, keine PDF-Pipeline, kein Reference Management.</p></div>
 
 **Problem:** Keine native Integration mit akademischen Suchsystemen. Wir nutzen WebSearch zum Finden von Papers, was ungenau ist und Citation-Kontext verpasst.
 
@@ -235,6 +255,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
+<div class="key-box amber"><h4>⚠️ Gap</h4><p>No automated arXiv digests, author tracking, or conference monitoring. We react instead of proactively tracking new work.</p></div>
+
 **Problem:** `research-monitor` skill exists but is manual. No automated tracking of new papers on our specific topics.
 
 **What we're missing:**
@@ -253,6 +275,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Keine automatisierten arXiv-Digests, kein Author-Tracking, kein Conference-Monitoring. Wir reagieren statt proaktiv zu tracken.</p></div>
 
 **Problem:** Der `research-monitor` Skill existiert, ist aber manuell. Kein automatisiertes Tracking neuer Papers zu unseren spezifischen Themen.
 
@@ -275,6 +299,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
+<div class="key-box amber"><h4>⚠️ Gap</h4><p>No PapersWithCode integration, no systematic codebase review, no local experiment reproduction or benchmarking infrastructure.</p></div>
+
 **Problem:** Many papers we reference have open-source implementations we've never looked at.
 
 **What we're missing:**
@@ -291,6 +317,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Keine PapersWithCode-Integration, kein systematisches Codebase-Review, keine lokale Experiment-Reproduktion oder Benchmarking-Infrastruktur.</p></div>
 
 **Problem:** Viele Papers, die wir referenzieren, haben Open-Source-Implementierungen, die wir nie angeschaut haben.
 
@@ -311,6 +339,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
+<div class="key-box amber"><h4>⚠️ Gap</h4><p>No Twitter/X academic discourse tracking, no Reddit monitoring, no conference workshop coverage, no lab blog aggregation.</p></div>
+
 **Problem:** We research papers but don't track the communities around them.
 
 **What we're missing:**
@@ -322,6 +352,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Kein Twitter/X-Diskurs-Tracking, kein Reddit-Monitoring, keine Conference-Workshop-Abdeckung, keine Lab-Blog-Aggregation.</p></div>
 
 **Problem:** Wir recherchieren Papers, aber tracken nicht die Communities dahinter.
 
@@ -336,6 +368,14 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 ---
 
 ## Toolkit Priorities / Werkzeugkasten-Prioritäten
+
+<div lang="en" markdown="1">
+<div class="section-summary"><h4>Section Summary</h4><p>Three time horizons: <strong>This week</strong> — Semantic Scholar + arXiv via WebFetch, translation-aware search. <strong>This month</strong> — MCP server, arXiv monitoring, PapersWithCode. <strong>Q2 2026</strong> — Full CJK pipeline, reference management, local benchmarking.</p></div>
+</div>
+
+<div lang="de" markdown="1">
+<div class="section-summary"><h4>Abschnitt-Zusammenfassung</h4><p>Drei Zeithorizonte: <strong>Diese Woche</strong> — Semantic Scholar + arXiv via WebFetch, translation-aware Search. <strong>Diesen Monat</strong> — MCP-Server, arXiv-Monitoring, PapersWithCode. <strong>Q2 2026</strong> — Volle CJK-Pipeline, Reference Management, lokales Benchmarking.</p></div>
+</div>
 
 ### Immediately Feasible (This Week) / Sofort machbar (diese Woche)
 
@@ -397,6 +437,8 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
+<div class="section-summary"><h4>Section Summary</h4><p>Immediate next step: Use Semantic Scholar + arXiv to build citation graphs from our core papers (Nowak 2008, Gao 2025, Wang 2025), discover missing work, and identify CJK labs at the intersection.</p></div>
+
 Start with Semantic Scholar + arXiv queries for our core papers to:
 1. Build citation graph outward from Nowak 2008, Gao 2025, Wang 2025
 2. Find papers we're missing (especially post-2024 work on self-evolving agents)
@@ -405,6 +447,8 @@ Start with Semantic Scholar + arXiv queries for our core papers to:
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="section-summary"><h4>Abschnitt-Zusammenfassung</h4><p>Nächster Schritt: Semantic Scholar + arXiv nutzen, um Citation Graphs aus unseren Kern-Papers aufzubauen (Nowak 2008, Gao 2025, Wang 2025), fehlende Arbeiten entdecken und CJK-Labs an der Schnittstelle identifizieren.</p></div>
 
 Mit Semantic Scholar + arXiv Queries für unsere Kern-Papers starten, um:
 1. Citation Graph ausgehend von Nowak 2008, Gao 2025, Wang 2025 aufzubauen
