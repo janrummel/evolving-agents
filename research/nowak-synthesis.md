@@ -336,64 +336,35 @@ rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
 
 ### 2.1 Evolvability ES (Evolutionary Strategies)
 
-Gajewski, Clune, Stanley, and Lehman (2019) developed **Evolvability ES**, an evolutionary algorithm that explicitly optimizes for evolvability — i.e., the ability to quickly adapt to different tasks after random mutations.
-
-**Core idea:** It is possible to derive a novel objective function in the spirit of Natural Evolution Strategies that maximizes the diversity of behaviors an individual exhibits under random mutations. The algorithm scales efficiently with compute.
-
-**Connection to Meta-Learning:** Evolvability ES shows a direct connection to the meta-learning algorithm MAML (Model-Agnostic Meta-Learning): Both optimize for rapid adaptability, but Evolvability ES discovers solutions with distinct properties — it finds representations that are inherently more adaptable.
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p>Gajewski et al. (2019) showed you can optimize <em>for evolvability itself</em> — not just task performance. Their Evolvability ES maximizes behavioral diversity under random mutations, producing representations that are inherently more adaptable. It connects directly to MAML (meta-learning): both optimize for rapid adaptation, but Evolvability ES finds distinct, more flexible solutions.</p>
+</div>
 
 > **→ Takeaway:** Don't just optimize your agent for today's task — optimize its *ability to adapt*. This is the computational version of Nowak's "evolvability is itself evolvable" (→ [P1](/evolving-agents/principles/#p1-evolvability-over-performance)).
 
 ### 2.2 Quality-Diversity (QD) Algorithms
 
-QD algorithms, particularly **MAP-Elites** (Multi-dimensional Archive of Phenotypic Elites), represent a paradigmatic break with classical optimization:
-
-- **Classical optimization:** Find the one best solution
-- **QD optimization:** Find a diverse collection of high-performing solutions — fill a space of possibilities with the best example of each reachable behavior class
-
-MAP-Elites discretizes the behavior space into niches ("cells") and stores only the elite solution in each cell. New individuals (through genetic variation) compete within their niche with the existing elite.
-
-**Recent developments:**
-
-- **PGA-MAP-Elites and DCG-MAP-Elites**: Combination of actor-critic methods from reinforcement learning with MAP-Elites for drastically improved sample efficiency in high-dimensional tasks
-- **ME-ES (MAP-Elites with Evolution Strategies)**: Scaling to high-dimensional controllers with deep neural networks
-- **Surrogate-Assisted Illumination (SAIL)**: Use of Gaussian Process surrogates to reduce expensive evaluations by orders of magnitude
-
-**Significance:** QD algorithms solve a fundamental problem — in complex landscapes with many local optima, pure fitness optimization gets stuck. Diversity as an optimization objective produces a repertoire of strategies that are immediately available when the environment changes.
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p><strong>MAP-Elites</strong> breaks with classical optimization: instead of finding the ONE best solution, it fills a behavior space with the best example per niche. Recent advances (PGA-MAP-Elites, ME-ES, SAIL) scale this to deep neural networks and reduce evaluations by orders of magnitude. The core insight: in complex landscapes with many local optima, <strong>diversity as an optimization objective</strong> produces strategies that are immediately available when the environment changes.</p>
+</div>
 
 > **→ Takeaway:** Keep multiple skill variants, not just the "best" one. Isolated subagent context windows are agent niches — this is MAP-Elites applied to prompts (→ [P2](/evolving-agents/principles/#p2-diversity-as-strategic-resource)).
 
 ### 2.3 Self-Evolving Agents — The Current Wave (2024–2026)
 
-A comprehensive survey by Gao et al. (2025/2026, arXiv:2507.21046) systematizes the field of **Self-Evolving Agents** for the first time along three dimensions: **What, When, and How** to evolve.
-
-**Core problem:** LLMs are fundamentally static — they cannot adapt their internal parameters to new tasks, evolving knowledge domains, or dynamic interaction contexts. This static character becomes a critical bottleneck as soon as agents are deployed in open, interactive environments.
-
-**Evolving dimensions:**
-
-1. **Parameter Evolution**: SFT + RL for continuous improvement of model weights
-2. **Prompt Evolution**: Iterative refinement of instructions (TextGrad, MIPRO)
-3. **Workflow Evolution**: Automatic adaptation of agent topology and task distribution (AFlow)
-4. **Tool Evolution**: Agents learn to use new tools or use existing ones more effectively
-5. **Memory Evolution**: Building and curation of long-term knowledge
-
-**Key patterns:**
-
-- **Self-Challenging Agent (SCA)**: Agent autonomously generates novel tasks, executes them, filters successful trajectories for retraining
-- **EXIF Framework**: Exploration Agent (Alice) trains Target Agent (Bob) through iterative feedback loops — Alice evaluates Bob's performance and adjusts her next exploration round. Interestingly: Even when Alice uses the same model as Bob, performance improves significantly
-- **AgentGen**: Synthesizes diverse simulation worlds from an initial corpus and implements a bidirectional evolution loop with progressive difficulty adjustment
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p>Gao et al. (arXiv:2507.21046) systematize the field along three dimensions: <strong>What, When, and How</strong> to evolve. Five dimensions evolve: Parameters (SFT+RL), Prompts (TextGrad, MIPRO), Workflows (AFlow), Tools, and Memory. Notable patterns: Self-Challenging Agents autonomously generate tasks for retraining; the EXIF Framework shows that even same-model exploration agents can improve a target agent significantly.</p>
+</div>
 
 ### 2.4 EvoAgentX — Evolving Agent Workflows (EMNLP 2025)
 
-EvoAgentX (Wang et al., 2025) is an open-source platform that unifies automated generation, execution, and evolutionary optimization of multi-agent workflows. The architecture consists of five core layers:
-
-1. **Basic Components Layer**: Configuration, logging, storage
-2. **Agent Layer**: Individual agent configuration
-3. **Workflow Layer**: Graph-based workflow structures
-4. **Evolving Layer**: Integration of TextGrad, AFlow, and MIPRO as optimization algorithms
-5. **Evaluation Layer**: Automatic evaluation of agent performance
-
-**Results:** Consistent performance improvements — up to 20% accuracy increase on the GAIA benchmark. The Evolving Layer iteratively refines agent prompts, tool configurations, and workflow topologies.
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p>EvoAgentX (Wang et al., 2025) unifies generation, execution, and evolutionary optimization of multi-agent workflows on one open-source platform. Five layers (Components → Agent → Workflow → Evolving → Evaluation) enable iterative refinement of prompts, tools, and topologies. Result: up to <strong>+20% accuracy</strong> on the GAIA benchmark.</p>
+</div>
 
 > **→ Takeaway for §2 overall:** The AI community has independently reinvented concepts from evolutionary biology — evolvability (§2.1), diversity maintenance (§2.2), and self-improvement loops (§2.3–2.4). This convergence suggests the Nowak mapping in [§4](#4-synthesis--the-bridge-from-nowak-to-agent-architectures) is not forced — it reflects genuine structural parallels.
 
@@ -405,64 +376,35 @@ EvoAgentX (Wang et al., 2025) is an open-source platform that unifies automated 
 
 ### 2.1 Evolvability ES (Evolutionary Strategies)
 
-Gajewski, Clune, Stanley und Lehman (2019) haben mit **Evolvability ES** einen evolutionären Algorithmus entwickelt, der explizit auf Evolvierbarkeit optimiert — also auf die Fähigkeit, sich nach zufälligen Mutationen schnell an unterschiedliche Aufgaben anzupassen.
-
-**Kernidee:** Es ist möglich, eine neuartige Zielfunktion im Geist von Natural Evolution Strategies abzuleiten, die die Diversität von Verhaltensweisen maximiert, die ein Individuum bei zufälligen Mutationen zeigt. Der Algorithmus skaliert effizient mit der Rechenkraft.
-
-**Verbindung zu Meta-Learning:** Evolvability ES zeigt eine direkte Verbindung zum Meta-Learning-Algorithmus MAML (Model-Agnostic Meta-Learning): Beide optimieren für schnelle Anpassungsfähigkeit, aber Evolvability ES entdeckt Lösungen mit distinkten Eigenschaften — es findet Repräsentationen, die inherent anpassungsfähiger sind.
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p>Gajewski et al. (2019) zeigten, dass man <em>Evolvierbarkeit selbst</em> optimieren kann — nicht nur Task-Performance. Ihr Evolvability ES maximiert Verhaltensdiversität unter zufälligen Mutationen und produziert inherent anpassungsfähigere Repräsentationen. Direkte Verbindung zu MAML (Meta-Learning): Beide optimieren für schnelle Adaptation, aber Evolvability ES findet flexiblere Lösungen.</p>
+</div>
 
 > **→ Takeaway:** Optimiere deinen Agent nicht nur für den heutigen Task — optimiere seine *Anpassungsfähigkeit*. Das ist die rechnerische Version von Nowaks „Evolvierbarkeit ist selbst evolvierbar" (→ [P1](/evolving-agents/principles/#p1-evolvierbarkeit-vor-performance)).
 
 ### 2.2 Quality-Diversity (QD) Algorithmen
 
-QD-Algorithmen, insbesondere **MAP-Elites** (Multi-dimensional Archive of Phenotypic Elites), repräsentieren einen paradigmatischen Bruch mit klassischer Optimierung:
-
-- **Klassische Optimierung:** Finde die eine beste Lösung
-- **QD-Optimierung:** Finde eine diverse Sammlung hochperformanter Lösungen — fülle einen Raum von Möglichkeiten mit dem besten Beispiel jeder erreichbaren Verhaltensklasse
-
-MAP-Elites diskretisiert den Verhaltensraum in Nischen ("Zellen") und speichert in jeder Zelle nur die Elite-Lösung. Neue Individuen (durch genetische Variation) konkurrieren innerhalb ihrer Nische mit der bestehenden Elite.
-
-**Aktuelle Entwicklungen:**
-
-- **PGA-MAP-Elites und DCG-MAP-Elites**: Kombination von Actor-Critic-Methoden aus dem Reinforcement Learning mit MAP-Elites für drastisch verbesserte Sample-Effizienz in hochdimensionalen Aufgaben
-- **ME-ES (MAP-Elites with Evolution Strategies)**: Skalierung auf hochdimensionale Controller mit tiefen neuronalen Netzwerken
-- **Surrogate-Assisted Illumination (SAIL)**: Nutzung von Gaussian Process Surrogates zur Reduktion teurer Evaluierungen um Größenordnungen
-
-**Bedeutung:** QD-Algorithmen lösen ein fundamentales Problem — in komplexen Landschaften mit vielen lokalen Optima bleibt reine Fitness-Optimierung stecken. Diversität als Optimierungsziel erzeugt ein Repertoire von Strategien, die bei Umgebungsänderungen sofort verfügbar sind.
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p><strong>MAP-Elites</strong> bricht mit klassischer Optimierung: Statt DIE eine beste Lösung zu finden, füllt es einen Verhaltensraum mit dem besten Beispiel pro Nische. Aktuelle Advances (PGA-MAP-Elites, ME-ES, SAIL) skalieren das auf tiefe neuronale Netze und reduzieren Evaluierungen um Größenordnungen. Kernerkenntnis: In komplexen Landschaften mit vielen lokalen Optima produziert <strong>Diversität als Optimierungsziel</strong> Strategien, die bei Umgebungsänderungen sofort verfügbar sind.</p>
+</div>
 
 > **→ Takeaway:** Behalte mehrere Skill-Varianten, nicht nur die „beste". Isolierte Subagent-Kontextfenster sind Agent-Nischen — das ist MAP-Elites angewandt auf Prompts (→ [P2](/evolving-agents/principles/#p2-diversität-als-strategische-ressource)).
 
 ### 2.3 Self-Evolving Agents — Die aktuelle Welle (2024–2026)
 
-Ein umfassender Survey von Gao et al. (2025/2026, arXiv:2507.21046) systematisiert erstmals das Feld der **Self-Evolving Agents** entlang dreier Dimensionen: **Was, Wann und Wie** evolviert werden soll.
-
-**Kernproblem:** LLMs sind fundamental statisch — sie können ihre internen Parameter nicht an neue Aufgaben, sich entwickelnde Wissensdomänen oder dynamische Interaktionskontexte anpassen. Dieser statische Charakter wird zum kritischen Flaschenhals, sobald Agents in offenen, interaktiven Umgebungen eingesetzt werden.
-
-**Evolvierende Dimensionen:**
-
-1. **Parameter-Evolution**: SFT + RL für kontinuierliche Verbesserung der Modellgewichte
-2. **Prompt-Evolution**: Iterative Verfeinerung von Anweisungen (TextGrad, MIPRO)
-3. **Workflow-Evolution**: Automatische Anpassung der Agent-Topologie und Aufgabenverteilung (AFlow)
-4. **Tool-Evolution**: Agents lernen, neue Tools zu nutzen oder bestehende besser einzusetzen
-5. **Memory-Evolution**: Aufbau und Kuratierung von Langzeit-Wissen
-
-**Schlüsselmuster:**
-
-- **Self-Challenging Agent (SCA)**: Agent generiert autonom neuartige Aufgaben, führt sie aus, filtert erfolgreiche Trajektorien für Retraining
-- **EXIF-Framework**: Exploration Agent (Alice) trainiert Target Agent (Bob) durch iterative Feedback-Loops — Alice evaluiert Bobs Performance und passt ihre nächste Explorationsrunde an. Interessant: Selbst wenn Alice dasselbe Modell wie Bob nutzt, verbessert sich die Performance signifikant
-- **AgentGen**: Synthetisiert diverse Simulationswelten aus einem initialen Corpus und implementiert eine bidirektionale Evolutionsschleife mit progressiver Schwierigkeitsanpassung
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p>Gao et al. (arXiv:2507.21046) systematisieren das Feld entlang dreier Dimensionen: <strong>Was, Wann und Wie</strong> evolviert werden soll. Fünf Dimensionen evolvieren: Parameter (SFT+RL), Prompts (TextGrad, MIPRO), Workflows (AFlow), Tools und Memory. Bemerkenswerte Muster: Self-Challenging Agents generieren autonom Aufgaben für Retraining; das EXIF-Framework zeigt, dass selbst Same-Model Exploration Agents einen Target Agent signifikant verbessern können.</p>
+</div>
 
 ### 2.4 EvoAgentX — Evolvierende Agent-Workflows (EMNLP 2025)
 
-EvoAgentX (Wang et al., 2025) ist eine Open-Source-Plattform, die automatisierte Generierung, Ausführung und evolutionäre Optimierung von Multi-Agent-Workflows vereint. Die Architektur besteht aus fünf Kernschichten:
-
-1. **Basic Components Layer**: Konfiguration, Logging, Storage
-2. **Agent Layer**: Individuelle Agent-Konfiguration
-3. **Workflow Layer**: Graph-basierte Workflow-Strukturen
-4. **Evolving Layer**: Integration von TextGrad, AFlow und MIPRO als Optimierungsalgorithmen
-5. **Evaluation Layer**: Automatische Bewertung der Agent-Performance
-
-**Ergebnisse:** Konsistente Performance-Verbesserungen — bis zu 20% Genauigkeitssteigerung auf dem GAIA-Benchmark. Die Evolving Layer verfeinert iterativ Agent-Prompts, Tool-Konfigurationen und Workflow-Topologien.
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p>EvoAgentX (Wang et al., 2025) vereint Generierung, Ausführung und evolutionäre Optimierung von Multi-Agent-Workflows auf einer Open-Source-Plattform. Fünf Schichten (Components → Agent → Workflow → Evolving → Evaluation) ermöglichen iterative Verfeinerung von Prompts, Tools und Topologien. Ergebnis: bis zu <strong>+20% Genauigkeit</strong> auf dem GAIA-Benchmark.</p>
+</div>
 
 > **→ Takeaway für §2 insgesamt:** Die KI-Community hat unabhängig Konzepte aus der Evolutionsbiologie neu erfunden — Evolvierbarkeit (§2.1), Diversitätserhaltung (§2.2) und Self-Improvement-Loops (§2.3–2.4). Diese Konvergenz deutet darauf hin, dass das Nowak-Mapping in [§4](#4-synthese--die-brücke-von-nowak-zu-agent-architekturen) nicht erzwungen ist — es spiegelt echte strukturelle Parallelen wider.
 
@@ -476,43 +418,31 @@ EvoAgentX (Wang et al., 2025) ist eine Open-Source-Plattform, die automatisierte
 
 ### 3.1 The Attribution Problem
 
-A central paper (arXiv:2602.05289, Feb 2026) argues that LLM-based multi-agent systems suffer from a fundamental **ambiguity of attribution**:
-
-**Problem 1 — Unguided search in the factor space:** A structured taxonomy of influencing factors is missing. Researchers are limited to unguided adjustments — like a blind search in a vast design space.
-
-**Problem 2 — Metrics do not distinguish between genuine cooperation gain and resource accumulation:** Conventional metrics measure end results, but they conflate intrinsic cooperation gain (capability growth through agent collaboration) with improvements that merely result from increased compute budget (more tokens, more agents).
-
-**Proposed solution:** Establishment of a **Collaboration Gain Metric (Γ)** that serves as a diagnostic signal, combined with a **Factor Attribution Paradigm** that systematically identifies which factors actually lead to cooperation gains.
-
-The factors are structured in two levels:
-
-- **Control Level**: Static architecture presets (topology, roles, communication structure) — the foundation that limits cooperation potential
-- **Information Level**: Dynamic execution mechanisms — how this potential is activated and transformed into actual gains
+<div class="key-box yellow">
+<h4>Key Finding</h4>
+<p>Adler et al. (arXiv:2602.05289) identify a fundamental problem: conventional metrics conflate <strong>genuine cooperation gain</strong> with mere resource accumulation (more tokens = better results, regardless of cooperation). They propose a <strong>Collaboration Gain Metric (Γ)</strong> as diagnostic signal, structured across two levels: <em>Control Level</em> (static architecture: topology, roles) and <em>Information Level</em> (dynamic execution: how potential becomes actual gain).</p>
+</div>
 
 ### 3.2 MAST — Why Multi-Agent Systems Fail
 
-Empirical analysis of MAS failures identifies systematic failure patterns:
-
-- **Premature Execution Termination**: Agents terminate tasks too early
-- **Insufficient Task Verification**: Inadequate mechanisms for accuracy, completeness, and reliability
-- **Coordination Failures**: Missed opportunities for collaboration, suboptimal decisions
-
-Evaluation of six popular multi-agent frameworks (including MetaGPT) shows that none systematically addresses the identified failure modes. The MAST dataset is the first empirically derived, comprehensive taxonomy specific to MAS failures.
+<div class="key-box red">
+<h4>Key Finding</h4>
+<p>Empirical analysis reveals three systematic MAS failure patterns: <strong>Premature Termination</strong> (agents quit too early), <strong>Insufficient Verification</strong> (no accuracy checks), and <strong>Coordination Failures</strong> (missed collaboration opportunities). None of six popular frameworks (including MetaGPT) systematically addresses these. MAST provides the first empirically derived failure taxonomy for multi-agent systems.</p>
+</div>
 
 ### 3.3 Google's Lessons from 2025
 
-Google's Office of the CTO draws central conclusions from the broad agent deployment experience of 2025:
-
-- **Evaluation as an active architecture component**: Evaluation evolved from a passive metric to an integrated component of agentic pipelines — an autorater (LLM as Judge) evaluates every output in real-time and provides corrective feedback
-- **Self-correction solves the cascading error problem**: When an agent makes an error in step 2, traditional evaluation only catches it after step 10 fails. Real-time autoraters correct errors at the source
-- **Dynamic simulation instead of static benchmarks**: Game arena approach where agents compete against each other in complex scenarios — with a game-theoretic framework for credit attribution
-- **On-the-job learning**: Agents don't need to be perfect at launch — the critical building block is the learning loop that integrates signals from the environment and humans in production
+<div class="key-box green">
+<h4>Key Finding</h4>
+<p>Google's CTO Office distills four lessons from broad agent deployment: (1) <strong>Evaluation became an active architecture component</strong> — real-time autoraters correct errors at source, not after cascade. (2) Self-correction solves cascading errors. (3) Dynamic simulation > static benchmarks (game arenas with credit attribution). (4) <strong>On-the-job learning</strong> — agents don't need to be perfect at launch; the learning loop is the critical building block.</p>
+</div>
 
 ### 3.4 Benchmarks for Multi-Agent Collaboration
 
-**MultiAgentBench** (ACL 2025, Zhu et al.) evaluates LLM-based multi-agent systems across diverse scenarios with novel, milestone-based KPIs. It tests various coordination protocols (Star, Chain, Tree, Graph topologies) and strategies such as Group Discussion and Cognitive Planning.
-
-New metrics capture cooperation through: cooperation and coordination rates, trust scores for agent reliability, consensus metrics after multiple negotiation rounds, and communication efficiency (protocol compliance and temporal synchronization).
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p><strong>MultiAgentBench</strong> (ACL 2025) tests coordination protocols (Star, Chain, Tree, Graph) with milestone-based KPIs. New metrics go beyond task success: cooperation rates, trust scores, consensus after negotiation rounds, and communication efficiency (protocol compliance + temporal sync).</p>
+</div>
 
 > **→ Takeaway for §3 overall:** Multi-agent systems need three things biology already solved: attribution (who contributed what?), selection (real-time evaluation, not post-hoc), and cooperation metrics that distinguish genuine gains from resource accumulation. Nowak's framework provides the vocabulary — §3 provides the engineering evidence (→ [P3](/evolving-agents/principles/#p3-feedback-loops-as-selection-pressure), [P5](/evolving-agents/principles/#p5-cooperation-must-be-measured-not-assumed)).
 
@@ -524,42 +454,30 @@ New metrics capture cooperation through: cooperation and coordination rates, tru
 
 ### 3.1 Das Attributions-Problem
 
-Ein zentrales Paper (arXiv:2602.05289, Feb 2026) argumentiert, dass LLM-basierte Multi-Agent-Systeme an einer fundamentalen **Ambiguität der Attribution** leiden:
-
-**Problem 1 — Ungeführte Suche im Faktorraum:** Es fehlt eine strukturierte Taxonomie der Einflussfaktoren. Forscher sind auf ungeleitete Anpassungen beschränkt — wie eine blinde Suche in einem riesigen Designraum.
-
-**Problem 2 — Metriken unterscheiden nicht zwischen echtem Kooperationsgewinn und Ressourcenakkumulation:** Konventionelle Metriken messen End-Ergebnisse, aber sie vermischen intrinsischen Kooperationsgewinn (Fähigkeitswachstum durch Agent-Zusammenarbeit) mit Verbesserungen, die bloß aus erhöhtem Rechenbudget resultieren (mehr Tokens, mehr Agents).
-
-**Vorgeschlagene Lösung:** Etablierung einer **Collaboration Gain Metric (Γ)**, die als diagnostisches Signal fungiert, kombiniert mit einem **Factor Attribution Paradigm**, das systematisch identifiziert, welche Faktoren tatsächlich zu Kooperationsgewinnen führen.
-
-Die Faktoren werden in zwei Ebenen strukturiert:
-
-- **Control Level**: Statische Architektur-Presets (Topologie, Rollen, Kommunikationsstruktur) — das Fundament, das Kooperationspotential begrenzt
-- **Information Level**: Dynamische Ausführungsmechanismen — wie dieses Potential aktiviert und in tatsächliche Gewinne transformiert wird
+<div class="key-box yellow">
+<h4>Key Finding</h4>
+<p>Adler et al. (arXiv:2602.05289) identifizieren ein fundamentales Problem: Konventionelle Metriken vermischen <strong>echten Kooperationsgewinn</strong> mit bloßer Ressourcenakkumulation (mehr Tokens = bessere Ergebnisse, unabhängig von Kooperation). Sie schlagen eine <strong>Collaboration Gain Metric (Γ)</strong> als diagnostisches Signal vor, strukturiert über zwei Ebenen: <em>Control Level</em> (statische Architektur: Topologie, Rollen) und <em>Information Level</em> (dynamische Ausführung: wie Potential zu echtem Gewinn wird).</p>
+</div>
 ### 3.2 MAST — Warum Multi-Agent-Systeme scheitern
 
-Empirische Analyse von MAS-Fehlern identifiziert systematische Failure Patterns:
-
-- **Premature Execution Termination**: Agents beenden Aufgaben zu früh
-- **Insufficient Task Verification**: Unzureichende Mechanismen für Genauigkeit, Vollständigkeit und Zuverlässigkeit
-- **Coordination Failures**: Verpasste Gelegenheiten für Zusammenarbeit, suboptimale Entscheidungen
-
-Evaluation von sechs populären Multi-Agent-Frameworks (darunter MetaGPT) zeigt, dass keines die identifizierten Failure Modes systematisch adressiert. Das MAST-Dataset ist die erste empirisch abgeleitete, umfassende Taxonomie spezifisch für MAS-Fehler.
+<div class="key-box red">
+<h4>Key Finding</h4>
+<p>Empirische Analyse enthüllt drei systematische MAS-Failure-Patterns: <strong>Premature Termination</strong> (Agents hören zu früh auf), <strong>Insufficient Verification</strong> (keine Genauigkeitsprüfung) und <strong>Coordination Failures</strong> (verpasste Kooperationschancen). Keines von sechs populären Frameworks (inkl. MetaGPT) adressiert diese systematisch. MAST liefert die erste empirisch abgeleitete Failure-Taxonomie für Multi-Agent-Systeme.</p>
+</div>
 
 ### 3.3 Googles Erkenntnisse aus 2025
 
-Googles Office of the CTO zieht aus der breiten Agent-Deployment-Erfahrung 2025 zentrale Schlüsse:
-
-- **Evaluation als aktive Architekturkomponente**: Evaluation wurde von einer passiven Metrik zu einem integrierten Bestandteil agentischer Pipelines — ein Autorater (LLM als Judge) bewertet jeden Output in Echtzeit und gibt korrigierbares Feedback
-- **Self-Correction löst das Cascading-Error-Problem**: Wenn ein Agent in Schritt 2 einen Fehler macht, fängt traditionelle Evaluation diesen erst nach dem Scheitern von Schritt 10. Echtzeit-Autorater korrigieren Fehler an der Quelle
-- **Dynamic Simulation statt statische Benchmarks**: Game-Arena-Ansatz, bei dem Agents gegeneinander in komplexen Szenarien antreten — mit spieltheoretischem Framework für Credit Attribution
-- **On-the-job Learning**: Agents müssen nicht bei Launch perfekt sein — der kritische Baustein ist die Lernschleife, die Signale aus Umgebung und Menschen in Produktion integriert
+<div class="key-box green">
+<h4>Key Finding</h4>
+<p>Googles CTO Office destilliert vier Lehren aus breitem Agent-Deployment: (1) <strong>Evaluation wurde aktive Architekturkomponente</strong> — Echtzeit-Autorater korrigieren Fehler an der Quelle, nicht nach der Kaskade. (2) Self-Correction löst Cascading Errors. (3) Dynamic Simulation > statische Benchmarks (Game Arenas mit Credit Attribution). (4) <strong>On-the-job Learning</strong> — Agents müssen nicht bei Launch perfekt sein; die Lernschleife ist der kritische Baustein.</p>
+</div>
 
 ### 3.4 Benchmarks für Multi-Agent-Kollaboration
 
-**MultiAgentBench** (ACL 2025, Zhu et al.) evaluiert LLM-basierte Multi-Agent-Systeme über diverse Szenarien mit neuartigen, milestone-basierten KPIs. Es testet verschiedene Koordinationsprotokolle (Star, Chain, Tree, Graph-Topologien) und Strategien wie Group Discussion und Cognitive Planning.
-
-Neue Metriken erfassen Kooperation über: Kooperations- und Koordinationsraten, Trust-Scores für Agent-Zuverlässigkeit, Konsens-Metriken nach mehreren Verhandlungsrunden und Kommunikationseffizienz (Protokoll-Compliance und temporale Synchronisation).
+<div class="key-box blue">
+<h4>Key Finding</h4>
+<p><strong>MultiAgentBench</strong> (ACL 2025) testet Koordinationsprotokolle (Star, Chain, Tree, Graph) mit milestone-basierten KPIs. Neue Metriken gehen über Task-Erfolg hinaus: Kooperationsraten, Trust-Scores, Konsens nach Verhandlungsrunden und Kommunikationseffizienz (Protokoll-Compliance + temporale Synchronisation).</p>
+</div>
 
 > **→ Takeaway für §3 insgesamt:** Multi-Agent-Systeme brauchen drei Dinge, die die Biologie schon gelöst hat: Attribution (wer hat was beigetragen?), Selektion (Echtzeit-Evaluation statt post-hoc) und Kooperationsmetriken, die echte Gewinne von Ressourcenakkumulation unterscheiden. Nowaks Framework liefert das Vokabular — §3 liefert die Engineering-Evidenz (→ [P3](/evolving-agents/principles/#p3-feedback-loops-als-selektionsdruck), [P5](/evolving-agents/principles/#p5-kooperation-muss-gemessen-nicht-angenommen-werden)).
 
