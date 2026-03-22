@@ -58,12 +58,26 @@ Workflow G = (O, Eᵃ)     ← Directed graph of operator nodes
 
 **Optimization:** Multi-Objective: `max{u(G,q), -c(G,q)}` — maximize Utility, minimize Cost.
 
+**Operator Repository** (8 types from the paper): CoT, LLM-Debate (3 debaters, majority voting), Take-a-Step-Back, Self-Consistency (5 CoT paths), Self-Refine (iterative, max 5), Ensemble (3 LLMs + pairwise ranking), ReAct (tool use), ExpertPrompt (dynamic control flows).
+
 **Seed Population:** 4 initial workflow types (Reflective Agent I/O, Arithmetic Collaborator, Lightweight Programmer, Advanced Multi-programmer).
 
-**Results:**
-- Outperformed o1-preview at **12.4% of the cost** (using open-source models: LLaMa-3.1-70b, Qwen-2.5-72b)
-- 1.23%–29.86% improvement over handcrafted workflows
-- Training: $0.45 vs. $1.23 (AFlow), Inference: $0.51 vs. $2.62
+**Results** (verified against full text, Tables 1–4):
+
+| Benchmark | EvoFlow | Best Baseline (AFlow) | Improvement |
+|-----------|---------|----------------------|-------------|
+| GSM8K | 92.90% | 91.16% | +1.74pp |
+| MATH | 57.70% | 51.28% | +6.42pp |
+| HumanEval | 92.85% | 90.93% | +1.92pp |
+| MBPP | 84.50% | 81.67% | +2.83pp |
+| ALFWorld | 68.57% | 59.16% | +9.41pp |
+
+- Outperformed o1-preview by **+2.7%** on MATH at **12.4% of its cost** (using open-source models: LLaMa-3.1-70b, Qwen-2.5-72b, Deepseek-V2.5, Hermes-3-70b)
+- Training cost: $0.459 vs. $1.223 (AFlow) — **37.5%**
+- Inference cost: $0.513 vs. $2.623 (AFlow) — **19.5%**
+- Unique: Only system with **LLM heterogeneity AND complexity adaptivity**
+
+**Ablation** (what matters most): Tag-based Retrieval and LLM Mutation are critical — removing either causes significant performance drops + variance increase. Operator Mutation contributes 3.5–7.3%.
 
 ---
 
@@ -128,12 +142,26 @@ Workflow G = (O, Eᵃ)     ← Gerichteter Graph von Operator-Knoten
 
 **Optimierung:** Multi-Objective: `max{u(G,q), -c(G,q)}` — Utility maximieren, Cost minimieren.
 
+**Operator-Repository** (8 Typen aus dem Paper): CoT, LLM-Debate (3 Debatter, Majority Voting), Take-a-Step-Back, Self-Consistency (5 CoT-Pfade), Self-Refine (iterativ, max 5), Ensemble (3 LLMs + Pairwise Ranking), ReAct (Tool-Nutzung), ExpertPrompt (dynamische Control Flows).
+
 **Seed Population:** 4 initiale Workflow-Typen (Reflective Agent I/O, Arithmetic Collaborator, Lightweight Programmer, Advanced Multi-programmer).
 
-**Ergebnisse:**
-- o1-preview übertroffen bei **12.4% der Kosten** (mit Open-Source-Modellen: LLaMa-3.1-70b, Qwen-2.5-72b)
-- 1.23%–29.86% Verbesserung über handcrafted Workflows
-- Training: $0.45 vs. $1.23 (AFlow), Inferenz: $0.51 vs. $2.62
+**Ergebnisse** (verifiziert am Volltext, Tabellen 1–4):
+
+| Benchmark | EvoFlow | Beste Baseline (AFlow) | Verbesserung |
+|-----------|---------|----------------------|-------------|
+| GSM8K | 92,90% | 91,16% | +1,74pp |
+| MATH | 57,70% | 51,28% | +6,42pp |
+| HumanEval | 92,85% | 90,93% | +1,92pp |
+| MBPP | 84,50% | 81,67% | +2,83pp |
+| ALFWorld | 68,57% | 59,16% | +9,41pp |
+
+- o1-preview um **+2,7%** auf MATH übertroffen bei **12,4% der Kosten** (mit Open-Source-Modellen: LLaMa-3.1-70b, Qwen-2.5-72b, Deepseek-V2.5, Hermes-3-70b)
+- Training-Kosten: $0,459 vs. $1,223 (AFlow) — **37,5%**
+- Inferenz-Kosten: $0,513 vs. $2,623 (AFlow) — **19,5%**
+- Einzigartig: Einziges System mit **LLM-Heterogenität UND Komplexitäts-Adaptivität**
+
+**Ablation** (was am meisten zählt): Tag-based Retrieval und LLM-Mutation sind kritisch — das Entfernen einer Komponente verursacht signifikante Performance-Einbrüche + Varianzanstieg. Operator-Mutation trägt 3,5–7,3% bei.
 
 ---
 
