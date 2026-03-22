@@ -132,6 +132,21 @@
       ctx.stroke();
       ctx.setLineDash([]);
     }
+
+    // Axis labels
+    ctx.fillStyle = 'rgba(139, 148, 158, 0.6)';
+    ctx.font = '11px -apple-system, sans-serif';
+
+    // Y-axis label (rotated)
+    ctx.save();
+    ctx.translate(12, H / 2);
+    ctx.rotate(-Math.PI / 2);
+    var en = document.documentElement.getAttribute('data-lang') !== 'de';
+    ctx.fillText(en ? 'Abundance' : 'Häufigkeit', -30, 0);
+    ctx.restore();
+
+    // X-axis label
+    ctx.fillText(en ? 'Sequences (sorted by fitness →)' : 'Sequenzen (sortiert nach Fitness →)', W / 2 - 80, H - 4);
   }
 
   function loop() {

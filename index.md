@@ -70,13 +70,44 @@ nav_order: 1
     <span class="r-val" id="r-value">0.00</span>
   </div>
   <div id="phase-label">◀ Prelife — no replication, random diversity</div>
+
+  <div style="margin-top:16px;padding:12px 16px;background:rgba(255,255,255,.03);border-radius:8px;font-size:0.85em">
+    <div lang="en">
+      <strong style="color:#e6edf3">How to read this:</strong>
+      <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
+        <li><strong style="color:#c9d1d9">80 bars</strong> = 80 molecular sequences competing in a chemical soup</li>
+        <li><strong style="color:#c9d1d9">Bar height</strong> = abundance (how frequent this sequence is in the population)</li>
+        <li><strong style="color:#c9d1d9">Bar color brightness</strong> = fitness (brighter = replicates faster)</li>
+        <li><strong style="color:#c9d1d9">Slider r</strong> = replication rate — how much template-directed copying happens</li>
+      </ul>
+      <div style="margin-top:8px;color:#8b949e"><strong>Try it:</strong> At r = 0, all bars are similar height (random diversity). Drag right — watch how 2-3 bright bars start dominating. That's Nowak's phase transition: the moment selection switches on.</div>
+    </div>
+    <div lang="de">
+      <strong style="color:#e6edf3">So liest du die Grafik:</strong>
+      <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
+        <li><strong style="color:#c9d1d9">80 Balken</strong> = 80 molekulare Sequenzen, die in einer chemischen Suppe konkurrieren</li>
+        <li><strong style="color:#c9d1d9">Balkenhöhe</strong> = Häufigkeit (wie oft diese Sequenz in der Population vorkommt)</li>
+        <li><strong style="color:#c9d1d9">Balkenfarbe Helligkeit</strong> = Fitness (heller = repliziert schneller)</li>
+        <li><strong style="color:#c9d1d9">Regler r</strong> = Replikationsrate — wie viel template-gesteuerte Kopierung stattfindet</li>
+      </ul>
+      <div style="margin-top:8px;color:#8b949e"><strong>Probier es:</strong> Bei r = 0 sind alle Balken ähnlich hoch (zufällige Diversität). Schiebe nach rechts — beobachte wie 2-3 helle Balken anfangen zu dominieren. Das ist Nowaks Phasenübergang: der Moment, in dem Selektion einschaltet.</div>
+    </div>
+  </div>
 </div>
 
 <div class="eq-highlight">
   <code>ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)</code>
-  <div style="margin-top:8px">
-    <span lang="en" style="color:#8b949e;font-size:0.85em">Each bar is a sequence. Height = abundance. Color intensity = fitness. As you increase <code>r</code>, fitter sequences take over — selection switches on.</span>
-    <span lang="de" style="color:#8b949e;font-size:0.85em">Jeder Balken ist eine Sequenz. Höhe = Häufigkeit. Farbintensität = Fitness. Wenn du <code>r</code> erhöhst, übernehmen fittere Sequenzen — Selektion schaltet ein.</span>
+  <div style="margin-top:10px">
+    <span lang="en" style="color:#8b949e;font-size:0.85em">
+      <strong>1st term</strong> (aᵢ·xᵢ'): Prelife chemistry — sequences arise from precursors.
+      <strong>2nd term</strong> (decay): Sequences degrade.
+      <strong>3rd term</strong> (r·xᵢ·(fᵢ−φ)): Selection — only active when r > 0. Fitter sequences grow, unfit ones shrink.
+    </span>
+    <span lang="de" style="color:#8b949e;font-size:0.85em">
+      <strong>1. Term</strong> (aᵢ·xᵢ'): Prelife-Chemie — Sequenzen entstehen aus Vorläufern.
+      <strong>2. Term</strong> (Zerfall): Sequenzen degradieren.
+      <strong>3. Term</strong> (r·xᵢ·(fᵢ−φ)): Selektion — nur aktiv wenn r > 0. Fittere Sequenzen wachsen, unfitte schrumpfen.
+    </span>
   </div>
 </div>
 
