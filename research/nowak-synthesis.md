@@ -215,6 +215,31 @@ rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
 </div>
 
   With mutation rate u per base and sequence length n, error-free replication probability is q = (1−u)ⁿ. The critical mutation rate is uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerical example from the paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0.058. Unlike classical Eigen-Schuster (threshold between different replicators), Nowak's threshold is between **Life and Prelife**
+
+<div style="margin:2em 0;padding:20px;background:rgba(255,255,255,.02);border:1px solid var(--border-color,#30363d);border-radius:8px">
+<h4 style="margin-top:0"><span lang="en">🧬 Interactive: Error Threshold Explorer</span><span lang="de">🧬 Interaktiv: Error-Threshold-Explorer</span></h4>
+<p style="font-size:0.85em;color:rgba(255,255,255,.6)"><span lang="en">Adjust mutation rate u and sequence length n. The dashed line marks u<sub>c</sub> — crossing it means information loss.</span><span lang="de">Mutationsrate u und Sequenzlänge n einstellen. Die gestrichelte Linie markiert u<sub>c</sub> — darüber geht Information verloren.</span></p>
+
+<div style="display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+<label style="font-size:0.9em"><span lang="en">Mutation rate u:</span><span lang="de">Mutationsrate u:</span></label>
+<input type="range" id="et-slider-u" min="0" max="0.15" step="0.001" value="0.03" style="width:180px;max-width:40vw">
+<span id="et-u-value" style="font-family:monospace;min-width:3em">0.030</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+<label style="font-size:0.9em"><span lang="en">Sequence length n:</span><span lang="de">Sequenzlänge n:</span></label>
+<input type="range" id="et-slider-n" min="5" max="100" step="1" value="20" style="width:180px;max-width:40vw">
+<span id="et-n-value" style="font-family:monospace;min-width:2em">20</span>
+</div>
+
+<canvas id="error-threshold-canvas" style="width:100%;max-width:500px;display:block;margin:0 auto;border-radius:6px;touch-action:none"></canvas>
+<div style="text-align:center;margin-top:8px">
+<span id="et-status" style="font-weight:bold;font-size:1.1em">✅ LIFE</span>
+</div>
+<div id="et-formula" style="text-align:center;font-family:monospace;font-size:0.85em;color:rgba(255,255,255,.5);margin-top:4px"></div>
+</div>
+
+<script src="/evolving-agents/assets/js/error-threshold-sim.js"></script>
+
 - **Cooperation as the third principle**: In finite populations, a single cooperator (e.g., with a tit-for-tat strategy) can invade a population of defectors — with a probability that corresponds to a net selection advantage
 - **Evolutionary graph theory**: The structure of the network (who interacts with whom) massively influences which strategies survive
 
@@ -314,6 +339,9 @@ rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
 </div>
 
   Bei Mutationsrate u pro Base und Sequenzlänge n ist die fehlerfreie Replikationswahrscheinlichkeit q = (1−u)ⁿ. Die kritische Mutationsrate ist uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerisches Beispiel aus dem Paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0,058. Anders als beim klassischen Eigen-Schuster (Schwelle zwischen verschiedenen Replikatoren) ist Nowaks Schwelle zwischen **Life und Prelife**
+
+*Der interaktive Error-Threshold-Explorer ist in der [englischen Version oben](#14-key-insights-from-nowaks-work) verfügbar.*
+
 - **Kooperation als drittes Prinzip**: In endlichen Populationen kann ein einzelner Kooperator (z.B. mit Tit-for-Tat-Strategie) eine Population von Defektoren invadieren — mit einer Wahrscheinlichkeit, die einem Netto-Selektionsvorteil entspricht
 - **Evolutionäre Graphentheorie**: Die Struktur des Netzwerks (wer mit wem interagiert) beeinflusst massiv, welche Strategien überleben
 
