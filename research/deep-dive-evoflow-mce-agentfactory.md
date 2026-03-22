@@ -346,7 +346,9 @@ Base-Agent (untere Ebene)
 <p>Four concrete upgrade steps, ordered by effort: (1) Cost tracking via Pulse — low effort, immediate. (2) Tag-based skill retrieval — medium effort. (3) Automated skill mutation via MCE pattern — high effort. (4) Crossover for new skills from existing ones — requires mutation first.</p>
 </div>
 
-### 3.1 Immediately Actionable: Cost Tracking as a Second Optimization Axis
+<details class="disclosure">
+<summary>3.1 Immediately Actionable: Cost Tracking as a Second Optimization Axis</summary>
+<div class="disclosure-body" markdown="1">
 
 **EvoFlow Insight:** Multi-Objective (Quality + Cost) is better than Single-Objective (Quality only).
 
@@ -361,7 +363,12 @@ Base-Agent (untere Ebene)
 <p>This is the lowest-hanging fruit: Pulse already has the data. Adding cost as a second axis in Quality-Gate turns single-objective selection into Pareto-optimal multi-objective selection — the same mechanism that makes EvoFlow work.</p>
 </div>
 
-### 3.2 Short-term: Tag-based Skill Retrieval
+</div>
+</details>
+
+<details class="disclosure">
+<summary>3.2 Short-term: Tag-based Skill Retrieval</summary>
+<div class="disclosure-body" markdown="1">
 
 **EvoFlow Insight:** Tag-based Retrieval (κ tags per workflow) is better than free text search for skill selection. Ablation: -3–4% performance without tags.
 
@@ -371,7 +378,12 @@ Base-Agent (untere Ebene)
 
 **Effort:** Medium. Define tag schema, tag skills, adjust routing.
 
-### 3.3 Medium-term: Automated Skill Mutation
+</div>
+</details>
+
+<details class="disclosure">
+<summary>3.3 Medium-term: Automated Skill Mutation</summary>
+<div class="disclosure-body" markdown="1">
 
 **MCE Insight:** A Meta-Agent can automatically refine skills through "deliberative search over history of skills, executions, and evaluations."
 
@@ -384,7 +396,12 @@ Base-Agent (untere Ebene)
 
 **Effort:** High. Requires: skill versioning, A/B testing infrastructure, automatic evaluation.
 
-### 3.4 Long-term: Crossover — Combining Existing Skills into New Ones
+</div>
+</details>
+
+<details class="disclosure">
+<summary>3.4 Long-term: Crossover — Combining Existing Skills into New Ones</summary>
+<div class="disclosure-body" markdown="1">
 
 **EvoFlow Insight:** Crossover (combining elements of two parent workflows) produces solutions that neither parent could achieve alone.
 
@@ -400,6 +417,9 @@ Base-Agent (untere Ebene)
 </div>
 
 </div>
+</details>
+
+</div>
 
 <div lang='de' markdown='1'>
 
@@ -410,7 +430,9 @@ Base-Agent (untere Ebene)
 <p>Vier konkrete Upgrade-Schritte, sortiert nach Aufwand: (1) Cost-Tracking via Pulse — geringer Aufwand, sofort machbar. (2) Tag-basiertes Skill-Retrieval — mittlerer Aufwand. (3) Automatisierte Skill-Mutation via MCE-Pattern — hoher Aufwand. (4) Crossover für neue Skills aus bestehenden — setzt Mutation voraus.</p>
 </div>
 
-### 3.1 Sofort umsetzbar: Cost-Tracking als zweite Optimierungsachse
+<details class="disclosure">
+<summary>3.1 Sofort umsetzbar: Cost-Tracking als zweite Optimierungsachse</summary>
+<div class="disclosure-body" markdown="1">
 
 **EvoFlow-Insight:** Multi-Objective (Quality + Cost) ist besser als Single-Objective (nur Quality).
 
@@ -425,7 +447,12 @@ Base-Agent (untere Ebene)
 <p>Das ist der Low-Hanging Fruit: Pulse hat die Daten bereits. Cost als zweite Achse im Quality-Gate macht aus Single-Objective-Selektion eine Pareto-optimale Multi-Objective-Selektion — derselbe Mechanismus, der EvoFlow funktionieren lässt.</p>
 </div>
 
-### 3.2 Kurzfristig: Tag-basiertes Skill-Retrieval
+</div>
+</details>
+
+<details class="disclosure">
+<summary>3.2 Kurzfristig: Tag-basiertes Skill-Retrieval</summary>
+<div class="disclosure-body" markdown="1">
 
 **EvoFlow-Insight:** Tag-based Retrieval (κ Tags pro Workflow) ist besser als freie Textsuche für Skill-Auswahl. Ablation: -3-4% Performance ohne Tags.
 
@@ -435,7 +462,12 @@ Base-Agent (untere Ebene)
 
 **Aufwand:** Mittel. Tag-Schema definieren, Skills taggen, Routing anpassen.
 
-### 3.3 Mittelfristig: Automatisierte Skill-Mutation
+</div>
+</details>
+
+<details class="disclosure">
+<summary>3.3 Mittelfristig: Automatisierte Skill-Mutation</summary>
+<div class="disclosure-body" markdown="1">
 
 **MCE-Insight:** Ein Meta-Agent kann Skills durch "deliberative search over history of skills, executions, and evaluations" automatisch verfeinern.
 
@@ -448,7 +480,12 @@ Base-Agent (untere Ebene)
 
 **Aufwand:** Hoch. Braucht: Skill-Versionierung, A/B-Test-Infrastruktur, automatische Evaluation.
 
-### 3.4 Langfristig: Crossover — neue Skills aus bestehenden kombinieren
+</div>
+</details>
+
+<details class="disclosure">
+<summary>3.4 Langfristig: Crossover — neue Skills aus bestehenden kombinieren</summary>
+<div class="disclosure-body" markdown="1">
 
 **EvoFlow-Insight:** Crossover (Elemente zweier Eltern-Workflows kombinieren) erzeugt Lösungen, die keiner der Eltern allein erreicht hätte.
 
@@ -464,6 +501,7 @@ Base-Agent (untere Ebene)
 </div>
 
 </div>
+</details>
 
 ---
 

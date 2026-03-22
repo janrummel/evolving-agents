@@ -47,7 +47,9 @@ nav_order: 1
 
 <div lang="en" markdown="1">
 
-## Glossary
+<details class="disclosure">
+<summary>Glossary — 10 key terms</summary>
+<div class="disclosure-body" markdown="1">
 
 | Term | Explanation |
 |------|-------------|
@@ -63,10 +65,15 @@ nav_order: 1
 | **Collaboration Gain (Γ)** | Metric: Measures the true cooperation gain of a multi-agent system = Quality(Multi-Agent) − Quality(Single-Agent at same token budget). |
 
 </div>
+</details>
+
+</div>
 
 <div lang="de" markdown="1">
 
-## Glossar
+<details class="disclosure">
+<summary>Glossar — 10 Schlüsselbegriffe</summary>
+<div class="disclosure-body" markdown="1">
 
 | Begriff | Erklärung |
 |---------|-----------|
@@ -80,6 +87,9 @@ nav_order: 1
 | **Pareto-Front** | Menge aller Lösungen, bei denen man eine Dimension (z.B. Qualität) nicht verbessern kann ohne eine andere (z.B. Kosten) zu verschlechtern. |
 | **TextGrad** | Optimierungsverfahren für natürliche Sprache: Nutzt Backpropagation-ähnliche Mechanismen, um Prompts iterativ zu verfeinern. |
 | **Collaboration Gain (Γ)** | Metrik: Misst den echten Kooperationsgewinn eines Multi-Agent-Systems = Qualität(Multi-Agent) − Qualität(Single-Agent bei gleichem Token-Budget). |
+
+</div>
+</details>
 
 </div>
 
@@ -114,7 +124,11 @@ The equation describes the transition from "Prelife" (generative chemistry witho
 - **Second term** (`(d + aᵢ₀ + aᵢ₁) · xᵢ`): Decay and processing into longer sequences
 - **Third term** (`r · xᵢ · (fᵢ − φ)`): Standard selection equation of evolutionary dynamics
 
-**Complete variable definitions** (from Nowak & Ohtsuki, PNAS 2008, verified against full text):
+<details class="disclosure">
+<summary>Complete variable definitions — 12 variables from the original paper</summary>
+<div class="disclosure-body" markdown="1">
+
+(From Nowak & Ohtsuki, PNAS 2008, verified against full text)
 
 | Variable | Definition |
 |----------|-----------|
@@ -131,6 +145,9 @@ The equation describes the transition from "Prelife" (generative chemistry witho
 
 - **r → 0**: No replication → pure Prelife dynamics (mutation and selection without heredity)
 - **r → ∞**: Replication dominates → standard selection equation (ẋᵢ = xᵢ(fᵢ − φ))
+
+</div>
+</details>
 
 ### 1.3 The Phase Transition
 
@@ -201,7 +218,11 @@ Die Gleichung beschreibt den Übergang von "Prelife" (generative Chemie ohne Rep
 ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)
 ```
 
-**Vollständige Variablendefinitionen** (aus Nowak & Ohtsuki, PNAS 2008, verifiziert am Volltext):
+<details class="disclosure">
+<summary>Vollständige Variablendefinitionen — 12 Variablen aus dem Originalpaper</summary>
+<div class="disclosure-body" markdown="1">
+
+(Aus Nowak & Ohtsuki, PNAS 2008, verifiziert am Volltext)
 
 | Variable | Definition |
 |----------|-----------|
@@ -214,16 +235,13 @@ Die Gleichung beschreibt den Übergang von "Prelife" (generative Chemie ohne Rep
 | `r` | **Replikationspotential** — skaliert die relative Stärke von template-gesteuerter Replikation vs. template-unabhängigem Wachstum |
 | `φ` | Durchschnittliche Fitness (Constraint-Term): φ = f̄ + (a₀ + a₁ − d) / r |
 
-**Entscheidende Parameter:**
-
-- `r` skaliert das Verhältnis von template-gesteuerter Replikation zu template-unabhängigem Sequenzwachstum
-- `fᵢ` ist die Fitness von Sequenz i
-- `φ` ist die durchschnittliche Fitness der Population (frequenzabhängige Todesrate)
-
 **Die zwei Grenzfälle:**
 
 - **r → 0**: Keine Replikation → reine Prelife-Dynamik (Mutation und Selektion ohne Vererbung)
 - **r → ∞**: Replikation dominiert → Standard-Selektionsgleichung der Evolutionsdynamik
+
+</div>
+</details>
 
 ### 1.3 Der Phasenübergang
 
@@ -678,7 +696,9 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 
 <div lang="en" markdown="1">
 
-## 6. Sources
+<details class="disclosure">
+<summary>6. Sources — All referenced papers with links</summary>
+<div class="disclosure-body" markdown="1">
 
 > All arXiv links are directly clickable. Sources without a link could not be assigned a unique URL — these are marked with ⚠.
 
@@ -716,10 +736,15 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 - Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. ⚠ arXiv ID not verified
 
 </div>
+</details>
+
+</div>
 
 <div lang="de" markdown="1">
 
-## 6. Quellen
+<details class="disclosure">
+<summary>6. Quellen — Alle referenzierten Papers mit Links</summary>
+<div class="disclosure-body" markdown="1">
 
 > Alle arXiv-Links sind direkt klickbar. Quellen ohne Link konnten nicht mit einem eindeutigen URL versehen werden — diese sind mit ⚠ markiert.
 
@@ -755,6 +780,9 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 ### Quality-Diversity
 - Flageat, M. et al. (2023). "Evolving Populations of Diverse RL Agents with MAP-Elites." [arXiv:2303.12803](https://arxiv.org/abs/2303.12803)
 - Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. ⚠ arXiv-ID nicht verifiziert
+
+</div>
+</details>
 
 </div>
 

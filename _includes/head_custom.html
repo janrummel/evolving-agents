@@ -38,5 +38,12 @@
 .compare-card h4{margin:0 0 8px;font-size:0.95em}
 .compare-card.highlight{border-color:#1f6feb}
 @media(max-width:600px){.compare-grid{grid-template-columns:1fr}}
+/* Progressive Disclosure — collapsible sections */
+details.disclosure{margin:1em 0;border:1px solid var(--border-color,#30363d);border-radius:8px;overflow:hidden}
+details.disclosure summary{padding:12px 16px;cursor:pointer;font-weight:600;font-size:0.95em;background:rgba(31,111,235,.05);list-style:none;display:flex;align-items:center;gap:8px}
+details.disclosure summary::-webkit-details-marker{display:none}
+details.disclosure summary::before{content:"▶";font-size:0.7em;transition:transform .2s;display:inline-block;width:1em}
+details.disclosure[open] summary::before{transform:rotate(90deg)}
+details.disclosure .disclosure-body{padding:12px 16px}
 </style>
 <script src="/evolving-agents/assets/js/lang-toggle.js" defer></script>
