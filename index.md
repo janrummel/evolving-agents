@@ -141,15 +141,15 @@ This is not a problem. Prelife is already generative. But the step to "Life" mod
 
 **The Missing Loop:**
 
-```
-IS:   Task → Skill Selection → Execution → [Quality Gate] → Output
-                                                ↓
-                                         (Feedback dies here)
+<pre style="background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:12px;overflow-x:auto;font-size:0.85em;line-height:1.5;color:#c9d1d9">
+IS:     Task → Skill Selection → Execution → [Quality Gate] → Output
+                                                    ↓
+                                             (Feedback dies here)
 
 SHOULD: Task → Skill Selection → Execution → [Quality Gate] → Output
-                ↑                                ↓
-                └──── Skill Mutation ←── Evaluation + Cost ──┘
-```
+                  ↑                                ↓
+                  └──── Skill Mutation ←── Evaluation + Cost ──┘
+</pre>
 
 **What would close the loop:**
 
@@ -175,15 +175,15 @@ Das ist nicht schlimm. Prelife ist bereits generativ. Aber es fehlt der Schritt 
 
 **Der fehlende Loop:**
 
-```
-IST:  Task → Skill-Auswahl → Execution → [Quality-Gate] → Output
-                                                ↓
-                                         (Feedback stirbt hier)
+<pre style="background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:12px;overflow-x:auto;font-size:0.85em;line-height:1.5;color:#c9d1d9">
+IST:   Task → Skill-Auswahl → Execution → [Quality-Gate] → Output
+                                                  ↓
+                                           (Feedback stirbt hier)
 
-SOLL: Task → Skill-Auswahl → Execution → [Quality-Gate] → Output
-                ↑                              ↓
-                └──── Skill-Mutation ←── Evaluation + Cost ──┘
-```
+SOLL:  Task → Skill-Auswahl → Execution → [Quality-Gate] → Output
+                 ↑                               ↓
+                 └──── Skill-Mutation ←── Evaluation + Cost ──┘
+</pre>
 
 **Was den Loop schließen würde:**
 
@@ -484,7 +484,7 @@ EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3
 </details>
 <details>
 <summary><strong>Was kann ich damit machen?</strong></summary>
-<p>Die <a href="/evolving-agents/principles/">7 Prinzipien</a> als Design-Checkliste nutzen. Den <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase-1-Feedback-Loop</a> implementieren. Die <a href="/evolving-agents/research/paper-registry">50+ Papers</a> lesen.</p>
+<p>Die <a href="/evolving-agents/principles/">7 Prinzipien</a> als Design-Checkliste nutzen. Den <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase-1-Feedback-Loop</a> implementieren. Die <a href="/evolving-agents/research/paper-registry">60+ Papers</a> lesen.</p>
 </details>
 </div>
 
@@ -495,7 +495,7 @@ EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3
 {: .warning }
 </div>
 <div lang="de" markdown="1">
-> Dies ist eine **Forschungssynthese**, kein systematisches Review. Die Analyse basiert auf Abstracts, Zusammenfassungen und kreuzverifizierten Daten aus 50+ Papers. Gegenargumente [dokumentiert](/evolving-agents/research/counter-arguments). [Vollständige Limitationen →](/evolving-agents/meta/limitations)
+> Dies ist eine **Forschungssynthese**, kein systematisches Review. Die Analyse basiert auf Abstracts, Zusammenfassungen und kreuzverifizierten Daten aus 60+ Papers. Gegenargumente [dokumentiert](/evolving-agents/research/counter-arguments). [Vollständige Limitationen →](/evolving-agents/meta/limitations)
 {: .warning }
 </div>
 
