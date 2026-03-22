@@ -89,11 +89,16 @@ nav_order: 1
 
 ## 1. Nowak's Mathematics — The Originator Equation
 
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>Nowak formalized when chemistry becomes evolution. His Originator Equation interpolates between random chemistry (Prelife) and Darwinian selection (Life). A single parameter <code>r</code> controls the transition — and there's an exact critical value where selection "switches on."</p>
+</div>
+
 ### 1.1 Core Idea
 
-Martin A. Nowak, Professor of Mathematics and Biology at Harvard University and Director of the Program for Evolutionary Dynamics, has formalized a fundamental question with his work: **When do chemical kinetics become evolutionary dynamics?**
+Martin A. Nowak (Harvard, Program for Evolutionary Dynamics) formalized a fundamental question: **When do chemical kinetics become evolutionary dynamics?**
 
-His central insight: Evolution requires three fundamental principles — **Replication, Mutation, and Selection**. Nowak has proposed that cooperation is the third fundamental principle of evolution. His book *Evolutionary Dynamics: Exploring the Equations of Life* (2006) lays the mathematical foundation, his later work *Prevolutionary Dynamics and the Origin of Evolution* (PNAS, 2008, with Hisashi Ohtsuki) introduces the so-called **Originator Equation**.
+His central insight: Evolution requires three fundamental principles — **Replication, Mutation, and Selection**. His book *Evolutionary Dynamics* (2006) lays the mathematical foundation, his later work *Prevolutionary Dynamics and the Origin of Evolution* (PNAS 105(39), 2008, with Ohtsuki) introduces the **Originator Equation**.
 
 ### 1.2 The Originator Equation
 
@@ -129,6 +134,11 @@ The equation describes the transition from "Prelife" (generative chemistry witho
 
 ### 1.3 The Phase Transition
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>There's an exact critical value r<sub>c</sub> where selection switches on. Below it: random diversity. Above it: the fittest dominate. This is not gradual — it's a sharp transition.</p>
+</div>
+
 Between Prelife and Life there exists a **phase transition**. The critical replication rate `rₓ` is defined by the condition that the net reproduction rate of the replicators becomes positive:
 
 ```
@@ -151,7 +161,14 @@ rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
 
 - **Prelife is already generative**: Even without replication, a system produces information, diversity, and is subject to selection
 - **Replication is not a prerequisite for selection**, but a prerequisite for cumulative evolution
-- **The error rate has a threshold** (Error Threshold): With mutation rate u per base and sequence length n, error-free replication probability is q = (1−u)ⁿ. The critical mutation rate is uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerical example from the paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0.058. Unlike classical Eigen-Schuster (threshold between different replicators), Nowak's threshold is between **Life and Prelife**
+- **The error rate has a threshold** (Error Threshold):
+
+<div class="key-box amber">
+<h4>⚠️ Error Threshold</h4>
+<p>With mutation rate u per base and sequence length n: q = (1−u)ⁿ. Critical rate: u<sub>c</sub> = 1 − [(d+2a)/(r·f)]^(1/n). Example from the paper: a=1, d=1, r=10, n=20 → u<sub>c</sub> = 0.058. Too many changes → information loss → system collapses back to Prelife.</p>
+</div>
+
+  With mutation rate u per base and sequence length n, error-free replication probability is q = (1−u)ⁿ. The critical mutation rate is uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerical example from the paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0.058. Unlike classical Eigen-Schuster (threshold between different replicators), Nowak's threshold is between **Life and Prelife**
 - **Cooperation as the third principle**: In finite populations, a single cooperator (e.g., with a tit-for-tat strategy) can invade a population of defectors — with a probability that corresponds to a net selection advantage
 - **Evolutionary graph theory**: The structure of the network (who interacts with whom) massively influences which strategies survive
 
@@ -165,11 +182,16 @@ Beyond the Originator Equation, Nowak's framework offers a range of analytical t
 
 ## 1. Nowaks Mathematik — Die Originator-Gleichung
 
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>Nowak formalisierte, wann Chemie zu Evolution wird. Seine Originator-Gleichung interpoliert zwischen zufälliger Chemie (Prelife) und darwinistischer Selektion (Life). Ein einziger Parameter <code>r</code> steuert den Übergang — und es gibt einen exakten kritischen Wert, an dem Selektion „einschaltet".</p>
+</div>
+
 ### 1.1 Kernidee
 
-Martin A. Nowak, Professor für Mathematik und Biologie an der Harvard University und Direktor des Program for Evolutionary Dynamics, hat mit seiner Arbeit eine fundamentale Frage formalisiert: **Wann werden chemische Kinetiken zu evolutionärer Dynamik?**
+Martin A. Nowak (Harvard, Program for Evolutionary Dynamics) formalisierte eine fundamentale Frage: **Wann werden chemische Kinetiken zu evolutionärer Dynamik?**
 
-Seine zentrale Erkenntnis: Evolution benötigt drei Grundprinzipien — **Replikation, Mutation und Selektion**. Nowak hat vorgeschlagen, dass Kooperation das dritte fundamentale Prinzip der Evolution ist. Sein Buch *Evolutionary Dynamics: Exploring the Equations of Life* (2006) legt das mathematische Fundament, seine spätere Arbeit *Prevolutionary Dynamics and the Origin of Evolution* (PNAS, 2008, mit Hisashi Ohtsuki) führt die sogenannte **Originator-Gleichung** ein.
+Seine zentrale Erkenntnis: Evolution benötigt drei Grundprinzipien — **Replikation, Mutation und Selektion**. Sein Buch *Evolutionary Dynamics* (2006) legt das mathematische Fundament, seine spätere Arbeit *Prevolutionary Dynamics and the Origin of Evolution* (PNAS 105(39), 2008, mit Ohtsuki) führt die **Originator-Gleichung** ein.
 
 ### 1.2 Die Originator-Gleichung
 
@@ -205,6 +227,11 @@ Die Gleichung beschreibt den Übergang von "Prelife" (generative Chemie ohne Rep
 
 ### 1.3 Der Phasenübergang
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Es gibt einen exakten kritischen Wert r<sub>c</sub>, an dem Selektion einschaltet. Darunter: zufällige Diversität. Darüber: die Fittesten dominieren. Das ist kein gradueller Übergang — es ist ein scharfer Phasenübergang.</p>
+</div>
+
 Zwischen Prelife und Life existiert ein **Phasenübergang**. Die kritische Replikationsrate `rₓ` ist definiert durch die Bedingung, dass die Netto-Reproduktionsrate der Replikatoren positiv wird:
 
 ```
@@ -227,7 +254,14 @@ rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
 
 - **Prelife ist bereits generativ**: Auch ohne Replikation erzeugt ein System Information, Diversität und unterliegt Selektion
 - **Replikation ist nicht Voraussetzung für Selektion**, aber Voraussetzung für kumulative Evolution
-- **Die Fehlerrate hat einen Schwellenwert** (Error Threshold): Bei Mutationsrate u pro Base und Sequenzlänge n ist die fehlerfreie Replikationswahrscheinlichkeit q = (1−u)ⁿ. Die kritische Mutationsrate ist uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerisches Beispiel aus dem Paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0,058. Anders als beim klassischen Eigen-Schuster (Schwelle zwischen verschiedenen Replikatoren) ist Nowaks Schwelle zwischen **Life und Prelife**
+- **Die Fehlerrate hat einen Schwellenwert** (Error Threshold):
+
+<div class="key-box amber">
+<h4>⚠️ Error Threshold</h4>
+<p>Bei Mutationsrate u pro Base und Sequenzlänge n: q = (1−u)ⁿ. Kritische Rate: u<sub>c</sub> = 1 − [(d+2a)/(r·f)]^(1/n). Beispiel aus dem Paper: a=1, d=1, r=10, n=20 → u<sub>c</sub> = 0,058. Zu viele Änderungen → Informationsverlust → System kollabiert zurück ins Prelife.</p>
+</div>
+
+  Bei Mutationsrate u pro Base und Sequenzlänge n ist die fehlerfreie Replikationswahrscheinlichkeit q = (1−u)ⁿ. Die kritische Mutationsrate ist uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerisches Beispiel aus dem Paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0,058. Anders als beim klassischen Eigen-Schuster (Schwelle zwischen verschiedenen Replikatoren) ist Nowaks Schwelle zwischen **Life und Prelife**
 - **Kooperation als drittes Prinzip**: In endlichen Populationen kann ein einzelner Kooperator (z.B. mit Tit-for-Tat-Strategie) eine Population von Defektoren invadieren — mit einer Wahrscheinlichkeit, die einem Netto-Selektionsvorteil entspricht
 - **Evolutionäre Graphentheorie**: Die Struktur des Netzwerks (wer mit wem interagiert) beeinflusst massiv, welche Strategien überleben
 

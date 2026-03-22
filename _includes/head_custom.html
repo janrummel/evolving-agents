@@ -14,5 +14,26 @@
 .feature-card p{color:#8b949e;font-size:0.9em;margin-bottom:8px}
 .feature-card a{color:#58a6ff;font-size:0.9em;text-decoration:none}
 .feature-card a:hover{text-decoration:underline}
+/* Key insight boxes */
+.key-box{background:#161b22;border-left:4px solid #1f6feb;border-radius:0 8px 8px 0;padding:16px 20px;margin:1.5em 0}
+.key-box.green{border-left-color:#34d399}
+.key-box.amber{border-left-color:#f59e0b}
+.key-box.red{border-left-color:#f87171}
+.key-box h4{margin:0 0 8px;color:#e6edf3;font-size:0.95em}
+.key-box p{margin:0;color:#8b949e;font-size:0.9em}
+/* Section summary cards */
+.section-summary{background:linear-gradient(135deg,#161b22,#0d1117);border:1px solid #30363d;border-radius:12px;padding:20px 24px;margin:1.5em 0}
+.section-summary h4{margin:0 0 8px;color:#58a6ff;font-size:0.9em;text-transform:uppercase;letter-spacing:1px}
+.section-summary p{margin:0;color:#c9d1d9}
+/* Visual separator with label */
+.labeled-divider{text-align:center;margin:2.5em 0 1.5em;position:relative}
+.labeled-divider::before{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:#30363d}
+.labeled-divider span{background:#0d1117;padding:0 16px;position:relative;color:#8b949e;font-size:0.85em;text-transform:uppercase;letter-spacing:1px}
+/* Comparison cards */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.5em 0}
+.compare-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px}
+.compare-card h4{margin:0 0 8px;font-size:0.95em}
+.compare-card.highlight{border-color:#1f6feb}
+@media(max-width:600px){.compare-grid{grid-template-columns:1fr}}
 </style>
 <script src="/evolving-agents/assets/js/lang-toggle.js" defer></script>
