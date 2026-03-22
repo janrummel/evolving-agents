@@ -1007,7 +1007,7 @@ graph TD
 
 1. **No persistent memory:** EvoFlow evaluates on benchmarks, has no session history. AgentField's memory system is a fundamental advantage.
 2. **No Human-in-the-Loop:** EvoFlow is fully automatic. Our human feedback is a richer signal than automatic evaluation.
-3. **No context:** EvoFlow works on isolated tasks. Our projects have rich context (project state, Vault, Episodic Memory).
+3. **No context:** EvoFlow works on isolated tasks. Real-world agent projects have rich context (project state, persistent memory, long-term knowledge stores).
 4. **Benchmark ≠ Real World:** EvoFlow's 29.86% improvement is on MATH/GSM8K. Whether this transfers to open, creative tasks (our core domain) remains unclear.
 
 ### What MCE Does NOT Address
@@ -1047,7 +1047,7 @@ AgentField sits at an intersection that none of the three papers covers:
 
 1. **Kein persistentes Gedächtnis:** EvoFlow evaluiert auf Benchmarks, hat keine Session-History. AgentField's memory-System ist ein fundamentaler Vorteil.
 2. **Keine Human-in-the-Loop:** EvoFlow ist voll automatisch. Unser Human-Feedback ist reicheres Signal als automatische Evaluation.
-3. **Kein Kontext:** EvoFlow arbeitet auf isolierten Tasks. Unsere Projekte haben reichen Kontext (Projekt-State, Vault, Episodic Memory).
+3. **Kein Kontext:** EvoFlow arbeitet auf isolierten Tasks. Reale Agent-Projekte haben reichen Kontext (Projekt-State, persistentes Memory, Langzeit-Wissenspeicher).
 4. **Benchmark ≠ Real World:** EvoFlow's 29.86% Verbesserung ist auf MATH/GSM8K. Ob das auf offene, kreative Aufgaben (unsere Kerndomäne) übertragbar ist: unklar.
 
 ### Was MCE NICHT adressiert

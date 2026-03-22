@@ -2,6 +2,7 @@
 layout: default
 title: Research Learnings
 parent: Meta
+nav_exclude: true
 nav_order: 2
 ---
 
