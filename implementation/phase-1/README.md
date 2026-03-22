@@ -99,12 +99,72 @@ This implements the **measurement apparatus** — Nowak's `fᵢ` (fitness per in
 - `alerts` = selection pressure signals (not automatic action)
 - `agent_skill_metrics` = niche performance (MAP-Elites analogy per agent)
 
+## Updates (2026-03-22, same day)
+
+### 5. Feedback Script (`skill-feedback.sh`)
+
+```bash
+~/.openclaw/scripts/skill-feedback.sh <quality_score> [--skill <name>] [--notes <text>]
+```
+
+Updates the quality_score of the last skill execution. Called when the user gives feedback ("good" → 0.95, "wrong" → 0.2).
+
+### 6. Auto-Quality Heuristic
+
+Documented in `skills/auto-quality/SKILL.md`. Binary signals instead of the 0.5 default:
+
+| Signal | Score |
+|--------|-------|
+| Code builds/deploys without errors | 0.85 |
+| User says "good"/"perfect" | 0.95 |
+| Needs rework (1×) | 0.6 |
+| Wrong approach | 0.1 |
+| Research delivered + in vault | 0.8 |
+| Routine task success | 1.0 |
+
+**Result:** 76% of entries now have real scores (was 28% before).
+
+### 7. Pareto View v2 (`skill_pareto_v2`)
+
+Directly on `skill_performance` (not via `skill_metrics`). Includes:
+- `quality_per_10k_tokens` — efficiency metric
+- `quality_trend` — last 5 vs. first 5 runs
+
+### 8. Token Usage Script (`token-usage.sh`)
+
+```bash
+~/.openclaw/scripts/token-usage.sh session  # Current session
+~/.openclaw/scripts/token-usage.sh today    # All sessions today
+~/.openclaw/scripts/token-usage.sh all      # Summary with cost estimate
+```
+
+Reads real token counts from the platform's `sessions.json` (input, output, cache read/write).
+
+### 9. Dashboard (`skill-dashboard.sh`)
+
+```bash
+~/.openclaw/scripts/skill-dashboard.sh
+```
+
+Combined view: Pareto ranking + recent executions + stats + token usage.
+
+### First Real Data (Day 1)
+
+| Metric | Value |
+|--------|-------|
+| Total entries | 21 |
+| Unique skills | 7 |
+| Real quality scores (≠0.5) | 76% |
+| Top skill by efficiency | deep-research (0.57 quality/10k tokens) |
+
 ## Next Steps (Phase 2 Prerequisites)
 
 - [ ] Accumulate ≥50 entries across all agents
 - [ ] First Pareto analysis with ≥3 uses per skill
 - [ ] First alert fires (quality drop or cost outlier)
 - [ ] Evaluate: Is manual logging sustainable or do we need automation?
+- [ ] Skill-routing based on Pareto data (planned W14)
+- [ ] Token tracking from API response instead of estimates (planned W14)
 
 </div>
 
@@ -201,11 +261,71 @@ Dies implementiert den **Messapparat** — Nowaks `fᵢ` (Fitness pro Individuum
 - `alerts` = Selektionsdruck-Signale (keine automatische Aktion)
 - `agent_skill_metrics` = Nischen-Performance (MAP-Elites-Analogie pro Agent)
 
+## Updates (22.03.2026, gleicher Tag)
+
+### 5. Feedback-Script (`skill-feedback.sh`)
+
+```bash
+~/.openclaw/scripts/skill-feedback.sh <quality_score> [--skill <name>] [--notes <text>]
+```
+
+Aktualisiert den quality_score der letzten Skill-Ausführung. Wird aufgerufen wenn der User Feedback gibt ("gut" → 0.95, "falsch" → 0.2).
+
+### 6. Auto-Quality-Heuristik
+
+Dokumentiert in `skills/auto-quality/SKILL.md`. Binäre Signale statt 0.5-Default:
+
+| Signal | Score |
+|--------|-------|
+| Code baut/deployed ohne Fehler | 0.85 |
+| User sagt "gut"/"perfekt" | 0.95 |
+| Nachbesserung nötig (1×) | 0.6 |
+| Falscher Ansatz | 0.1 |
+| Research geliefert + im Vault | 0.8 |
+| Routine-Task erfolgreich | 1.0 |
+
+**Ergebnis:** 76% der Einträge haben jetzt echte Scores (vorher 28%).
+
+### 7. Pareto View v2 (`skill_pareto_v2`)
+
+Direkt auf `skill_performance` (nicht über `skill_metrics`). Enthält:
+- `quality_per_10k_tokens` — Effizienz-Metrik
+- `quality_trend` — letzte 5 vs. erste 5 Runs
+
+### 8. Token-Usage-Script (`token-usage.sh`)
+
+```bash
+~/.openclaw/scripts/token-usage.sh session  # Aktuelle Session
+~/.openclaw/scripts/token-usage.sh today    # Alle Sessions heute
+~/.openclaw/scripts/token-usage.sh all      # Zusammenfassung mit Kostenschätzung
+```
+
+Liest echte Token-Zahlen aus `sessions.json` der Plattform (Input, Output, Cache Read/Write).
+
+### 9. Dashboard (`skill-dashboard.sh`)
+
+```bash
+~/.openclaw/scripts/skill-dashboard.sh
+```
+
+Kombinierte Ansicht: Pareto-Ranking + letzte Ausführungen + Stats + Token-Usage.
+
+### Erste echte Daten (Tag 1)
+
+| Metrik | Wert |
+|--------|------|
+| Einträge gesamt | 21 |
+| Unique Skills | 7 |
+| Echte Quality-Scores (≠0.5) | 76% |
+| Top-Skill nach Effizienz | deep-research (0.57 Qualität/10k Tokens) |
+
 ## Nächste Schritte (Phase-2-Voraussetzungen)
 
 - [ ] ≥50 Einträge über alle Agents sammeln
 - [ ] Erste Pareto-Analyse mit ≥3 Nutzungen pro Skill
 - [ ] Erster Alert feuert (Qualitätseinbruch oder Kosten-Ausreißer)
 - [ ] Bewertung: Ist manuelles Logging nachhaltig oder brauchen wir Automatisierung?
+- [ ] Skill-Routing basierend auf Pareto-Daten (geplant W14)
+- [ ] Token-Tracking aus API-Response statt Schätzungen (geplant W14)
 
 </div>
