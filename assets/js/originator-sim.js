@@ -90,6 +90,11 @@
     var phi = totalX > 0 ? totalFX / totalX : 0;
 
     var sumPrelife = 0, sumDecay = 0, sumSelection = 0;
+    var maxAbundance = 0, maxIdx = 0;
+
+    for (var i = 0; i < N; i++) {
+      if (species[i].x > maxAbundance) { maxAbundance = species[i].x; maxIdx = i; }
+    }
 
     for (var i = 0; i < N; i++) {
       var s = species[i];
@@ -102,9 +107,12 @@
       s.dominantTerm = Math.abs(selectionTerm) > Math.abs(prelifeTerm) ? 'selection' : 'prelife';
       s.selectionStrength = Math.abs(selectionTerm) / (Math.abs(prelifeTerm) + Math.abs(selectionTerm) + 0.001);
 
-      sumPrelife += prelifeTerm;
-      sumDecay += decayTerm;
-      sumSelection += Math.abs(selectionTerm);
+      // Use dominant species for display (more dynamic than average)
+      if (i === maxIdx) {
+        sumPrelife = prelifeTerm;
+        sumDecay = decayTerm;
+        sumSelection = Math.abs(selectionTerm);
+      }
 
       s.x += (prelifeTerm - decayTerm + selectionTerm) * dt;
 
@@ -122,10 +130,10 @@
       for (var i = 0; i < N; i++) species[i].x /= totalAbundance;
     }
 
-    // Smooth average for display
-    avgPrelife = avgPrelife * 0.9 + (sumPrelife / N) * 0.1;
-    avgDecay = avgDecay * 0.9 + (sumDecay / N) * 0.1;
-    avgSelection = avgSelection * 0.9 + (sumSelection / N) * 0.1;
+    // Smooth display values (tracking dominant species, not average)
+    avgPrelife = avgPrelife * 0.9 + sumPrelife * 0.1;
+    avgDecay = avgDecay * 0.9 + sumDecay * 0.1;
+    avgSelection = avgSelection * 0.9 + sumSelection * 0.1;
 
     // Update live indicators
     if (termPrelife) termPrelife.textContent = avgPrelife.toFixed(3);

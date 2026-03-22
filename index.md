@@ -106,12 +106,12 @@ nav_order: 1
     <div style="text-align:center;min-width:120px">
       <div style="color:#f87171;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:1px"><span lang="en">Decay</span><span lang="de">Zerfall</span></div>
       <div style="color:#f87171;font-family:monospace;font-size:1.3em;font-weight:700" id="term-decay">0.00</div>
-      <div style="color:#8b949e;font-size:0.75em"><span lang="en">sequences degrade</span><span lang="de">Sequenzen zerfallen</span></div>
+      <div style="color:#8b949e;font-size:0.75em"><span lang="en">champion degrades</span><span lang="de">Champion zerfällt</span></div>
     </div>
     <div style="text-align:center;min-width:120px">
       <div style="color:#34d399;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:1px"><span lang="en">Selection</span><span lang="de">Selektion</span></div>
       <div style="color:#34d399;font-family:monospace;font-size:1.3em;font-weight:700" id="term-selection">0.00</div>
-      <div style="color:#8b949e;font-size:0.75em"><span lang="en">fittest replicate</span><span lang="de">Fitteste replizieren</span></div>
+      <div style="color:#8b949e;font-size:0.75em"><span lang="en">champion replicates</span><span lang="de">Champion repliziert</span></div>
     </div>
   </div>
 </div>
