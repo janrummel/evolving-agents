@@ -54,12 +54,35 @@ nav_order: 1
 <!-- INTERACTIVE ORIGINATOR EQUATION -->
 <div lang="en" markdown="1">
 <h2>Try It: The Phase Transition</h2>
-<p>Nowak's Originator Equation describes when a system transitions from random diversity (<strong>Prelife</strong>) to directed evolution (<strong>Life</strong>). Drag the slider to see it happen:</p>
+<p>Nowak's Originator Equation describes when a system transitions from random diversity (<strong>Prelife</strong>) to directed evolution (<strong>Life</strong>).</p>
 </div>
 
 <div lang="de" markdown="1">
 <h2>Ausprobieren: Der Phasenübergang</h2>
-<p>Nowaks Originator-Gleichung beschreibt, wann ein System von zufälliger Diversität (<strong>Prelife</strong>) zu gerichteter Evolution (<strong>Life</strong>) übergeht. Ziehe den Regler und sieh es live:</p>
+<p>Nowaks Originator-Gleichung beschreibt, wann ein System von zufälliger Diversität (<strong>Prelife</strong>) zu gerichteter Evolution (<strong>Life</strong>) übergeht.</p>
+</div>
+
+<div style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border-color,#30363d);border-radius:8px;font-size:0.85em;margin-bottom:16px">
+  <div lang="en">
+    <strong style="color:#e6edf3">How to read the chart:</strong>
+    <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
+      <li><strong style="color:#c9d1d9">80 bars</strong> = 80 molecular sequences competing in a chemical soup</li>
+      <li><strong style="color:#c9d1d9">Bar height</strong> = frequency (share of the population)</li>
+      <li><strong style="color:#c9d1d9">Bar color</strong>: <span style="color:#f59e0b">■ amber</span> = Prelife dominates · <span style="color:#34d399">■ green</span> = Selection dominates · brighter = fitter</li>
+      <li><strong style="color:#c9d1d9">Slider r</strong> = replication rate — how much template-directed copying happens</li>
+    </ul>
+    <div style="margin-top:8px;color:#8b949e"><strong>Try it:</strong> At r = 0, all bars are similar height (random diversity). Drag right — watch one champion emerge. That's Nowak's phase transition.</div>
+  </div>
+  <div lang="de">
+    <strong style="color:#e6edf3">So liest du die Grafik:</strong>
+    <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
+      <li><strong style="color:#c9d1d9">80 Balken</strong> = 80 molekulare Sequenzen, die in einer chemischen Suppe konkurrieren</li>
+      <li><strong style="color:#c9d1d9">Balkenhöhe</strong> = Häufigkeit (Anteil an der Population)</li>
+      <li><strong style="color:#c9d1d9">Balkenfarbe</strong>: <span style="color:#f59e0b">■ amber</span> = Prelife dominiert · <span style="color:#34d399">■ grün</span> = Selektion dominiert · heller = fitter</li>
+      <li><strong style="color:#c9d1d9">Regler r</strong> = Replikationsrate — wie viel template-gesteuerte Kopierung stattfindet</li>
+    </ul>
+    <div style="margin-top:8px;color:#8b949e"><strong>Probier es:</strong> Bei r = 0 sind alle Balken ähnlich hoch (zufällige Diversität). Schiebe nach rechts — beobachte wie ein Champion entsteht. Das ist Nowaks Phasenübergang.</div>
+  </div>
 </div>
 
 <div class="sim-container">
@@ -70,29 +93,6 @@ nav_order: 1
     <span class="r-val" id="r-value">0.00</span>
   </div>
   <div id="phase-label">◀ Prelife — no replication, random diversity</div>
-
-  <div style="margin-top:16px;padding:12px 16px;background:rgba(255,255,255,.03);border-radius:8px;font-size:0.85em">
-    <div lang="en">
-      <strong style="color:#e6edf3">How to read this:</strong>
-      <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
-        <li><strong style="color:#c9d1d9">80 bars</strong> = 80 molecular sequences competing in a chemical soup</li>
-        <li><strong style="color:#c9d1d9">Bar height</strong> = abundance (how frequent this sequence is in the population)</li>
-        <li><strong style="color:#c9d1d9">Bar color brightness</strong> = fitness (brighter = replicates faster)</li>
-        <li><strong style="color:#c9d1d9">Slider r</strong> = replication rate — how much template-directed copying happens</li>
-      </ul>
-      <div style="margin-top:8px;color:#8b949e"><strong>Try it:</strong> At r = 0, all bars are similar height (random diversity). Drag right — watch how 2-3 bright bars start dominating. That's Nowak's phase transition: the moment selection switches on.</div>
-    </div>
-    <div lang="de">
-      <strong style="color:#e6edf3">So liest du die Grafik:</strong>
-      <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
-        <li><strong style="color:#c9d1d9">80 Balken</strong> = 80 molekulare Sequenzen, die in einer chemischen Suppe konkurrieren</li>
-        <li><strong style="color:#c9d1d9">Balkenhöhe</strong> = Häufigkeit (wie oft diese Sequenz in der Population vorkommt)</li>
-        <li><strong style="color:#c9d1d9">Balkenfarbe Helligkeit</strong> = Fitness (heller = repliziert schneller)</li>
-        <li><strong style="color:#c9d1d9">Regler r</strong> = Replikationsrate — wie viel template-gesteuerte Kopierung stattfindet</li>
-      </ul>
-      <div style="margin-top:8px;color:#8b949e"><strong>Probier es:</strong> Bei r = 0 sind alle Balken ähnlich hoch (zufällige Diversität). Schiebe nach rechts — beobachte wie 2-3 helle Balken anfangen zu dominieren. Das ist Nowaks Phasenübergang: der Moment, in dem Selektion einschaltet.</div>
-    </div>
-  </div>
 </div>
 
 <div class="eq-highlight">
