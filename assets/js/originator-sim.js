@@ -100,9 +100,15 @@
       // Add small noise
       s.x += (Math.random() - 0.5) * 0.002;
 
-      // Clamp
-      if (s.x < 0.001) s.x = 0.001;
-      if (s.x > 2.0) s.x = 2.0;
+      // Floor only — no ceiling clamp
+      if (s.x < 0.0001) s.x = 0.0001;
+    }
+
+    // Normalize: abundances are frequencies (sum to 1)
+    var totalAbundance = 0;
+    for (var i = 0; i < N; i++) totalAbundance += species[i].x;
+    if (totalAbundance > 0) {
+      for (var i = 0; i < N; i++) species[i].x /= totalAbundance;
     }
 
     // Smooth average for display
@@ -163,14 +169,19 @@
     // Axis labels
     ctx.fillStyle = 'rgba(139, 148, 158, 0.6)';
     ctx.font = '11px -apple-system, sans-serif';
+    var en = document.documentElement.getAttribute('data-lang') !== 'de';
 
-    // Y-axis label (rotated)
+    // Y-axis label (rotated) + percentage
     ctx.save();
     ctx.translate(12, H / 2);
     ctx.rotate(-Math.PI / 2);
-    var en = document.documentElement.getAttribute('data-lang') !== 'de';
-    ctx.fillText(en ? 'Abundance' : 'Häufigkeit', -30, 0);
+    ctx.fillText(en ? 'Frequency (%)' : 'Häufigkeit (%)', -35, 0);
     ctx.restore();
+
+    // Y-axis tick: show max percentage
+    var maxPct = (maxX * 100).toFixed(0);
+    ctx.fillText(maxPct + '%', 18, 18);
+    ctx.fillText('0%', 18, H - 6);
 
     // X-axis label
     ctx.fillText(en ? 'Sequences (sorted by fitness →)' : 'Sequenzen (sortiert nach Fitness →)', W / 2 - 80, H - 4);
