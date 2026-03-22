@@ -75,7 +75,7 @@ nav_order: 3
 | **Selection** | Pareto (quality vs. cost) | Meta-agent evaluation (+16.9%) | Task performance filtering |
 | **Diversity strategy** | Niching / MAP-Elites style | Skill specialization | Code library growth |
 | **Storage format** | Text (prompts + graph) | Text (SKILL.md style) | Executable code |
-| **Best result** | Beat o1-preview at 12.4% cost | +16.9% avg improvement | Autonomous skill accumulation |
+| **Best result** | Beat o1-preview at 12.4% cost; +4.15pp avg over 6 benchmarks; cross-domain transfer works | +16.9% avg improvement | Autonomous skill accumulation |
 | **Nowak analogy** | Population with selection (P2+P3) | Heredity via meta-agent (P7) | Replicator accumulation (P1) |
 | **arXiv** | [2502.07373](https://arxiv.org/abs/2502.07373) | [2601.21557](https://arxiv.org/abs/2601.21557) | [2603.18000](https://arxiv.org/abs/2603.18000) |
 
@@ -86,49 +86,197 @@ nav_order: 3
 
 **Core Idea:** Instead of searching for ONE optimal workflow, evolve a POPULATION of heterogeneous workflows. Use niching selection (related to MAP-Elites) to maintain diversity and quality simultaneously.
 
-**Architecture (3 Levels):**
+**Two core problems of prior approaches:**
+- **Missing LLM heterogeneity:** Previous systems use a single expensive LLM (e.g., GPT-4o) for all agents
+- **Missing complexity diversity:** Optimization converges to a single, complex workflow; simple queries get unnecessarily expensive treatment
+
+**Architecture — Hierarchical Search Space (3 Levels):**
 
 ```
-Workflow G = (O, Eᵃ)     ← Directed graph of operator nodes
-  └── Operator Oⱼ = (Iⱼ, ξⱼ) ← Collection of Invoking Nodes + internal connectivity
-       └── Invoking Node Iᵢ = (Mᵢ, Pᵢ, τᵢ) ← LLM model + Prompt + Temperature
+Workflow G = (Oˢ, Eᵃ)     ← Directed graph of operator nodes + inter-operator connectivity
+  └── Operator Oⱼ = (Iᵒⱼ, Eᵒⱼ) ← Subset of Invoking Nodes + internal connectivity
+       └── Invoking Node Iᵢ = (Mᵢ, Pᵢ, τᵢ) ← LLM instance + Prompt + Temperature
+            where Mᵢ = (|Mᵢ|, Cᵢ, Lᵢ) → model size, token cost, latency
+            Feasible Space: I = M × P × ℝ[0,1]
 ```
 
-**Evolutionary Cycle:**
-1. **Tag-based Retrieval:** Select parent workflows from the population based on task tags
-2. **Crossover:** Combine elements of two parent workflows
-3. **Mutation (3 Types):**
-   - LLM Mutation: Switch to a different model
-   - Prompt Mutation: Refine template
-   - Operator Mutation: Modify workflow structure
-4. **Niching Selection:** Retain diverse, high-performing workflows along the Pareto front (Quality vs. Cost)
+**Optimization Target (Multi-Objective):**
 
-**Optimization:** Multi-Objective: `max{u(G,q), -c(G,q)}` — maximize Utility, minimize Cost.
+```
+G⋆ = arg max [u(G, T), −c(G, T)]ᵀ
+        G∈H(O,Eᵃ)
+```
 
-**Operator Repository** (8 types from the paper): CoT, LLM-Debate (3 debaters, majority voting), Take-a-Step-Back, Self-Consistency (5 CoT paths), Self-Refine (iterative, max 5), Ensemble (3 LLMs + pairwise ranking), ReAct (tool use), ExpertPrompt (dynamic control flows).
+Where `u(·)` = Performance-Evaluator, `c(·)` = Cost-Evaluator. `G⋆` is the Pareto-optimal set.
+
+#### Operator Repository (8 Types)
+
+| Operator | Description |
+|----------|-------------|
+| **CoT** | Step-by-step Reasoning |
+| **LLM-Debate** | 3 Debaters, max 2 rounds, Majority Voting |
+| **Take-a-Step-Back** | First identify principles, then solve |
+| **Self-Consistency** | 5 CoT paths aggregated via Majority Voting |
+| **Self-Refine** | CoT + iterative self-reflection (max 5 iterations) |
+| **Ensemble** | 3 LLM agents from different sources + Pairwise Ranking |
+| **ReAct** | Agent uses tools (Code Interpreter, Web Search, Knowledge DB) |
+| **ExpertPrompt** | Dynamic control flows, agent selects experts |
+
+#### Evolutionary Algorithm (Pseudocode)
+
+```
+Input: Dataset D (train/test), Operator Set O
+Output: Optimized Population P
+
+// Phase 1: Population Initialization
+FOR k = 1 TO N:
+    Gₖ ← {Oₖ, Eᵃₖ}           // Random operator combination
+    Tags ← f_tag(Gₖ)           // LLM-generated utility tags (κ=5 each)
+P⁽⁰⁾ = {G₁, G₂, ..., Gₙ}
+
+// Phase 2: Evolutionary Optimization (query-by-query)
+FOR each query qₜ IN D_train:
+    
+    // Step 1: Tag-based Retrieval
+    Parents {Gₜ₁,...,GₜK} = TopK(S({Gᵢ}|qₜ), K)
+    // S(Gᵢ|qₜ) = Σⱼ cosine_sim(v(κᵢ,ⱼ), v(qₜ))
+    // v(·) = all-MiniLM-L6-v2 Embeddings
+    
+    // Step 2: Crossover (LLM-facilitated)
+    G°⁽ᵗ⁾ ← Crossover(Gₜ₁, ..., GₜK)
+    
+    // Step 3: Mutation (3 types, applied sequentially)
+    G⊚⁽ᵗ⁾ ← µₒ(µₚ(µₗ(G°⁽ᵗ⁾)))
+    
+    // Step 4: Niching-based Selection
+    // 4a: Identify Niching Area
+    PNA = TopK({−Rank(Gᵢ)}, E)
+    // Rank = RankS (Tag-Similarity) + Rankc (Cost-Similarity)
+    
+    // 4b: Execute all relevant workflows
+    FOR Gᵢ IN PNA ∪ Parents ∪ {G⊚}:
+        Execute Gᵢ on qₜ → Update running avg cost c⁽ᵗ⁾ + performance p⁽ᵗ⁾
+    
+    // 4c: Compute fitness (Pareto-Indicator-based)
+    F(G) = Σ exp(I(G, G⊚) / (φ · Imax))   // φ = 0.05
+    
+    // 4d: Eliminate worst individual
+    G_worst = argmax F(G) over PNA ∪ {G⊚}
+    P⁽ᵗ⁺¹⁾ ← P⁽ᵗ⁾ \ G_worst ∪ G⊚⁽ᵗ⁾
+
+RETURN P
+```
+
+#### The 4 Evolutionary Operators in Detail
+
+| Operator | Type | Mechanism |
+|----------|------|-----------|
+| **LLM Crossover** | Recombination | LLM-facilitated: combines structural elements of K parent workflows into a new offspring. Not random — the LLM understands the parent architectures and produces a meaningful synthesis. |
+| **LLM Mutation `µₗ`** | Backbone swap | LLM-powered decision based on LLM Experience Pool `P_LLM`. Pool contains per-LLM triplets (Workflow, Positive/Negative/None rating, qualitative feedback). Swaps the LLM backbone of an Invoking Node based on historical performance. |
+| **Prompt Refinement `µₚ`** | Prompt engineering | LLM-powered, uses Workflow Experience Pool `P_WF` with triplets (Workflow, Query, Evaluation with quantitative + qualitative feedback). Modifies instructions, adds few-shot examples. |
+| **Operator Mutation `µₒ`** | Topology change | Adds (`O_add`) or removes (`O_del`) operators from the workflow DAG, rewires topology. Changes the structural composition of the workflow. |
+| **Niching Selection** | Diversity preservation | Identifies a "niching area" (similar workflows by tag + cost), evaluates all candidates, eliminates the worst using a Pareto-dominance-preserving binary indicator. Prevents population collapse to a single workflow type. |
 
 **Seed Population:** 4 initial workflow types (Reflective Agent I/O, Arithmetic Collaborator, Lightweight Programmer, Advanced Multi-programmer).
 
-**Results** (verified against full text, Tables 1–4):
+#### Benchmark Results
 
-| Benchmark | EvoFlow | Best Baseline (AFlow) | Improvement |
-|-----------|---------|----------------------|-------------|
-| GSM8K | 92.90% | 91.16% | +1.74pp |
-| MATH | 57.70% | 51.28% | +6.42pp |
-| HumanEval | 92.85% | 90.93% | +1.92pp |
-| MBPP | 84.50% | 81.67% | +2.83pp |
-| ALFWorld | 68.57% | 59.16% | +9.41pp |
+**Homogeneous Settings** (all methods use gpt-4o-mini):
 
-- Outperformed o1-preview by **+2.7%** on MATH at **12.4% of its cost** (using open-source models: LLaMa-3.1-70b, Qwen-2.5-72b, Deepseek-V2.5, Hermes-3-70b)
-- Training cost: $0.459 vs. $1.223 (AFlow) — **37.5%**
-- Inference cost: $0.513 vs. $2.623 (AFlow) — **19.5%**
-- Unique: Only system with **LLM heterogeneity AND complexity adaptivity**
+| Method | GSM8K | MATH | MultiArith | HumanEval | MBPP | ALFWorld | Avg. |
+|--------|-------|------|------------|-----------|------|----------|------|
+| Vanilla | 87.45 | 46.29 | 96.85 | 87.08 | 71.83 | 38.71 | 71.37 |
+| CoT | 87.10 | 46.40 | 96.31 | 88.13 | 71.83 | 39.92 | 71.62 |
+| SC (CoT×5) | 87.57 | 47.91 | 96.58 | 88.60 | 73.60 | 40.55 | 72.47 |
+| LLM-Debate | 89.47 | 48.54 | 97.33 | 88.68 | 70.29 | 44.68 | 73.17 |
+| DyLAN | 89.98 | 48.63 | 97.12 | 90.42 | 77.30 | 53.32 | 76.13 |
+| AgentVerse | 89.91 | 47.35 | 97.50 | 89.29 | 74.28 | 45.03 | 73.89 |
+| GPTSwarm | 89.14 | 47.88 | 96.79 | 89.32 | 77.43 | 53.19 | 75.63 |
+| ADAS | 86.12 | 43.18 | 96.02 | 84.19 | 68.13 | 47.66 | 70.88 |
+| AgentSquare | 87.62 | 48.51 | 97.77 | 89.08 | 78.46 | 66.42 | 78.14 |
+| AFlow | 91.16 | 51.28 | 96.22 | 90.93 | 81.67 | 59.16 | 78.40 |
+| **EvoFlow** | **92.90** | **57.70** | **98.80** | **92.85** | **84.50** | **68.57** | **82.55** |
 
-**Ablation** (what matters most): Tag-based Retrieval and LLM Mutation are critical — removing either causes significant performance drops + variance increase. Operator Mutation contributes 3.5–7.3%.
+**Improvement over SOTA (AFlow):** +1.23% to +29.86% per benchmark. Average **+4.15pp**.
+
+**Heterogeneous Settings** (MATH & MBPP, Open-Source LLM Pool):
+
+| Method | MATH Acc. | MATH Cost ($) | MBPP pass@1 | MBPP Cost ($) |
+|--------|-----------|---------------|-------------|---------------|
+| Qwen-2.5-72b (Single) | 63.80% | 0.032 | 69.76% | 0.009 |
+| o1-preview (Single) | 70.20% | 7.841 | 89.65% | 3.209 |
+| AFlow_Qwen | 66.38% | 3.846 | 80.84% | 1.598 |
+| DyLAN_Qwen | 64.17% | 16.864 | 75.63% | 8.973 |
+| **EvoFlow** | **72.90%** | **0.973** | **87.62%** | **0.565** |
+
+Key findings:
+- EvoFlow outperforms o1-preview by **+2.7%** on MATH at only **12.4% of the cost**
+- Training cost: **$0.459** vs AFlow $1.223 (**37.5%**)
+- Inference cost: **$0.513** vs AFlow $2.623 (**19.5%**)
+- Uses exclusively open-source models: LLaMa-3.1-70b, Qwen-2.5-72b, Deepseek-V2.5, Hermes-3-70b
+
+**Cross-Domain Settings** (MATH + MBPP combined training):
+
+| Method | LLM | MATH (solo) | MBPP (solo) | MATH+MBPP →MATH | MATH+MBPP →MBPP |
+|--------|-----|-------------|-------------|-----------------|-----------------|
+| DyLAN | Deepseek | 46.20 | 80.13 | 43.85 ↓ | 78.62 ↓ |
+| GPTSwarm | Deepseek | 45.36 | 77.52 | 39.18 ↓ | 74.09 ↓ |
+| AFlow | Deepseek | 48.65 | 79.14 | 43.22 ↓ | 77.02 ↓ |
+| **EvoFlow** | LLM Pool | **72.90** | **87.62** | 72.69 (≈) | **88.35** ↑ |
+
+EvoFlow **benefits** from cross-domain training (MBPP rises 87.62→88.35), while all baselines **degrade**. This demonstrates true complexity-adaptive routing.
+
+#### Ablation Study — What Matters Most
+
+| Variant | MATH | MBPP | Impact |
+|---------|------|------|--------|
+| Full EvoFlow | ~73% | ~88% | — |
+| w/o Tag-based Retrieval | ↓ significant | ↓ significant | **Critical** — high variance increase |
+| w/o LLM Mutation | ↓ significant | ↓ significant | **Critical** — high variance increase |
+| w/o Prompt Mutation | ↓ moderate | ↓ moderate | Important but not critical |
+| w/o Operator Mutation | ↓ 3.5–7.3% | ↓ 3.5–7.3% | Contributes meaningful gains |
+
+**Key takeaway:** Tag-based Retrieval and LLM Mutation are the two most critical components — removing either causes both performance drops AND variance increase (unreliable results).
+
+#### Parameter Sensitivity
+
+| Parameter | Optimum | Observation |
+|-----------|---------|-------------|
+| K (parent count) | 3 | Too small → low offspring diversity; Too large → LLM can't aggregate |
+| κ (tags per workflow) | 5 | Stable range |
+| N (population size) | 15 (trade-off) | N=5→25: +3.1% performance, but cost rises from 8e-4 to 2e-3 $/query |
+
+#### Pareto Front (evolved population)
+
+The evolved population forms a clear Pareto front:
+- **Simplest workflows:** Basic I/O + Self-Refine → 38.7% Acc, $0.00018/query
+- **Medium workflows:** Multi-agent Debate → balanced cost/performance
+- **Most complex workflows:** Iterative Generation + Ensembling → 72.57% Acc, $0.0037/query
+
+EvoFlow automatically selects the appropriate workflow at inference time based on query complexity.
+
+#### Unique Capabilities vs. All Baselines
+
+| Feature | EvoFlow | AFlow | AgentSquare | ADAS | GPTSwarm |
+|---------|---------|-------|-------------|------|---------|
+| Prompt Optimize | ✔ | ✔ | ✗ | ✔ | ✗ |
+| Agent Topology | ✔ | ✔ | ✔ | ✗ | ✔ |
+| Agent Profile | ✔ | ✔ | ✔ | ✔ | ✗ |
+| LLM Backbone (heterogeneous) | ✔ | ✗ | ✗ | ✗ | ✗ |
+| Complexity Adaptivity | ✔ | ✗ | ✗ | ✗ | ✗ |
+
+#### Limitations (derived from paper)
+
+1. **Operator repository is manually curated:** The initial 8 operators are hand-designed; the system can evolve new topologies but starts from manual primitives.
+2. **LLM-dependent mutation:** Crossover and mutation are LLM-facilitated → quality depends on the orchestrator LLM's ability to generate sensible workflows.
+3. **Evaluation on limited domains:** 6 benchmarks (Math, Code, Embodied) — no evaluation on open-ended generation, long-context reasoning, or multimodal tasks.
+4. **Population scalability:** Each query requires executing Parents + Niching Area + Offspring (K + E + 1 workflows). At N=15, K=3, E=5 that's ~9 workflow executions per training query.
+5. **No evaluation with stronger closed-source models in pool:** Heterogeneous settings tested only with open-source models.
+6. **Cross-domain generalization limited:** Only MATH+MBPP combined, no broader multi-domain evaluation.
 
 <div class="key-box green">
 <h4>💡 Key Insight</h4>
-<p>EvoFlow beat o1-preview on MATH at just 12.4% of the cost — by evolving a population of heterogeneous workflows with open-source models. Population diversity + multi-objective selection is the key mechanism.</p>
+<p>EvoFlow beat o1-preview on MATH at just 12.4% of the cost — by evolving a population of heterogeneous workflows with open-source models. Population diversity + multi-objective selection is the key mechanism. The ablation confirms: Tag-based Retrieval and LLM Mutation are the two non-negotiable components.</p>
 </div>
 
 ---
@@ -193,7 +341,7 @@ Base-Agent (lower level)
 | **Selektion** | Pareto (Qualität vs. Kosten) | Meta-Agent-Evaluation (+16,9%) | Task-Performance-Filtering |
 | **Diversitätsstrategie** | Niching / MAP-Elites-Stil | Skill-Spezialisierung | Code-Library-Wachstum |
 | **Speicherformat** | Text (Prompts + Graph) | Text (SKILL.md-Stil) | Ausführbarer Code |
-| **Bestes Ergebnis** | o1-preview geschlagen bei 12,4% Kosten | +16,9% Ø Verbesserung | Autonome Skill-Akkumulation |
+| **Bestes Ergebnis** | o1-preview geschlagen bei 12,4% Kosten; +4,15pp Ø über 6 Benchmarks; Cross-Domain-Transfer funktioniert | +16,9% Ø Verbesserung | Autonome Skill-Akkumulation |
 | **Nowak-Analogie** | Population mit Selektion (P2+P3) | Vererbung via Meta-Agent (P7) | Replikator-Akkumulation (P1) |
 | **arXiv** | [2502.07373](https://arxiv.org/abs/2502.07373) | [2601.21557](https://arxiv.org/abs/2601.21557) | [2603.18000](https://arxiv.org/abs/2603.18000) |
 
@@ -204,49 +352,197 @@ Base-Agent (lower level)
 
 **Kernidee:** Statt EINEN optimalen Workflow zu suchen, evolve eine POPULATION heterogener Workflows. Nutze Niching-Selektion (verwandt mit MAP-Elites) um Diversität und Qualität gleichzeitig zu erhalten.
 
-**Architektur (3 Ebenen):**
+**Zwei Kernprobleme bisheriger Ansätze:**
+- **Fehlende LLM-Heterogenität:** Bisherige Systeme nutzen ein einzelnes teures LLM (z.B. GPT-4o) für alle Agenten
+- **Fehlende Komplexitätsdiversität:** Optimierung konvergiert zu einem einzigen, komplexen Workflow; einfache Queries werden unnötig aufwändig bearbeitet
+
+**Architektur — Hierarchischer Search Space (3 Ebenen):**
 
 ```
-Workflow G = (O, Eᵃ)     ← Gerichteter Graph von Operator-Knoten
-  └── Operator Oⱼ = (Iⱼ, ξⱼ) ← Sammlung von Invoking Nodes + interne Konnektivität
-       └── Invoking Node Iᵢ = (Mᵢ, Pᵢ, τᵢ) ← LLM-Modell + Prompt + Temperature
+Workflow G = (Oˢ, Eᵃ)     ← Gerichteter Graph von Operator-Knoten + Inter-Operator-Konnektivität
+  └── Operator Oⱼ = (Iᵒⱼ, Eᵒⱼ) ← Subset von Invoking Nodes + interne Konnektivität
+       └── Invoking Node Iᵢ = (Mᵢ, Pᵢ, τᵢ) ← LLM-Instanz + Prompt + Temperatur
+            wobei Mᵢ = (|Mᵢ|, Cᵢ, Lᵢ) → Modellgröße, Token-Cost, Latenz
+            Feasible Space: I = M × P × ℝ[0,1]
 ```
 
-**Evolutionärer Zyklus:**
-1. **Tag-based Retrieval:** Wähle Eltern-Workflows aus der Population basierend auf Aufgaben-Tags
-2. **Crossover:** Kombiniere Elemente zweier Eltern-Workflows
-3. **Mutation (3 Typen):**
-   - LLM-Mutation: Anderes Modell einsetzen
-   - Prompt-Mutation: Template verfeinern
-   - Operator-Mutation: Workflow-Struktur ändern
-4. **Niching Selection:** Behalte diverse, hochperformante Workflows entlang der Pareto-Front (Quality vs. Cost)
+**Optimierungsziel (Multi-Objective):**
 
-**Optimierung:** Multi-Objective: `max{u(G,q), -c(G,q)}` — Utility maximieren, Cost minimieren.
+```
+G⋆ = arg max [u(G, T), −c(G, T)]ᵀ
+        G∈H(O,Eᵃ)
+```
 
-**Operator-Repository** (8 Typen aus dem Paper): CoT, LLM-Debate (3 Debatter, Majority Voting), Take-a-Step-Back, Self-Consistency (5 CoT-Pfade), Self-Refine (iterativ, max 5), Ensemble (3 LLMs + Pairwise Ranking), ReAct (Tool-Nutzung), ExpertPrompt (dynamische Control Flows).
+Wobei `u(·)` = Performance-Evaluator, `c(·)` = Cost-Evaluator. `G⋆` ist das Pareto-optimale Set.
+
+#### Operator-Repository (8 Typen)
+
+| Operator | Beschreibung |
+|----------|-------------|
+| **CoT** | Step-by-step Reasoning |
+| **LLM-Debate** | 3 Debatter, max 2 Runden, Majority Voting |
+| **Take-a-Step-Back** | Erst Prinzipien identifizieren, dann lösen |
+| **Self-Consistency** | 5 CoT-Pfade aggregiert via Majority Voting |
+| **Self-Refine** | CoT + iterative Selbstreflexion (max 5 Iterationen) |
+| **Ensemble** | 3 LLM-Agenten aus verschiedenen Quellen + Pairwise Ranking |
+| **ReAct** | Agent nutzt Tools (Code Interpreter, Web Search, Knowledge DB) |
+| **ExpertPrompt** | Dynamische Control Flows, Agent wählt Experten |
+
+#### Evolutionärer Algorithmus (Pseudocode)
+
+```
+Input: Dataset D (train/test), Operator Set O
+Output: Optimierte Population P
+
+// Phase 1: Population Initialization
+FOR k = 1 TO N:
+    Gₖ ← {Oₖ, Eᵃₖ}           // Zufällige Operator-Kombination
+    Tags ← f_tag(Gₖ)           // LLM-generierte Utility-Tags (κ=5 Stück)
+P⁽⁰⁾ = {G₁, G₂, ..., Gₙ}
+
+// Phase 2: Evolutionäre Optimierung (query-by-query)
+FOR each query qₜ IN D_train:
+    
+    // Schritt 1: Tag-based Retrieval
+    Parents {Gₜ₁,...,GₜK} = TopK(S({Gᵢ}|qₜ), K)
+    // S(Gᵢ|qₜ) = Σⱼ cosine_sim(v(κᵢ,ⱼ), v(qₜ))
+    // v(·) = all-MiniLM-L6-v2 Embeddings
+    
+    // Schritt 2: Crossover (LLM-facilitated)
+    G°⁽ᵗ⁾ ← Crossover(Gₜ₁, ..., GₜK)
+    
+    // Schritt 3: Mutation (3 Typen, sequenziell angewandt)
+    G⊚⁽ᵗ⁾ ← µₒ(µₚ(µₗ(G°⁽ᵗ⁾)))
+    
+    // Schritt 4: Niching-based Selection
+    // 4a: Niching Area identifizieren
+    PNA = TopK({−Rank(Gᵢ)}, E)
+    // Rank = RankS (Tag-Similarity) + Rankc (Cost-Similarity)
+    
+    // 4b: Alle relevanten Workflows ausführen
+    FOR Gᵢ IN PNA ∪ Parents ∪ {G⊚}:
+        Execute Gᵢ on qₜ → Update Running Avg Cost c⁽ᵗ⁾ + Performance p⁽ᵗ⁾
+    
+    // 4c: Fitness berechnen (Pareto-Indikator-basiert)
+    F(G) = Σ exp(I(G, G⊚) / (φ · Imax))   // φ = 0.05
+    
+    // 4d: Schlechtestes Individuum eliminieren
+    G_worst = argmax F(G) über PNA ∪ {G⊚}
+    P⁽ᵗ⁺¹⁾ ← P⁽ᵗ⁾ \ G_worst ∪ G⊚⁽ᵗ⁾
+
+RETURN P
+```
+
+#### Die 4 Evolutions-Operatoren im Detail
+
+| Operator | Typ | Mechanismus |
+|----------|-----|-----------|
+| **LLM Crossover** | Rekombination | LLM-facilitated: kombiniert strukturelle Elemente von K Eltern-Workflows zu einem neuen Offspring. Nicht zufällig — das LLM versteht die Eltern-Architekturen und produziert eine sinnvolle Synthese. |
+| **LLM Mutation `µₗ`** | Backbone-Tausch | LLM-gesteuerte Entscheidung basierend auf LLM Experience Pool `P_LLM`. Pool enthält pro LLM Triplets (Workflow, Positive/Negative/None Bewertung, qualitatives Feedback). Tauscht das LLM-Backbone eines Invoking Node basierend auf historischer Performance. |
+| **Prompt Refinement `µₚ`** | Prompt Engineering | LLM-gesteuert, nutzt Workflow Experience Pool `P_WF` mit Triplets (Workflow, Query, Evaluation mit quantitativem + qualitativem Feedback). Modifiziert Instruktionen, fügt Few-shot-Beispiele hinzu. |
+| **Operator Mutation `µₒ`** | Topologie-Änderung | Fügt Operatoren hinzu (`O_add`) oder entfernt sie (`O_del`), verdrahtet Topologie neu. Ändert die strukturelle Komposition des Workflows. |
+| **Niching Selection** | Diversitätserhalt | Identifiziert eine "Niching Area" (ähnliche Workflows nach Tag + Cost), evaluiert alle Kandidaten, eliminiert den schlechtesten via Pareto-Dominanz-preserving Binary Indicator. Verhindert Populations-Kollaps auf einen einzigen Workflow-Typ. |
 
 **Seed Population:** 4 initiale Workflow-Typen (Reflective Agent I/O, Arithmetic Collaborator, Lightweight Programmer, Advanced Multi-programmer).
 
-**Ergebnisse** (verifiziert am Volltext, Tabellen 1–4):
+#### Benchmark-Ergebnisse
 
-| Benchmark | EvoFlow | Beste Baseline (AFlow) | Verbesserung |
-|-----------|---------|----------------------|-------------|
-| GSM8K | 92,90% | 91,16% | +1,74pp |
-| MATH | 57,70% | 51,28% | +6,42pp |
-| HumanEval | 92,85% | 90,93% | +1,92pp |
-| MBPP | 84,50% | 81,67% | +2,83pp |
-| ALFWorld | 68,57% | 59,16% | +9,41pp |
+**Homogene Settings** (alle Methoden nutzen gpt-4o-mini):
 
-- o1-preview um **+2,7%** auf MATH übertroffen bei **12,4% der Kosten** (mit Open-Source-Modellen: LLaMa-3.1-70b, Qwen-2.5-72b, Deepseek-V2.5, Hermes-3-70b)
-- Training-Kosten: $0,459 vs. $1,223 (AFlow) — **37,5%**
-- Inferenz-Kosten: $0,513 vs. $2,623 (AFlow) — **19,5%**
-- Einzigartig: Einziges System mit **LLM-Heterogenität UND Komplexitäts-Adaptivität**
+| Methode | GSM8K | MATH | MultiArith | HumanEval | MBPP | ALFWorld | Avg. |
+|---------|-------|------|------------|-----------|------|----------|------|
+| Vanilla | 87,45 | 46,29 | 96,85 | 87,08 | 71,83 | 38,71 | 71,37 |
+| CoT | 87,10 | 46,40 | 96,31 | 88,13 | 71,83 | 39,92 | 71,62 |
+| SC (CoT×5) | 87,57 | 47,91 | 96,58 | 88,60 | 73,60 | 40,55 | 72,47 |
+| LLM-Debate | 89,47 | 48,54 | 97,33 | 88,68 | 70,29 | 44,68 | 73,17 |
+| DyLAN | 89,98 | 48,63 | 97,12 | 90,42 | 77,30 | 53,32 | 76,13 |
+| AgentVerse | 89,91 | 47,35 | 97,50 | 89,29 | 74,28 | 45,03 | 73,89 |
+| GPTSwarm | 89,14 | 47,88 | 96,79 | 89,32 | 77,43 | 53,19 | 75,63 |
+| ADAS | 86,12 | 43,18 | 96,02 | 84,19 | 68,13 | 47,66 | 70,88 |
+| AgentSquare | 87,62 | 48,51 | 97,77 | 89,08 | 78,46 | 66,42 | 78,14 |
+| AFlow | 91,16 | 51,28 | 96,22 | 90,93 | 81,67 | 59,16 | 78,40 |
+| **EvoFlow** | **92,90** | **57,70** | **98,80** | **92,85** | **84,50** | **68,57** | **82,55** |
 
-**Ablation** (was am meisten zählt): Tag-based Retrieval und LLM-Mutation sind kritisch — das Entfernen einer Komponente verursacht signifikante Performance-Einbrüche + Varianzanstieg. Operator-Mutation trägt 3,5–7,3% bei.
+**Verbesserung gegenüber SOTA (AFlow):** +1,23% bis +29,86% je nach Benchmark. Durchschnitt **+4,15pp**.
+
+**Heterogene Settings** (MATH & MBPP, Open-Source LLM Pool):
+
+| Methode | MATH Acc. | MATH Kosten ($) | MBPP pass@1 | MBPP Kosten ($) |
+|---------|-----------|-----------------|-------------|-----------------|
+| Qwen-2.5-72b (Single) | 63,80% | 0,032 | 69,76% | 0,009 |
+| o1-preview (Single) | 70,20% | 7,841 | 89,65% | 3,209 |
+| AFlow_Qwen | 66,38% | 3,846 | 80,84% | 1,598 |
+| DyLAN_Qwen | 64,17% | 16,864 | 75,63% | 8,973 |
+| **EvoFlow** | **72,90%** | **0,973** | **87,62%** | **0,565** |
+
+Zentrale Erkenntnisse:
+- EvoFlow übertrifft o1-preview um **+2,7%** auf MATH bei nur **12,4% der Kosten**
+- Training-Kosten: **$0,459** vs AFlow $1,223 (**37,5%**)
+- Inferenz-Kosten: **$0,513** vs AFlow $2,623 (**19,5%**)
+- Nutzt ausschließlich Open-Source-Modelle: LLaMa-3.1-70b, Qwen-2.5-72b, Deepseek-V2.5, Hermes-3-70b
+
+**Cross-Domain Settings** (MATH + MBPP kombiniertes Training):
+
+| Methode | LLM | MATH (solo) | MBPP (solo) | MATH+MBPP →MATH | MATH+MBPP →MBPP |
+|---------|-----|-------------|-------------|-----------------|-----------------|
+| DyLAN | Deepseek | 46,20 | 80,13 | 43,85 ↓ | 78,62 ↓ |
+| GPTSwarm | Deepseek | 45,36 | 77,52 | 39,18 ↓ | 74,09 ↓ |
+| AFlow | Deepseek | 48,65 | 79,14 | 43,22 ↓ | 77,02 ↓ |
+| **EvoFlow** | LLM Pool | **72,90** | **87,62** | 72,69 (≈) | **88,35** ↑ |
+
+EvoFlow **profitiert** von Cross-Domain-Training (MBPP steigt 87,62→88,35), während alle Baselines **degradieren**. Das demonstriert echte komplexitäts-adaptive Routing-Fähigkeit.
+
+#### Ablation Study — Was am meisten zählt
+
+| Variante | MATH | MBPP | Einfluss |
+|----------|------|------|----------|
+| Vollständiges EvoFlow | ~73% | ~88% | — |
+| w/o Tag-based Retrieval | ↓ signifikant | ↓ signifikant | **Kritisch** — hoher Varianzanstieg |
+| w/o LLM Mutation | ↓ signifikant | ↓ signifikant | **Kritisch** — hoher Varianzanstieg |
+| w/o Prompt Mutation | ↓ moderat | ↓ moderat | Wichtig, aber nicht kritisch |
+| w/o Operator Mutation | ↓ 3,5–7,3% | ↓ 3,5–7,3% | Trägt messbare Gewinne bei |
+
+**Zentrale Erkenntnis:** Tag-based Retrieval und LLM Mutation sind die beiden kritischsten Komponenten — das Entfernen einer der beiden verursacht sowohl Performance-Einbrüche ALS AUCH Varianzanstieg (unzuverlässige Ergebnisse).
+
+#### Parameter-Sensitivität
+
+| Parameter | Optimum | Beobachtung |
+|-----------|---------|-------------|
+| K (Eltern-Anzahl) | 3 | Zu klein → geringe Offspring-Diversität; Zu groß → LLM kann nicht aggregieren |
+| κ (Tags pro Workflow) | 5 | Stabiler Bereich |
+| N (Populationsgröße) | 15 (Trade-off) | N=5→25: +3,1% Performance, aber Cost steigt von 8e-4 auf 2e-3 $/query |
+
+#### Pareto-Front (evolvierte Population)
+
+Die evolvierte Population bildet eine klare Pareto-Front:
+- **Einfachste Workflows:** Basic I/O + Self-Refine → 38,7% Acc, $0,00018/query
+- **Mittlere Workflows:** Multi-agent Debate → balancierte Kosten/Performance
+- **Komplexeste Workflows:** Iterative Generation + Ensembling → 72,57% Acc, $0,0037/query
+
+EvoFlow wählt zur Inferenz automatisch den passenden Workflow basierend auf Query-Komplexität.
+
+#### Unique Capabilities vs. alle Baselines
+
+| Feature | EvoFlow | AFlow | AgentSquare | ADAS | GPTSwarm |
+|---------|---------|-------|-------------|------|---------|
+| Prompt Optimize | ✔ | ✔ | ✗ | ✔ | ✗ |
+| Agent Topology | ✔ | ✔ | ✔ | ✗ | ✔ |
+| Agent Profile | ✔ | ✔ | ✔ | ✔ | ✗ |
+| LLM Backbone (heterogen) | ✔ | ✗ | ✗ | ✗ | ✗ |
+| Complexity Adaptivity | ✔ | ✗ | ✗ | ✗ | ✗ |
+
+#### Limitationen (aus dem Paper abgeleitet)
+
+1. **Operator-Repository ist manuell kuratiert:** Die initialen 8 Operatoren werden manuell definiert; das System kann neue Topologien evolvieren, startet aber von Hand-designed Primitives.
+2. **LLM-abhängige Mutation:** Crossover und Mutation sind LLM-facilitated → Qualität hängt von der Fähigkeit des Orchestrator-LLMs ab, sinnvolle Workflows zu generieren.
+3. **Evaluation auf begrenzten Domains:** 6 Benchmarks (Math, Code, Embodied) — keine Evaluation auf Open-ended Generation, Long-Context Reasoning oder multimodale Tasks.
+4. **Skalierbarkeit der Population:** Jede Query erfordert Ausführung von Parents + Niching Area + Offspring (K + E + 1 Workflows). Bei N=15, K=3, E=5 werden pro Training-Query ~9 Workflows ausgeführt.
+5. **Keine Evaluation mit stärkeren Closed-Source-Modellen im Pool:** Heterogene Settings nur mit Open-Source-Modellen getestet.
+6. **Cross-Domain-Generalisierung begrenzt getestet:** Nur MATH+MBPP kombiniert, keine breitere Multi-Domain-Evaluation.
 
 <div class="key-box green">
 <h4>💡 Kernerkenntnis</h4>
-<p>EvoFlow schlägt o1-preview auf MATH bei nur 12,4% der Kosten — durch Evolution einer Population heterogener Workflows mit Open-Source-Modellen. Populationsdiversität + Multi-Objective-Selektion ist der Schlüsselmechanismus.</p>
+<p>EvoFlow schlägt o1-preview auf MATH bei nur 12,4% der Kosten — durch Evolution einer Population heterogener Workflows mit Open-Source-Modellen. Populationsdiversität + Multi-Objective-Selektion ist der Schlüsselmechanismus. Die Ablation bestätigt: Tag-based Retrieval und LLM Mutation sind die beiden nicht-verhandelbaren Komponenten.</p>
 </div>
 
 ---
