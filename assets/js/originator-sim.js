@@ -10,9 +10,10 @@
   // Simulation parameters
   var N = 80;           // number of sequences
   var species = [];     // {x, fitness, color, prelife}
-  var r = 0.0;          // replication rate (user controls this)
+  var r = 0.0;          // replication rate (user controls this, 0-3 internally)
   var d = 0.02;         // decay rate
   var dt = 0.05;
+  var rScale = 3.0;     // slider 0-1 maps to r 0-3 for dramatic effect
   // Term averages (for live display)
   var avgPrelife = 0, avgDecay = 0, avgSelection = 0;
 
@@ -37,7 +38,7 @@
 
     // Slider event — use both 'input' (dragging) and 'change' (release)
     function onSliderChange() {
-      r = parseFloat(slider.value);
+      r = parseFloat(slider.value) * rScale;  // map 0-1 slider to 0-3
       if (rLabel) rLabel.textContent = r.toFixed(2);
       updatePhaseLabel();
     }
@@ -59,7 +60,7 @@
       species.push({
         x: Math.random(),                    // abundance
         fitness: 0.3 + Math.random() * 0.7,  // fitness [0.3, 1.0]
-        prelife: 0.01 + Math.random() * 0.03, // prelife generation rate
+        prelife: 0.002 + Math.random() * 0.005, // prelife generation rate (small, so selection can dominate)
         hue: Math.floor(Math.random() * 360)
       });
     }
@@ -67,10 +68,10 @@
 
   function updatePhaseLabel() {
     var en = document.documentElement.getAttribute('data-lang') === 'de' ? false : true;
-    if (r < 0.15) {
+    if (r < 0.3) {
       phaseLabel.textContent = en ? '◀ Prelife — no replication, random diversity' : '◀ Prelife — keine Replikation, zufällige Diversität';
       phaseLabel.style.color = '#f59e0b';
-    } else if (r < 0.4) {
+    } else if (r < 1.2) {
       phaseLabel.textContent = en ? '⚡ Phase Transition — selection switches on at rₓ' : '⚡ Phasenübergang — Selektion schaltet ein bei rₓ';
       phaseLabel.style.color = '#60a5fa';
     } else {
@@ -94,7 +95,7 @@
       var s = species[i];
       // Originator equation terms
       var prelifeTerm = s.prelife;                         // aᵢ·xᵢ' (simplified)
-      var decayTerm = (d + 0.01) * s.x;                   // (d + aᵢ₀ + aᵢ₁)·xᵢ
+      var decayTerm = (d + 0.005) * s.x;                   // (d + aᵢ₀ + aᵢ₁)·xᵢ
       var selectionTerm = r * s.x * (s.fitness - phi);     // r·xᵢ·(fᵢ − φ)
 
       // Track per-species dominant term for coloring
@@ -108,7 +109,7 @@
       s.x += (prelifeTerm - decayTerm + selectionTerm) * dt;
 
       // Add small noise
-      s.x += (Math.random() - 0.5) * 0.002;
+      s.x += (Math.random() - 0.5) * 0.0005;
 
       // Floor only — no ceiling clamp
       if (s.x < 0.0001) s.x = 0.0001;
@@ -144,7 +145,7 @@
     for (var i = 0; i < N; i++) {
       if (sorted[i].x > maxX) maxX = sorted[i].x;
     }
-    if (maxX < 0.1) maxX = 0.1; // prevent division by tiny numbers
+    if (maxX < 0.001) maxX = 0.001; // prevent division by tiny numbers
 
     var barW = W / N;
     var maxBarH = H - 20; // leave 20px padding at top
