@@ -47,9 +47,14 @@
 .compare-card h4{margin:0 0 8px;font-size:0.95em}
 .compare-card.highlight{border-color:#1f6feb}
 @media(max-width:600px){.compare-grid{grid-template-columns:1fr}}
-/* Wider content area */
+/* Wider content area + sidebar closer to edge */
 @media(min-width:50rem){
-  .main{max-width:56rem!important}
+  .main{max-width:58rem!important}
+}
+@media(min-width:66.5rem){
+  .side-bar{width:calc((100% - 72rem) / 2 + 14rem)!important;min-width:14rem!important}
+  .side-bar+.main{margin-left:Max(14rem, calc((100% - 72rem) / 2 + 14rem))!important}
+  .site-nav,.site-header,.site-footer{width:14rem!important}
 }
 /* Progressive Disclosure — collapsible sections */
 details.disclosure{margin:1em 0;border:1px solid var(--border-color,#30363d);border-radius:8px;overflow:hidden}
