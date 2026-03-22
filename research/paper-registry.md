@@ -164,6 +164,10 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MermaidFlow: Safety-constrained Evolutionary Workflow Programming | — | arXiv | 2025 | — |
 | !! | EvolveR: Self-Evolving LLM Agents through Experience-Driven Lifecycle | — | arXiv | 2025 | 2510.16079 |
 | !! | AgentEvolver: Efficient Self-Evolving Agent System | — | arXiv | 2025 | 2511.10395 |
+| !!! | **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** | Zhang, Hu, Lu, Lange, **Clune** | arXiv | 2025 | **2505.22954** |
+| !! | EvoRL: Evolution of Agentic Workflows Using Reinforcement Learning | Attota, X | BigData Conf | 2025 | — |
+| !! | Polymath: Self-Optimizing Agent with Dynamic Hierarchical Workflow | — | arXiv | 2025 | 2508.02959 |
+| ! | Self-Organizing Agent Network for LLM-based Workflow Automation | — | arXiv | 2025 | 2508.13732 |
 
 </div>
 
@@ -182,6 +186,10 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MermaidFlow: Safety-constrained Evolutionary Workflow Programming | — | arXiv | 2025 | — |
 | !! | EvolveR: Self-Evolving LLM Agents through Experience-Driven Lifecycle | — | arXiv | 2025 | 2510.16079 |
 | !! | AgentEvolver: Efficient Self-Evolving Agent System | — | arXiv | 2025 | 2511.10395 |
+| !!! | **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** | Zhang, Hu, Lu, Lange, **Clune** | arXiv | 2025 | **2505.22954** |
+| !! | EvoRL: Evolution of Agentic Workflows Using Reinforcement Learning | Attota, X | BigData Conf | 2025 | — |
+| !! | Polymath: Self-Optimizing Agent with Dynamic Hierarchical Workflow | — | arXiv | 2025 | 2508.02959 |
+| ! | Self-Organizing Agent Network for LLM-based Workflow Automation | — | arXiv | 2025 | 2508.13732 |
 
 </div>
 
@@ -200,6 +208,9 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MAS-GPT: Training LLMs to Construct Multi-Agent Systems | — | ICML | 2025 | — |
 | !! | MAS-ZERO: Designing MAS with Zero Supervision | — | arXiv | 2025 | — |
 | !! | Evolving Interpretable Constitutions for Multi-Agent Coordination | Kumar et al. | arXiv | 2026 | 2602.00755 |
+| !!! | **CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards** | Xue et al. (CN) | arXiv | 2025 | **2510.08529** |
+| !! | EvoScientist: Multi-Agent Evolving AI Scientists for Scientific Discovery | Lyu et al. (CN) | arXiv | 2026 | 2603.08127 |
+| !! | Learning to Deliberate: Meta-policy Collaboration for Agentic LLMs | — | arXiv | 2025 | 2509.03817 |
 
 </div>
 
@@ -218,6 +229,9 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MAS-GPT: Training LLMs to Construct Multi-Agent Systems | — | ICML | 2025 | — |
 | !! | MAS-ZERO: Designing MAS with Zero Supervision | — | arXiv | 2025 | — |
 | !! | Evolving Interpretable Constitutions for Multi-Agent Coordination | Kumar et al. | arXiv | 2026 | 2602.00755 |
+| !!! | **CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards** | Xue et al. (CN) | arXiv | 2025 | **2510.08529** |
+| !! | EvoScientist: Multi-Agent Evolving AI Scientists for Scientific Discovery | Lyu et al. (CN) | arXiv | 2026 | 2603.08127 |
+| !! | Learning to Deliberate: Meta-policy Collaboration for Agentic LLMs | — | arXiv | 2025 | 2509.03817 |
 
 </div>
 
@@ -233,6 +247,10 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | Why Do Multi-Agent LLM Systems Fail? (MAST) | Cemri et al. | arXiv | 2025 | 2503.13657 |
 | !! | Multi-Agent Collaboration Mechanisms: A Survey | Tran et al. | arXiv | 2025 | 2501.06322 |
 | ! | Lessons from 2025 on Agents and Trust | Google Cloud | Report | 2025 | — |
+| !! | **AgenTracer: Who Is Inducing Failure in LLM Agentic Systems?** | — | arXiv | 2025 | 2509.03312 |
+| !! | Rethinking the Value of Multi-Agent Workflow: Strong Single Agent Baseline | — | arXiv | 2026 | 2601.12307 |
+| ! | AgentDropoutV2: Optimizing Information Flow in MAS via Pruning | — | arXiv | 2026 | 2602.23258 |
+| ! | SC-MAS: Cost-Efficient MAS with Edge-Level Heterogeneous Collaboration | — | arXiv | 2026 | 2601.09434 |
 
 </div>
 
@@ -248,6 +266,10 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | Why Do Multi-Agent LLM Systems Fail? (MAST) | Cemri et al. | arXiv | 2025 | 2503.13657 |
 | !! | Multi-Agent Collaboration Mechanisms: A Survey | Tran et al. | arXiv | 2025 | 2501.06322 |
 | ! | Lessons from 2025 on Agents and Trust | Google Cloud | Report | 2025 | — |
+| !! | **AgenTracer: Who Is Inducing Failure in LLM Agentic Systems?** | — | arXiv | 2025 | 2509.03312 |
+| !! | Rethinking the Value of Multi-Agent Workflow: Strong Single Agent Baseline | — | arXiv | 2026 | 2601.12307 |
+| ! | AgentDropoutV2: Optimizing Information Flow in MAS via Pruning | — | arXiv | 2026 | 2602.23258 |
+| ! | SC-MAS: Cost-Efficient MAS with Edge-Level Heterogeneous Collaboration | — | arXiv | 2026 | 2601.09434 |
 
 </div>
 
@@ -263,6 +285,8 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | TheraAgent: Multi-Agent with Self-Evolving Memory | Chen et al. (CN) | arXiv | 2026 | 2603.13676 |
 | !! | RetroAgent: Retrospective Dual Intrinsic Feedback | Zhang, Liu et al. (CN) | arXiv | 2026 | 2603.08561 |
 | ! | Steve-Evolving: Open-World Embodied Self-Evolution | Xie et al. (CN) | arXiv | 2026 | 2603.13131 |
+| !!! | **MemEvolve: Meta-Evolution of Agent Memory Systems** | — | arXiv | 2025 | **2512.18746** |
+| !! | Self-Evolving Distributed Memory Architecture for Scalable AI | — | arXiv | 2026 | 2601.05569 |
 
 </div>
 
@@ -278,6 +302,8 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | TheraAgent: Multi-Agent with Self-Evolving Memory | Chen et al. (CN) | arXiv | 2026 | 2603.13676 |
 | !! | RetroAgent: Retrospective Dual Intrinsic Feedback | Zhang, Liu et al. (CN) | arXiv | 2026 | 2603.08561 |
 | ! | Steve-Evolving: Open-World Embodied Self-Evolution | Xie et al. (CN) | arXiv | 2026 | 2603.13131 |
+| !!! | **MemEvolve: Meta-Evolution of Agent Memory Systems** | — | arXiv | 2025 | **2512.18746** |
+| !! | Self-Evolving Distributed Memory Architecture for Scalable AI | — | arXiv | 2026 | 2601.05569 |
 
 </div>
 
@@ -339,11 +365,12 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 
 ## Statistics
 
-- **Total Papers:** 50+
-- **!!! (Must-Read):** 15
-- **Chinese involvement:** ~20 papers (marked CN)
-- **2026 Papers:** 18 (12 of which from March 2026)
-- **Open Repos:** EvoAgentX, EvoFlow (to check), pyribs, QDax, MultiAgentBench
+- **Total Papers:** 60+
+- **!!! (Must-Read):** 19
+- **Chinese involvement:** ~25 papers (marked CN)
+- **2026 Papers:** 20+
+- **Open Repos:** EvoAgentX, EvoFlow, CoMAS, Darwin Gödel Machine, pyribs, QDax, MultiAgentBench
+- **Last updated:** 2026-03-22 (added 13 papers via Semantic Scholar citation graph + CJK scan)
 
 </div>
 
@@ -351,10 +378,11 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 
 ## Statistik
 
-- **Total Papers:** 50+
-- **!!! (Must-Read):** 15
-- **Chinesische Beteiligung:** ~20 Papers (CN markiert)
-- **2026 Papers:** 18 (davon 12 aus März 2026)
-- **Offene Repos:** EvoAgentX, EvoFlow (zu prüfen), pyribs, QDax, MultiAgentBench
+- **Total Papers:** 60+
+- **!!! (Must-Read):** 19
+- **Chinesische Beteiligung:** ~25 Papers (CN markiert)
+- **2026 Papers:** 20+
+- **Offene Repos:** EvoAgentX, EvoFlow, CoMAS, Darwin Gödel Machine, pyribs, QDax, MultiAgentBench
+- **Zuletzt aktualisiert:** 22.03.2026 (13 Papers via Semantic Scholar Citation Graph + CJK-Scan hinzugefügt)
 
 </div>

@@ -155,7 +155,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
-<div class="key-box amber"><h4>⚠️ Gap</h4><p>No CJK language support. Missing CNKI, Wanfang, Baidu Scholar, CiNii, J-STAGE, RISS. Estimated 30–50% of relevant work invisible.</p></div>
+<div class="key-box green"><h4>✅ Partially Addressed (2026-03-22)</h4><p>CJK scan completed via Semantic Scholar citation graph + targeted Chinese keyword search. Found 5 new CJK-authored papers (CoMAS, EvoScientist, etc.). ~25 papers now have CN tag. Systematic CNKI/Wanfang pipeline still missing, but coverage improved significantly.</p></div>
 
 **Problem:** Our entire research pipeline is English/German. This topic spans communities that publish heavily in Chinese, Japanese, and Korean.
 
@@ -179,7 +179,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="de" markdown="1">
 
-<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Keine CJK-Sprachunterstützung. CNKI, Wanfang, Baidu Scholar, CiNii, J-STAGE, RISS fehlen. Geschätzt 30–50 % relevanter Arbeiten unsichtbar.</p></div>
+<div class="key-box green"><h4>✅ Teilweise adressiert (22.03.2026)</h4><p>CJK-Scan durchgeführt via Semantic Scholar Citation Graph + gezielte chinesische Keyword-Suche. 5 neue CJK-Papers gefunden (CoMAS, EvoScientist etc.). ~25 Papers haben jetzt CN-Tag. Systematische CNKI/Wanfang-Pipeline fehlt noch, aber Abdeckung deutlich verbessert.</p></div>
 
 **Problem:** Unsere gesamte Research-Pipeline ist Englisch/Deutsch. Das Thema umfasst Communities, die stark auf Chinesisch, Japanisch und Koreanisch publizieren.
 
@@ -205,7 +205,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
-<div class="key-box amber"><h4>⚠️ Gap</h4><p>No Semantic Scholar, arXiv API, or Google Scholar integration. No citation graph traversal, no PDF pipeline, no reference management.</p></div>
+<div class="key-box green"><h4>✅ Partially Addressed (2026-03-22)</h4><p>Semantic Scholar API successfully used for citation graph traversal (Nowak 2008: 110 citations, EvoFlow: 31 citations). Found 13 new papers through forward citations alone. No persistent integration yet — manual API calls via web_fetch.</p></div>
 
 **Problem:** No native integration with academic search systems. We rely on WebSearch to find papers, which is imprecise and misses citation context.
 
@@ -229,7 +229,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="de" markdown="1">
 
-<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Kein Semantic Scholar, arXiv API oder Google Scholar. Kein Citation Graph Traversal, keine PDF-Pipeline, kein Reference Management.</p></div>
+<div class="key-box green"><h4>✅ Teilweise adressiert (22.03.2026)</h4><p>Semantic Scholar API erfolgreich für Citation Graph Traversal genutzt (Nowak 2008: 110 Zitationen, EvoFlow: 31 Zitationen). 13 neue Papers allein durch Vorwärts-Zitationen gefunden. Noch keine persistente Integration — manuelle API-Calls via web_fetch.</p></div>
 
 **Problem:** Keine native Integration mit akademischen Suchsystemen. Wir nutzen WebSearch zum Finden von Papers, was ungenau ist und Citation-Kontext verpasst.
 

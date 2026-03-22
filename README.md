@@ -6,7 +6,7 @@
 
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://janrummel.github.io/evolving-agents/)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Papers](https://img.shields.io/badge/Papers-50%2B-blue)](https://janrummel.github.io/evolving-agents/research/paper-registry)
+[![Papers](https://img.shields.io/badge/Papers-60%2B-blue)](https://janrummel.github.io/evolving-agents/research/paper-registry)
 [![Principles](https://img.shields.io/badge/Principles-7-green)](https://janrummel.github.io/evolving-agents/principles/)
 
 ---

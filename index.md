@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Why do some AI agent systems get better over time? Nowak's math, 50+ papers, 7 principles, and an interactive simulation."
+description: "Why do some AI agent systems get better over time? Nowak's math, 60+ papers, 7 principles, and an interactive simulation."
 ---
 
 <style>
@@ -366,7 +366,7 @@ EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3
 
 <div class="stat-row">
   <div class="stat-item">
-    <span class="stat-number">50+</span>
+    <span class="stat-number">60+</span>
     <span class="stat-label">Papers</span>
   </div>
   <div class="stat-item">
@@ -468,7 +468,7 @@ EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3
 </details>
 <details>
 <summary><strong>What can I DO with this?</strong></summary>
-<p>Use the <a href="/evolving-agents/principles/">7 principles</a> as a design checklist. Implement the <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase 1 feedback loop</a>. Read the <a href="/evolving-agents/research/paper-registry">50+ papers</a>.</p>
+<p>Use the <a href="/evolving-agents/principles/">7 principles</a> as a design checklist. Implement the <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase 1 feedback loop</a>. Read the <a href="/evolving-agents/research/paper-registry">60+ papers</a>.</p>
 </details>
 </div>
 
@@ -491,7 +491,7 @@ EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3
 ---
 
 <div lang="en" markdown="1">
-> This is a **research synthesis**, not a systematic review. Analysis is based on abstracts, summaries, and cross-verified data from 50+ papers. Counter-arguments [documented](/evolving-agents/research/counter-arguments). [Full limitations →](/evolving-agents/meta/limitations)
+> This is a **research synthesis**, not a systematic review. Analysis is based on abstracts, summaries, and cross-verified data from 60+ papers. Counter-arguments [documented](/evolving-agents/research/counter-arguments). [Full limitations →](/evolving-agents/meta/limitations)
 {: .warning }
 </div>
 <div lang="de" markdown="1">
