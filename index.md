@@ -61,6 +61,48 @@ Eine lebende Forschungssammlung und praktische Design-Prinzipien an der Schnitts
 
 <div lang="en" markdown="1">
 
+## The Originator Equation
+
+Martin A. Nowak (Harvard, Program for Evolutionary Dynamics) formalized a fundamental question: **When do chemical kinetics become evolutionary dynamics?** His answer — the Originator Equation — describes the transition from "Prelife" (generative chemistry without replication) to "Life" (systems with replication and selection):
+
+</div>
+
+<div lang="de" markdown="1">
+
+## Die Originator-Gleichung
+
+Martin A. Nowak (Harvard, Program for Evolutionary Dynamics) formalisierte eine fundamentale Frage: **Wann werden chemische Kinetiken zu evolutionärer Dynamik?** Seine Antwort — die Originator-Gleichung — beschreibt den Übergang von "Prelife" (generative Chemie ohne Replikation) zu "Life" (Systeme mit Replikation und Selektion):
+
+</div>
+
+<div class="equation-box" style="background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:24px;margin:24px 0;text-align:center">
+  <code style="font-size:1.3em;color:#e6edf3;letter-spacing:0.5px">ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)</code>
+</div>
+
+<div lang="en">
+<table>
+<tr><td style="white-space:nowrap;padding-right:16px"><code>aᵢ · xᵢ'</code></td><td><strong>Prelife dynamics</strong> — sequences arise from precursors through addition of activated monomers</td></tr>
+<tr><td style="padding-right:16px"><code>(d + aᵢ₀ + aᵢ₁) · xᵢ</code></td><td><strong>Decay</strong> — sequences degrade and get processed into longer sequences</td></tr>
+<tr><td style="padding-right:16px"><code>r · xᵢ · (fᵢ − φ)</code></td><td><strong>Selection</strong> — standard selection equation of evolutionary dynamics</td></tr>
+</table>
+<p style="margin-top:16px"><strong>Two limiting cases:</strong> When <code>r → 0</code>, no replication — pure Prelife. When <code>r → ∞</code>, replication dominates — standard evolution. Between them lies a <strong>phase transition</strong> at a critical replication rate <code>rₓ</code> where selection "switches on."</p>
+<p><a href="/evolving-agents/research/nowak-synthesis">Full mathematical synthesis →</a></p>
+</div>
+
+<div lang="de">
+<table>
+<tr><td style="white-space:nowrap;padding-right:16px"><code>aᵢ · xᵢ'</code></td><td><strong>Prelife-Dynamik</strong> — Sequenzen entstehen aus Vorläufern durch Addition aktivierter Monomere</td></tr>
+<tr><td style="padding-right:16px"><code>(d + aᵢ₀ + aᵢ₁) · xᵢ</code></td><td><strong>Zerfall</strong> — Sequenzen zerfallen und werden zu längeren Sequenzen verarbeitet</td></tr>
+<tr><td style="padding-right:16px"><code>r · xᵢ · (fᵢ − φ)</code></td><td><strong>Selektion</strong> — Standard-Selektionsgleichung der Evolutionsdynamik</td></tr>
+</table>
+<p style="margin-top:16px"><strong>Zwei Grenzfälle:</strong> Bei <code>r → 0</code> keine Replikation — reines Prelife. Bei <code>r → ∞</code> dominiert Replikation — Standard-Evolution. Dazwischen liegt ein <strong>Phasenübergang</strong> bei einer kritischen Replikationsrate <code>rₓ</code>, an dem Selektion "einschaltet."</p>
+<p><a href="/evolving-agents/research/nowak-synthesis">Vollständige mathematische Synthese →</a></p>
+</div>
+
+---
+
+<div lang="en" markdown="1">
+
 ## The Core Insight
 
 > There is a structural analogy between biological evolution and agent system improvement. Replication, mutation, and selection map onto workflow reuse, prompt variation, and evaluation. This analogy is a **design heuristic**, not a formal proof — see [Counter-Arguments](/evolving-agents/research/counter-arguments) for where it breaks.

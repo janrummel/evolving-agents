@@ -5,6 +5,20 @@ parent: Engineering
 nav_order: 1
 ---
 
+<div lang='en' markdown='1'>
+
+# Phase 1 Spec: Closing the Feedback Loop
+
+**Goal:** Move the evolutionary loop from "Prelife" (feedback dies after Quality Gate) to "Proto-Life" (feedback flows into skill evaluation and triggers improvement).
+
+**Scope:** Minimal Viable Feedback Loop. No automatic mutation — only measure, make visible, set triggers.
+
+**Inspired by:** EvoFlow (Pareto: Quality + Cost), EvoAgentX (Evaluation Layer), MCE (History of skills, executions, evaluations)
+
+</div>
+
+<div lang='de' markdown='1'>
+
 # Phase 1 Spec: Feedback-Loop schließen
 
 **Ziel:** Den evolutionären Loop von "Prelife" (Feedback stirbt nach Quality-Gate) zu "Proto-Life" (Feedback fließt in Skill-Bewertung und triggert Verbesserung) bringen.
@@ -13,7 +27,26 @@ nav_order: 1
 
 **Inspiriert von:** EvoFlow (Pareto: Quality + Cost), EvoAgentX (Evaluation Layer), MCE (History of skills, executions, evaluations)
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## Current State (AS-IS)
+
+| Component | Tool | What It Provides | Where It Ends |
+|-----------|------|-------------------|---------------|
+| Skill Execution | orchestrator-routing | Which skill for which intent | Log in knowledge.db (skills_usage) |
+| Token Usage | Pulse | Tokens/Session, Velocity | Pulse DB (SQLite) |
+| Quality | Quality-Gate / signal-check | Quality score per output | memory/quality-scores.md |
+| Routing History | routing-log | Skill → Trigger → Outcome | knowledge.db |
+
+**The Problem:** These 4 data streams are not connected. We don't know: "Skill X costs on average Y tokens and delivers quality score Z."
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Was existiert (IST)
 
@@ -26,7 +59,93 @@ nav_order: 1
 
 **Das Problem:** Diese 4 Datenströme sind nicht verbunden. Wir wissen nicht: "Skill X kostet durchschnittlich Y Tokens und liefert Quality-Score Z."
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## What Needs to Be Built (TARGET)
+
+### 1. Skill Performance Log (Core)
+
+**What:** After each skill execution, write a structured entry to a central table.
+
+```sql
+CREATE TABLE IF NOT EXISTS skill_performance (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT NOT NULL,
+    skill_name TEXT NOT NULL,
+    task_type TEXT,            -- 'research', 'writing', 'analysis', 'code', 'review'
+    quality_score REAL,        -- 0.0-1.0, from Quality-Gate/signal-check
+    token_cost INTEGER,        -- Tokens consumed (Input + Output)
+    duration_seconds REAL,     -- Wall time
+    outcome TEXT,              -- 'success', 'partial', 'failure', 'skipped'
+    project TEXT,              -- Project name (from Working Directory / Project State)
+    notes TEXT                 -- Optional: Why success/failure
+);
+```
+
+**Where:** `~/.claude/data/knowledge.db` (already exists, used for skills_usage)
+
+**When:** At the end of each skill execution. Can be implemented as a hook or manually via routing log update.
+
+### 2. Aggregated Skill Metrics (View)
+
+```sql
+CREATE VIEW IF NOT EXISTS skill_metrics AS
+SELECT
+    skill_name,
+    COUNT(*) as total_uses,
+    AVG(quality_score) as avg_quality,
+    AVG(token_cost) as avg_cost,
+    AVG(duration_seconds) as avg_duration,
+    SUM(CASE WHEN outcome = 'success' THEN 1 ELSE 0 END) * 1.0 / COUNT(*) as success_rate,
+    MIN(timestamp) as first_used,
+    MAX(timestamp) as last_used
+FROM skill_performance
+GROUP BY skill_name;
+```
+
+**Usage:** `SELECT * FROM skill_metrics ORDER BY avg_quality DESC;` instantly shows the best/worst skills.
+
+### 3. Pareto View (Quality vs. Cost)
+
+```sql
+-- Skills that deliver above-average quality for their cost
+SELECT
+    skill_name,
+    avg_quality,
+    avg_cost,
+    total_uses,
+    CASE
+        WHEN avg_quality > (SELECT AVG(avg_quality) FROM skill_metrics)
+         AND avg_cost < (SELECT AVG(avg_cost) FROM skill_metrics)
+        THEN 'PARETO-OPTIMAL'
+        WHEN avg_quality < (SELECT AVG(avg_quality) FROM skill_metrics)
+         AND avg_cost > (SELECT AVG(avg_cost) FROM skill_metrics)
+        THEN 'DOMINATED'
+        ELSE 'TRADE-OFF'
+    END as pareto_status
+FROM skill_metrics
+WHERE total_uses >= 3  -- At least 3 uses for reliable data
+ORDER BY avg_quality DESC;
+```
+
+### 4. Automatic Triggers (Alerts, Not Actions)
+
+| Trigger | Condition | Action |
+|---------|-----------|--------|
+| **Quality Drop** | avg_quality < 0.5 AND total_uses >= 5 | "Skill X has low quality. Review needed?" |
+| **Cost Outlier** | avg_cost > 2× median of all skills | "Skill X costs twice the median." |
+| **Unused Skill** | last_used > 30 days | "Skill X unused for 30 days. Still relevant?" |
+| **New Champion** | New skill has higher avg_quality than current default for task_type | "Skill Y outperforms Skill X for [task_type]." |
+
+**Important:** Phase 1 only triggers alerts to the user. No automatic changes. The human decides.
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Was gebaut werden muss (SOLL)
 
@@ -106,7 +225,35 @@ ORDER BY avg_quality DESC;
 
 **Wichtig:** Phase 1 triggert nur Alerts an den User. Keine automatischen Änderungen. Der Mensch entscheidet.
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## Integration into Existing Components
+
+### orchestrator-routing (modify)
+
+After skill execution → `INSERT INTO skill_performance`. The routing log entry (`skills_usage`) is either extended with performance fields OR skill_performance is maintained as a separate, more detailed log.
+
+**Recommendation:** Separate log. skills_usage remains the routing log (why was it routed), skill_performance is the performance log (how good was the result).
+
+### Quality-Gate (modify)
+
+Quality score is currently written to `memory/quality-scores.md`. Additionally: `INSERT INTO skill_performance` with the score.
+
+### Pulse (read, don't modify)
+
+Pulse tracks token usage per session. For Phase 1: Manually derive the token count per skill usage from the session. For Phase 2: Link Pulse events directly to skill_performance.
+
+### improve Skill (modify)
+
+The improve skill ("improve routing") gets access to the `skill_metrics` view. Instead of only routing logs: real performance data as a basis for improvement suggestions.
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Integration in bestehende Komponenten
 
@@ -128,7 +275,46 @@ Pulse trackt Token-Verbrauch pro Session. Für Phase 1: Manuell den Token-Count 
 
 Der improve-Skill ("Routing verbessern") bekommt Zugriff auf `skill_metrics` View. Statt nur Routing-Logs: echte Performance-Daten als Basis für Verbesserungsvorschläge.
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## Implementation Plan
+
+### Step 1: Create Schema (5 min)
+```bash
+sqlite3 ~/.claude/data/knowledge.db < schema.sql
+```
+
+### Step 2: Define Logging Hook (30 min)
+- Option A: Claude Code Hook (`post_tool_call`) that writes the performance entry after a skill tool call
+- Option B: Manual block at the end of each skill: "Log Performance"
+- **Recommendation:** Option A (Hook) — automatic, no manual effort
+
+### Step 3: Extend Routing Log Entry (15 min)
+```sql
+-- Update existing skills_usage entry with outcome
+UPDATE skills_usage SET outcome = '<success|partial|failure>' WHERE id = <last_insert>;
+```
+
+### Step 4: Test Metrics Query (15 min)
+- Create view
+- Insert test data
+- Validate `SELECT * FROM skill_metrics`
+
+### Step 5: Build Trigger Logic into improve Skill (1h)
+- Alerts as part of the improve output
+- Pareto classification per skill
+
+### Step 6: Collect for 2 Weeks, Then Evaluate
+- At least 50 skill executions for reliable statistics
+- First insights: Which skills are Pareto-optimal? Which are dominated?
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Implementierungsplan
 
@@ -161,7 +347,25 @@ UPDATE skills_usage SET outcome = '<success|partial|failure>' WHERE id = <last_i
 - Mindestens 50 Skill-Ausführungen für belastbare Statistik
 - Erste Erkenntnisse: Welche Skills sind Pareto-optimal? Welche dominated?
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## What Phase 1 Does NOT Do
+
+- ❌ Automatic mutation of skills
+- ❌ A/B testing of skill variants
+- ❌ Crossover (new skills from existing ones)
+- ❌ Population management (Niching)
+- ❌ Automatic workflow topology changes
+
+All of that is Phase 2+. Phase 1 delivers the **data foundation**, without which no evolution is possible.
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Was Phase 1 NICHT tut
 
@@ -173,7 +377,25 @@ UPDATE skills_usage SET outcome = '<success|partial|failure>' WHERE id = <last_i
 
 All das ist Phase 2+. Phase 1 liefert die **Datenbasis**, ohne die keine Evolution möglich ist.
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## Success Criteria
+
+| Criterion | Measurement |
+|-----------|-------------|
+| Performance data is being collected | ≥ 50 entries after 2 weeks |
+| Pareto view works | At least 1 skill identified as PARETO-OPTIMAL, 1 as DOMINATED |
+| First alert fires | At least 1 Quality Drop or Cost Outlier alert |
+| improve skill uses data | improve output references skill_metrics |
+| User decision is made | At least 1 skill change based on performance data |
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Erfolgskriterien
 
@@ -185,7 +407,23 @@ All das ist Phase 2+. Phase 1 liefert die **Datenbasis**, ohne die keine Evoluti
 | improve-Skill nutzt Daten | improve-Output referenziert skill_metrics |
 | User-Entscheidung wird getroffen | Mindestens 1 Skill-Änderung basierend auf Performance-Daten |
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## Connection to Nowak
+
+This Phase 1 implements the **measurement apparatus** — Nowak's `fᵢ` (fitness per individual) and `φ` (population average). Without this measurement there is no selection pressure, only drift.
+
+The Pareto view (Quality vs. Cost) is the first step toward multi-objective selection — EvoFlow's core idea, applied to our system.
+
+The triggers are the **selection pressure** — they don't force change, but they make visible WHERE change would be needed. This is the transition from "no signal" to "signal present" — the first step of the phase transition.
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Verbindung zu Nowak
 
@@ -194,3 +432,5 @@ Diese Phase 1 implementiert den **Messapparat** — Nowaks `fᵢ` (Fitness pro I
 Die Pareto-Ansicht (Quality vs. Cost) ist der erste Schritt zu Multi-Objective-Selektion — EvoFlow's Kernidee, auf unser System übertragen.
 
 Die Trigger sind der **Selektionsdruck** — sie erzwingen keine Änderung, aber sie machen sichtbar, WO Änderung nötig wäre. Das ist der Übergang von "kein Signal" zu "Signal vorhanden" — der erste Schritt des Phasenübergangs.
+
+</div>
