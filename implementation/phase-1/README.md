@@ -5,10 +5,10 @@ parent: Engineering
 nav_order: 2
 ---
 
-# Phase 1 Implementation — OpenClaw / Mac mini
+# Phase 1 Implementation
 
 **Status:** ✅ Deployed (2026-03-22)
-**Platform:** OpenClaw on Mac mini (5 agents: main + α/β/γ/δ)
+**Platform:** Multi-agent system (5 agents: main + α/β/γ/δ)
 **Spec:** [Phase 1: Feedback Loop](../../specs/phase-1-feedback-loop.md)
 
 ## Quickstart (3 commands)
@@ -69,13 +69,13 @@ Alerts are advisory only — no automatic changes (Phase 1 principle).
 1. **Reused existing `metrics.db`** instead of creating a new DB — keeps everything in one place
 2. **Shell scripts, not Python** — zero dependencies, works from any agent
 3. **agent_id field** — tracks which of the 5 agents executed which skill, enabling Q3 (Collaboration Gain) analysis later
-4. **Manual logging, not hooks** — OpenClaw doesn't have post-execution hooks yet; agents are instructed via AGENTS.md to log after every skill use
+4. **Manual logging, not hooks** — The platform doesn't have post-execution hooks yet; agents are instructed via AGENTS.md to log after every skill use
 
 ## Adaptation from Spec
 
-The original spec targets Claude Code with `knowledge.db` and post_tool_call hooks. This implementation adapts to OpenClaw:
+The original spec targets `knowledge.db` and post_tool_call hooks. This implementation adapts to the target platform:
 
-| Spec (Claude Code) | Implementation (OpenClaw) |
+| Original Spec | Adapted Implementation |
 |---------------------|---------------------------|
 | knowledge.db | metrics.db (already existed) |
 | post_tool_call hook | Manual logging via AGENTS.md instruction |

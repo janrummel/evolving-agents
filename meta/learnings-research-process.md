@@ -8,7 +8,7 @@ nav_order: 2
 # Research Process Learnings
 
 Erkenntnisse aus der ersten Recherche-Runde (2026-03-19).
-Jedes Learning ist für unser AgentField-System nutzbar.
+Jedes Learning ist für Agent-Systeme nutzbar.
 
 ---
 
@@ -16,7 +16,7 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 **Was passiert ist:** 3 parallele WebFetch-Calls an Semantic Scholar API → 2 von 3 gaben HTTP 429 (Too Many Requests). Auch sequentieller Retry nach wenigen Sekunden → erneut 429.
 
-**Implikation für uns:**
+**Praktische Implikation:**
 - Semantic Scholar erlaubt ~1 Request/Sekunde ohne API Key
 - Mit API Key (kostenlos, per Mail) → 100 Requests/Sekunde
 - Unsere research-pipeline muss Calls sequentiell mit Cooldown machen, oder besser: API Key holen
@@ -34,7 +34,7 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 **Was passiert ist:** Ein einziger WebFetch auf die [Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) Liste lieferte sofort ~30 kategorisierte Papers mit Taxonomie, deutlich effizienter als 10 einzelne API-Calls.
 
-**Implikation für uns:**
+**Praktische Implikation:**
 - Awesome-Listen sind kuratiert, strukturiert, aktuell (Community-maintained)
 - Sie geben Taxonomie gratis mit — wie das Feld sich selbst organisiert
 - Für neue Themen: Erst "awesome-[topic]" auf GitHub suchen, dann vertiefen
@@ -51,14 +51,14 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 **Was passiert ist:** 3 parallele arXiv-API-Calls → alle 3 erfolgreich, zusammen 35 Papers. Kein Rate Limiting, sofort Ergebnisse.
 
-**Implikation für uns:**
+**Praktische Implikation:**
 - arXiv API ist der robusteste Zugang für Paper-Discovery
 - XML-Format wird von WebFetch gut verarbeitet
 - Sortierung nach submittedDate gibt sofort die neuesten Papers
 
 **Systemverbesserung:**
 - [ ] arXiv als primäre Paper-Discovery-Quelle in research-pipeline einbauen
-- [ ] Standard-Queries definieren für unsere Kern-Themen (monitoring-ready)
+- [ ] Standard-Queries definieren für die Kern-Themen (monitoring-ready)
 
 **Prinzip:** *Öffentliche, unlimitierte APIs bevorzugen. arXiv > Semantic Scholar für Discovery.*
 
@@ -72,7 +72,7 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 - Zhihu-Diskussionen mit eigenen Perspektiven
 - Foundation Agents Survey (MetaGPT + Mila, 47 Autoren)
 
-**Implikation für uns:**
+**Praktische Implikation:**
 - ~30-50% der relevanten Arbeit ist nur über chinesische Suche auffindbar
 - Zhihu (知乎) ist Chinas StackOverflow/Medium-Äquivalent — dort diskutieren Forscher informell
 - CAICT Reports sind Chinas Äquivalent zu NIST/EU-Whitepapers
@@ -93,13 +93,13 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 **Was passiert ist:** 12 relevante neue Papers allein in der ersten Märzhälfte 2026. AgentFactory (vorgestern!), SEMAG, SAGE, OpenHospital — alles brandneu.
 
-**Implikation für uns:**
+**Praktische Implikation:**
 - Statische Literaturlisten sind nach 2 Wochen veraltet
 - Ohne automatisches Monitoring verpassen wir schnell wichtige Entwicklungen
 - Die Awesome-Liste wird community-maintained aktualisiert
 
 **Systemverbesserung:**
-- [ ] arXiv RSS/API-basiertes Weekly Digest für unsere Keywords einrichten
+- [ ] arXiv RSS/API-basiertes Weekly Digest für die relevanten Keywords einrichten
 - [ ] Awareness-Metrik: "Wie alt ist unser neuester Eintrag?" als Monitoring-Signal
 
 **Prinzip:** *In schnellen Feldern ist Monitoring wichtiger als einmalige Recherche.*
@@ -110,12 +110,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 **Was passiert ist:** EvoFlow (2502.07373, 31 Zitationen) nutzt explizit Niching Evolutionary Algorithms (verwandt mit MAP-Elites/Quality-Diversity) für Agent-Workflow-Evolution. Es übertraf o1-preview um 2.7% bei 12.4% der Kosten.
 
-**Implikation für uns:**
+**Praktische Implikation:**
 - Die Brücke Nowak → Agent-Systeme ist NICHT nur theoretisch — EvoFlow implementiert sie
 - Niching-basierte Selektion = Nowaks Populationsdiversität in der Praxis
 - Open-Source-Modelle + Evolution > einzelnes großes Modell (Kosten-/Performance-Argument)
 
-**Für AgentField konkret:**
+**Praktische Konsequenz:**
 - EvoFlow's Architektur studieren: Tag-basiertes Retrieval + Crossover + Mutation + Niching Selection
 - Prüfen ob unser Skill-System ähnliche Muster zeigt (Skills als "Individuen", Quality-Gate als "Selection")
 
@@ -123,16 +123,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 ---
 
-## L7: Meta Context Engineering = formalisiertes AgentField
+## L7: Meta Context Engineering = formalisierte Agent-Systeme
 
-**Was passiert ist:** MCE Paper (2601.21557) beschreibt genau das, was AgentField manuell tut: Skills und Context-Artefakte ko-evolvieren. Meta-Agent verfeinert Skills durch deliberative Search, Base-Agent führt aus. 5.6-53.8% Verbesserung über SOTA.
+**Was passiert ist:** MCE Paper (2601.21557) beschreibt genau das, was Agent-Systeme manuell tun: Skills und Context-Artefakte ko-evolvieren. Meta-Agent verfeinert Skills durch deliberative Search, Base-Agent führt aus. 5.6-53.8% Verbesserung über SOTA.
 
-**Implikation für uns:**
-- AgentField IST bereits ein (manuelles) MCE-System
+**Praktische Implikation:**
+- Ein solches System IST bereits ein (manuelles) MCE-System
 - Der Schritt von manuell zu automatisiert ist formalisiert — wir müssen das Rad nicht neu erfinden
 - Die "deliberative search over historical skills, executions, and evaluations" ist genau das, was unser improve-Skill ansatzweise tut
 
-**Für AgentField konkret:**
+**Praktische Konsequenz:**
 - MCE-Paper im Detail studieren
 - Prüfen welche MCE-Elemente wir automatisieren können
 - Pulse-Metriken als "evaluation signal" für Skill-Evolution nutzen
@@ -145,7 +145,7 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 **Was passiert ist:** "Evolutionary Systems Thinking" (2602.15957) argumentiert explizit für die Übertragung von Evolutionsdynamik auf komplexe adaptive Systeme inkl. AI. "Evolving Interpretable Constitutions" (2602.00755) verbindet Constitutional AI mit evolutionären Ansätzen für Multi-Agent-Koordination.
 
-**Implikation für uns:**
+**Praktische Implikation:**
 - Unsere Nowak-Synthese ist nicht esoterisch — es gibt eine wachsende Community
 - Aber: Niemand hat bisher Nowaks Originator-Gleichung explizit auf Agent-Systeme abgebildet (unsere unique contribution?)
 - Die Isomorphie-Tabelle aus unserer Synthese könnte ein eigenständiger Beitrag werden
@@ -154,7 +154,7 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 ---
 
-## Zusammenfassung: Was ins AgentField-System zurückfließen sollte
+## Zusammenfassung: Was in Agent-Systeme zurückfließen sollte
 
 ### research-pipeline Verbesserungen
 1. Awesome-Listen als Einstiegsheuristik

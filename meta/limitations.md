@@ -23,13 +23,13 @@ Diese Seite dokumentiert, was diese Research Collection ist, was sie nicht ist, 
 
 <div lang="en">
 
-A structured research collection with actionable engineering output, built in one intensive session using [Claude Code](https://claude.com/claude-code). It connects Martin Nowak's mathematical framework for evolutionary dynamics with modern AI agent systems.
+A structured research collection with actionable engineering output, built through iterative research sessions. It connects Martin Nowak's mathematical framework for evolutionary dynamics with modern AI agent systems.
 
 </div>
 
 <div lang="de">
 
-Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erstellt in einer intensiven Session mit [Claude Code](https://claude.com/claude-code). Sie verbindet Martin Nowaks mathematisches Framework für Evolutionary Dynamics mit modernen AI-Agent-Systemen.
+Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erstellt durch iterative Research-Sessions. Sie verbindet Martin Nowaks mathematisches Framework für Evolutionary Dynamics mit modernen AI-Agent-Systemen.
 
 </div>
 

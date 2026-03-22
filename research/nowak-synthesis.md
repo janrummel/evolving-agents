@@ -16,7 +16,7 @@ nav_order: 1
 
 ---
 
-**Author:** Jan Rummel (with Claude)
+
 **Date:** March 2026
 **Status:** Initial synthesis — to be expanded
 
@@ -35,7 +35,7 @@ nav_order: 1
 
 ---
 
-**Autor:** Jan Rummel (mit Claude)
+
 **Datum:** März 2026
 **Status:** Initiale Synthese — wird erweitert
 

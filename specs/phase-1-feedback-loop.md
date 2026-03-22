@@ -289,7 +289,7 @@ sqlite3 ~/.claude/data/knowledge.db < schema.sql
 ```
 
 ### Step 2: Define Logging Hook (30 min)
-- Option A: Claude Code Hook (`post_tool_call`) that writes the performance entry after a skill tool call
+- Option A: Platform hook (`post_tool_call`) that writes the performance entry after a skill tool call
 - Option B: Manual block at the end of each skill: "Log Performance"
 - **Recommendation:** Option A (Hook) — automatic, no manual effort
 
@@ -324,7 +324,7 @@ sqlite3 ~/.claude/data/knowledge.db < schema.sql
 ```
 
 ### Schritt 2: Logging-Hook definieren (30 Min)
-- Option A: Claude Code Hook (`post_tool_call`) der nach Skill-Tool-Aufruf den Performance-Eintrag schreibt
+- Option A: Platform hook (`post_tool_call`) der nach Skill-Tool-Aufruf den Performance-Eintrag schreibt
 - Option B: Manueller Block am Ende jedes Skills: "Log Performance"
 - **Empfehlung:** Option A (Hook) — automatisch, kein manueller Aufwand
 
@@ -417,7 +417,7 @@ All das ist Phase 2+. Phase 1 liefert die **Datenbasis**, ohne die keine Evoluti
 
 This Phase 1 implements the **measurement apparatus** — Nowak's `fᵢ` (fitness per individual) and `φ` (population average). Without this measurement there is no selection pressure, only drift.
 
-The Pareto view (Quality vs. Cost) is the first step toward multi-objective selection — EvoFlow's core idea, applied to our system.
+The Pareto view (Quality vs. Cost) is the first step toward multi-objective selection — EvoFlow's core idea, applied in practice.
 
 The triggers are the **selection pressure** — they don't force change, but they make visible WHERE change would be needed. This is the transition from "no signal" to "signal present" — the first step of the phase transition.
 
@@ -429,7 +429,7 @@ The triggers are the **selection pressure** — they don't force change, but the
 
 Diese Phase 1 implementiert den **Messapparat** — Nowaks `fᵢ` (Fitness pro Individuum) und `φ` (Populations-Durchschnitt). Ohne diese Messung gibt es keinen Selektionsdruck, nur Drift.
 
-Die Pareto-Ansicht (Quality vs. Cost) ist der erste Schritt zu Multi-Objective-Selektion — EvoFlow's Kernidee, auf unser System übertragen.
+Die Pareto-Ansicht (Quality vs. Cost) ist der erste Schritt zu Multi-Objective-Selektion — EvoFlow's Kernidee, praktisch angewendet.
 
 Die Trigger sind der **Selektionsdruck** — sie erzwingen keine Änderung, aber sie machen sichtbar, WO Änderung nötig wäre. Das ist der Übergang von "kein Signal" zu "Signal vorhanden" — der erste Schritt des Phasenübergangs.
 

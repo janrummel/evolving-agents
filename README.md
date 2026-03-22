@@ -94,7 +94,7 @@ Seven actionable design principles derived from evolutionary theory: [principles
 | Document | What It Contains |
 |----------|-----------------|
 | [Research Process Learnings](meta/learnings-research-process.md) | 8 findings: rate limiting, CJK search, awesome lists, arXiv reliability |
-| [AgentField = Prelife](meta/learning-agentfield-prelife.md) | The central insight — and the 4-phase upgrade path |
+| [Agent Systems = Prelife](meta/learning-agentfield-prelife.md) | The central insight — and the 4-phase upgrade path |
 
 ## Key Discovery: EvoFlow
 
@@ -166,4 +166,4 @@ This is a living research collection. If you're working at the intersection of e
 
 ---
 
-*Built with [Claude Code](https://claude.com/claude-code) as part of the [AgentField](https://github.com/janrummel) ecosystem.*
+*A living research collection connecting evolutionary dynamics with AI agent architectures.*

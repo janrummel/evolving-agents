@@ -7,7 +7,7 @@ nav_order: 3
 
 <div lang='en' markdown='1'>
 
-# Deep Dive: EvoFlow, MCE, AgentFactory — and What AgentField Can Learn From Them
+# Deep Dive: EvoFlow, MCE, AgentFactory — and What Agent Systems Can Learn
 
 {: .note }
 > **Reading: 3 of 5** · After reading this, you'll understand how EvoFlow implements niching selection for workflows, how MCE formalizes skill co-evolution, and a concrete 4-phase upgrade path from Prelife to full agent evolution.
@@ -19,7 +19,7 @@ nav_order: 3
 
 <div lang='de' markdown='1'>
 
-# Deep Dive: EvoFlow, MCE, AgentFactory — und was AgentField daraus lernen kann
+# Deep Dive: EvoFlow, MCE, AgentFactory — und was Agent-Systeme daraus lernen können
 
 {: .note }
 > **Reading: 3 of 5** · After reading this, you'll understand how EvoFlow implements niching selection for workflows, how MCE formalizes skill co-evolution, and a concrete 4-phase upgrade path from Prelife to full agent evolution.
@@ -175,9 +175,9 @@ Base-Agent (untere Ebene)
 
 <div lang='en' markdown='1'>
 
-## 2. The Isomorphism Table: EvoFlow → MCE → AgentFactory → AgentField
+## 2. The Isomorphism Table: EvoFlow → MCE → AgentFactory → Agent System
 
-| Concept | EvoFlow | MCE | AgentFactory | AgentField | Our Status |
+| Concept | EvoFlow | MCE | AgentFactory | Agent System | Status |
 |---------|---------|-----|-------------|------------|------------|
 | **Base Unit** | Invoking Node (M, P, τ) | CE Skill | Executable Subagent (Python) | Skill (SKILL.md) | ✅ Available |
 | **Composition** | Operator Node (node cluster) | Skill chain | Subagent library | Skill-Chain (max 4) | ✅ Available |
@@ -197,9 +197,9 @@ Base-Agent (untere Ebene)
 
 <div lang='de' markdown='1'>
 
-## 2. Die Isomorphie-Tabelle: EvoFlow → MCE → AgentFactory → AgentField
+## 2. Die Isomorphie-Tabelle: EvoFlow → MCE → AgentFactory → Agent System
 
-| Konzept | EvoFlow | MCE | AgentFactory | AgentField | Status bei uns |
+| Konzept | EvoFlow | MCE | AgentFactory | Agent System | Status |
 |---------|---------|-----|-------------|------------|----------------|
 | **Basiseinheit** | Invoking Node (M, P, τ) | CE Skill | Executable Subagent (Python) | Skill (SKILL.md) | ✅ Vorhanden |
 | **Komposition** | Operator Node (Knoten-Cluster) | Skill-Kette | Subagent-Bibliothek | Skill-Chain (max 4) | ✅ Vorhanden |
@@ -221,7 +221,7 @@ Base-Agent (untere Ebene)
 
 <div lang='en' markdown='1'>
 
-## 3. What AgentField Can Concretely Learn
+## 3. What Agent Systems Can Concretely Learn
 
 ### 3.1 Immediately Actionable: Cost Tracking as a Second Optimization Axis
 
@@ -270,7 +270,7 @@ Base-Agent (untere Ebene)
 
 <div lang='de' markdown='1'>
 
-## 3. Was AgentField konkret lernen kann
+## 3. Was Agent-Systeme konkret lernen können
 
 ### 3.1 Sofort umsetzbar: Cost-Tracking als zweite Optimierungsachse
 
@@ -323,7 +323,7 @@ Base-Agent (untere Ebene)
 
 ## 4. The Nowak Bridge — Formal Correspondences
 
-| Nowak | EvoFlow | AgentField (Current) | AgentField (Target) |
+| Nowak | EvoFlow | Current State | Target State |
 |-------|---------|----------------------|---------------------|
 | Sequence/Replicator | Invoking Node (M,P,τ) | Skill (SKILL.md) | Skill with version + tags |
 | Fitness fᵢ | Utility u(G,q) | Quality score | Quality + Cost (Pareto) |
@@ -335,7 +335,7 @@ Base-Agent (untere Ebene)
 | Prelife → Life | Seed → evolved population | Manual → ? | Manual → automatic |
 | Cooperation (Γ) | Workflow composition | Skill chains | Measurable cooperation gains |
 
-**Key Observation:** AgentField is currently in the **"Prelife" phase** according to Nowak's terminology — there is diversity and selection (Quality-Gate), but no **replication** (automatic inheritance of successful patterns). EvoFlow shows what the phase transition to "Life" could look like.
+**Key Observation:** A typical agent system is currently in the **"Prelife" phase** according to Nowak's terminology — there is diversity and selection (Quality-Gate), but no **replication** (automatic inheritance of successful patterns). EvoFlow shows what the phase transition to "Life" could look like.
 
 </div>
 
@@ -343,7 +343,7 @@ Base-Agent (untere Ebene)
 
 ## 4. Die Nowak-Brücke — formale Entsprechungen
 
-| Nowak | EvoFlow | AgentField (Ist) | AgentField (Soll) |
+| Nowak | EvoFlow | Ist-Zustand | Soll-Zustand |
 |-------|---------|-------------------|-------------------|
 | Sequenz/Replikator | Invoking Node (M,P,τ) | Skill (SKILL.md) | Skill mit Version + Tags |
 | Fitness fᵢ | Utility u(G,q) | Quality-Score | Quality + Cost (Pareto) |
@@ -355,7 +355,7 @@ Base-Agent (untere Ebene)
 | Prelife → Life | Seed → evolvierte Population | Manuell → ? | Manuell → automatisch |
 | Kooperation (Γ) | Workflow-Komposition | Skill-Chains | Messbare Kooperationsgewinne |
 
-**Schlüsselbeobachtung:** AgentField befindet sich derzeit in der **"Prelife"-Phase** nach Nowaks Terminologie — es gibt Diversität und Selektion (Quality-Gate), aber keine **Replikation** (automatische Vererbung erfolgreicher Muster). EvoFlow zeigt, wie der Phasenübergang zu "Life" aussehen könnte.
+**Schlüsselbeobachtung:** Ein typisches Agent-System befindet sich derzeit in der **"Prelife"-Phase** nach Nowaks Terminologie — es gibt Diversität und Selektion (Quality-Gate), aber keine **Replikation** (automatische Vererbung erfolgreicher Muster). EvoFlow zeigt, wie der Phasenübergang zu "Life" aussehen könnte.
 
 </div>
 
@@ -363,7 +363,7 @@ Base-Agent (untere Ebene)
 
 <div lang='en' markdown='1'>
 
-## 5. The Upgrade Path: Prelife → Life for AgentField
+## 5. The Upgrade Path: Prelife → Life for Agent Systems
 
 ```
 Phase 0 (NOW): Prelife
@@ -395,7 +395,7 @@ Phase 4: Full Evolution (= "Life")
 
 <div lang='de' markdown='1'>
 
-## 5. Der Upgrade-Pfad: Prelife → Life für AgentField
+## 5. Der Upgrade-Pfad: Prelife → Life für Agent-Systeme
 
 ```
 Phase 0 (JETZT): Prelife
@@ -433,7 +433,7 @@ Phase 4: Full Evolution (= "Life")
 
 ### What EvoFlow Does NOT Address (and We Must Consider)
 
-1. **No persistent memory:** EvoFlow evaluates on benchmarks, has no session history. AgentField's memory system is a fundamental advantage.
+1. **No persistent memory:** EvoFlow evaluates on benchmarks, has no session history. The agent system's memory system is a fundamental advantage.
 2. **No Human-in-the-Loop:** EvoFlow is fully automatic. Our human feedback is a richer signal than automatic evaluation.
 3. **No context:** EvoFlow works on isolated tasks. Our projects have rich context (project state, Vault, Episodic Memory).
 4. **Benchmark ≠ Real World:** EvoFlow's 29.86% improvement is on MATH/GSM8K. Whether this transfers to open, creative tasks (our core domain) remains unclear.
@@ -450,7 +450,7 @@ Phase 4: Full Evolution (= "Life")
 
 ### Our Unique Position
 
-AgentField sits at an intersection that none of the three papers covers:
+Agent systems sit at an intersection that none of the three papers covers:
 - **Population diversity** (EvoFlow) + **Skill co-evolution** (MCE) + **Persistent Memory** (us)
 - Additionally: **Human-in-the-Loop** as the richest feedback signal
 - And: **Project context** as information that none of the benchmark papers have
@@ -463,7 +463,7 @@ AgentField sits at an intersection that none of the three papers covers:
 
 ### Was EvoFlow NICHT adressiert (und wir berücksichtigen müssen)
 
-1. **Kein persistentes Gedächtnis:** EvoFlow evaluiert auf Benchmarks, hat keine Session-History. AgentField's Memory-System ist ein fundamentaler Vorteil.
+1. **Kein persistentes Gedächtnis:** EvoFlow evaluiert auf Benchmarks, hat keine Session-History. The agent system's memory-System ist ein fundamentaler Vorteil.
 2. **Keine Human-in-the-Loop:** EvoFlow ist voll automatisch. Unser Human-Feedback ist reicheres Signal als automatische Evaluation.
 3. **Kein Kontext:** EvoFlow arbeitet auf isolierten Tasks. Unsere Projekte haben reichen Kontext (Projekt-State, Vault, Episodic Memory).
 4. **Benchmark ≠ Real World:** EvoFlow's 29.86% Verbesserung ist auf MATH/GSM8K. Ob das auf offene, kreative Aufgaben (unsere Kerndomäne) übertragbar ist: unklar.
@@ -480,7 +480,7 @@ AgentField sits at an intersection that none of the three papers covers:
 
 ### Unsere einzigartige Position
 
-AgentField sitzt an einer Kreuzung, die keines der drei Papers abdeckt:
+Agent systems sit an einer Kreuzung, die keines der drei Papers abdeckt:
 - **Populationsdiversität** (EvoFlow) + **Skill-Koevolution** (MCE) + **Persistent Memory** (wir)
 - Dazu: **Human-in-the-Loop** als reichstes Feedback-Signal
 - Und: **Projektkontext** als Information, die keines der Benchmark-Papers hat

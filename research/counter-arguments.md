@@ -43,7 +43,7 @@ nav_order: 5
 
 **Objection:** Nowak's mathematics is based on **random mutation + selection** (Darwinism). Agent systems, however, use **directed optimization** — TextGrad, Reinforcement Learning, feedback-based finetuning. This is [Lamarckism](https://en.wikipedia.org/wiki/Lamarckism) (acquired traits are inherited), not Darwinism.
 
-**Consequence for us:** The Originator Equation assumes random mutations. If "mutation" in agents is directed (e.g., TextGrad optimizes prompts along the gradient), then Nowak's results on Error Threshold and phase transitions don't apply directly — they could be conservative (directed mutation is more efficient) or irrelevant (different dynamics).
+**Practical consequence:** The Originator Equation assumes random mutations. If "mutation" in agents is directed (e.g., TextGrad optimizes prompts along the gradient), then Nowak's results on Error Threshold and phase transitions don't apply directly — they could be conservative (directed mutation is more efficient) or irrelevant (different dynamics).
 
 **Assessment:** Valid. Our analogy must explicitly state: "Agent evolution is more Lamarckian than Darwinian. Nowak's results are a lower bound — directed mutation can perform better, but has different failure modes (e.g., local optima instead of Error Threshold)."
 
@@ -55,7 +55,7 @@ nav_order: 5
 
 **Einwand:** Nowaks Mathematik basiert auf **zufälliger Mutation + Selektion** (Darwinismus). Agent-Systeme nutzen aber **gerichtete Optimierung** — TextGrad, Reinforcement Learning, Feedback-basiertes Finetuning. Das ist [Lamarckismus](https://de.wikipedia.org/wiki/Lamarckismus) (erworbene Eigenschaften werden vererbt), nicht Darwinismus.
 
-**Konsequenz für uns:** Die Originator-Gleichung setzt zufällige Mutationen voraus. Wenn die "Mutation" bei Agents gerichtet ist (z.B. TextGrad optimiert Prompts in die Richtung des Gradienten), dann gelten Nowaks Ergebnisse über Error Threshold und Phasenübergang nicht direkt — sie könnten konservativ sein (gerichtete Mutation ist effizienter) oder irrelevant (andere Dynamik).
+**Praktische Konsequenz:** Die Originator-Gleichung setzt zufällige Mutationen voraus. Wenn die "Mutation" bei Agents gerichtet ist (z.B. TextGrad optimiert Prompts in die Richtung des Gradienten), dann gelten Nowaks Ergebnisse über Error Threshold und Phasenübergang nicht direkt — sie könnten konservativ sein (gerichtete Mutation ist effizienter) oder irrelevant (andere Dynamik).
 
 **Bewertung:** Trifft zu. Unsere Analogie muss explizit sagen: "Agent-Evolution ist eher Lamarckisch als Darwinistisch. Nowaks Ergebnisse sind eine untere Schranke — gerichtete Mutation kann besser sein, hat aber andere Failure Modes (z.B. lokale Optima statt Error Threshold)."
 
@@ -71,9 +71,9 @@ nav_order: 5
 
 **Objection:** Biological evolution requires reproduction — individuals copy themselves, with variation. Agent configurations don't copy themselves. They are created by humans or meta-agents. Without true reproduction, the replication term in Nowak's equation (`r · xᵢ · (fᵢ − φ)`) is insubstantial.
 
-**Consequence for us:** When we say "Skills replicate through SKILL.md inheritance," that's a weak analogy. A SKILL.md isn't automatically copied and varied — it's manually edited or rewritten by an LLM. That's more "design" than "replication."
+**Practical consequence:** When we say "Skills replicate through SKILL.md inheritance," that's a weak analogy. A SKILL.md isn't automatically copied and varied — it's manually edited or rewritten by an LLM. That's more "design" than "replication."
 
-**Assessment:** Partially valid. EvoFlow comes closer: Workflows are automatically generated from parent workflows through crossover/mutation — that IS a form of reproduction. But in our AgentField system it's manual. We should clearly distinguish between "designed evolution" and "autonomous evolution."
+**Assessment:** Partially valid. EvoFlow comes closer: Workflows are automatically generated from parent workflows through crossover/mutation — that IS a form of reproduction. But in practice it's manual. We should clearly distinguish between "designed evolution" and "autonomous evolution."
 
 </div>
 
@@ -81,9 +81,9 @@ nav_order: 5
 
 **Einwand:** Biologische Evolution braucht Reproduktion — Individuen kopieren sich, mit Variation. Agent-Konfigurationen kopieren sich nicht selbst. Sie werden von Menschen oder Meta-Agents erstellt. Ohne echte Reproduktion ist der Replikationsterm in Nowaks Gleichung (`r · xᵢ · (fᵢ − φ)`) substanzlos.
 
-**Konsequenz für uns:** Wenn wir sagen "Skills replizieren sich durch SKILL.md-Vererbung", dann ist das eine schwache Analogie. Ein SKILL.md wird nicht automatisch kopiert und variiert — es wird manuell editiert oder von einem LLM umgeschrieben. Das ist eher "Design" als "Replikation".
+**Praktische Konsequenz:** Wenn wir sagen "Skills replizieren sich durch SKILL.md-Vererbung", dann ist das eine schwache Analogie. Ein SKILL.md wird nicht automatisch kopiert und variiert — es wird manuell editiert oder von einem LLM umgeschrieben. Das ist eher "Design" als "Replikation".
 
-**Bewertung:** Trifft teilweise zu. EvoFlow kommt näher: Workflows werden automatisch aus Eltern-Workflows durch Crossover/Mutation erzeugt — das IST eine Form von Reproduktion. Aber in unserem AgentField-System ist es manuell. Wir sollten klar zwischen "designed evolution" und "autonomous evolution" unterscheiden.
+**Bewertung:** Trifft teilweise zu. EvoFlow kommt näher: Workflows werden automatisch aus Eltern-Workflows durch Crossover/Mutation erzeugt — das IST eine Form von Reproduktion. Aber in der Praxis ist es manuell. Wir sollten klar zwischen "designed evolution" und "autonomous evolution" unterscheiden.
 
 </div>
 
@@ -95,7 +95,7 @@ nav_order: 5
 
 **Objection:** Drew McDermott coined the term "wishful mnemonics" for AI's tradition of giving systems human/biological terms ("Agent," "Knowledge," "Goal," "Evolution") hoping the metaphors would eventually become reality. The risk: The metaphor obscures what's actually happening.
 
-**Consequence for us:** When we say "Mutation" instead of "Prompt Variation" or "Fitness" instead of "Quality Score," we suggest a depth of analogy that may not exist. The isomorphism table could be a sophisticated case of label-matching: We stick biological labels on technical processes and call it a "bridge."
+**Practical consequence:** When we say "Mutation" instead of "Prompt Variation" or "Fitness" instead of "Quality Score," we suggest a depth of analogy that may not exist. The isomorphism table could be a sophisticated case of label-matching: We stick biological labels on technical processes and call it a "bridge."
 
 **Assessment:** Justified as a warning. Countermeasure: In the synthesis, always use BOTH terms — the biological and the technical. Not "Mutation," but "Prompt Variation (analogy: Mutation)." We've already started with "Structural Analogy" instead of "Formal Isomorphism," but should apply this more consistently.
 
@@ -107,7 +107,7 @@ nav_order: 5
 
 **Einwand:** Drew McDermott prägte den Begriff "wishful mnemonics" für die AI-Tradition, Systemen menschliche/biologische Begriffe zu geben ("Agent", "Wissen", "Ziel", "Evolution") in der Hoffnung, die Metaphern würden irgendwann Realität werden. Das Risiko: Die Metapher verstellt den Blick auf das, was tatsächlich passiert.
 
-**Konsequenz für uns:** Wenn wir "Mutation" sagen statt "Prompt-Variation" oder "Fitness" statt "Quality-Score", suggerieren wir eine Tiefe der Analogie, die möglicherweise nicht existiert. Die Isomorphie-Tabelle könnte ein raffinierter Fall von Label-Matching sein: Wir kleben biologische Etiketten auf technische Prozesse und nennen es "Brücke".
+**Praktische Konsequenz:** Wenn wir "Mutation" sagen statt "Prompt-Variation" oder "Fitness" statt "Quality-Score", suggerieren wir eine Tiefe der Analogie, die möglicherweise nicht existiert. Die Isomorphie-Tabelle könnte ein raffinierter Fall von Label-Matching sein: Wir kleben biologische Etiketten auf technische Prozesse und nennen es "Brücke".
 
 **Bewertung:** Berechtigt als Warnung. Gegenmaßnahme: In der Synthese immer BEIDE Begriffe nennen — den biologischen und den technischen. Nicht "Mutation", sondern "Prompt-Variation (Analogie: Mutation)". Wir haben mit "Strukturelle Analogie" statt "Formale Isomorphie" schon angefangen, aber konsequenter durchziehen.
 
@@ -123,7 +123,7 @@ nav_order: 5
 
 **Objection:** In biology, the environment IS the selector — there is no designer. In agent systems, humans design the fitness function (Quality Gate, benchmarks). This is [artificial selection](https://en.wikipedia.org/wiki/Selective_breeding) (like dog breeding), not natural selection.
 
-**Consequence for us:** The quality of "evolution" is only as good as the fitness function. If the Quality Gate measures poorly, the system evolves in the wrong direction — at high speed. Natural selection doesn't have this problem because the "fitness function" (survival) isn't designed by someone fallible.
+**Practical consequence:** The quality of "evolution" is only as good as the fitness function. If the Quality Gate measures poorly, the system evolves in the wrong direction — at high speed. Natural selection doesn't have this problem because the "fitness function" (survival) isn't designed by someone fallible.
 
 **Assessment:** Fully valid. This is actually a stronger argument FOR our work: It makes the Error Threshold even more important. Not just "don't change more than you can measure" (Nowak), but also "make sure you're measuring the right thing" (new principle?).
 
@@ -135,7 +135,7 @@ nav_order: 5
 
 **Einwand:** In der Biologie IST die Umwelt der Selektor — es gibt keinen Designer. In Agent-Systemen designen Menschen die Fitness-Funktion (Quality-Gate, Benchmarks). Das ist [künstliche Selektion](https://de.wikipedia.org/wiki/K%C3%BCnstliche_Selektion) (wie Hundezucht), nicht natürliche Selektion.
 
-**Konsequenz für uns:** Die Qualität der "Evolution" ist nur so gut wie die Fitness-Funktion. Wenn das Quality-Gate schlecht misst, evolviert das System in die falsche Richtung — mit hoher Geschwindigkeit. Natürliche Selektion hat dieses Problem nicht, weil die "Fitness-Funktion" (Überleben) nicht von einem Fehlbaren designt wird.
+**Praktische Konsequenz:** Die Qualität der "Evolution" ist nur so gut wie die Fitness-Funktion. Wenn das Quality-Gate schlecht misst, evolviert das System in die falsche Richtung — mit hoher Geschwindigkeit. Natürliche Selektion hat dieses Problem nicht, weil die "Fitness-Funktion" (Überleben) nicht von einem Fehlbaren designt wird.
 
 **Bewertung:** Trifft voll zu. Das ist sogar ein stärkeres Argument FÜR unsere Arbeit: Es macht den Error Threshold noch wichtiger. Nicht nur "ändere nicht mehr als du messen kannst" (Nowak), sondern auch "stelle sicher, dass du das Richtige misst" (neues Prinzip?).
 
@@ -151,7 +151,7 @@ nav_order: 5
 
 **Objection:** Only biological systems produce [open-ended evolution](https://en.wikipedia.org/wiki/Open-ended_evolution) — the continuous generation of genuine novelty without a predefined goal. All Artificial Life attempts to realize open-ended evolution have failed so far. Agent systems evolve within a designed fitness landscape and never truly discover new fitness dimensions.
 
-**Consequence for us:** Our agent evolution is always "closed" — bound to pre-defined metrics. It will never spontaneously "discover" a new task type that we didn't anticipate.
+**Practical consequence:** Our agent evolution is always "closed" — bound to pre-defined metrics. It will never spontaneously "discover" a new task type that we didn't anticipate.
 
 **Assessment:** True, but less relevant for us. We don't want open-ended evolution — we want directed improvement within known task types. The argument hits the philosophical superstructure, not the practical application.
 
@@ -163,9 +163,9 @@ nav_order: 5
 
 **Einwand:** Nur biologische Systeme erzeugen [open-ended evolution](https://en.wikipedia.org/wiki/Open-ended_evolution) — die kontinuierliche Erzeugung genuiner Neuheit ohne vorgegebenes Ziel. Alle Artificial-Life-Versuche, open-ended evolution zu realisieren, sind bisher gescheitert. Agent-Systeme evolvieren innerhalb einer designten Fitness-Landschaft und erzeugen nie wirklich neue Fitness-Dimensionen.
 
-**Konsequenz für uns:** Unsere Agent-Evolution ist immer "geschlossen" — gebunden an vorher definierte Metriken. Sie wird nie spontan einen neuen Aufgabentyp "entdecken", den wir nicht vorhergesehen haben.
+**Praktische Konsequenz:** Unsere Agent-Evolution ist immer "geschlossen" — gebunden an vorher definierte Metriken. Sie wird nie spontan einen neuen Aufgabentyp "entdecken", den wir nicht vorhergesehen haben.
 
-**Bewertung:** Stimmt, ist aber weniger relevant für uns. Wir wollen keine open-ended evolution — wir wollen gerichtete Verbesserung innerhalb bekannter Aufgabentypen. Das Argument trifft den philosophischen Überbau, nicht die praktische Anwendung.
+**Bewertung:** Stimmt, ist aber weniger relevant für die Praxis. Das Ziel ist keine open-ended evolution — das Ziel ist gerichtete Verbesserung innerhalb bekannter Aufgabentypen. Das Argument trifft den philosophischen Überbau, nicht die praktische Anwendung.
 
 **Quelle:** Diskussion in [Frontiers in Ecology and Evolution, 2021](https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2021.806283/full)
 
@@ -179,7 +179,7 @@ nav_order: 5
 
 **Objection:** Population-based methods (MAP-Elites, EvoFlow) require many evaluations. Each evaluation of an agent workflow costs tokens = money. Monte Carlo Tree Search and similar search methods are "fundamentally bottlenecked by costly execution-based rollouts." ([arXiv:2401.10510](https://arxiv.org/abs/2401.10510))
 
-**Consequence for us:** EvoFlow's "12.4% of o1-preview costs" applies to inference — but the training/evolution itself required many evaluation rounds. For a small system like AgentField, the overhead of evolution could exceed its benefits.
+**Practical consequence:** EvoFlow's "12.4% of o1-preview costs" applies to inference — but the training/evolution itself required many evaluation rounds. For a small agent system, the overhead of evolution could exceed its benefits.
 
 **Assessment:** Justified. Phase 1 (Measuring) is cheap. But Phase 3 (Population Management) becomes expensive. We need to keep the cost-benefit ratio in mind — evolution only pays off above a certain system size.
 
@@ -189,7 +189,7 @@ nav_order: 5
 
 **Einwand:** Populationsbasierte Methoden (MAP-Elites, EvoFlow) brauchen viele Evaluierungen. Jede Evaluierung eines Agent-Workflows kostet Token = Geld. Monte Carlo Tree Search und ähnliche Suchverfahren sind "fundamentally bottlenecked by costly execution-based rollouts." ([arXiv:2401.10510](https://arxiv.org/abs/2401.10510))
 
-**Konsequenz für uns:** EvoFlow's "12.4% der Kosten von o1-preview" gilt für die Inferenz — aber das Training/die Evolution selbst kostete viele Evaluierungsrunden. Für ein kleines System wie AgentField könnte der Overhead der Evolution den Nutzen übersteigen.
+**Praktische Konsequenz:** EvoFlow's "12.4% der Kosten von o1-preview" gilt für die Inferenz — aber das Training/die Evolution selbst kostete viele Evaluierungsrunden. Für ein kleines Agent-System könnte der Overhead der Evolution den Nutzen übersteigen.
 
 **Bewertung:** Berechtigt. Phase 1 (Messen) ist billig. Aber Phase 3 (Populations-Management) wird teuer. Wir müssen das Kosten-Nutzen-Verhältnis im Auge behalten — Evolution lohnt sich erst ab einer bestimmten Systemgröße.
 
@@ -197,15 +197,15 @@ nav_order: 5
 
 ---
 
-### G7: Darwinistische Logik sagt auch schlechte Outcomes voraus / Darwinian Logic Also Predicts Bad Outcomes (NIEDRIG/LOW für uns)
+### G7: Darwinistische Logik sagt auch schlechte Outcomes voraus / Darwinian Logic Also Predicts Bad Outcomes (LOW)
 
 <div lang="en">
 
 **Objection:** If you take the evolution analogy seriously, then selection doesn't favor "good" agents but "fit" ones — those that survive and reproduce. This can lead to deceptive alignment, power accumulation, and self-serving behavior. ([arXiv:2303.16200](https://arxiv.org/abs/2303.16200))
 
-**Consequence for us:** Less relevant because we have Human-in-the-Loop and design the fitness function ourselves. But it's a warning: If you automate selection (Phase 4), the fitness function must be robust against Goodhart's Law.
+**Practical consequence:** Less relevant because we have Human-in-the-Loop and design the fitness function ourselves. But it's a warning: If you automate selection (Phase 4), the fitness function must be robust against Goodhart's Law.
 
-**Assessment:** Academically important, low relevance for our system (we control selection).
+**Assessment:** Academically important, low practical relevance (selection is controlled).
 
 </div>
 
@@ -213,9 +213,9 @@ nav_order: 5
 
 **Einwand:** Wenn man die Evolutions-Analogie ernst nimmt, dann favorisiert Selektion nicht "gute" Agents, sondern "fitte" — also solche, die überleben und sich vermehren. Das kann zu deceptive alignment, Machtakkumulation und eigennützigem Verhalten führen. ([arXiv:2303.16200](https://arxiv.org/abs/2303.16200))
 
-**Konsequenz für uns:** Weniger relevant, weil wir Human-in-the-Loop haben und die Fitness-Funktion selbst designen. Aber es ist eine Warnung: Wenn man die Selektion automatisiert (Phase 4), muss die Fitness-Funktion robust gegen Goodhart's Law sein.
+**Praktische Konsequenz:** Weniger relevant, weil wir Human-in-the-Loop haben und die Fitness-Funktion selbst designen. Aber es ist eine Warnung: Wenn man die Selektion automatisiert (Phase 4), muss die Fitness-Funktion robust gegen Goodhart's Law sein.
 
-**Bewertung:** Akademisch wichtig, für unser System niedrige Relevanz (wir kontrollieren die Selektion).
+**Bewertung:** Akademisch wichtig, praktisch niedrige Relevanz (die Selektion wird kontrolliert).
 
 </div>
 
@@ -227,7 +227,7 @@ nav_order: 5
 
 **Objection:** [Erden & Faltings (GECCO 2025)](https://arxiv.org/abs/2505.23774) argue the REVERSE: Not "Nowak → AI," but "Evo-Devo → AI." They say the Modern Synthesis (Nowak's framework) has the same limitations as current AI, and Evolutionary Developmental Biology (Evo-Devo) shows the way to better AI.
 
-**Consequence for us:** Perhaps our mapping is too narrow. Nowak's selection framework is only ONE part of evolutionary biology. Evo-Devo (how do individuals develop within their lifetime?) could be more relevant than population genetics (how does a population change across generations?).
+**Practical consequence:** Perhaps our mapping is too narrow. Nowak's selection framework is only ONE part of evolutionary biology. Evo-Devo (how do individuals develop within their lifetime?) could be more relevant than population genetics (how does a population change across generations?).
 
 **Assessment:** Very interesting — opens a new research direction. Our repo covers the population genetics side but not the Evo-Devo side. Possible extension.
 
@@ -237,7 +237,7 @@ nav_order: 5
 
 **Einwand:** [Erden & Faltings (GECCO 2025)](https://arxiv.org/abs/2505.23774) argumentieren UMGEKEHRT: Nicht "Nowak → AI", sondern "Evo-Devo → AI". Sie sagen, die Modern Synthesis (Nowaks Rahmen) hat dieselben Limitationen wie aktuelle AI, und Evolutionary Developmental Biology (Evo-Devo) zeigt den Weg zu besserer AI.
 
-**Konsequenz für uns:** Vielleicht ist unser Mapping zu eng. Nowaks Selektions-Framework ist nur EIN Teil der Evolutionsbiologie. Evo-Devo (wie entwickeln sich Individuen innerhalb ihrer Lebenszeit?) könnte relevanter sein als Populationsgenetik (wie verändert sich eine Population über Generationen?).
+**Praktische Konsequenz:** Vielleicht ist unser Mapping zu eng. Nowaks Selektions-Framework ist nur EIN Teil der Evolutionsbiologie. Evo-Devo (wie entwickeln sich Individuen innerhalb ihrer Lebenszeit?) könnte relevanter sein als Populationsgenetik (wie verändert sich eine Population über Generationen?).
 
 **Bewertung:** Sehr interessant — öffnet eine neue Forschungsrichtung. Unser Repo deckt die Populationsgenetik-Seite ab, aber nicht die Evo-Devo-Seite. Mögliche Ergänzung.
 
@@ -251,7 +251,7 @@ nav_order: 5
 
 **Objection:** Nowak's selection equation and quasispecies theory assume statistically significant population sizes. In populations below ~10⁴ individuals, [genetic drift](https://en.wikipedia.org/wiki/Genetic_drift) dominates over selection — random fluctuations determine which variants survive, not fitness. Agent systems typically have 3–10 configurations — far below any threshold where selection dynamics are statistically meaningful.
 
-**Consequence for us:** If we have 5 skill variants and one of them "wins," we don't know whether that was fitness or chance. The Pareto analysis from Phase 1 needs minimum samples per skill (hence: ≥3 Uses for Pareto View). But even with many executions, the "population" (number of competing variants per task type) remains small.
+**Practical consequence:** If we have 5 skill variants and one of them "wins," we don't know whether that was fitness or chance. The Pareto analysis from Phase 1 needs minimum samples per skill (hence: ≥3 Uses for Pareto View). But even with many executions, the "population" (number of competing variants per task type) remains small.
 
 **Assessment:** Valid. This is a real problem that weakens the analogy. Countermeasure: Don't select at population level (too few individuals), but at execution level — many data points per variant instead of many variants. This shifts the problem from population genetics to classical statistics (hypothesis testing).
 
@@ -263,7 +263,7 @@ nav_order: 5
 
 **Einwand:** Nowaks Selektionsgleichung und die Quasispezies-Theorie setzen statistisch signifikante Populationsgrößen voraus. In Populationen unter ~10⁴ Individuen dominiert [genetischer Drift](https://en.wikipedia.org/wiki/Genetic_drift) über Selektion — zufällige Schwankungen bestimmen, welche Varianten überleben, nicht Fitness. Agent-Systeme haben typisch 3–10 Konfigurationen — das ist weit unter jeder Schwelle, bei der Selektionsdynamik statistisch greift.
 
-**Konsequenz für uns:** Wenn wir 5 Skill-Varianten haben und eine davon "gewinnt", wissen wir nicht ob das Fitness oder Zufall war. Die Pareto-Analyse aus Phase 1 braucht Mindest-Stichproben pro Skill (deshalb: ≥3 Uses für Pareto-View). Aber selbst mit vielen Ausführungen bleibt die "Population" (Anzahl konkurrierender Varianten pro Aufgabentyp) klein.
+**Praktische Konsequenz:** Wenn wir 5 Skill-Varianten haben und eine davon "gewinnt", wissen wir nicht ob das Fitness oder Zufall war. Die Pareto-Analyse aus Phase 1 braucht Mindest-Stichproben pro Skill (deshalb: ≥3 Uses für Pareto-View). Aber selbst mit vielen Ausführungen bleibt die "Population" (Anzahl konkurrierender Varianten pro Aufgabentyp) klein.
 
 **Bewertung:** Trifft zu. Das ist ein echtes Problem, das die Analogie schwächt. Gegenmaßnahme: Nicht auf Populations-Level selektieren (zu wenige Individuen), sondern auf Ausführungs-Level — viele Datenpunkte pro Variante statt vieler Varianten. Das verschiebt das Problem von Populationsgenetik zu klassischer Statistik (Hypothesentests).
 
@@ -313,7 +313,7 @@ The **structural analogy** remains valid as a **thinking aid and design heuristi
 | G2: Keine echte Reproduktion | STARK | Unterscheidung "designed" vs. "autonomous" evolution nötig |
 | G3: Wishful Mnemonics | MITTEL | Immer beide Begriffe nennen (biologisch + technisch) |
 | G4: Künstliche ≠ Natürliche Selektion | STARK | Fitness-Funktion ist der fragilste Teil → mögliches neues Prinzip |
-| G5: Open-Ended Evolution nur in Biologie | MITTEL | Für uns weniger relevant (wir wollen gerichtete Verbesserung) |
+| G5: Open-Ended Evolution nur in Biologie | MITTEL | Für uns weniger relevant (das Ziel ist gerichtete Verbesserung) |
 | G6: Evolutionäre Ansätze sind teuer | MITTEL | Kosten-Nutzen erst ab bestimmter Systemgröße positiv |
 | G7: Selektion favorisiert "fit", nicht "gut" | NIEDRIG | Durch Human-in-the-Loop gemildert |
 | G8: Evo-Devo statt Modern Synthesis | META | Öffnet neue Richtung, erweitert statt widerlegt |
