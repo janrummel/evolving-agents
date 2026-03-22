@@ -18,7 +18,18 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 > Without this document, the repo would be confirmation-biased. A thesis becomes stronger when it knows its counter-arguments — or it corrects itself.
 
-<div class='section-summary'><h4>Section Summary</h4><p>9 counter-arguments tested against the Nowak-Agent analogy. 3 rated <strong>STRONG</strong> (Lamarckian dynamics, no true reproduction, artificial selection), 3 <strong>MEDIUM</strong> (wishful mnemonics, open-ended evolution, cost), 1 <strong>LOW</strong> (bad outcomes), 1 <strong>META</strong> (Evo-Devo), 1 <strong>MEDIUM-STRONG</strong> (population size). The structural analogy survives as a design heuristic but requires explicit corrections — especially a new principle: "The fitness function is the most fragile part."</p></div>
+<div class='section-summary'>
+<h4>Section Summary</h4>
+<p>9 counter-arguments tested against the Nowak-Agent analogy:</p>
+<ul style="margin:8px 0;padding-left:20px">
+<li>🔴 <strong>3 STRONG</strong> — Lamarckian dynamics, no true reproduction, artificial selection</li>
+<li>🟡 <strong>3 MEDIUM</strong> — Wishful mnemonics, open-ended evolution, cost</li>
+<li>🟢 <strong>1 LOW</strong> — Bad outcomes</li>
+<li>🟡 <strong>1 META</strong> — Evo-Devo</li>
+<li>🔴 <strong>1 MEDIUM-STRONG</strong> — Population size</li>
+</ul>
+<p><strong>Verdict:</strong> The structural analogy survives as a design heuristic but requires explicit corrections — especially a new principle: <em>"The fitness function is the most fragile part."</em></p>
+</div>
 
 <details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 On this page</summary>
@@ -52,7 +63,18 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 > Ohne dieses Dokument wäre das Repo confirmation-biased. Eine These wird stärker, wenn sie ihre Gegenargumente kennt — oder sie korrigiert sich.
 
-<div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>9 Gegenargumente gegen die Nowak-Agent-Analogie geprüft. 3 als <strong>STARK</strong> bewertet (Lamarcksche Dynamik, keine echte Reproduktion, künstliche Selektion), 3 <strong>MITTEL</strong> (Wishful Mnemonics, Open-Ended Evolution, Kosten), 1 <strong>NIEDRIG</strong> (schlechte Outcomes), 1 <strong>META</strong> (Evo-Devo), 1 <strong>MITTEL-STARK</strong> (Populationsgröße). Die strukturelle Analogie überlebt als Design-Heuristik, erfordert aber explizite Korrekturen — insbesondere ein neues Prinzip: „Die Fitness-Funktion ist der fragilste Teil."</p></div>
+<div class='section-summary'>
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>9 Gegenargumente gegen die Nowak-Agent-Analogie geprüft:</p>
+<ul style="margin:8px 0;padding-left:20px">
+<li>🔴 <strong>3 STARK</strong> — Lamarcksche Dynamik, keine echte Reproduktion, künstliche Selektion</li>
+<li>🟡 <strong>3 MITTEL</strong> — Wishful Mnemonics, Open-Ended Evolution, Kosten</li>
+<li>🟢 <strong>1 NIEDRIG</strong> — Schlechte Outcomes</li>
+<li>🟡 <strong>1 META</strong> — Evo-Devo</li>
+<li>🔴 <strong>1 MITTEL-STARK</strong> — Populationsgröße</li>
+</ul>
+<p><strong>Fazit:</strong> Die strukturelle Analogie überlebt als Design-Heuristik, erfordert aber explizite Korrekturen — insbesondere ein neues Prinzip: <em>„Die Fitness-Funktion ist der fragilste Teil."</em></p>
+</div>
 
 <details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 Auf dieser Seite</summary>

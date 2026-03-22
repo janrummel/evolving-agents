@@ -600,7 +600,12 @@ Base-Agent (untere Ebene)
 
 <div class="section-summary">
 <h4>Section Summary</h4>
-<p>A concept-by-concept mapping across all three papers and AgentField. Of 11 evolutionary concepts, 3 are fully available (base unit, composition, system), 4 are partial (selection, retrieval, population, feedback), and 4 are missing entirely (mutation, crossover, diversity, cost awareness).</p>
+<p>A concept-by-concept mapping across all three papers and AgentField. Of 11 evolutionary concepts:</p>
+<ul style="margin:8px 0;padding-left:20px">
+<li>✅ <strong>3 fully available</strong> — base unit, composition, system</li>
+<li>⚠️ <strong>4 partial</strong> — selection, retrieval, population, feedback</li>
+<li>❌ <strong>4 missing</strong> — mutation, crossover, diversity, cost awareness</li>
+</ul>
 </div>
 
 <div class="key-box amber">
@@ -647,7 +652,12 @@ Base-Agent (untere Ebene)
 
 <div class="section-summary">
 <h4>Abschnitt-Zusammenfassung</h4>
-<p>Ein Konzept-für-Konzept-Mapping über alle drei Papers und AgentField. Von 11 evolutionären Konzepten sind 3 vollständig vorhanden (Basiseinheit, Komposition, System), 4 teilweise (Selektion, Retrieval, Population, Feedback) und 4 fehlen komplett (Mutation, Crossover, Diversität, Cost-Awareness).</p>
+<p>Ein Konzept-für-Konzept-Mapping über alle drei Papers und AgentField. Von 11 evolutionären Konzepten:</p>
+<ul style="margin:8px 0;padding-left:20px">
+<li>✅ <strong>3 vollständig</strong> — Basiseinheit, Komposition, System</li>
+<li>⚠️ <strong>4 teilweise</strong> — Selektion, Retrieval, Population, Feedback</li>
+<li>❌ <strong>4 fehlen</strong> — Mutation, Crossover, Diversität, Cost-Awareness</li>
+</ul>
 </div>
 
 <div class="key-box amber">
@@ -696,7 +706,13 @@ Base-Agent (untere Ebene)
 
 <div class="section-summary">
 <h4>Section Summary</h4>
-<p>Four concrete upgrade steps, ordered by effort: (1) Cost tracking via Pulse — low effort, immediate. (2) Tag-based skill retrieval — medium effort. (3) Automated skill mutation via MCE pattern — high effort. (4) Crossover for new skills from existing ones — requires mutation first.</p>
+<p>Four concrete upgrade steps, ordered by effort:</p>
+<ol style="margin:8px 0;padding-left:20px">
+<li><strong>Cost tracking</strong> via Pulse — low effort, immediate</li>
+<li><strong>Tag-based skill retrieval</strong> — medium effort</li>
+<li><strong>Automated skill mutation</strong> via MCE pattern — high effort</li>
+<li><strong>Crossover</strong> for new skills from existing ones — requires mutation first</li>
+</ol>
 </div>
 
 <details class="disclosure">
@@ -780,7 +796,13 @@ Base-Agent (untere Ebene)
 
 <div class="section-summary">
 <h4>Abschnitt-Zusammenfassung</h4>
-<p>Vier konkrete Upgrade-Schritte, sortiert nach Aufwand: (1) Cost-Tracking via Pulse — geringer Aufwand, sofort machbar. (2) Tag-basiertes Skill-Retrieval — mittlerer Aufwand. (3) Automatisierte Skill-Mutation via MCE-Pattern — hoher Aufwand. (4) Crossover für neue Skills aus bestehenden — setzt Mutation voraus.</p>
+<p>Vier konkrete Upgrade-Schritte, sortiert nach Aufwand:</p>
+<ol style="margin:8px 0;padding-left:20px">
+<li><strong>Cost-Tracking</strong> via Pulse — geringer Aufwand, sofort machbar</li>
+<li><strong>Tag-basiertes Skill-Retrieval</strong> — mittlerer Aufwand</li>
+<li><strong>Automatisierte Skill-Mutation</strong> via MCE-Pattern — hoher Aufwand</li>
+<li><strong>Crossover</strong> für neue Skills aus bestehenden — setzt Mutation voraus</li>
+</ol>
 </div>
 
 <details class="disclosure">

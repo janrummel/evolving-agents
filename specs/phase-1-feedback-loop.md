@@ -90,7 +90,14 @@ nav_order: 1
 
 <div class="section-summary">
 <h4>Section Summary</h4>
-<p>4 components: (1) a central SQL table logging every skill execution, (2) an aggregated metrics view, (3) a Pareto classification query (quality vs. cost), and (4) advisory alert triggers. Total build estimate: ~2 hours.</p>
+<p>4 components:</p>
+<ol style="margin:8px 0;padding-left:20px">
+<li>Central SQL table logging every skill execution</li>
+<li>Aggregated metrics view</li>
+<li>Pareto classification query (quality vs. cost)</li>
+<li>Advisory alert triggers</li>
+</ol>
+<p>Total build estimate: ~2 hours.</p>
 </div>
 
 ### 1. Skill Performance Log (Core)
@@ -182,7 +189,14 @@ ORDER BY avg_quality DESC;
 
 <div class="section-summary">
 <h4>Abschnitt-Zusammenfassung</h4>
-<p>4 Komponenten: (1) eine zentrale SQL-Tabelle für jede Skill-Ausführung, (2) eine aggregierte Metriken-View, (3) eine Pareto-Klassifikations-Abfrage (Qualität vs. Kosten) und (4) beratende Alert-Trigger. Geschätzter Aufwand: ~2 Stunden.</p>
+<p>4 Komponenten:</p>
+<ol style="margin:8px 0;padding-left:20px">
+<li>Zentrale SQL-Tabelle für jede Skill-Ausführung</li>
+<li>Aggregierte Metriken-View</li>
+<li>Pareto-Klassifikations-Abfrage (Qualität vs. Kosten)</li>
+<li>Beratende Alert-Trigger</li>
+</ol>
+<p>Geschätzter Aufwand: ~2 Stunden.</p>
 </div>
 
 ### 1. Skill-Performance-Log (Kern)
