@@ -245,6 +245,11 @@ Base-Agent (untere Ebene)
 
 ## 2. The Isomorphism Table: EvoFlow → MCE → AgentFactory → AgentField
 
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>A concept-by-concept mapping across all three papers and AgentField. Of 11 evolutionary concepts, 3 are fully available (base unit, composition, system), 4 are partial (selection, retrieval, population, feedback), and 4 are missing entirely (mutation, crossover, diversity, cost awareness).</p>
+</div>
+
 <div class="key-box amber">
 <h4>⚠️ Gap Analysis</h4>
 <p>5 of 11 concepts are missing or partial: Mutation (not automated), Crossover (missing entirely), Diversity mechanism (none), Cost awareness (no tracking), and Feedback loop (open). These are the targets for Phases 1–3.</p>
@@ -266,11 +271,31 @@ Base-Agent (untere Ebene)
 
 **Legend:** ✅ = we have it, ⚠️ = partial, ❌ = missing
 
+<div class="key-box amber">
+<h4>⚠️ Gap: Selection</h4>
+<p>Quality-Gate evaluates quality only. EvoFlow uses Pareto-optimal multi-objective selection (Quality + Cost). Adding cost as a second axis is Phase 1.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Gap: Retrieval</h4>
+<p>Orchestrator routing is intent-based (text classification). EvoFlow uses structured tag-matching (κ tags per individual). Ablation shows -3–4% without tags.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Gap: Feedback Loop</h4>
+<p>Pulse metrics + Quality-Gate provide feedback signals, but they don't flow back into skill modifications. The loop is open — evaluation happens but doesn't drive evolution.</p>
+</div>
+
 </div>
 
 <div lang='de' markdown='1'>
 
 ## 2. Die Isomorphie-Tabelle: EvoFlow → MCE → AgentFactory → AgentField
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>Ein Konzept-für-Konzept-Mapping über alle drei Papers und AgentField. Von 11 evolutionären Konzepten sind 3 vollständig vorhanden (Basiseinheit, Komposition, System), 4 teilweise (Selektion, Retrieval, Population, Feedback) und 4 fehlen komplett (Mutation, Crossover, Diversität, Cost-Awareness).</p>
+</div>
 
 <div class="key-box amber">
 <h4>⚠️ Gap-Analyse</h4>
@@ -293,6 +318,21 @@ Base-Agent (untere Ebene)
 
 **Legende:** ✅ = haben wir, ⚠️ = teilweise, ❌ = fehlt
 
+<div class="key-box amber">
+<h4>⚠️ Gap: Selektion</h4>
+<p>Quality-Gate bewertet nur Qualität. EvoFlow nutzt Pareto-optimale Multi-Objective-Selektion (Quality + Cost). Cost als zweite Achse hinzuzufügen ist Phase 1.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Gap: Retrieval</h4>
+<p>Orchestrator-Routing ist intent-basiert (Textklassifikation). EvoFlow nutzt strukturiertes Tag-Matching (κ Tags pro Individual). Ablation zeigt -3–4% ohne Tags.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Gap: Feedback-Loop</h4>
+<p>Pulse-Metriken + Quality-Gate liefern Feedback-Signale, aber sie fließen nicht in Skill-Modifikationen zurück. Der Loop ist offen — Evaluation findet statt, treibt aber keine Evolution.</p>
+</div>
+
 </div>
 
 ---
@@ -300,6 +340,11 @@ Base-Agent (untere Ebene)
 <div lang='en' markdown='1'>
 
 ## 3. What AgentField Can Concretely Learn
+
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>Four concrete upgrade steps, ordered by effort: (1) Cost tracking via Pulse — low effort, immediate. (2) Tag-based skill retrieval — medium effort. (3) Automated skill mutation via MCE pattern — high effort. (4) Crossover for new skills from existing ones — requires mutation first.</p>
+</div>
 
 ### 3.1 Immediately Actionable: Cost Tracking as a Second Optimization Axis
 
@@ -310,6 +355,11 @@ Base-Agent (untere Ebene)
 - Alternatively: Pareto visualization per skill (Quality vs. Cost)
 
 **Effort:** Low. Pulse data exists, Quality-Gate just needs to be extended.
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>This is the lowest-hanging fruit: Pulse already has the data. Adding cost as a second axis in Quality-Gate turns single-objective selection into Pareto-optimal multi-objective selection — the same mechanism that makes EvoFlow work.</p>
+</div>
 
 ### 3.2 Short-term: Tag-based Skill Retrieval
 
@@ -344,11 +394,21 @@ Base-Agent (untere Ebene)
 
 **Prerequisite:** Skill mutation must work first. Crossover is the next step.
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>The four phases form a dependency chain: Cost tracking → Tag retrieval → Mutation → Crossover. Each phase unlocks the next. Skipping ahead (e.g., crossover without mutation) would produce random recombination without selection pressure.</p>
+</div>
+
 </div>
 
 <div lang='de' markdown='1'>
 
 ## 3. Was AgentField konkret lernen kann
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>Vier konkrete Upgrade-Schritte, sortiert nach Aufwand: (1) Cost-Tracking via Pulse — geringer Aufwand, sofort machbar. (2) Tag-basiertes Skill-Retrieval — mittlerer Aufwand. (3) Automatisierte Skill-Mutation via MCE-Pattern — hoher Aufwand. (4) Crossover für neue Skills aus bestehenden — setzt Mutation voraus.</p>
+</div>
 
 ### 3.1 Sofort umsetzbar: Cost-Tracking als zweite Optimierungsachse
 
@@ -359,6 +419,11 @@ Base-Agent (untere Ebene)
 - Alternativ: Pareto-Darstellung pro Skill (Quality vs. Cost)
 
 **Aufwand:** Gering. Pulse-Daten existieren, Quality-Gate muss nur erweitert werden.
+
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Das ist der Low-Hanging Fruit: Pulse hat die Daten bereits. Cost als zweite Achse im Quality-Gate macht aus Single-Objective-Selektion eine Pareto-optimale Multi-Objective-Selektion — derselbe Mechanismus, der EvoFlow funktionieren lässt.</p>
+</div>
 
 ### 3.2 Kurzfristig: Tag-basiertes Skill-Retrieval
 
@@ -393,6 +458,11 @@ Base-Agent (untere Ebene)
 
 **Voraussetzung:** Skill-Mutation muss erst funktionieren. Crossover ist der nächste Schritt.
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Die vier Phasen bilden eine Abhängigkeitskette: Cost-Tracking → Tag-Retrieval → Mutation → Crossover. Jede Phase schaltet die nächste frei. Vorspringen (z.B. Crossover ohne Mutation) würde zufällige Rekombination ohne Selektionsdruck erzeugen.</p>
+</div>
+
 </div>
 
 ---
@@ -400,6 +470,11 @@ Base-Agent (untere Ebene)
 <div lang='en' markdown='1'>
 
 ## 4. The Nowak Bridge — Formal Correspondences
+
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>Mapping EvoFlow concepts to Nowak's evolutionary dynamics reveals that AgentField is in the "Prelife" phase: selection exists (Quality-Gate), but replication (automatic inheritance of successful patterns) is missing. The phase transition to "Life" requires closing exactly that gap.</p>
+</div>
 
 | Nowak | EvoFlow | AgentField (Current) | AgentField (Target) |
 |-------|---------|----------------------|---------------------|
@@ -415,11 +490,21 @@ Base-Agent (untere Ebene)
 
 **Key Observation:** AgentField is currently in the **"Prelife" phase** according to Nowak's terminology — there is diversity and selection (Quality-Gate), but no **replication** (automatic inheritance of successful patterns). EvoFlow shows what the phase transition to "Life" could look like.
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>The Nowak mapping makes the gap precise: AgentField has fitness (Quality-Gate) and population (~30 skills), but lacks replication. Adding skill versioning + inheritance is the single most important step toward the Prelife→Life transition.</p>
+</div>
+
 </div>
 
 <div lang='de' markdown='1'>
 
 ## 4. Die Nowak-Brücke — formale Entsprechungen
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>Das Mapping von EvoFlow-Konzepten auf Nowaks Evolutionsdynamik zeigt: AgentField ist in der "Prelife"-Phase. Selektion existiert (Quality-Gate), aber Replikation (automatische Vererbung erfolgreicher Muster) fehlt. Der Phasenübergang zu "Life" erfordert genau diese Lücke zu schließen.</p>
+</div>
 
 | Nowak | EvoFlow | AgentField (Ist) | AgentField (Soll) |
 |-------|---------|-------------------|-------------------|
@@ -435,6 +520,11 @@ Base-Agent (untere Ebene)
 
 **Schlüsselbeobachtung:** AgentField befindet sich derzeit in der **"Prelife"-Phase** nach Nowaks Terminologie — es gibt Diversität und Selektion (Quality-Gate), aber keine **Replikation** (automatische Vererbung erfolgreicher Muster). EvoFlow zeigt, wie der Phasenübergang zu "Life" aussehen könnte.
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Das Nowak-Mapping macht die Lücke präzise: AgentField hat Fitness (Quality-Gate) und Population (~30 Skills), aber keine Replikation. Skill-Versionierung + Vererbung hinzuzufügen ist der einzelne wichtigste Schritt zum Prelife→Life-Übergang.</p>
+</div>
+
 </div>
 
 ---
@@ -442,6 +532,11 @@ Base-Agent (untere Ebene)
 <div lang='en' markdown='1'>
 
 ## 5. The Upgrade Path: Prelife → Life for AgentField
+
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>A concrete 5-phase roadmap from manual skill curation (Phase 0 / Prelife) to full evolutionary skill management (Phase 4 / Life). Each phase builds on the previous. The critical transition point rₓ is where evolution outpaces manual curation.</p>
+</div>
 
 <div class="key-box green">
 <h4>💡 The Roadmap</h4>
@@ -479,6 +574,11 @@ Phase 4: Full Evolution (= "Life")
 <div lang='de' markdown='1'>
 
 ## 5. Der Upgrade-Pfad: Prelife → Life für AgentField
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>Eine konkrete 5-Phasen-Roadmap von manueller Skill-Kuration (Phase 0 / Prelife) zu vollem evolutionärem Skill-Management (Phase 4 / Life). Jede Phase baut auf der vorherigen auf. Der kritische Übergangspunkt rₓ ist dort, wo Evolution manuelle Kuration überholt.</p>
+</div>
 
 <div class="key-box green">
 <h4>💡 Die Roadmap</h4>
@@ -519,6 +619,11 @@ Phase 4: Full Evolution (= "Life")
 
 ## 6. Critical Assessment
 
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>None of the three papers addresses persistent memory, human-in-the-loop feedback, or rich project context — all of which AgentField already has. This puts us at a unique intersection: population diversity (EvoFlow) + skill co-evolution (MCE) + persistent memory + human feedback.</p>
+</div>
+
 ### What EvoFlow Does NOT Address (and We Must Consider)
 
 1. **No persistent memory:** EvoFlow evaluates on benchmarks, has no session history. AgentField's memory system is a fundamental advantage.
@@ -543,11 +648,21 @@ AgentField sits at an intersection that none of the three papers covers:
 - Additionally: **Human-in-the-Loop** as the richest feedback signal
 - And: **Project context** as information that none of the benchmark papers have
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>AgentField's unique advantage is the combination of what none of the papers has: persistent memory + human feedback + project context. When we add the evolutionary mechanisms from EvoFlow/MCE, we get something genuinely novel — not just a re-implementation.</p>
+</div>
+
 </div>
 
 <div lang='de' markdown='1'>
 
 ## 6. Kritische Einordnung
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>Keines der drei Papers adressiert persistentes Gedächtnis, Human-in-the-Loop-Feedback oder reichen Projektkontext — alles Dinge, die AgentField bereits hat. Das positioniert uns an einer einzigartigen Kreuzung: Populationsdiversität (EvoFlow) + Skill-Koevolution (MCE) + persistentes Gedächtnis + menschliches Feedback.</p>
+</div>
 
 ### Was EvoFlow NICHT adressiert (und wir berücksichtigen müssen)
 
@@ -572,6 +687,11 @@ Agent systems sit an einer Kreuzung, die keines der drei Papers abdeckt:
 - **Populationsdiversität** (EvoFlow) + **Skill-Koevolution** (MCE) + **Persistent Memory** (wir)
 - Dazu: **Human-in-the-Loop** als reichstes Feedback-Signal
 - Und: **Projektkontext** als Information, die keines der Benchmark-Papers hat
+
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>AgentFields einzigartiger Vorteil ist die Kombination dessen, was keines der Papers hat: persistentes Gedächtnis + menschliches Feedback + Projektkontext. Wenn wir die evolutionären Mechanismen von EvoFlow/MCE hinzufügen, entsteht etwas genuinely Neues — keine bloße Re-Implementierung.</p>
+</div>
 
 </div>
 

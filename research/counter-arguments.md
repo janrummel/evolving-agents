@@ -5,7 +5,7 @@ parent: Research
 nav_order: 5
 ---
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 # Counter-Arguments: Where the Nowak-Agent Analogy Breaks
 
@@ -21,7 +21,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 # Gegenargumente: Wo die Nowak-Agent-Analogie bricht
 
@@ -43,7 +43,7 @@ nav_order: 5
 
 ### G1: Agent-Systeme sind Lamarckisch, nicht Darwinistisch / Agent Systems Are Lamarckian, Not Darwinian (STARK/STRONG)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box red'><h4>⚔️ STRONG</h4><p>Agent evolution uses directed optimization (Lamarckism), not random mutation (Darwinism). Nowak's results become a lower bound, not an exact mapping.</p></div>
 
@@ -57,7 +57,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box red'><h4>⚔️ STARK</h4><p>Agent-Evolution nutzt gerichtete Optimierung (Lamarckismus), nicht zufällige Mutation (Darwinismus). Nowaks Ergebnisse werden zur unteren Schranke, nicht zur exakten Abbildung.</p></div>
 
@@ -75,7 +75,7 @@ nav_order: 5
 
 ### G2: Keine echte Reproduktion / No True Reproduction (STARK/STRONG)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box red'><h4>⚔️ STRONG</h4><p>Agent configurations don't self-replicate. Without true reproduction, Nowak's replication term is insubstantial. Distinction between "designed" and "autonomous" evolution needed.</p></div>
 
@@ -87,7 +87,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box red'><h4>⚔️ STARK</h4><p>Agent-Konfigurationen replizieren sich nicht selbst. Ohne echte Reproduktion ist Nowaks Replikationsterm substanzlos. Unterscheidung zwischen „designed" und „autonomous" Evolution nötig.</p></div>
 
@@ -103,7 +103,7 @@ nav_order: 5
 
 ### G3: "Wishful Mnemonics" — Metaphern-Inflation / Metaphor Inflation (MITTEL/MEDIUM)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ MEDIUM</h4><p>Biological labels on technical processes may suggest depth that doesn't exist. Always use both terms — biological and technical — to stay honest.</p></div>
 
@@ -117,7 +117,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ MITTEL</h4><p>Biologische Etiketten auf technischen Prozessen suggerieren eine Tiefe, die möglicherweise nicht existiert. Immer beide Begriffe nennen — biologisch und technisch — um ehrlich zu bleiben.</p></div>
 
@@ -135,7 +135,7 @@ nav_order: 5
 
 ### G4: Künstliche Selektion ≠ Natürliche Selektion / Artificial Selection ≠ Natural Selection (STARK/STRONG)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box red'><h4>⚔️ STRONG</h4><p>Humans design the fitness function — making the quality of "evolution" only as good as the metric. The fitness function is the most fragile part of the system.</p></div>
 
@@ -149,7 +149,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box red'><h4>⚔️ STARK</h4><p>Menschen designen die Fitness-Funktion — die Qualität der „Evolution" ist nur so gut wie die Metrik. Die Fitness-Funktion ist der fragilste Teil des Systems.</p></div>
 
@@ -167,7 +167,7 @@ nav_order: 5
 
 ### G5: Open-Ended Evolution ist biologisch einzigartig / Open-Ended Evolution Is Biologically Unique (MITTEL/MEDIUM)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ MEDIUM</h4><p>Agent evolution is always "closed" — bound to pre-defined metrics. It never generates genuine novelty. Less relevant since we want directed improvement, not open-ended evolution.</p></div>
 
@@ -181,7 +181,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ MITTEL</h4><p>Agent-Evolution ist immer „geschlossen" — gebunden an vordefinierte Metriken. Sie erzeugt nie genuine Neuheit. Weniger relevant, da wir gerichtete Verbesserung wollen, nicht open-ended evolution.</p></div>
 
@@ -199,7 +199,7 @@ nav_order: 5
 
 ### G6: Evolutionäre Ansätze sind teuer / Evolutionary Approaches Are Expensive (MITTEL/MEDIUM)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ MEDIUM</h4><p>Population-based methods require many costly evaluations. Evolution only pays off above a certain system size — cost-benefit must be tracked.</p></div>
 
@@ -211,7 +211,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ MITTEL</h4><p>Populationsbasierte Methoden brauchen viele kostenintensive Evaluierungen. Evolution lohnt sich erst ab einer bestimmten Systemgröße — Kosten-Nutzen muss im Blick bleiben.</p></div>
 
@@ -227,7 +227,7 @@ nav_order: 5
 
 ### G7: Darwinistische Logik sagt auch schlechte Outcomes voraus / Darwinian Logic Also Predicts Bad Outcomes (LOW)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box green'><h4>✅ LOW</h4><p>Selection favors "fit" agents, not "good" ones — risking deceptive alignment. Mitigated by Human-in-the-Loop and controlled fitness functions.</p></div>
 
@@ -239,7 +239,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box green'><h4>✅ NIEDRIG</h4><p>Selektion favorisiert „fitte" Agents, nicht „gute" — Risiko für deceptive alignment. Durch Human-in-the-Loop und kontrollierte Fitness-Funktionen gemildert.</p></div>
 
@@ -255,7 +255,7 @@ nav_order: 5
 
 ### G8: Die Analogie könnte in beide Richtungen funktionieren / The Analogy Could Work in Both Directions (META)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ META</h4><p>Evo-Devo argues the reverse direction: not "Nowak → AI" but "Evo-Devo → AI." Opens a new research direction that extends rather than refutes the thesis.</p></div>
 
@@ -267,7 +267,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box amber'><h4>⚠️ META</h4><p>Evo-Devo argumentiert in die umgekehrte Richtung: Nicht „Nowak → AI", sondern „Evo-Devo → AI." Öffnet eine neue Forschungsrichtung, die die These erweitert statt widerlegt.</p></div>
 
@@ -283,7 +283,7 @@ nav_order: 5
 
 ### G9: Populationsgröße — Nowaks Gleichungen setzen große Populationen voraus / Population Size — Nowak's Equations Assume Large Populations (MITTEL-STARK/MEDIUM-STRONG)
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='key-box red'><h4>⚔️ MEDIUM-STRONG</h4><p>Agent systems have 3–10 configurations — far below the ~10⁴ threshold where selection dynamics are meaningful. Genetic drift dominates. Select at execution level, not population level.</p></div>
 
@@ -297,7 +297,7 @@ nav_order: 5
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='key-box red'><h4>⚔️ MITTEL-STARK</h4><p>Agent-Systeme haben 3–10 Konfigurationen — weit unter der ~10⁴-Schwelle, ab der Selektionsdynamik statistisch greift. Genetischer Drift dominiert. Auf Ausführungs-Level selektieren, nicht Populations-Level.</p></div>
 
@@ -315,7 +315,7 @@ nav_order: 5
 
 ## Zusammenfassung: Was bleibt von unserer These? / Summary: What Remains of Our Thesis?
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 | Counter-Argument | Strength | Impact on Our Thesis |
 |-----------------|----------|---------------------|
@@ -345,7 +345,7 @@ The **structural analogy** remains valid as a **thinking aid and design heuristi
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 | Gegenargument | Stärke | Auswirkung auf unsere These |
 |--------------|--------|----------------------------|

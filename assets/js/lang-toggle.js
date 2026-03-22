@@ -21,11 +21,19 @@
     'Monitoring Keywords': 'Monitoring-Keywords'
   };
 
-  // Create toggle UI
-  var toggle = document.createElement('div');
-  toggle.className = 'lang-toggle';
-  toggle.innerHTML = '<button class="lang-btn" data-lang="en" onclick="setLang(\'en\')">EN</button><button class="lang-btn" data-lang="de" onclick="setLang(\'de\')">DE</button>';
-  document.body.appendChild(toggle);
+  function createToggle() {
+    if (document.getElementById('lang-toggle-el')) return;
+    var toggle = document.createElement('div');
+    toggle.className = 'lang-toggle';
+    toggle.id = 'lang-toggle-el';
+    toggle.innerHTML = '<button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="de">DE</button>';
+    document.body.appendChild(toggle);
+    toggle.addEventListener('click', function(e) {
+      if (e.target.classList.contains('lang-btn')) {
+        setLang(e.target.dataset.lang);
+      }
+    });
+  }
 
   function translateNav(lang) {
     document.querySelectorAll('.nav-list-link').forEach(function(link) {
@@ -37,12 +45,20 @@
         link.textContent = link.dataset.origText;
       }
     });
-    // Also translate page title in header
-    var pageTitle = document.querySelector('.main-content h1');
-    // Don't touch h1 — those are handled by lang divs
+
+    // Also translate the breadcrumb / page heading if it exists outside lang divs
+    var breadcrumbs = document.querySelectorAll('.breadcrumb-nav-list-item a');
+    breadcrumbs.forEach(function(bc) {
+      var text = bc.textContent.trim();
+      if (!bc.dataset.origText) bc.dataset.origText = text;
+      if (lang === 'de' && navTranslations[bc.dataset.origText]) {
+        bc.textContent = navTranslations[bc.dataset.origText];
+      } else if (lang === 'en' && bc.dataset.origText) {
+        bc.textContent = bc.dataset.origText;
+      }
+    });
   }
 
-  // Apply language
   window.setLang = function(lang) {
     document.documentElement.setAttribute('data-lang', lang);
     localStorage.setItem('ea-lang', lang);
@@ -52,8 +68,23 @@
     translateNav(lang);
   };
 
-  // Init
-  var saved = localStorage.getItem('ea-lang');
-  var lang = saved || (navigator.language.startsWith('de') ? 'de' : 'en');
-  setLang(lang);
+  // Run when DOM is ready
+  function init() {
+    createToggle();
+    var saved = localStorage.getItem('ea-lang');
+    var lang = saved || (navigator.language.startsWith('de') ? 'de' : 'en');
+    setLang(lang);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Re-translate after Just-the-Docs finishes loading (it may modify nav)
+  window.addEventListener('load', function() {
+    var lang = localStorage.getItem('ea-lang') || 'en';
+    translateNav(lang);
+  });
 })();

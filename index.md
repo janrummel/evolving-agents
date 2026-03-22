@@ -39,12 +39,12 @@ nav_order: 1
 </style>
 
 <!-- HERO -->
-<div lang="en">
+<div lang="en" markdown="1">
 <p class="hero-question">Why do some AI agent systems get <em>better</em> over time — while others just get more complex?</p>
 <p class="hero-answer">Martin Nowak answered this question for biology 20 years ago. The math already exists. We mapped it to AI agents.</p>
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 <p class="hero-question">Warum werden manche KI-Agent-Systeme mit der Zeit <em>besser</em> — während andere nur komplexer werden?</p>
 <p class="hero-answer">Martin Nowak hat diese Frage für die Biologie vor 20 Jahren beantwortet. Die Mathematik existiert bereits. Wir haben sie auf KI-Agents übertragen.</p>
 </div>
@@ -52,12 +52,12 @@ nav_order: 1
 ---
 
 <!-- INTERACTIVE ORIGINATOR EQUATION -->
-<div lang="en">
+<div lang="en" markdown="1">
 <h2>Try It: The Phase Transition</h2>
 <p>Nowak's Originator Equation describes when a system transitions from random diversity (<strong>Prelife</strong>) to directed evolution (<strong>Life</strong>). Drag the slider to see it happen:</p>
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 <h2>Ausprobieren: Der Phasenübergang</h2>
 <p>Nowaks Originator-Gleichung beschreibt, wann ein System von zufälliger Diversität (<strong>Prelife</strong>) zu gerichteter Evolution (<strong>Life</strong>) übergeht. Ziehe den Regler und sieh es live:</p>
 </div>
@@ -90,11 +90,11 @@ nav_order: 1
 ---
 
 <!-- THE BRIDGE -->
-<div lang="en">
+<div lang="en" markdown="1">
 <h2>The Bridge: Biology → AI Agents</h2>
 <p>The same dynamics that govern biological evolution map structurally onto AI agent systems:</p>
 </div>
-<div lang="de">
+<div lang="de" markdown="1">
 <h2>Die Brücke: Biologie → KI-Agents</h2>
 <p>Dieselben Dynamiken, die biologische Evolution bestimmen, lassen sich strukturell auf KI-Agent-Systeme übertragen:</p>
 </div>
@@ -165,16 +165,16 @@ nav_order: 1
 ---
 
 <!-- THE JOURNEY -->
-<div lang="en">
+<div lang="en" markdown="1">
 <h2>The Upgrade Path</h2>
 <p>Where is your agent system on the evolutionary ladder?</p>
 </div>
-<div lang="de">
+<div lang="de" markdown="1">
 <h2>Der Upgrade-Pfad</h2>
 <p>Wo steht dein Agent-System auf der evolutionären Leiter?</p>
 </div>
 
-<div lang="en">
+<div lang="en" markdown="1">
 <div class="journey-step">
   <div class="step-num" style="background:#78350f">0</div>
   <div class="step-content">
@@ -212,7 +212,7 @@ nav_order: 1
 </div>
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 <div class="journey-step">
   <div class="step-num" style="background:#78350f">0</div>
   <div class="step-content">
@@ -270,7 +270,7 @@ nav_order: 1
 ---
 
 <!-- EXPLORE -->
-<div lang="en">
+<div lang="en" markdown="1">
 <h2>Dive Deeper</h2>
 <div class="feature-grid">
   <div class="feature-card">
@@ -306,7 +306,7 @@ nav_order: 1
 </div>
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 <h2>Tiefer eintauchen</h2>
 <div class="feature-grid">
   <div class="feature-card">
@@ -344,7 +344,7 @@ nav_order: 1
 
 ---
 
-<div lang="en">
+<div lang="en" markdown="1">
 <h2>FAQ</h2>
 <details>
 <summary><strong>Is this a formal proof?</strong></summary>
@@ -360,7 +360,7 @@ nav_order: 1
 </details>
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 <h2>FAQ</h2>
 <details>
 <summary><strong>Ist das ein formaler Beweis?</strong></summary>

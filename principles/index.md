@@ -28,7 +28,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ## P1: Evolvability Over Performance
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='section-summary'><h4>Section Summary</h4><p>Build for adaptability, not peak performance. Systems that can evolve outperform those optimized for today's tasks.</p></div>
 
@@ -46,7 +46,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>Baue für Anpassungsfähigkeit, nicht für Spitzenleistung. Systeme, die sich weiterentwickeln können, übertreffen solche, die auf heutige Tasks optimiert sind.</p></div>
 
@@ -68,7 +68,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ## P2: Diversity as Strategic Resource
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='section-summary'><h4>Section Summary</h4><p>Keep multiple good solutions ready. When conditions change, diversity is your insurance policy.</p></div>
 
@@ -86,7 +86,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>Halte mehrere gute Lösungen bereit. Wenn sich Bedingungen ändern, ist Diversität deine Versicherung.</p></div>
 
@@ -108,7 +108,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ## P3: Feedback Loops as Selection Pressure
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='section-summary'><h4>Section Summary</h4><p>No evaluation, no evolution. Feedback loops are the selection pressure that turns random variation into directed improvement.</p></div>
 
@@ -126,7 +126,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>Keine Evaluation, keine Evolution. Feedback Loops sind der Selektionsdruck, der zufällige Variation in gerichtete Verbesserung verwandelt.</p></div>
 
@@ -148,7 +148,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ## P4: Respect the Error Threshold
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='section-summary'><h4>Section Summary</h4><p>Change one thing at a time. Exceed your measurement capacity and you lose the ability to learn from changes.</p></div>
 
@@ -166,7 +166,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>Ändere eine Sache nach der anderen. Übersteigst du deine Messkapazität, verlierst du die Fähigkeit, aus Änderungen zu lernen.</p></div>
 
@@ -188,7 +188,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ## P5: Cooperation Must Be Measured, Not Assumed
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='section-summary'><h4>Section Summary</h4><p>Multi-agent ≠ better. Prove cooperation gain with data, or simplify to a single agent.</p></div>
 
@@ -206,7 +206,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>Multi-Agent ≠ besser. Beweise Kooperationsgewinn mit Daten, oder vereinfache auf einen einzelnen Agent.</p></div>
 
@@ -228,7 +228,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ## P6: The Fitness Function Is the Most Fragile Part
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='section-summary'><h4>Section Summary</h4><p>You design the selection pressure. If your metrics measure the wrong thing, the system optimizes in the wrong direction — fast.</p></div>
 
@@ -246,7 +246,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>Du designst den Selektionsdruck. Wenn deine Metriken das Falsche messen, optimiert das System in die falsche Richtung — schnell.</p></div>
 
@@ -268,7 +268,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ## P7: Knowledge Must Persist Beyond the Individual
 
-<div lang="en">
+<div lang="en" markdown="1">
 
 <div class='section-summary'><h4>Section Summary</h4><p>Without heredity, there is no evolution — only repeated rediscovery. Persistent memory is what separates cumulative improvement from Groundhog Day.</p></div>
 
@@ -287,7 +287,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
 
 <div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>Ohne Vererbung gibt es keine Evolution — nur wiederholte Neuentdeckung. Persistenter Speicher trennt kumulative Verbesserung von Und-täglich-grüßt-das-Murmeltier.</p></div>
 
