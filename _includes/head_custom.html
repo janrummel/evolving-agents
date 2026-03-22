@@ -47,11 +47,9 @@
 .compare-card h4{margin:0 0 8px;font-size:0.95em}
 .compare-card.highlight{border-color:#1f6feb}
 @media(max-width:600px){.compare-grid{grid-template-columns:1fr}}
-/* Wider content area, narrower sidebar */
-@media(min-width:1064px){
-  .side-bar{width:220px!important;min-width:220px!important}
-  .main{margin-left:220px!important}
-  .main-content-wrap{max-width:960px!important}
+/* Wider content area */
+@media(min-width:50rem){
+  .main{max-width:56rem!important}
 }
 /* Progressive Disclosure — collapsible sections */
 details.disclosure{margin:1em 0;border:1px solid var(--border-color,#30363d);border-radius:8px;overflow:hidden}
