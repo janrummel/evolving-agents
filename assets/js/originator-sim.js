@@ -97,11 +97,19 @@
     // Sort by fitness for visual layering
     var sorted = species.slice().sort(function(a, b) { return a.fitness - b.fitness; });
 
+    // Find max abundance for relative scaling
+    var maxX = 0;
+    for (var i = 0; i < N; i++) {
+      if (sorted[i].x > maxX) maxX = sorted[i].x;
+    }
+    if (maxX < 0.1) maxX = 0.1; // prevent division by tiny numbers
+
     var barW = W / N;
+    var maxBarH = H - 20; // leave 20px padding at top
 
     for (var i = 0; i < N; i++) {
       var s = sorted[i];
-      var barH = Math.min(s.x * 100, H - 20);
+      var barH = (s.x / maxX) * maxBarH;
 
       // Color: low fitness = dim, high fitness = bright
       var sat = 60 + s.fitness * 40;
