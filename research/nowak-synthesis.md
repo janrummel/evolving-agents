@@ -20,7 +20,7 @@ nav_order: 1
 **Date:** March 2026
 **Status:** Initial synthesis — to be expanded
 
-> **Transparency note on research depth:** This document is based on paper abstracts, summaries, and third-party sources (EmergentMind, alphaXiv, GitHub). Analysis is based on abstracts, summaries, and third-party reviews. Numbers (e.g., "12.4% of costs") come from abstracts and were verified across at least 2 independent sources. All arXiv IDs are linked and directly verifiable. The synthesis in Section 4 is an independent interpretation — not a published finding.
+> **Transparency note:** Core papers (Nowak & Ohtsuki 2008, EvoFlow 2025) were read in full text. Variable definitions, theorems, and numerical examples are verified against the original publications. The synthesis in Section 4 is an independent interpretation — not a published finding. All arXiv IDs are linked and directly verifiable.
 
 </div>
 
@@ -39,7 +39,7 @@ nav_order: 1
 **Datum:** März 2026
 **Status:** Initiale Synthese — wird erweitert
 
-> **Transparenzhinweis zur Recherche-Tiefe:** Dieses Dokument basiert auf Paper-Abstracts, Summaries und Drittquellen (EmergentMind, alphaXiv, GitHub). Die Analyse basiert auf Abstracts, Summaries und Drittquellen-Reviews. Zahlen (z.B. "12.4% der Kosten") stammen aus Abstracts und wurden über mindestens 2 unabhängige Quellen geprüft. Alle arXiv-IDs sind verlinkt und direkt prüfbar. Die Synthese in Abschnitt 4 ist eine eigenständige Interpretation — keine publizierte Erkenntnis.
+> **Transparenzhinweis:** Kern-Papers (Nowak & Ohtsuki 2008, EvoFlow 2025) wurden im Volltext gelesen. Variablendefinitionen, Theoreme und numerische Beispiele sind gegen die Originalpublikationen verifiziert. Die Synthese in Abschnitt 4 ist eine eigenständige Interpretation — keine publizierte Erkenntnis. Alle arXiv-IDs sind verlinkt und direkt prüfbar.
 
 </div>
 
@@ -109,16 +109,23 @@ The equation describes the transition from "Prelife" (generative chemistry witho
 - **Second term** (`(d + aᵢ₀ + aᵢ₁) · xᵢ`): Decay and processing into longer sequences
 - **Third term** (`r · xᵢ · (fᵢ − φ)`): Standard selection equation of evolutionary dynamics
 
-**Critical parameters:**
+**Complete variable definitions** (from Nowak & Ohtsuki, PNAS 2008, verified against full text):
 
-- `r` scales the ratio of template-directed replication to template-independent sequence growth
-- `fᵢ` is the fitness of sequence i
-- `φ` is the average fitness of the population (frequency-dependent death rate)
+| Variable | Definition |
+|----------|-----------|
+| `xᵢ` | Frequency of sequence i (Σᵢ xᵢ = 1) |
+| `i'` | Unique precursor of sequence i (e.g., precursor of 001 is 00) |
+| `aᵢ` | Rate constant for producing sequence i from precursor i' |
+| `aᵢ₀, aᵢ₁` | Rate constants for extending i to i0 or i1 |
+| `d` | Decay rate (degradation rate) of all sequences |
+| `fᵢ` | Relative replication rate (fitness) of sequence i; fᵢ ≥ 0 |
+| `r` | **Replication potential** — scales relative strength of template-directed replication vs. template-independent growth |
+| `φ` | Average fitness constraint term: φ = f̄ + (a₀ + a₁ − d) / r |
 
 **The two limiting cases:**
 
 - **r → 0**: No replication → pure Prelife dynamics (mutation and selection without heredity)
-- **r → ∞**: Replication dominates → standard selection equation of evolutionary dynamics
+- **r → ∞**: Replication dominates → standard selection equation (ẋᵢ = xᵢ(fᵢ − φ))
 
 ### 1.3 The Phase Transition
 
@@ -130,11 +137,21 @@ gᵢ = r · (fᵢ − φ) − (d + aᵢ₀ + aᵢ₁)
 
 Below `rₓ`, Prelife dominates — longer sequences are exponentially rarer than shorter ones. Above `rₓ`, the fastest replicator dominates the population. There is selection *for and against* replication itself.
 
+**Critical replication rate** (from the full text, Eq. derived from net reproduction rate):
+
+```
+rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
+```
+
+**Numerical example from the paper** (Fig. 3): With d=1, aᵢ₀=0.4418, aᵢ₁=0.1284, fᵢ=0.999 → rc = 1.572, confirmed by numerical simulation.
+
+**Theorem (Nowak & Ohtsuki):** For sequences with equal fitness f, all their frequencies cross their precursor frequencies at a **single point** — Life is selected over Prelife only when all replicating sequences reach equal equilibrium frequency.
+
 ### 1.4 Key Insights from Nowak's Work
 
 - **Prelife is already generative**: Even without replication, a system produces information, diversity, and is subject to selection
 - **Replication is not a prerequisite for selection**, but a prerequisite for cumulative evolution
-- **The error rate has a threshold** (Error Threshold from quasispecies theory): Adaptation is only possible when the mutation rate per bit is less than the inverse of the sequence length
+- **The error rate has a threshold** (Error Threshold): With mutation rate u per base and sequence length n, error-free replication probability is q = (1−u)ⁿ. The critical mutation rate is uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerical example from the paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0.058. Unlike classical Eigen-Schuster (threshold between different replicators), Nowak's threshold is between **Life and Prelife**
 - **Cooperation as the third principle**: In finite populations, a single cooperator (e.g., with a tit-for-tat strategy) can invade a population of defectors — with a probability that corresponds to a net selection advantage
 - **Evolutionary graph theory**: The structure of the network (who interacts with whom) massively influences which strategies survive
 
@@ -162,11 +179,18 @@ Die Gleichung beschreibt den Übergang von "Prelife" (generative Chemie ohne Rep
 ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)
 ```
 
-**Wobei:**
+**Vollständige Variablendefinitionen** (aus Nowak & Ohtsuki, PNAS 2008, verifiziert am Volltext):
 
-- **Erster Term** (`aᵢ · xᵢ'`): Prelife-Dynamik — Sequenzen entstehen aus Vorläufern durch Addition aktivierter Monomere
-- **Zweiter Term** (`(d + aᵢ₀ + aᵢ₁) · xᵢ`): Abbau und Weiterverarbeitung zu längeren Sequenzen
-- **Dritter Term** (`r · xᵢ · (fᵢ − φ)`): Standard-Selektionsgleichung der Evolutionsdynamik
+| Variable | Definition |
+|----------|-----------|
+| `xᵢ` | Häufigkeit der Sequenz i (Σᵢ xᵢ = 1) |
+| `i'` | Eindeutiger Vorläufer der Sequenz i (z.B. Vorläufer von 001 ist 00) |
+| `aᵢ` | Ratenkonstante für die Produktion von Sequenz i aus Vorläufer i' |
+| `aᵢ₀, aᵢ₁` | Ratenkonstanten für die Verlängerung von i zu i0 bzw. i1 |
+| `d` | Zerfallsrate (Degradationsrate) aller Sequenzen |
+| `fᵢ` | Relative Replikationsrate (Fitness) der Sequenz i; fᵢ ≥ 0 |
+| `r` | **Replikationspotential** — skaliert die relative Stärke von template-gesteuerter Replikation vs. template-unabhängigem Wachstum |
+| `φ` | Durchschnittliche Fitness (Constraint-Term): φ = f̄ + (a₀ + a₁ − d) / r |
 
 **Entscheidende Parameter:**
 
@@ -189,11 +213,21 @@ gᵢ = r · (fᵢ − φ) − (d + aᵢ₀ + aᵢ₁)
 
 Unterhalb von `rₓ` dominiert Prelife — längere Sequenzen sind exponentiell seltener als kürzere. Oberhalb von `rₓ` dominiert der schnellste Replikator die Population. Es gibt Selektion *für und gegen* Replikation selbst.
 
+**Kritische Replikationsrate** (aus dem Volltext, abgeleitet aus der Netto-Reproduktionsrate):
+
+```
+rc = (d + aᵢ₀ + aᵢ₁) / fᵢ
+```
+
+**Numerisches Beispiel aus dem Paper** (Fig. 3): Mit d=1, aᵢ₀=0,4418, aᵢ₁=0,1284, fᵢ=0,999 → rc = 1,572, bestätigt durch numerische Simulation.
+
+**Theorem (Nowak & Ohtsuki):** Für Sequenzen mit gleicher Fitness f schneiden sich alle ihre Häufigkeiten mit denen ihrer Vorläufer in einem **einzigen Punkt** — Life wird erst über Prelife selektiert, wenn alle replizierenden Sequenzen die gleiche Gleichgewichtshäufigkeit erreicht haben.
+
 ### 1.4 Schlüsselerkenntnisse aus Nowaks Werk
 
 - **Prelife ist bereits generativ**: Auch ohne Replikation erzeugt ein System Information, Diversität und unterliegt Selektion
 - **Replikation ist nicht Voraussetzung für Selektion**, aber Voraussetzung für kumulative Evolution
-- **Die Fehlerrate hat einen Schwellenwert** (Error Threshold aus der Quasispezies-Theorie): Anpassung ist nur möglich, wenn die Mutationsrate pro Bit kleiner ist als die Inverse der Sequenzlänge
+- **Die Fehlerrate hat einen Schwellenwert** (Error Threshold): Bei Mutationsrate u pro Base und Sequenzlänge n ist die fehlerfreie Replikationswahrscheinlichkeit q = (1−u)ⁿ. Die kritische Mutationsrate ist uc = 1 − [(d+2a)/(r·fᵢ)]^(1/n). Numerisches Beispiel aus dem Paper: a=1, d=1, r=10, f₂₀=1, n=20 → uc = 0,058. Anders als beim klassischen Eigen-Schuster (Schwelle zwischen verschiedenen Replikatoren) ist Nowaks Schwelle zwischen **Life und Prelife**
 - **Kooperation als drittes Prinzip**: In endlichen Populationen kann ein einzelner Kooperator (z.B. mit Tit-for-Tat-Strategie) eine Population von Defektoren invadieren — mit einer Wahrscheinlichkeit, die einem Netto-Selektionsvorteil entspricht
 - **Evolutionäre Graphentheorie**: Die Struktur des Netzwerks (wer mit wem interagiert) beeinflusst massiv, welche Strategien überleben
 
