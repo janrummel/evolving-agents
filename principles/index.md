@@ -26,7 +26,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
-## P1: Evolvability Over Performance
+## <span lang="en">P1: Evolvability Over Performance</span><span lang="de">P1: Evolvierbarkeit vor Performance</span>
 
 <div lang="en" markdown="1">
 
@@ -66,7 +66,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
-## P2: Diversity as Strategic Resource
+## <span lang="en">P2: Diversity as Strategic Resource</span><span lang="de">P2: Diversität als strategische Ressource</span>
 
 <div lang="en" markdown="1">
 
@@ -106,7 +106,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
-## P3: Feedback Loops as Selection Pressure
+## <span lang="en">P3: Feedback Loops as Selection Pressure</span><span lang="de">P3: Feedback-Loops als Selektionsdruck</span>
 
 <div lang="en" markdown="1">
 
@@ -146,7 +146,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
-## P4: Respect the Error Threshold
+## <span lang="en">P4: Respect the Error Threshold</span><span lang="de">P4: Den Error Threshold respektieren</span>
 
 <div lang="en" markdown="1">
 
@@ -186,7 +186,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
-## P5: Cooperation Must Be Measured, Not Assumed
+## <span lang="en">P5: Cooperation Must Be Measured, Not Assumed</span><span lang="de">P5: Kooperation muss gemessen, nicht angenommen werden</span>
 
 <div lang="en" markdown="1">
 
@@ -226,7 +226,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
-## P6: The Fitness Function Is the Most Fragile Part
+## <span lang="en">P6: The Fitness Function Is the Most Fragile Part</span><span lang="de">P6: Die Fitness-Funktion ist der fragilste Teil</span>
 
 <div lang="en" markdown="1">
 
@@ -266,7 +266,7 @@ Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionär
 
 ---
 
-## P7: Knowledge Must Persist Beyond the Individual
+## <span lang="en">P7: Knowledge Must Persist Beyond the Individual</span><span lang="de">P7: Wissen muss über das Individuum hinaus bestehen</span>
 
 <div lang="en" markdown="1">
 

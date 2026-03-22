@@ -39,9 +39,9 @@ nav_order: 5
 
 ---
 
-## Die 9 stärksten Gegenargumente / The 9 Strongest Counter-Arguments
+## <span lang="en">The 9 Strongest Counter-Arguments</span><span lang="de">Die 9 stärksten Gegenargumente</span>
 
-### G1: Agent-Systeme sind Lamarckisch, nicht Darwinistisch / Agent Systems Are Lamarckian, Not Darwinian (STARK/STRONG)
+### <span lang="en">G1: Agent Systems Are Lamarckian, Not Darwinian (STRONG)</span><span lang="de">G1: Agent-Systeme sind Lamarckisch, nicht Darwinistisch (STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -73,7 +73,7 @@ nav_order: 5
 
 ---
 
-### G2: Keine echte Reproduktion / No True Reproduction (STARK/STRONG)
+### <span lang="en">G2: No True Reproduction (STRONG)</span><span lang="de">G2: Keine echte Reproduktion (STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -101,7 +101,7 @@ nav_order: 5
 
 ---
 
-### G3: "Wishful Mnemonics" — Metaphern-Inflation / Metaphor Inflation (MITTEL/MEDIUM)
+### <span lang="en">G3: "Wishful Mnemonics" — Metaphor Inflation (MEDIUM)</span><span lang="de">G3: „Wishful Mnemonics" — Metaphern-Inflation (MITTEL)</span>
 
 <div lang="en" markdown="1">
 
@@ -133,7 +133,7 @@ nav_order: 5
 
 ---
 
-### G4: Künstliche Selektion ≠ Natürliche Selektion / Artificial Selection ≠ Natural Selection (STARK/STRONG)
+### <span lang="en">G4: Artificial Selection ≠ Natural Selection (STRONG)</span><span lang="de">G4: Künstliche Selektion ≠ Natürliche Selektion (STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -165,7 +165,7 @@ nav_order: 5
 
 ---
 
-### G5: Open-Ended Evolution ist biologisch einzigartig / Open-Ended Evolution Is Biologically Unique (MITTEL/MEDIUM)
+### <span lang="en">G5: Open-Ended Evolution Is Biologically Unique (MEDIUM)</span><span lang="de">G5: Open-Ended Evolution ist biologisch einzigartig (MITTEL)</span>
 
 <div lang="en" markdown="1">
 
@@ -197,7 +197,7 @@ nav_order: 5
 
 ---
 
-### G6: Evolutionäre Ansätze sind teuer / Evolutionary Approaches Are Expensive (MITTEL/MEDIUM)
+### <span lang="en">G6: Evolutionary Approaches Are Expensive (MEDIUM)</span><span lang="de">G6: Evolutionäre Ansätze sind teuer (MITTEL)</span>
 
 <div lang="en" markdown="1">
 
@@ -225,7 +225,7 @@ nav_order: 5
 
 ---
 
-### G7: Darwinistische Logik sagt auch schlechte Outcomes voraus / Darwinian Logic Also Predicts Bad Outcomes (LOW)
+### <span lang="en">G7: Darwinian Logic Also Predicts Bad Outcomes (LOW)</span><span lang="de">G7: Darwinistische Logik sagt auch schlechte Outcomes voraus (NIEDRIG)</span>
 
 <div lang="en" markdown="1">
 
@@ -253,7 +253,7 @@ nav_order: 5
 
 ---
 
-### G8: Die Analogie könnte in beide Richtungen funktionieren / The Analogy Could Work in Both Directions (META)
+### <span lang="en">G8: The Analogy Could Work in Both Directions (META)</span><span lang="de">G8: Die Analogie könnte in beide Richtungen funktionieren (META)</span>
 
 <div lang="en" markdown="1">
 
@@ -281,7 +281,7 @@ nav_order: 5
 
 ---
 
-### G9: Populationsgröße — Nowaks Gleichungen setzen große Populationen voraus / Population Size — Nowak's Equations Assume Large Populations (MITTEL-STARK/MEDIUM-STRONG)
+### <span lang="en">G9: Population Size — Nowak's Equations Assume Large Populations (MEDIUM-STRONG)</span><span lang="de">G9: Populationsgröße — Nowaks Gleichungen setzen große Populationen voraus (MITTEL-STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -313,7 +313,7 @@ nav_order: 5
 
 ---
 
-## Zusammenfassung: Was bleibt von unserer These? / Summary: What Remains of Our Thesis?
+## <span lang="en">Summary: What Remains of Our Thesis?</span><span lang="de">Zusammenfassung: Was bleibt von unserer These?</span>
 
 <div lang="en" markdown="1">
 
@@ -377,7 +377,7 @@ Die **strukturelle Analogie** bleibt gültig als **Denkhilfe und Design-Heuristi
 
 ---
 
-## Quellen / Sources
+## <span lang="en">Sources</span><span lang="de">Quellen</span>
 
 - [AI & Society: Darwin in the Machine — Algorithmic Individuation through Evolutionary Narratives](https://link.springer.com/article/10.1007/s00146-025-02310-0)
 - [Science: The Metaphors of Artificial Intelligence](https://www.science.org/doi/10.1126/science.adt6140)

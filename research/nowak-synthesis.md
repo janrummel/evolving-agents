@@ -475,9 +475,9 @@ Empirische Analyse von MAS-Fehlern identifiziert systematische Failure Patterns:
 
 Evaluation von sechs populären Multi-Agent-Frameworks (darunter MetaGPT) zeigt, dass keines die identifizierten Failure Modes systematisch adressiert. Das MAST-Dataset ist die erste empirisch abgeleitete, umfassende Taxonomie spezifisch für MAS-Fehler.
 
-### 3.3 Google's Lessons from 2025
+### 3.3 Googles Erkenntnisse aus 2025
 
-Google's Office of the CTO zieht aus der breiten Agent-Deployment-Erfahrung 2025 zentrale Schlüsse:
+Googles Office of the CTO zieht aus der breiten Agent-Deployment-Erfahrung 2025 zentrale Schlüsse:
 
 - **Evaluation als aktive Architekturkomponente**: Evaluation wurde von einer passiven Metrik zu einem integrierten Bestandteil agentischer Pipelines — ein Autorater (LLM als Judge) bewertet jeden Output in Echtzeit und gibt korrigierbares Feedback
 - **Self-Correction löst das Cascading-Error-Problem**: Wenn ein Agent in Schritt 2 einen Fehler macht, fängt traditionelle Evaluation diesen erst nach dem Scheitern von Schritt 10. Echtzeit-Autorater korrigieren Fehler an der Quelle
