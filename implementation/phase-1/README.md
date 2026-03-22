@@ -11,6 +11,19 @@ nav_order: 2
 **Platform:** OpenClaw on Mac mini (5 agents: main + α/β/γ/δ)
 **Spec:** [Phase 1: Feedback Loop](../../specs/phase-1-feedback-loop.md)
 
+## Quickstart (3 commands)
+
+```bash
+# 1. Create the database
+sqlite3 ~/.openclaw/data/metrics.db < implementation/phase-1/schema.sql
+
+# 2. Log a skill execution
+skill-log.sh deep-research success --quality 0.85 --tokens 15000 --duration 120
+
+# 3. View metrics
+skill-metrics.sh overview
+```
+
 ## What Was Built
 
 ### 1. SQLite Schema (`metrics.db`)

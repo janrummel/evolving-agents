@@ -8,7 +8,7 @@ nav_order: 5
 # Gegenargumente: Wo die Nowak-Agent-Analogie bricht
 
 {: .counter }
-> **Reading: 5 of 5** · After reading this, you'll know the 8 strongest objections to the evolutionary analogy — including 3 rated STRONG — and where the thesis survives vs. where it needs correction.
+> **Reading: 5 of 5** · After reading this, you'll know the 9 strongest objections to the evolutionary analogy — including 3 rated STRONG — and where the thesis survives vs. where it needs correction.
 
 **Datum:** 2026-03-19
 **Zweck:** Ehrlichkeitstest — gezielte Suche nach Gegenargumenten zur eigenen These. Dieses Dokument sammelt die stärksten Einwände.
@@ -17,7 +17,7 @@ nav_order: 5
 
 ---
 
-## Die 8 stärksten Gegenargumente
+## Die 9 stärksten Gegenargumente
 
 ### G1: Agent-Systeme sind Lamarckisch, nicht Darwinistisch (STARK)
 
@@ -107,6 +107,18 @@ nav_order: 5
 
 ---
 
+### G9: Populationsgröße — Nowaks Gleichungen setzen große Populationen voraus (MITTEL-STARK)
+
+**Einwand:** Nowaks Selektionsgleichung und die Quasispezies-Theorie setzen statistisch signifikante Populationsgrößen voraus. In Populationen unter ~10⁴ Individuen dominiert [genetischer Drift](https://en.wikipedia.org/wiki/Genetic_drift) über Selektion — zufällige Schwankungen bestimmen, welche Varianten überleben, nicht Fitness. Agent-Systeme haben typisch 3–10 Konfigurationen — das ist weit unter jeder Schwelle, bei der Selektionsdynamik statistisch greift.
+
+**Konsequenz für uns:** Wenn wir 5 Skill-Varianten haben und eine davon "gewinnt", wissen wir nicht ob das Fitness oder Zufall war. Die Pareto-Analyse aus Phase 1 braucht Mindest-Stichproben pro Skill (deshalb: ≥3 Uses für Pareto-View). Aber selbst mit vielen Ausführungen bleibt die "Population" (Anzahl konkurrierender Varianten pro Aufgabentyp) klein.
+
+**Bewertung:** Trifft zu. Das ist ein echtes Problem, das die Analogie schwächt. Gegenmaßnahme: Nicht auf Populations-Level selektieren (zu wenige Individuen), sondern auf Ausführungs-Level — viele Datenpunkte pro Variante statt vieler Varianten. Das verschiebt das Problem von Populationsgenetik zu klassischer Statistik (Hypothesentests).
+
+**Quelle:** LaBar, T. & Adami, C. (2016). "[Different Evolutionary Paths to Complexity for Small and Large Populations of Digital Organisms](https://pmc.ncbi.nlm.nih.gov/articles/PMC5140054/)." *PLOS Computational Biology* — zeigt, dass in Populationen < 10⁴ Drift die Evolutionsdynamik fundamental verändert.
+
+---
+
 ## Zusammenfassung: Was bleibt von unserer These?
 
 | Gegenargument | Stärke | Auswirkung auf unsere These |
@@ -119,6 +131,7 @@ nav_order: 5
 | G6: Evolutionäre Ansätze sind teuer | MITTEL | Kosten-Nutzen erst ab bestimmter Systemgröße positiv |
 | G7: Selektion favorisiert "fit", nicht "gut" | NIEDRIG | Durch Human-in-the-Loop gemildert |
 | G8: Evo-Devo statt Modern Synthesis | META | Öffnet neue Richtung, erweitert statt widerlegt |
+| G9: Populationsgröße zu klein | MITTEL-STARK | Auf Ausführungs-Level selektieren, nicht Populations-Level |
 
 ### Was die These überlebt:
 

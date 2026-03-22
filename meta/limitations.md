@@ -60,7 +60,7 @@ The initial research searched for papers supporting the evolutionary analogy. It
 
 ### Principles Validation
 
-The 5 design principles are **derived from theory, not empirically validated**. They are design heuristics, not proven laws. Their effectiveness has not been measured on any system.
+The 7 design principles are **derived from theory, not empirically validated**. They are design heuristics, not proven laws. Their effectiveness has not been measured on any system.
 
 ## What Would Make This More Rigorous
 

@@ -98,4 +98,21 @@ Each principle follows the format: **What** (the rule), **Why** (the evolutionar
 
 ---
 
+## P7: Knowledge Must Persist Beyond the Individual
+
+**What:** Successful variations must be stored and inherited — without persistent memory, there is no cumulative evolution, only repeated rediscovery.
+
+**Why:** Nowak's Originator equation ([Nowak & Ohtsuki, PNAS 2008](https://www.pnas.org/doi/10.1073/pnas.0806714105)) defines the transition from Prelife to Life as the emergence of **replication** — template-directed copying that carries information forward. Without replication, a system has variation and selection but no heredity. It generates novelty but cannot accumulate improvements. This is the formal difference between drift and evolution.
+
+**How:**
+- Successful skill configurations must be saved, not just evaluated and discarded
+- Memory systems (MEMORY.md, learned-rules.md, skill_performance DB) are the heredity mechanism
+- When an agent discovers a better approach, it must be written down — not just used once
+- Cross-agent knowledge transfer (shared memory, shared skills) enables population-level inheritance
+- Measure: "If I reset all agents to fresh sessions, what knowledge survives?"
+
+**Connection to other principles:** P3 (Feedback Loops) generates the selection signal, but without P7 that signal has no lasting effect. P7 is what closes the loop from "we measured it" to "future runs benefit from it." Without P7, every session starts at zero — the system is stuck in Prelife.
+
+---
+
 *These principles are living documents. They evolve as the research base grows. See [Counter-Arguments](../research/counter-arguments) for where the evolutionary analogy breaks.*

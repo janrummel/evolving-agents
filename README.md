@@ -20,7 +20,7 @@
 [![Website](https://img.shields.io/badge/Website-Live-brightgreen)](https://janrummel.github.io/evolving-agents/)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Papers](https://img.shields.io/badge/Papers-55%2B-blue)](https://janrummel.github.io/evolving-agents/research/)
-[![Principles](https://img.shields.io/badge/Principles-6-green)](https://janrummel.github.io/evolving-agents/principles/)
+[![Principles](https://img.shields.io/badge/Principles-7-green)](https://janrummel.github.io/evolving-agents/principles/)
 
 ---
 
@@ -31,13 +31,13 @@ Current AI agent systems are fundamentally static. Martin Nowak's work on evolut
 > There is a structural analogy between biological evolution and agent system improvement.
 > Replication, mutation, and selection map onto workflow reuse, prompt variation, and evaluation.
 
-This repo connects the math to the practice — through 55+ papers, 6 actionable principles, and a concrete engineering spec for making agent systems evolvable.
+This repo connects the math to the practice — through 55+ papers, 7 actionable principles, and a concrete engineering spec for making agent systems evolvable.
 
 ## Who Is This For?
 
 | You are... | You'll get... | Start here |
 |:---|:---|:---|
-| **An agent system builder** | Design checklist + engineering spec | [6 Principles](principles/README.md) → [Phase 1 Spec](specs/phase-1-feedback-loop.md) |
+| **An agent system builder** | Design checklist + engineering spec | [7 Principles](principles/README.md) → [Phase 1 Spec](specs/phase-1-feedback-loop.md) |
 | **An AI/ML researcher** | 55+ categorized papers + open questions | [Paper Registry](research/paper-registry.md) → [Open Questions](research/open-questions.md) |
 | **Curious about biology × AI** | Accessible synthesis with glossary | [Nowak Synthesis](research/nowak-synthesis.md) |
 
@@ -72,7 +72,7 @@ See the [full FAQ on the website](https://janrummel.github.io/evolving-agents/#f
 
 ### Principles
 
-Five actionable design principles derived from evolutionary theory: [principles/](principles/README.md)
+Seven actionable design principles derived from evolutionary theory: [principles/](principles/README.md)
 
 1. **Evolvability over Performance** — Optimize for adaptability, not just current task success
 2. **Diversity as Strategic Resource** — Maintain a repertoire of solutions, not just the best one
@@ -123,7 +123,7 @@ Phase 1 is specified and [ready to implement](specs/phase-1-feedback-loop.md).
 
 ```
 research/           Syntheses, paper notes, open questions, deep dives
-principles/         5 design principles derived from evolutionary theory
+principles/         7 design principles derived from evolutionary theory
 specs/              Engineering specs (Phase 1 feedback loop)
 meta/               Research methodology, toolkit audit, learnings, monitoring
 ```
