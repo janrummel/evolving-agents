@@ -388,7 +388,7 @@ nav_order: 1
 </details>
 <details>
 <summary><strong>Were these papers actually read?</strong></summary>
-<p>Abstracts and summaries — no full-text reads. All numbers cross-checked against 2+ sources. See <a href="/evolving-agents/meta/limitations">Limitations</a>.</p>
+<p>Core papers read in full text. Broader corpus based on abstracts and summaries, cross-checked against 2+ sources. See <a href="/evolving-agents/meta/limitations">Limitations</a>.</p>
 </details>
 <details>
 <summary><strong>What can I DO with this?</strong></summary>
@@ -404,7 +404,7 @@ nav_order: 1
 </details>
 <details>
 <summary><strong>Wurden die Papers gelesen?</strong></summary>
-<p>Abstracts und Summaries — keine Volltextlektüre. Alle Zahlen gegen 2+ Quellen geprüft. Siehe <a href="/evolving-agents/meta/limitations">Limitationen</a>.</p>
+<p>Kern-Papers im Volltext gelesen. Breiterer Corpus basierend auf Abstracts und Zusammenfassungen, gegen 2+ Quellen geprüft. Siehe <a href="/evolving-agents/meta/limitations">Limitationen</a>.</p>
 </details>
 <details>
 <summary><strong>Was kann ich damit machen?</strong></summary>

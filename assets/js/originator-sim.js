@@ -18,7 +18,7 @@
 
   function init() {
     canvas = document.getElementById('originator-canvas');
-    if (!canvas) return;
+    if (!canvas) { console.warn('Originator sim: canvas not found'); return; }
     ctx = canvas.getContext('2d');
     canvas.width = W;
     canvas.height = H;
@@ -30,13 +30,23 @@
     termDecay = document.getElementById('term-decay');
     termSelection = document.getElementById('term-selection');
 
+    if (!slider) { console.warn('Originator sim: slider not found'); return; }
+
     // Initialize species
     resetSpecies();
 
-    slider.addEventListener('input', function() {
-      r = parseFloat(this.value);
-      rLabel.textContent = r.toFixed(2);
+    // Slider event — use both 'input' (dragging) and 'change' (release)
+    function onSliderChange() {
+      r = parseFloat(slider.value);
+      if (rLabel) rLabel.textContent = r.toFixed(2);
       updatePhaseLabel();
+    }
+    slider.addEventListener('input', onSliderChange);
+    slider.addEventListener('change', onSliderChange);
+
+    // Also handle touch events for mobile
+    slider.addEventListener('touchmove', function(e) {
+      onSliderChange();
     });
 
     running = true;
