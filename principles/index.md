@@ -2,6 +2,7 @@
 layout: default
 title: Principles
 nav_order: 3
+description: "7 actionable design principles for agent architectures, derived from evolutionary dynamics research."
 ---
 
 <div lang="en" markdown="1">

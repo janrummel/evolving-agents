@@ -2,6 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
+description: "Why do some AI agent systems get better over time? Nowak's math, 50+ papers, 7 principles, and an interactive simulation."
 ---
 
 <style>

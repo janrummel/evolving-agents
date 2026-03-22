@@ -3,6 +3,7 @@ layout: default
 title: Counter-Arguments
 parent: Research
 nav_order: 5
+description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the thesis breaks — and where it survives."
 ---
 
 <div lang="en" markdown="1">
