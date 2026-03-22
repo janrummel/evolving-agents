@@ -12,6 +12,11 @@ nav_order: 2
 {: .note }
 > **Reading: 2 of 5** · After browsing this, you'll have a categorized map of the field — 55+ papers across 9 categories, with priority ratings to guide what to read first.
 
+<div class="section-summary">
+<h4>Quick Navigation</h4>
+<p>9 categories: Evolutionary Foundations · Self-Evolving Agents · Workflow Evolution · Quality-Diversity · Multi-Agent Collaboration · Prompt Optimization · Evaluation · Failure Modes · Cross-Domain. Look for <strong>!!!</strong> = must read.</p>
+</div>
+
 All identified papers, categorized and prioritized. As of: 2026-03-19.
 
 **Legend:**
@@ -28,6 +33,11 @@ All identified papers, categorized and prioritized. As of: 2026-03-19.
 
 {: .note }
 > **Lesehinweis: 2 von 5** · Nach dem Durchstöbern hast du eine kategorisierte Übersicht des Feldes — 55+ Papers in 9 Kategorien, mit Prioritätsbewertungen als Leseleitfaden.
+
+<div class="section-summary">
+<h4>Schnellnavigation</h4>
+<p>9 Kategorien: Evolutionäre Grundlagen · Selbst-evolvierende Agents · Workflow-Evolution · Quality-Diversity · Multi-Agent-Kollaboration · Prompt-Optimierung · Evaluation · Fehlermodi · Cross-Domain. Achte auf <strong>!!!</strong> = Pflichtlektüre.</p>
+</div>
 
 Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 

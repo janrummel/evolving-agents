@@ -17,6 +17,8 @@ nav_order: 5
 
 > Without this document, the repo would be confirmation-biased. A thesis becomes stronger when it knows its counter-arguments — or it corrects itself.
 
+<div class='section-summary'><h4>Section Summary</h4><p>9 counter-arguments tested against the Nowak-Agent analogy. 3 rated <strong>STRONG</strong> (Lamarckian dynamics, no true reproduction, artificial selection), 3 <strong>MEDIUM</strong> (wishful mnemonics, open-ended evolution, cost), 1 <strong>LOW</strong> (bad outcomes), 1 <strong>META</strong> (Evo-Devo), 1 <strong>MEDIUM-STRONG</strong> (population size). The structural analogy survives as a design heuristic but requires explicit corrections — especially a new principle: "The fitness function is the most fragile part."</p></div>
+
 </div>
 
 <div lang="de">
@@ -31,6 +33,8 @@ nav_order: 5
 
 > Ohne dieses Dokument wäre das Repo confirmation-biased. Eine These wird stärker, wenn sie ihre Gegenargumente kennt — oder sie korrigiert sich.
 
+<div class='section-summary'><h4>Abschnitt-Zusammenfassung</h4><p>9 Gegenargumente gegen die Nowak-Agent-Analogie geprüft. 3 als <strong>STARK</strong> bewertet (Lamarcksche Dynamik, keine echte Reproduktion, künstliche Selektion), 3 <strong>MITTEL</strong> (Wishful Mnemonics, Open-Ended Evolution, Kosten), 1 <strong>NIEDRIG</strong> (schlechte Outcomes), 1 <strong>META</strong> (Evo-Devo), 1 <strong>MITTEL-STARK</strong> (Populationsgröße). Die strukturelle Analogie überlebt als Design-Heuristik, erfordert aber explizite Korrekturen — insbesondere ein neues Prinzip: „Die Fitness-Funktion ist der fragilste Teil."</p></div>
+
 </div>
 
 ---
@@ -40,6 +44,8 @@ nav_order: 5
 ### G1: Agent-Systeme sind Lamarckisch, nicht Darwinistisch / Agent Systems Are Lamarckian, Not Darwinian (STARK/STRONG)
 
 <div lang="en">
+
+<div class='key-box red'><h4>⚔️ STRONG</h4><p>Agent evolution uses directed optimization (Lamarckism), not random mutation (Darwinism). Nowak's results become a lower bound, not an exact mapping.</p></div>
 
 **Objection:** Nowak's mathematics is based on **random mutation + selection** (Darwinism). Agent systems, however, use **directed optimization** — TextGrad, Reinforcement Learning, feedback-based finetuning. This is [Lamarckism](https://en.wikipedia.org/wiki/Lamarckism) (acquired traits are inherited), not Darwinism.
 
@@ -52,6 +58,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box red'><h4>⚔️ STARK</h4><p>Agent-Evolution nutzt gerichtete Optimierung (Lamarckismus), nicht zufällige Mutation (Darwinismus). Nowaks Ergebnisse werden zur unteren Schranke, nicht zur exakten Abbildung.</p></div>
 
 **Einwand:** Nowaks Mathematik basiert auf **zufälliger Mutation + Selektion** (Darwinismus). Agent-Systeme nutzen aber **gerichtete Optimierung** — TextGrad, Reinforcement Learning, Feedback-basiertes Finetuning. Das ist [Lamarckismus](https://de.wikipedia.org/wiki/Lamarckismus) (erworbene Eigenschaften werden vererbt), nicht Darwinismus.
 
@@ -69,6 +77,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box red'><h4>⚔️ STRONG</h4><p>Agent configurations don't self-replicate. Without true reproduction, Nowak's replication term is insubstantial. Distinction between "designed" and "autonomous" evolution needed.</p></div>
+
 **Objection:** Biological evolution requires reproduction — individuals copy themselves, with variation. Agent configurations don't copy themselves. They are created by humans or meta-agents. Without true reproduction, the replication term in Nowak's equation (`r · xᵢ · (fᵢ − φ)`) is insubstantial.
 
 **Practical consequence:** When we say "Skills replicate through SKILL.md inheritance," that's a weak analogy. A SKILL.md isn't automatically copied and varied — it's manually edited or rewritten by an LLM. That's more "design" than "replication."
@@ -78,6 +88,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box red'><h4>⚔️ STARK</h4><p>Agent-Konfigurationen replizieren sich nicht selbst. Ohne echte Reproduktion ist Nowaks Replikationsterm substanzlos. Unterscheidung zwischen „designed" und „autonomous" Evolution nötig.</p></div>
 
 **Einwand:** Biologische Evolution braucht Reproduktion — Individuen kopieren sich, mit Variation. Agent-Konfigurationen kopieren sich nicht selbst. Sie werden von Menschen oder Meta-Agents erstellt. Ohne echte Reproduktion ist der Replikationsterm in Nowaks Gleichung (`r · xᵢ · (fᵢ − φ)`) substanzlos.
 
@@ -93,6 +105,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box amber'><h4>⚠️ MEDIUM</h4><p>Biological labels on technical processes may suggest depth that doesn't exist. Always use both terms — biological and technical — to stay honest.</p></div>
+
 **Objection:** Drew McDermott coined the term "wishful mnemonics" for AI's tradition of giving systems human/biological terms ("Agent," "Knowledge," "Goal," "Evolution") hoping the metaphors would eventually become reality. The risk: The metaphor obscures what's actually happening.
 
 **Practical consequence:** When we say "Mutation" instead of "Prompt Variation" or "Fitness" instead of "Quality Score," we suggest a depth of analogy that may not exist. The isomorphism table could be a sophisticated case of label-matching: We stick biological labels on technical processes and call it a "bridge."
@@ -104,6 +118,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box amber'><h4>⚠️ MITTEL</h4><p>Biologische Etiketten auf technischen Prozessen suggerieren eine Tiefe, die möglicherweise nicht existiert. Immer beide Begriffe nennen — biologisch und technisch — um ehrlich zu bleiben.</p></div>
 
 **Einwand:** Drew McDermott prägte den Begriff "wishful mnemonics" für die AI-Tradition, Systemen menschliche/biologische Begriffe zu geben ("Agent", "Wissen", "Ziel", "Evolution") in der Hoffnung, die Metaphern würden irgendwann Realität werden. Das Risiko: Die Metapher verstellt den Blick auf das, was tatsächlich passiert.
 
