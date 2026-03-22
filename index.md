@@ -132,14 +132,17 @@ description: "Why do some AI agent systems get better over time? Nowak's math, 6
 
 <!-- PRELIFE INSIGHT -->
 <div lang="en" markdown="1">
-<details style="margin:1.5em 0;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:4px 16px">
+<details style="margin:1.5em 0;background:rgba(22,27,34,.6);border:1px solid var(--border-color,#30363d);border-radius:8px;padding:4px 20px">
 <summary style="cursor:pointer;padding:12px 0;font-size:1.05em"><strong>🔬 Why Current Agent Systems Are in the Prelife Phase</strong></summary>
+<div markdown="1" style="padding-bottom:12px">
 
-Following Nowak's terminology, most agent systems today — including AgentField — are in the **"Prelife" phase**: There is diversity (~30 skills) and selection (Quality Gate), but no **replication** — no automatic inheritance of successful patterns.
+Following Nowak's terminology, most agent systems today — including AgentField — are in the **"Prelife" phase**:
 
-This is not a problem. Prelife is already generative. But the step to "Life" mode is missing: the closed evolutionary loop.
+- ✅ **Diversity** exists (~30 skills)
+- ✅ **Selection** exists (Quality Gate)
+- ❌ **Replication** is missing — no automatic inheritance of successful patterns
 
-**The Missing Loop:**
+This is not a problem. Prelife is already generative. But the step to "Life" mode is missing: **the closed evolutionary loop.**
 
 <pre style="background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:12px;overflow-x:auto;font-size:0.85em;line-height:1.5;color:#c9d1d9">
 IS:     Task → Skill Selection → Execution → [Quality Gate] → Output
@@ -154,26 +157,30 @@ SHOULD: Task → Skill Selection → Execution → [Quality Gate] → Output
 **What would close the loop:**
 
 1. **Cost tracking** as a second optimization axis
-2. **Skill performance history** (which skill → which task → which score)
-3. **Automated prompt mutation** (small variations, A/B testing)
-4. **Niching** (multiple skill variants per task type, preserving diversity)
+2. **Skill performance history** — which skill → which task → which score
+3. **Automated prompt mutation** — small variations, A/B testing
+4. **Niching** — multiple skill variants per task type, preserving diversity
 
-EvoFlow shows empirically: The step from Phase 0 (manual workflows) to Phase 3 (evolved population) yields 1.23–29.86% improvement at 12.4% of the cost. This is not a hypothetical gain.
+EvoFlow shows empirically: The step from Phase 0 (manual workflows) to Phase 3 (evolved population) yields **1.23–29.86% improvement at 12.4% of the cost**. This is not a hypothetical gain.
 
-*Identified: 2026-03-19, during EvoFlow/MCE/AgentFactory Deep Dive*
+*Identified: 2026-03-19, during [EvoFlow/MCE/AgentFactory Deep Dive](/evolving-agents/research/deep-dive-evoflow-mce-agentfactory)*
 
+</div>
 </details>
 </div>
 
 <div lang="de" markdown="1">
-<details style="margin:1.5em 0;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:4px 16px">
+<details style="margin:1.5em 0;background:rgba(22,27,34,.6);border:1px solid var(--border-color,#30363d);border-radius:8px;padding:4px 20px">
 <summary style="cursor:pointer;padding:12px 0;font-size:1.05em"><strong>🔬 Warum aktuelle Agent-Systeme in der Prelife-Phase sind</strong></summary>
+<div markdown="1" style="padding-bottom:12px">
 
-Nach Nowaks Terminologie befinden sich die meisten Agent-Systeme heute — einschließlich AgentField — in der **"Prelife"-Phase**: Es gibt Diversität (~30 Skills) und Selektion (Quality-Gate), aber keine **Replikation** — keine automatische Vererbung erfolgreicher Muster.
+Nach Nowaks Terminologie befinden sich die meisten Agent-Systeme heute — einschließlich AgentField — in der **"Prelife"-Phase**:
 
-Das ist nicht schlimm. Prelife ist bereits generativ. Aber es fehlt der Schritt zum "Life"-Modus: der geschlossene evolutionäre Loop.
+- ✅ **Diversität** vorhanden (~30 Skills)
+- ✅ **Selektion** vorhanden (Quality-Gate)
+- ❌ **Replikation** fehlt — keine automatische Vererbung erfolgreicher Muster
 
-**Der fehlende Loop:**
+Das ist nicht schlimm. Prelife ist bereits generativ. Aber es fehlt der Schritt zum "Life"-Modus: **der geschlossene evolutionäre Loop.**
 
 <pre style="background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:12px;overflow-x:auto;font-size:0.85em;line-height:1.5;color:#c9d1d9">
 IST:   Task → Skill-Auswahl → Execution → [Quality-Gate] → Output
@@ -188,14 +195,15 @@ SOLL:  Task → Skill-Auswahl → Execution → [Quality-Gate] → Output
 **Was den Loop schließen würde:**
 
 1. **Cost-Tracking** als zweite Optimierungsachse
-2. **Skill-Performance-Historie** (welcher Skill → welcher Task → welcher Score)
-3. **Automatisierte Prompt-Mutation** (kleine Variationen, A/B-Test)
-4. **Niching** (mehrere Skill-Varianten pro Task-Typ, Diversität erhalten)
+2. **Skill-Performance-Historie** — welcher Skill → welcher Task → welcher Score
+3. **Automatisierte Prompt-Mutation** — kleine Variationen, A/B-Test
+4. **Niching** — mehrere Skill-Varianten pro Task-Typ, Diversität erhalten
 
-EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3 (evolvierte Population) bringt 1.23–29.86% Verbesserung bei 12,4% der Kosten. Das ist kein hypothetischer Gewinn.
+EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3 (evolvierte Population) bringt **1,23–29,86% Verbesserung bei 12,4% der Kosten**. Das ist kein hypothetischer Gewinn.
 
-*Erkannt: 2026-03-19, während EvoFlow/MCE/AgentFactory Deep Dive*
+*Erkannt: 2026-03-19, während [EvoFlow/MCE/AgentFactory Deep Dive](/evolving-agents/research/deep-dive-evoflow-mce-agentfactory)*
 
+</div>
 </details>
 </div>
 
@@ -391,8 +399,8 @@ EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3
     <a href="/evolving-agents/research/nowak-synthesis">Read →</a>
   </div>
   <div class="feature-card">
-    <h3>📄 50+ Papers</h3>
-    <p>9 categories, 15 must-reads. Prioritized and linked to arXiv.</p>
+    <h3>📄 60+ Papers</h3>
+    <p>9 categories, 19 must-reads. Prioritized and linked to arXiv.</p>
     <a href="/evolving-agents/research/paper-registry">Browse →</a>
   </div>
   <div class="feature-card">
@@ -427,8 +435,8 @@ EvoFlow zeigt empirisch: Der Schritt von Phase 0 (manuelle Workflows) zu Phase 3
     <a href="/evolving-agents/research/nowak-synthesis">Lesen →</a>
   </div>
   <div class="feature-card">
-    <h3>📄 50+ Papers</h3>
-    <p>9 Kategorien, 15 Must-Reads. Priorisiert und mit arXiv verlinkt.</p>
+    <h3>📄 60+ Papers</h3>
+    <p>9 Kategorien, 19 Must-Reads. Priorisiert und mit arXiv verlinkt.</p>
     <a href="/evolving-agents/research/paper-registry">Durchsuchen →</a>
   </div>
   <div class="feature-card">
