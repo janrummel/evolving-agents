@@ -17,13 +17,14 @@ nav_order: 3
 
 <details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 On this page</summary>
-<div style="font-size:0.85em;margin-top:8px">
+<div style="font-size:0.85em;margin-top:8px" markdown="1">
 
 1. [The Three Papers at a Glance](#1-the-three-papers-at-a-glance) — Comparison table
-2. [EvoFlow](#evoflow-250207373--population-based-workflow-evolution) — Niching selection for workflows
-3. [MCE](#mce-260121557--meta-context-engineering) — Skill co-evolution
-4. [AgentFactory](#agentfactory-260318000--executable-subagent-accumulation) — Code-based replication
-5. [Synthesis for AgentField](#4-synthesis-for-agentfield) — 4-phase upgrade path
+2. [Isomorphism Table](#2-the-isomorphism-table-evoflow--mce--agentfactory--agentfield)
+3. [What AgentField Can Learn](#3-what-agentfield-can-concretely-learn)
+4. [The Nowak Bridge](#4-the-nowak-bridge--formal-correspondences)
+5. [Upgrade Path: Prelife → Life](#5-the-upgrade-path-prelife--life-for-agentfield)
+6. [Critical Assessment](#6-critical-assessment)
 
 </div>
 </details>
@@ -42,13 +43,14 @@ nav_order: 3
 
 <details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 Auf dieser Seite</summary>
-<div style="font-size:0.85em;margin-top:8px">
+<div style="font-size:0.85em;margin-top:8px" markdown="1">
 
 1. [Die drei Papers im Überblick](#1-die-drei-papers-im-überblick) — Vergleichstabelle
-2. [EvoFlow](#evoflow-250207373--populationsbasierte-workflow-evolution) — Niching-Selektion für Workflows
-3. [MCE](#mce-260121557--meta-context-engineering) — Skill-Ko-Evolution
-4. [AgentFactory](#agentfactory-260318000--ausführbare-subagent-akkumulation) — Code-basierte Replikation
-5. [Synthese für AgentField](#4-synthese-für-agentfield) — 4-Phasen-Upgrade-Pfad
+2. [Isomorphie-Tabelle](#2-die-isomorphie-tabelle-evoflow--mce--agentfactory--agentfield)
+3. [Was AgentField lernen kann](#3-was-agentfield-konkret-lernen-kann)
+4. [Die Nowak-Brücke](#4-die-nowak-brücke--formale-entsprechungen)
+5. [Upgrade-Pfad: Prelife → Life](#5-der-upgrade-pfad-prelife--life-für-agentfield)
+6. [Kritische Bewertung](#6-kritische-bewertung)
 
 </div>
 </details>

@@ -3,6 +3,7 @@ layout: default
 title: Paper Registry
 parent: Research
 nav_order: 2
+description: "50+ papers across 9 categories with priority ratings. The reading map for evolving agent systems."
 ---
 
 <div lang='en' markdown='1'>
@@ -51,9 +52,15 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 
 ---
 
+<style>
+.paper-table td:first-child{font-weight:700;text-align:center;white-space:nowrap}
+.cat-intro{color:var(--body-text-color,#8b949e);font-size:0.9em;margin:-0.5em 0 1em;font-style:italic}
+</style>
+
 <div lang='en' markdown='1'>
 
 ## Category 1: Evolutionary Foundations
+<p class="cat-intro">The mathematical basis — Nowak's equations, quasispecies theory, evolutionary dynamics.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -67,6 +74,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 1: Evolutionäre Grundlagen
+<p class="cat-intro">Die mathematische Basis — Nowaks Gleichungen, Quasispezies-Theorie, Evolutionsdynamik.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -80,6 +88,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 2: Quality-Diversity / Evolvability
+<p class="cat-intro">Algorithms that maintain diverse, high-performing solutions — MAP-Elites, QD optimization.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -97,6 +106,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 2: Quality-Diversity / Evolvierbarkeit
+<p class="cat-intro">Algorithmen, die diverse, hochperformante Lösungen pflegen — MAP-Elites, QD-Optimierung.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -114,6 +124,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 3: Self-Evolving Agents (Surveys)
+<p class="cat-intro">Comprehensive surveys covering what, when, and how agents can self-improve.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -127,6 +138,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 3: Self-Evolving Agents (Surveys)
+<p class="cat-intro">Umfassende Surveys: Was, wann und wie Agents sich selbst verbessern können.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -140,6 +152,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 4: Evolving Agent Workflows (Core Topic)
+<p class="cat-intro">The core of our topic — papers that evolve agent workflows automatically.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -157,6 +170,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 4: Evolving Agent Workflows (Kernthema)
+<p class="cat-intro">Der Kern unseres Themas — Papers, die Agent-Workflows automatisch evolvieren.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -174,6 +188,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 5: Multi-Agent Self-Evolution
+<p class="cat-intro">Systems where multiple agents co-evolve and improve each other.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -191,6 +206,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 5: Multi-Agent Self-Evolution
+<p class="cat-intro">Systeme, in denen mehrere Agents ko-evolvieren und sich gegenseitig verbessern.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -208,6 +224,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 6: Multi-Agent Science (Attribution, Failure, Benchmarks)
+<p class="cat-intro">Attribution, failure modes, benchmarks — making multi-agent research rigorous.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -222,6 +239,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 6: Multi-Agent Science (Attribution, Failure, Benchmarks)
+<p class="cat-intro">Attribution, Fehlermodi, Benchmarks — Multi-Agent-Forschung rigoros machen.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -236,6 +254,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 7: Memory & Cognition Evolution
+<p class="cat-intro">How agents build and curate long-term knowledge — the heredity mechanism.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -250,6 +269,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 7: Memory & Cognition Evolution
+<p class="cat-intro">Wie Agents Langzeit-Wissen aufbauen und kuratieren — der Vererbungsmechanismus.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -264,6 +284,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 8: Self-Testing & Quality Gates
+<p class="cat-intro">Evaluation-as-architecture — agents that test and verify their own outputs.</p>
 
 | Prio | Paper | Authors | Venue | Year | ID |
 |------|-------|---------|-------|------|----|
@@ -275,6 +296,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 8: Selbst-Test & Quality Gates
+<p class="cat-intro">Evaluation-as-Architecture — Agents, die ihre eigenen Outputs testen und verifizieren.</p>
 
 | Prio | Paper | Autoren | Venue | Jahr | ID |
 |------|-------|---------|-------|------|----|
@@ -286,6 +308,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='en' markdown='1'>
 
 ## Category 9: Chinese-Language Sources
+<p class="cat-intro">Relevant work from Chinese institutions, often with distinct approaches.</p>
 
 | Prio | Source | Institution | Type | ID |
 |------|--------|-------------|-----|----|
@@ -299,6 +322,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 <div lang='de' markdown='1'>
 
 ## Kategorie 9: Chinesisch-sprachige Quellen
+<p class="cat-intro">Relevante Arbeiten aus chinesischen Institutionen, oft mit eigenen Ansätzen.</p>
 
 | Prio | Quelle | Institution | Typ | ID |
 |------|--------|-------------|-----|----|

@@ -2,7 +2,6 @@ title: Evolving Agents
 description: "From Nowak's Evolvability Equations to AI Agent Architectures — 50+ papers, 7 principles, interactive simulations."
 remote_theme: just-the-docs/just-the-docs@v0.10.0
 url: https://janrummel.github.io/evolving-agents
-logo: /evolving-agents/assets/img/og-default.png
 
 color_scheme: dark
 
@@ -17,6 +16,12 @@ heading_anchors: true
 
 mermaid:
   version: "10.9.0"
+
+exclude:
+  - AUDIT-MATRIX.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
 
 back_to_top: true
 back_to_top_text: "Back to top"
