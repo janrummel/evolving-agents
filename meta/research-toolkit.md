@@ -27,9 +27,19 @@ Was wir haben, was uns fehlt und was wir für seriöse interdisziplinäre Forsch
 
 ## What We Have / Was wir haben
 
+<div lang="en" markdown="1">
+<div class="section-summary"><h4>Section Summary</h4><p>Our current toolkit covers general web search, structured research pipelines, multi-layer analysis & synthesis skills, and a 5-vault knowledge storage system. Approved external sources include PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, and Open Targets.</p></div>
+</div>
+
+<div lang="de" markdown="1">
+<div class="section-summary"><h4>Abschnitt-Zusammenfassung</h4><p>Unser aktuelles Toolkit umfasst allgemeine Websuche, strukturierte Research-Pipelines, mehrstufige Analyse- & Synthese-Skills und ein 5-Vault-Wissensspeichersystem. Genehmigte externe Quellen: PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov und Open Targets.</p></div>
+</div>
+
 ### Search & Discovery
 
 <div lang="en" markdown="1">
+
+<div class="key-box green"><h4>✅ Available</h4><p>WebSearch (real-time web), WebFetch (direct URL access), research-pipeline (multi-source routing), learn-from-the-best (Mondon method), knowledge-check (cross-vault search, 5 layers)</p></div>
 
 | Tool | Capability | Strength | Limitation |
 |------|-----------|----------|------------|
@@ -42,6 +52,8 @@ Was wir haben, was uns fehlt und was wir für seriöse interdisziplinäre Forsch
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box green"><h4>✅ Verfügbar</h4><p>WebSearch (Echtzeit-Web), WebFetch (direkter URL-Zugriff), research-pipeline (Multi-Source-Routing), learn-from-the-best (Mondon-Methode), knowledge-check (Cross-Vault-Suche, 5 Layer)</p></div>
 
 | Tool | Fähigkeit | Stärke | Einschränkung |
 |------|-----------|--------|---------------|
@@ -57,6 +69,8 @@ Was wir haben, was uns fehlt und was wir für seriöse interdisziplinäre Forsch
 
 <div lang="en" markdown="1">
 
+<div class="key-box green"><h4>✅ Available</h4><p>analyze (ReAct cycle), synthesize (cross-source patterns), distill (progressive summarization), signal-check (quality filter), challenge (adversarial testing), briefing (vault overview)</p></div>
+
 | Tool | Capability | When to Use |
 |------|-----------|-------------|
 | **analyze** | ReAct cycle investigation | Multi-step structured analysis |
@@ -69,6 +83,8 @@ Was wir haben, was uns fehlt und was wir für seriöse interdisziplinäre Forsch
 </div>
 
 <div lang="de" markdown="1">
+
+<div class="key-box green"><h4>✅ Verfügbar</h4><p>analyze (ReAct-Zyklus), synthesize (quellübergreifende Muster), distill (Progressive Summarization), signal-check (Qualitätsfilter), challenge (Adversarial Testing), briefing (Vault-Überblick)</p></div>
 
 | Tool | Fähigkeit | Einsatzzweck |
 |------|-----------|-------------|
