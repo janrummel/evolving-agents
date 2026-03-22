@@ -5,6 +5,8 @@ parent: Engineering
 nav_order: 2
 ---
 
+<div lang='en' markdown='1'>
+
 # Phase 1 Implementation
 
 **Status:** ✅ Deployed (2026-03-22)
@@ -97,3 +99,102 @@ This implements the **measurement apparatus** — Nowak's `fᵢ` (fitness per in
 - [ ] First Pareto analysis with ≥3 uses per skill
 - [ ] First alert fires (quality drop or cost outlier)
 - [ ] Evaluate: Is manual logging sustainable or do we need automation?
+
+</div>
+
+<div lang='de' markdown='1'>
+
+# Phase 1 Implementierung
+
+**Status:** ✅ Deployed (2026-03-22)
+**Plattform:** Multi-Agent-System (5 Agents: main + α/β/γ/δ)
+**Spec:** [Phase 1: Feedback Loop](../../specs/phase-1-feedback-loop.md)
+
+## Schnellstart (3 Befehle)
+
+```bash
+# 1. Datenbank erstellen
+sqlite3 ~/.openclaw/data/metrics.db < implementation/phase-1/schema.sql
+
+# 2. Skill-Ausführung loggen
+skill-log.sh deep-research success --quality 0.85 --tokens 15000 --duration 120
+
+# 3. Metriken anzeigen
+skill-metrics.sh overview
+```
+
+## Was gebaut wurde
+
+### 1. SQLite-Schema (`metrics.db`)
+
+Die bestehende `~/.openclaw/data/metrics.db` wurde erweitert um:
+
+- **`skill_performance`**-Tabelle — loggt jede Skill-Ausführung mit agent_id, quality_score, token_cost, duration, outcome
+- **`skill_metrics`**-View — aggregierte Statistiken pro Skill (Ø Qualität, Kosten, Erfolgsrate)
+- **`skill_pareto`**-View — Pareto-Klassifikation (PARETO-OPTIMAL / DOMINATED / TRADE-OFF)
+- **`agent_skill_metrics`**-View — Aufschlüsselung pro Agent
+
+### 2. Logging-Script (`skill-log.sh`)
+
+```bash
+~/.openclaw/scripts/skill-log.sh <skill_name> <outcome> [--agent <id>] [--quality <0-1>] [--tokens <n>] [--duration <sec>] [--task-type <type>] [--project <name>] [--notes <text>]
+```
+
+Wird nach jeder Skill-Ausführung aufgerufen. Alle 5 Agents haben das als Pflicht in ihrer AGENTS.md.
+
+### 3. Metriken-Script (`skill-metrics.sh`)
+
+```bash
+~/.openclaw/scripts/skill-metrics.sh overview   # Überblick
+~/.openclaw/scripts/skill-metrics.sh pareto     # Qualität vs. Kosten
+~/.openclaw/scripts/skill-metrics.sh agents     # Pro-Agent-Aufschlüsselung
+~/.openclaw/scripts/skill-metrics.sh alerts     # Qualitätseinbrüche, Kosten-Ausreißer
+~/.openclaw/scripts/skill-metrics.sh detail <name>  # Historie eines Skills
+~/.openclaw/scripts/skill-metrics.sh recent [n]     # Letzte n Einträge
+```
+
+### 4. Alert-Trigger
+
+| Trigger | Bedingung | Aktion |
+|---------|-----------|--------|
+| Qualitätseinbruch | avg_quality < 0.5 UND uses >= 5 | Alert an User |
+| Kosten-Ausreißer | avg_cost > 2× Median | Alert an User |
+| Unbenutzter Skill | last_used > 30 Tage | Alert an User |
+
+Alerts sind rein informativ — keine automatischen Änderungen (Phase-1-Prinzip).
+
+## Architektur-Entscheidungen
+
+1. **Bestehende `metrics.db` wiederverwendet** statt neue DB — alles an einem Ort
+2. **Shell-Scripts, nicht Python** — keine Abhängigkeiten, funktioniert von jedem Agent
+3. **agent_id-Feld** — trackt welcher der 5 Agents welchen Skill ausgeführt hat, ermöglicht Q3-Analyse (Collaboration Gain) später
+4. **Manuelles Logging, keine Hooks** — Die Plattform hat noch keine Post-Execution-Hooks; Agents werden via AGENTS.md angewiesen, nach jeder Skill-Nutzung zu loggen
+
+## Anpassung gegenüber Spec
+
+Die ursprüngliche Spec zielt auf `knowledge.db` und post_tool_call Hooks. Diese Implementierung ist an die Zielplattform angepasst:
+
+| Original-Spec | Angepasste Implementierung |
+|---------------------|---------------------------|
+| knowledge.db | metrics.db (existierte bereits) |
+| post_tool_call Hook | Manuelles Logging via AGENTS.md-Anweisung |
+| Einzelner Agent | 5 Agents (main + α/β/γ/δ) mit agent_id-Tracking |
+| improve-Skill | skill-metrics.sh alerts Befehl |
+
+## Verbindung zu Nowak
+
+Dies implementiert den **Messapparat** — Nowaks `fᵢ` (Fitness pro Individuum) und `φ` (Populations-Durchschnitt). Ohne diese Messung gibt es keinen Selektionsdruck, nur Drift.
+
+- `skill_metrics`-View = Fitness-Landschaft der Population
+- `skill_pareto`-View = Multi-Objective-Selektion (EvoFlows Kernidee)
+- `alerts` = Selektionsdruck-Signale (keine automatische Aktion)
+- `agent_skill_metrics` = Nischen-Performance (MAP-Elites-Analogie pro Agent)
+
+## Nächste Schritte (Phase-2-Voraussetzungen)
+
+- [ ] ≥50 Einträge über alle Agents sammeln
+- [ ] Erste Pareto-Analyse mit ≥3 Nutzungen pro Skill
+- [ ] Erster Alert feuert (Qualitätseinbruch oder Kosten-Ausreißer)
+- [ ] Bewertung: Ist manuelles Logging nachhaltig oder brauchen wir Automatisierung?
+
+</div>
