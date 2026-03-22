@@ -4,6 +4,7 @@
   var canvas, ctx, slider, rLabel, phaseLabel;
   var termPrelife, termDecay, termSelection;
   var W = 600, H = 240;
+  var isMobile = (typeof window !== 'undefined' && window.innerWidth < 500);
   var running = false;
   var animId = null;
 
@@ -21,6 +22,15 @@
     canvas = document.getElementById('originator-canvas');
     if (!canvas) { console.warn('Originator sim: canvas not found'); return; }
     ctx = canvas.getContext('2d');
+
+    // Responsive: fit canvas to container width on mobile
+    if (isMobile && canvas.parentElement) {
+      var containerW = canvas.parentElement.clientWidth - 48; // padding
+      if (containerW < W) {
+        W = Math.max(300, containerW);
+        H = Math.round(W * 0.4); // keep aspect ratio
+      }
+    }
 
     // Retina / HiDPI support
     var dpr = window.devicePixelRatio || 1;

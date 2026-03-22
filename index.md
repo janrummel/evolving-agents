@@ -9,14 +9,16 @@ description: "Why do some AI agent systems get better over time? Nowak's math, 5
 .hero-question{font-size:1.6em;font-weight:300;color:#c9d1d9;line-height:1.4;margin:2em 0 0.5em}
 .hero-answer{font-size:1.1em;color:#8b949e;margin-bottom:2em}
 .sim-container{background:#0d1117;border:1px solid #30363d;border-radius:12px;padding:24px;margin:2em 0}
-.sim-container canvas{width:100%;max-width:600px;display:block;margin:0 auto 16px;border-radius:6px}
-.sim-controls{display:flex;align-items:center;gap:16px;justify-content:center;flex-wrap:wrap}
+.sim-container canvas{width:100%;max-width:600px;display:block;margin:0 auto 16px;border-radius:6px;touch-action:none}
+.sim-controls{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;padding:0 8px}
+.sim-controls input[type=range]{width:200px;max-width:50vw}
 .sim-controls label{color:#8b949e;font-size:0.9em}
 .sim-controls input[type=range]{width:200px;accent-color:#1f6feb}
 .sim-controls .r-val{font-family:monospace;color:#e6edf3;font-size:1.1em;min-width:3em}
 #phase-label{text-align:center;margin-top:12px;font-size:0.95em;font-weight:600;min-height:1.5em}
-.eq-highlight{background:#161b22;border-left:3px solid #1f6feb;padding:16px 20px;margin:1.5em 0;border-radius:0 8px 8px 0}
+.eq-highlight{background:#161b22;border-left:3px solid #1f6feb;padding:16px 20px;margin:1.5em 0;border-radius:0 8px 8px 0;overflow-x:auto}
 .eq-highlight code{font-size:1.15em;color:#e6edf3;letter-spacing:0.3px}
+@media(max-width:480px){.eq-highlight code{font-size:0.9em;letter-spacing:0}.eq-highlight>div{gap:8px!important}}
 .bridge-grid{display:grid;grid-template-columns:1fr 40px 1fr;gap:0;margin:2em 0}
 .bridge-col{padding:20px}
 .bridge-col h3{margin-top:0;font-size:1em;text-transform:uppercase;letter-spacing:1px}

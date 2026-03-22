@@ -143,9 +143,9 @@ His central insight: Evolution requires three fundamental principles — **Repli
 
 The equation describes the transition from "Prelife" (generative chemistry without replication) to "Life" (systems with replication):
 
-```
-ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)
-```
+$$\dot{x}_i = a_i \cdot x_i^\prime - (d + a_{i0} + a_{i1}) \cdot x_i + r \cdot x_i \cdot (f_i - \bar{\varphi})$$
+
+
 
 **Where:**
 
@@ -247,10 +247,10 @@ Seine zentrale Erkenntnis: Evolution benötigt drei Grundprinzipien — **Replik
 ### 1.2 Die Originator-Gleichung
 
 Die Gleichung beschreibt den Übergang von "Prelife" (generative Chemie ohne Replikation) zu "Life" (Systeme mit Replikation):
+$$\dot{x}_i = a_i \cdot x_i^\prime - (d + a_{i0} + a_{i1}) \cdot x_i + r \cdot x_i \cdot (f_i - \bar{\varphi})$$
 
-```
-ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)
-```
+
+
 
 <details class="disclosure">
 <summary>Vollständige Variablendefinitionen — 12 Variablen aus dem Originalpaper</summary>
