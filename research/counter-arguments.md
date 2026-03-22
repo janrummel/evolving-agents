@@ -24,16 +24,16 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 On this page</summary>
 <div style="font-size:0.85em;margin-top:8px">
 
-- 🔴 [G1: Lamarckian, not Darwinian](#g1-agent-systems-are-lamarckian-not-darwinian-strong) — STRONG
-- 🔴 [G2: No True Reproduction](#g2-no-true-reproduction-strong) — STRONG
-- 🟡 [G3: Wishful Mnemonics](#g3-wishful-mnemonics--metaphor-inflation-medium) — MEDIUM
-- 🔴 [G4: Artificial ≠ Natural Selection](#g4-artificial-selection--natural-selection-strong) — STRONG
-- 🟡 [G5: Open-Ended Evolution](#g5-open-ended-evolution-is-biologically-unique-medium) — MEDIUM
-- 🟡 [G6: Expensive](#g6-evolutionary-approaches-are-expensive-medium) — MEDIUM
-- 🟢 [G7: Bad Outcomes](#g7-darwinian-logic-also-predicts-bad-outcomes-low) — LOW
-- 🟡 [G8: Evo-Devo](#g8-the-analogy-could-work-in-both-directions-meta) — META
-- 🔴 [G9: Population Size](#g9-population-size--nowaks-equations-assume-large-populations-medium-strong) — MEDIUM-STRONG
-- [Summary](#summary-what-remains-of-our-thesis)
+- 🔴 [G1: Lamarckian, not Darwinian](#g1) — STRONG
+- 🔴 [G2: No True Reproduction](#g2) — STRONG
+- 🟡 [G3: Wishful Mnemonics](#g3) — MEDIUM
+- 🔴 [G4: Artificial ≠ Natural Selection](#g4) — STRONG
+- 🟡 [G5: Open-Ended Evolution](#g5) — MEDIUM
+- 🟡 [G6: Expensive](#g6) — MEDIUM
+- 🟢 [G7: Bad Outcomes](#g7) — LOW
+- 🟡 [G8: Evo-Devo](#g8) — META
+- 🔴 [G9: Population Size](#g9) — MEDIUM-STRONG
+- [Summary](#summary)
 
 </div>
 </details>
@@ -58,16 +58,16 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 Auf dieser Seite</summary>
 <div style="font-size:0.85em;margin-top:8px">
 
-- 🔴 [G1: Lamarckisch, nicht Darwinistisch](#g1-agent-systeme-sind-lamarckisch-nicht-darwinistisch-stark) — STARK
-- 🔴 [G2: Keine echte Reproduktion](#g2-keine-echte-reproduktion-stark) — STARK
-- 🟡 [G3: Wishful Mnemonics](#g3-wishful-mnemonics--metaphern-inflation-mittel) — MITTEL
-- 🔴 [G4: Künstliche ≠ Natürliche Selektion](#g4-künstliche-selektion--natürliche-selektion-stark) — STARK
-- 🟡 [G5: Open-Ended Evolution](#g5-open-ended-evolution-ist-biologisch-einzigartig-mittel) — MITTEL
-- 🟡 [G6: Teuer](#g6-evolutionäre-ansätze-sind-teuer-mittel) — MITTEL
-- 🟢 [G7: Schlechte Outcomes](#g7-darwinistische-logik-sagt-auch-schlechte-outcomes-voraus-niedrig) — NIEDRIG
-- 🟡 [G8: Evo-Devo](#g8-die-analogie-könnte-in-beide-richtungen-funktionieren-meta) — META
-- 🔴 [G9: Populationsgröße](#g9-populationsgröße--nowaks-gleichungen-setzen-große-populationen-voraus-mittel-stark) — MITTEL-STARK
-- [Zusammenfassung](#zusammenfassung-was-bleibt-von-unserer-these)
+- 🔴 [G1: Lamarckisch, nicht Darwinistisch](#g1) — STARK
+- 🔴 [G2: Keine echte Reproduktion](#g2) — STARK
+- 🟡 [G3: Wishful Mnemonics](#g3) — MITTEL
+- 🔴 [G4: Künstliche ≠ Natürliche Selektion](#g4) — STARK
+- 🟡 [G5: Open-Ended Evolution](#g5) — MITTEL
+- 🟡 [G6: Teuer](#g6) — MITTEL
+- 🟢 [G7: Schlechte Outcomes](#g7) — NIEDRIG
+- 🟡 [G8: Evo-Devo](#g8) — META
+- 🔴 [G9: Populationsgröße](#g9) — MITTEL-STARK
+- [Zusammenfassung](#summary)
 
 </div>
 </details>
@@ -78,7 +78,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ## <span lang="en">The 9 Strongest Counter-Arguments</span><span lang="de">Die 9 stärksten Gegenargumente</span>
 
-### <span lang="en">G1: Agent Systems Are Lamarckian, Not Darwinian (STRONG)</span><span lang="de">G1: Agent-Systeme sind Lamarckisch, nicht Darwinistisch (STARK)</span>
+### <span id="g1" lang="en">G1: Agent Systems Are Lamarckian, Not Darwinian (STRONG)</span><span lang="de">G1: Agent-Systeme sind Lamarckisch, nicht Darwinistisch (STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -110,7 +110,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G2: No True Reproduction (STRONG)</span><span lang="de">G2: Keine echte Reproduktion (STARK)</span>
+### <span id="g2" lang="en">G2: No True Reproduction (STRONG)</span><span lang="de">G2: Keine echte Reproduktion (STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -138,7 +138,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G3: "Wishful Mnemonics" — Metaphor Inflation (MEDIUM)</span><span lang="de">G3: „Wishful Mnemonics" — Metaphern-Inflation (MITTEL)</span>
+### <span id="g3" lang="en">G3: "Wishful Mnemonics" — Metaphor Inflation (MEDIUM)</span><span lang="de">G3: „Wishful Mnemonics" — Metaphern-Inflation (MITTEL)</span>
 
 <div lang="en" markdown="1">
 
@@ -170,7 +170,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G4: Artificial Selection ≠ Natural Selection (STRONG)</span><span lang="de">G4: Künstliche Selektion ≠ Natürliche Selektion (STARK)</span>
+### <span id="g4" lang="en">G4: Artificial Selection ≠ Natural Selection (STRONG)</span><span lang="de">G4: Künstliche Selektion ≠ Natürliche Selektion (STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -202,7 +202,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G5: Open-Ended Evolution Is Biologically Unique (MEDIUM)</span><span lang="de">G5: Open-Ended Evolution ist biologisch einzigartig (MITTEL)</span>
+### <span id="g5" lang="en">G5: Open-Ended Evolution Is Biologically Unique (MEDIUM)</span><span lang="de">G5: Open-Ended Evolution ist biologisch einzigartig (MITTEL)</span>
 
 <div lang="en" markdown="1">
 
@@ -234,7 +234,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G6: Evolutionary Approaches Are Expensive (MEDIUM)</span><span lang="de">G6: Evolutionäre Ansätze sind teuer (MITTEL)</span>
+### <span id="g6" lang="en">G6: Evolutionary Approaches Are Expensive (MEDIUM)</span><span lang="de">G6: Evolutionäre Ansätze sind teuer (MITTEL)</span>
 
 <div lang="en" markdown="1">
 
@@ -262,7 +262,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G7: Darwinian Logic Also Predicts Bad Outcomes (LOW)</span><span lang="de">G7: Darwinistische Logik sagt auch schlechte Outcomes voraus (NIEDRIG)</span>
+### <span id="g7" lang="en">G7: Darwinian Logic Also Predicts Bad Outcomes (LOW)</span><span lang="de">G7: Darwinistische Logik sagt auch schlechte Outcomes voraus (NIEDRIG)</span>
 
 <div lang="en" markdown="1">
 
@@ -290,7 +290,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G8: The Analogy Could Work in Both Directions (META)</span><span lang="de">G8: Die Analogie könnte in beide Richtungen funktionieren (META)</span>
+### <span id="g8" lang="en">G8: The Analogy Could Work in Both Directions (META)</span><span lang="de">G8: Die Analogie könnte in beide Richtungen funktionieren (META)</span>
 
 <div lang="en" markdown="1">
 
@@ -318,7 +318,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-### <span lang="en">G9: Population Size — Nowak's Equations Assume Large Populations (MEDIUM-STRONG)</span><span lang="de">G9: Populationsgröße — Nowaks Gleichungen setzen große Populationen voraus (MITTEL-STARK)</span>
+### <span id="g9" lang="en">G9: Population Size — Nowak's Equations Assume Large Populations (MEDIUM-STRONG)</span><span lang="de">G9: Populationsgröße — Nowaks Gleichungen setzen große Populationen voraus (MITTEL-STARK)</span>
 
 <div lang="en" markdown="1">
 
@@ -350,7 +350,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 ---
 
-## <span lang="en">Summary: What Remains of Our Thesis?</span><span lang="de">Zusammenfassung: Was bleibt von unserer These?</span>
+## <span id="summary" lang="en">Summary: What Remains of Our Thesis?</span><span lang="de">Zusammenfassung: Was bleibt von unserer These?</span>
 
 <div lang="en" markdown="1">
 

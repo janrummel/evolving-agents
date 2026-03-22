@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Phase 1: Implementation"
+title: "Implementation Guide"
 parent: Engineering
 nav_order: 2
 ---
