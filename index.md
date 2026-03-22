@@ -96,18 +96,23 @@ nav_order: 1
 </div>
 
 <div class="eq-highlight">
-  <code>ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)</code>
-  <div style="margin-top:10px">
-    <span lang="en" style="color:#8b949e;font-size:0.85em">
-      <strong>1st term</strong> (aᵢ·xᵢ'): Prelife chemistry — sequences arise from precursors.
-      <strong>2nd term</strong> (decay): Sequences degrade.
-      <strong>3rd term</strong> (r·xᵢ·(fᵢ−φ)): Selection — only active when r > 0. Fitter sequences grow, unfit ones shrink.
-    </span>
-    <span lang="de" style="color:#8b949e;font-size:0.85em">
-      <strong>1. Term</strong> (aᵢ·xᵢ'): Prelife-Chemie — Sequenzen entstehen aus Vorläufern.
-      <strong>2. Term</strong> (Zerfall): Sequenzen degradieren.
-      <strong>3. Term</strong> (r·xᵢ·(fᵢ−φ)): Selektion — nur aktiv wenn r > 0. Fittere Sequenzen wachsen, unfitte schrumpfen.
-    </span>
+  <code style="font-size:1.1em">ẋᵢ = <span style="color:#f59e0b;font-weight:700">aᵢ · xᵢ'</span> − <span style="color:#f87171;font-weight:700">(d + aᵢ₀ + aᵢ₁) · xᵢ</span> + <span style="color:#34d399;font-weight:700">r · xᵢ · (fᵢ − φ)</span></code>
+  <div style="display:flex;gap:16px;margin-top:12px;flex-wrap:wrap;justify-content:center">
+    <div style="text-align:center;min-width:120px">
+      <div style="color:#f59e0b;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:1px"><span lang="en">Prelife</span><span lang="de">Prelife</span></div>
+      <div style="color:#f59e0b;font-family:monospace;font-size:1.3em;font-weight:700" id="term-prelife">0.00</div>
+      <div style="color:#8b949e;font-size:0.75em"><span lang="en">chemistry creates</span><span lang="de">Chemie erzeugt</span></div>
+    </div>
+    <div style="text-align:center;min-width:120px">
+      <div style="color:#f87171;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:1px"><span lang="en">Decay</span><span lang="de">Zerfall</span></div>
+      <div style="color:#f87171;font-family:monospace;font-size:1.3em;font-weight:700" id="term-decay">0.00</div>
+      <div style="color:#8b949e;font-size:0.75em"><span lang="en">sequences degrade</span><span lang="de">Sequenzen zerfallen</span></div>
+    </div>
+    <div style="text-align:center;min-width:120px">
+      <div style="color:#34d399;font-size:0.8em;font-weight:600;text-transform:uppercase;letter-spacing:1px"><span lang="en">Selection</span><span lang="de">Selektion</span></div>
+      <div style="color:#34d399;font-family:monospace;font-size:1.3em;font-weight:700" id="term-selection">0.00</div>
+      <div style="color:#8b949e;font-size:0.75em"><span lang="en">fittest replicate</span><span lang="de">Fitteste replizieren</span></div>
+    </div>
   </div>
 </div>
 

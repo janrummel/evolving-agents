@@ -2,6 +2,7 @@
 // ẋᵢ = aᵢ·xᵢ' − (d + aᵢ₀ + aᵢ₁)·xᵢ + r·xᵢ·(fᵢ − φ)
 (function() {
   var canvas, ctx, slider, rLabel, phaseLabel;
+  var termPrelife, termDecay, termSelection;
   var W = 600, H = 240;
   var running = false;
   var animId = null;
@@ -12,6 +13,8 @@
   var r = 0.0;          // replication rate (user controls this)
   var d = 0.02;         // decay rate
   var dt = 0.05;
+  // Term averages (for live display)
+  var avgPrelife = 0, avgDecay = 0, avgSelection = 0;
 
   function init() {
     canvas = document.getElementById('originator-canvas');
@@ -23,6 +26,9 @@
     slider = document.getElementById('r-slider');
     rLabel = document.getElementById('r-value');
     phaseLabel = document.getElementById('phase-label');
+    termPrelife = document.getElementById('term-prelife');
+    termDecay = document.getElementById('term-decay');
+    termSelection = document.getElementById('term-selection');
 
     // Initialize species
     resetSpecies();
@@ -72,12 +78,22 @@
     }
     var phi = totalX > 0 ? totalFX / totalX : 0;
 
+    var sumPrelife = 0, sumDecay = 0, sumSelection = 0;
+
     for (var i = 0; i < N; i++) {
       var s = species[i];
       // Originator equation terms
       var prelifeTerm = s.prelife;                         // aᵢ·xᵢ' (simplified)
       var decayTerm = (d + 0.01) * s.x;                   // (d + aᵢ₀ + aᵢ₁)·xᵢ
       var selectionTerm = r * s.x * (s.fitness - phi);     // r·xᵢ·(fᵢ − φ)
+
+      // Track per-species dominant term for coloring
+      s.dominantTerm = Math.abs(selectionTerm) > Math.abs(prelifeTerm) ? 'selection' : 'prelife';
+      s.selectionStrength = Math.abs(selectionTerm) / (Math.abs(prelifeTerm) + Math.abs(selectionTerm) + 0.001);
+
+      sumPrelife += prelifeTerm;
+      sumDecay += decayTerm;
+      sumSelection += Math.abs(selectionTerm);
 
       s.x += (prelifeTerm - decayTerm + selectionTerm) * dt;
 
@@ -88,6 +104,16 @@
       if (s.x < 0.001) s.x = 0.001;
       if (s.x > 2.0) s.x = 2.0;
     }
+
+    // Smooth average for display
+    avgPrelife = avgPrelife * 0.9 + (sumPrelife / N) * 0.1;
+    avgDecay = avgDecay * 0.9 + (sumDecay / N) * 0.1;
+    avgSelection = avgSelection * 0.9 + (sumSelection / N) * 0.1;
+
+    // Update live indicators
+    if (termPrelife) termPrelife.textContent = avgPrelife.toFixed(3);
+    if (termDecay) termDecay.textContent = '-' + avgDecay.toFixed(3);
+    if (termSelection) termSelection.textContent = avgSelection.toFixed(3);
   }
 
   function draw() {
@@ -111,13 +137,14 @@
       var s = sorted[i];
       var barH = (s.x / maxX) * maxBarH;
 
-      // Color: low fitness = dim, high fitness = bright
-      var sat = 60 + s.fitness * 40;
-      var light = 20 + s.fitness * 40;
+      // Color shifts from amber (prelife) to green (selection) based on dominant term
+      var selStr = s.selectionStrength || 0;
+      // Amber: hsl(38, 92%, 50%), Green: hsl(160, 60%, 50%)
+      var hue = 38 + selStr * 122;         // 38 (amber) → 160 (green)
+      var sat = 70 + s.fitness * 25;       // brighter = fitter
+      var light = 25 + s.fitness * 30;     // brighter = fitter
 
-      // In prelife mode, all bars are similar height (random diversity)
-      // In life mode, high-fitness bars dominate
-      ctx.fillStyle = 'hsl(' + s.hue + ',' + sat + '%,' + light + '%)';
+      ctx.fillStyle = 'hsl(' + Math.round(hue) + ',' + sat + '%,' + light + '%)';
       ctx.fillRect(i * barW + 1, H - barH, barW - 2, barH);
     }
 
