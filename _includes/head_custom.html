@@ -7,5 +7,12 @@
 [data-lang="en"] [lang="en"],[data-lang="de"] [lang="de"]{display:block}
 [data-lang="en"] span[lang="en"],[data-lang="de"] span[lang="de"]{display:inline}
 [data-lang="en"] span[lang="de"],[data-lang="de"] span[lang="en"]{display:none!important}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin:1em 0}
+.feature-card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:20px;transition:border-color .2s}
+.feature-card:hover{border-color:#58a6ff}
+.feature-card h3{margin-top:0;font-size:1.05em}
+.feature-card p{color:#8b949e;font-size:0.9em;margin-bottom:8px}
+.feature-card a{color:#58a6ff;font-size:0.9em;text-decoration:none}
+.feature-card a:hover{text-decoration:underline}
 </style>
 <script src="/evolving-agents/assets/js/lang-toggle.js" defer></script>
