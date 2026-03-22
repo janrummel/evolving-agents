@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Meta
+description: "Meta documents: research process learnings, toolkit, and internal development notes."
 nav_order: 5
 has_children: true
 ---

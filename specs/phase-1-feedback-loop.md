@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Feedback Loop Spec"
+description: "Phase 1 spec: SQL schema, 7 KPIs, Pareto views, and alert triggers for agent system observability."
 parent: Engineering
 nav_order: 1
 ---

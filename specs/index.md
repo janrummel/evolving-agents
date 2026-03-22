@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Engineering
+description: "Engineering specifications and implementation roadmap for the Prelife-to-Life transition in agent systems."
 nav_order: 4
 has_children: true
 ---

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Research
+description: "Research hub: Nowak synthesis, counter-arguments, deep dives, and paper registry on evolutionary dynamics in AI agents."
 nav_order: 2
 has_children: true
 ---

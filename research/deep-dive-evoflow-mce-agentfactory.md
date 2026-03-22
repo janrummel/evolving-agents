@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Deep Dive: EvoFlow, MCE, AgentFactory"
+description: "Comparative analysis of EvoFlow, MCE, and AgentFactory — three independent paths from manual to evolutionary agent design."
 parent: Research
 nav_order: 3
 ---
@@ -933,30 +934,24 @@ Base-Agent (untere Ebene)
 <p>4 phases: (0) Manual curation → (1) Close the feedback loop → (2) Automated mutation → (3) Population management. Each phase builds on the previous one. Phase 1 is specified and ready to implement.</p>
 </div>
 
-```
-Phase 0 (NOW): Prelife
-  - Skills exist, are manually curated
-  - Quality-Gate selects, but without consequences for skills themselves
-  - Pulse measures, but metrics don't flow into skill changes
+```mermaid
+graph TD
+    P0["🧪 Phase 0: Prelife<br/><small>Manual skill curation<br/>Quality-Gate without consequences<br/>Metrics collected but unused</small>"]
+    P1["📊 Phase 1: Feedback Loop<br/><small>Cost tracking (2nd axis)<br/>Tag-based retrieval<br/>Skill performance history</small>"]
+    P2["🧬 Phase 2: Automated Mutation<br/><small>A/B prompt testing<br/>MCE: Meta-Agent proposes changes<br/>Human-in-the-Loop selection</small>"]
+    P3["🌿 Phase 3: Population Management<br/><small>Multiple skill variants per task<br/>Niching: preserve diversity<br/>Crossover: combine skills</small>"]
+    P4["🔄 Phase 4: Full Evolution = Life<br/><small>Autonomous cycle: Select → Execute → Evaluate → Mutate<br/>r > rₓ: evolution outpaces manual curation</small>"]
 
-Phase 1: Close the Feedback Loop
-  - Cost tracking as second axis (Pulse → Quality-Gate)
-  - Tag-based retrieval in the Orchestrator
-  - Skill performance history (which skill, which task, which score)
+    P0 -->|"Measure everything"| P1
+    P1 -->|"Let metrics drive changes"| P2
+    P2 -->|"Scale variation"| P3
+    P3 -->|"r > rₓ: phase transition"| P4
 
-Phase 2: Automated Mutation
-  - Automatically test prompt variations (A/B)
-  - MCE pattern: Meta-Agent proposes skill changes
-  - Human decides (keep/discard) → Human-in-the-Loop selection
-
-Phase 3: Population Management
-  - Multiple skill variants per task type
-  - Niching: Explicitly preserve diversity
-  - Crossover: Generate new skills from existing ones
-
-Phase 4: Full Evolution (= "Life")
-  - Automatic cycle: Task → Skill selection → Execution → Evaluation → Mutation/Selection
-  - The phase transition rₓ: From here, the system improves faster through evolution than through manual curation
+    style P0 fill:#1e1e2e,stroke:#f87171,color:#f87171
+    style P1 fill:#1e1e2e,stroke:#f59e0b,color:#f59e0b
+    style P2 fill:#1e1e2e,stroke:#38bdf8,color:#38bdf8
+    style P3 fill:#1e1e2e,stroke:#a78bfa,color:#a78bfa
+    style P4 fill:#1e1e2e,stroke:#34d399,color:#34d399
 ```
 
 </div>
@@ -975,30 +970,24 @@ Phase 4: Full Evolution (= "Life")
 <p>4 Phasen: (0) Manuelle Kuration → (1) Feedback-Loop schließen → (2) Automatisierte Mutation → (3) Populationsmanagement. Jede Phase baut auf der vorherigen auf. Phase 1 ist spezifiziert und implementierungsbereit.</p>
 </div>
 
-```
-Phase 0 (JETZT): Prelife
-  - Skills existieren, werden manuell kuratiert
-  - Quality-Gate selektiert, aber ohne Konsequenz für Skills selbst
-  - Pulse misst, aber Metriken fließen nicht in Skill-Änderungen
+```mermaid
+graph TD
+    P0["🧪 Phase 0: Prelife<br/><small>Manuelle Skill-Kuration<br/>Quality-Gate ohne Konsequenz<br/>Metriken gesammelt aber ungenutzt</small>"]
+    P1["📊 Phase 1: Feedback-Loop<br/><small>Cost-Tracking (2. Achse)<br/>Tag-basiertes Retrieval<br/>Skill-Performance-Historie</small>"]
+    P2["🧬 Phase 2: Automatisierte Mutation<br/><small>A/B Prompt-Testing<br/>MCE: Meta-Agent schlägt Änderungen vor<br/>Human-in-the-Loop Selektion</small>"]
+    P3["🌿 Phase 3: Population Management<br/><small>Mehrere Skill-Varianten pro Task<br/>Niching: Diversität erhalten<br/>Crossover: Skills kombinieren</small>"]
+    P4["🔄 Phase 4: Full Evolution = Life<br/><small>Autonomer Zyklus: Auswahl → Ausführung → Evaluation → Mutation<br/>r > rₓ: Evolution überholt manuelle Kuration</small>"]
 
-Phase 1: Feedback-Loop schließen
-  - Cost-Tracking als zweite Achse (Pulse → Quality-Gate)
-  - Tag-basiertes Retrieval im Orchestrator
-  - Skill-Performance-Historie (welcher Skill, welcher Task, welcher Score)
+    P0 -->|"Alles messen"| P1
+    P1 -->|"Metriken steuern Änderungen"| P2
+    P2 -->|"Variation skalieren"| P3
+    P3 -->|"r > rₓ: Phasenübergang"| P4
 
-Phase 2: Automatisierte Mutation
-  - Prompt-Variationen automatisch testen (A/B)
-  - MCE-Pattern: Meta-Agent schlägt Skill-Änderungen vor
-  - Mensch entscheidet (keep/discard) → Human-in-the-Loop Selektion
-
-Phase 3: Population Management
-  - Mehrere Skill-Varianten pro Task-Typ
-  - Niching: Diversität explizit erhalten
-  - Crossover: Neue Skills aus bestehenden generieren
-
-Phase 4: Full Evolution (= "Life")
-  - Automatischer Zyklus: Task → Skill-Auswahl → Execution → Evaluation → Mutation/Selection
-  - Der Phasenübergang rₓ: Ab hier verbessert sich das System schneller durch Evolution als durch manuelle Kuration
+    style P0 fill:#1e1e2e,stroke:#f87171,color:#f87171
+    style P1 fill:#1e1e2e,stroke:#f59e0b,color:#f59e0b
+    style P2 fill:#1e1e2e,stroke:#38bdf8,color:#38bdf8
+    style P3 fill:#1e1e2e,stroke:#a78bfa,color:#a78bfa
+    style P4 fill:#1e1e2e,stroke:#34d399,color:#34d399
 ```
 
 </div>

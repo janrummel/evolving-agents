@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Implementation Guide"
+description: "Implementation guide: scripts, automation, and deployment details for the feedback loop infrastructure."
 parent: Engineering
 nav_order: 2
 ---

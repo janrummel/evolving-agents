@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Open Questions
+description: "Open research questions at the intersection of evolutionary dynamics and AI agent architectures."
 parent: Research
 nav_order: 4
 ---
