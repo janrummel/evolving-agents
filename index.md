@@ -24,11 +24,11 @@ A living research collection and practical design principles at the intersection
     <span class="stat-label">Papers</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">6</span>
+    <span class="stat-number">7</span>
     <span class="stat-label">Principles</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">8</span>
+    <span class="stat-number">9</span>
     <span class="stat-label">Counter-Arguments</span>
   </div>
   <div class="stat-item">
@@ -65,13 +65,13 @@ A living research collection and practical design principles at the intersection
     <a href="/evolving-agents/research/deep-dive-evoflow-mce-agentfactory">Read deep dive &rarr;</a>
   </div>
   <div class="feature-card">
-    <h3>6 Design Principles</h3>
+    <h3>7 Design Principles</h3>
     <p>Actionable rules derived from evolutionary theory. Including P6 from the strongest counter-argument.</p>
     <a href="/evolving-agents/principles/">See principles &rarr;</a>
   </div>
   <div class="feature-card">
     <h3>Counter-Arguments</h3>
-    <p>8 critiques of the Nowak-agent analogy. 3 rated STRONG. Honest about where the thesis breaks.</p>
+    <p>9 critiques of the Nowak-agent analogy. 3 rated STRONG. Honest about where the thesis breaks.</p>
     <a href="/evolving-agents/research/counter-arguments">Read critiques &rarr;</a>
   </div>
   <div class="feature-card">
@@ -166,7 +166,7 @@ This repo does that. And it stress-tests its own conclusions: the [counter-argum
 
 <details>
 <summary><strong>Why include counter-arguments against your own thesis?</strong></summary>
-<p>Because a thesis that hasn't been stress-tested isn't worth sharing. Three of the eight counter-arguments are rated STRONG. One of them (<a href="/evolving-agents/research/counter-arguments#g4-künstliche-selektion--natürliche-selektion-stark">artificial ≠ natural selection</a>) was strong enough to produce a new design principle (P6).</p>
+<p>Because a thesis that hasn't been stress-tested isn't worth sharing. Three of the nine counter-arguments are rated STRONG. One of them (<a href="/evolving-agents/research/counter-arguments#g4-künstliche-selektion--natürliche-selektion-stark">artificial ≠ natural selection</a>) was strong enough to produce a new design principle (P6).</p>
 </details>
 
 <details>
