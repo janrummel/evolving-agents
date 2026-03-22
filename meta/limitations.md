@@ -21,7 +21,7 @@ Diese Seite dokumentiert, was diese Research Collection ist, was sie nicht ist, 
 
 </div>
 
-## What This Is / Was das hier ist
+## <span lang="en">What This Is</span><span lang="de">Was das hier ist</span>
 
 <div lang="en" markdown="1">
 
@@ -40,7 +40,7 @@ Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erste
 <p><span lang="en">This is a structured research synthesis with engineering output — not a peer-reviewed paper. Core papers verified in full text, broader corpus via abstracts. The structural analogy is an interpretation, not a proof.</span><span lang="de">Dies ist eine strukturierte Forschungssynthese mit Engineering-Output — kein Peer-reviewed Paper. Kern-Papers im Volltext verifiziert, breiterer Corpus via Abstracts. Die strukturelle Analogie ist eine Interpretation, kein Beweis.</span></p>
 </div>
 
-## What This Is NOT / Was das hier NICHT ist
+## <span lang="en">What This Is NOT</span><span lang="de">Was das hier NICHT ist</span>
 
 <div lang="en" markdown="1">
 
@@ -58,9 +58,9 @@ Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erste
 
 </div>
 
-## Specific Limitations / Konkrete Einschränkungen
+## <span lang="en">Specific Limitations</span><span lang="de">Konkrete Einschränkungen</span>
 
-### Research Depth / Recherchetiefe
+### <span lang="en">Research Depth</span><span lang="de">Recherchetiefe</span>
 
 <div lang="en" markdown="1">
 
@@ -84,7 +84,7 @@ Kern-Papers (Nowak & Ohtsuki 2008, EvoFlow 2025) wurden im Volltext gelesen und 
 
 </div>
 
-### The Structural Analogy / Die strukturelle Analogie
+### <span lang="en">The Structural Analogy</span><span lang="de">Die strukturelle Analogie</span>
 
 <div lang="en" markdown="1">
 
@@ -104,7 +104,7 @@ Das Mapping zwischen Nowaks Evolutionary Dynamics und Agent-Systemen ist **die I
 
 </div>
 
-### Paper Registry Completeness / Vollständigkeit der Paper Registry
+### <span lang="en">Paper Registry Completeness</span><span lang="de">Vollständigkeit der Paper-Registry</span>
 
 <div lang="en" markdown="1">
 
@@ -124,7 +124,7 @@ Von 55+ gelisteten Papers:
 
 </div>
 
-### Multi-Lingual Coverage / Mehrsprachige Abdeckung
+### <span lang="en">Multi-Lingual Coverage</span><span lang="de">Mehrsprachige Abdeckung</span>
 
 <div lang="en" markdown="1">
 
@@ -144,7 +144,7 @@ Chinesischsprachige Quellen wurden via WebSearch mit chinesischen Zeichen (自�
 
 </div>
 
-### Selection Bias
+### <span lang="en">Selection Bias</span><span lang="de">Selektionsverzerrung</span>
 
 <div lang="en" markdown="1">
 
@@ -164,7 +164,7 @@ Die initiale Recherche suchte nach Papers, die die evolutionäre Analogie stütz
 
 </div>
 
-### Principles Validation / Validierung der Prinzipien
+### <span lang="en">Principles Validation</span><span lang="de">Validierung der Prinzipien</span>
 
 <div lang="en" markdown="1">
 
@@ -178,7 +178,7 @@ Die 7 Design-Prinzipien sind **aus der Theorie abgeleitet, nicht empirisch valid
 
 </div>
 
-## What Would Make This More Rigorous / Was das Ganze rigoroser machen würde
+## <span lang="en">What Would Make This More Rigorous</span><span lang="de">Was das Ganze rigoroser machen würde</span>
 
 <div lang="en" markdown="1">
 

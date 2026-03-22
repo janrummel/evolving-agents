@@ -40,7 +40,7 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 
 </div>
 
-## Priority 1 — Directly Tractable / Direkt bearbeitbar
+## <span lang="en">Priority 1 — Directly Tractable</span><span lang="de">Priorität 1 — Direkt bearbeitbar</span>
 
 <div class="key-box green">
 <h4><span lang="en">🎯 Start Here</span><span lang="de">🎯 Hier anfangen</span></h4>
@@ -137,7 +137,7 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 
 </div>
 
-## Priority 2 — Needs More Research First / Erfordert weitere Recherche
+## <span lang="en">Priority 2 — Needs More Research First</span><span lang="de">Priorität 2 — Erfordert weitere Recherche</span>
 
 <div class="section-summary">
 <h4><span lang="en">Section Summary</span><span lang="de">Abschnitt-Zusammenfassung</span></h4>
@@ -190,7 +190,7 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 
 </div>
 
-## Priority 3 — Long-Term / Speculative / Langfristig / Spekulativ
+## <span lang="en">Priority 3 — Long-Term / Speculative</span><span lang="de">Priorität 3 — Langfristig / Spekulativ</span>
 
 <div class="key-box amber">
 <h4><span lang="en">🔮 Speculative</span><span lang="de">🔮 Spekulativ</span></h4>

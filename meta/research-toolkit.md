@@ -25,7 +25,7 @@ Was wir haben, was uns fehlt und was wir für seriöse interdisziplinäre Forsch
 
 ---
 
-## What We Have / Was wir haben
+## <span lang="en">What We Have</span><span lang="de">Was wir haben</span>
 
 <div lang="en" markdown="1">
 <div class="section-summary"><h4>Section Summary</h4><p>Our current toolkit covers general web search, structured research pipelines, multi-layer analysis & synthesis skills, and a 5-vault knowledge storage system. Approved external sources include PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, and Open Targets.</p></div>
@@ -141,7 +141,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 ---
 
-## Blind Spots — What's Missing / Blinde Flecken — Was fehlt
+## <span lang="en">Blind Spots — What's Missing</span><span lang="de">Blinde Flecken — Was fehlt</span>
 
 <div lang="en" markdown="1">
 <div class="section-summary"><h4>Section Summary</h4><p>Five critical gaps identified: (1) Multi-lingual research coverage — we're missing ~30–50% of relevant work from CJK sources, (2) No native academic paper infrastructure (citation graphs, arXiv API), (3) No automated research monitoring/alerting, (4) Missing code reproducibility pipeline, (5) No community discourse tracking. Priorities: Semantic Scholar + arXiv via WebFetch this week, MCP integrations this month, full CJK pipeline Q2 2026.</p></div>
@@ -367,7 +367,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 ---
 
-## Toolkit Priorities / Werkzeugkasten-Prioritäten
+## <span lang="en">Toolkit Priorities</span><span lang="de">Werkzeugkasten-Prioritäten</span>
 
 <div lang="en" markdown="1">
 <div class="section-summary"><h4>Section Summary</h4><p>Three time horizons: <strong>This week</strong> — Semantic Scholar + arXiv via WebFetch, translation-aware search. <strong>This month</strong> — MCP server, arXiv monitoring, PapersWithCode. <strong>Q2 2026</strong> — Full CJK pipeline, reference management, local benchmarking.</p></div>
@@ -377,7 +377,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 <div class="section-summary"><h4>Abschnitt-Zusammenfassung</h4><p>Drei Zeithorizonte: <strong>Diese Woche</strong> — Semantic Scholar + arXiv via WebFetch, translation-aware Search. <strong>Diesen Monat</strong> — MCP-Server, arXiv-Monitoring, PapersWithCode. <strong>Q2 2026</strong> — Volle CJK-Pipeline, Reference Management, lokales Benchmarking.</p></div>
 </div>
 
-### Immediately Feasible (This Week) / Sofort machbar (diese Woche)
+### <span lang="en">Immediately Feasible (This Week)</span><span lang="de">Sofort machbar (diese Woche)</span>
 
 <div lang="en" markdown="1">
 
@@ -395,7 +395,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 </div>
 
-### Short-Term (This Month) / Kurzfristig (diesen Monat)
+### <span lang="en">Short-Term (This Month)</span><span lang="de">Kurzfristig (diesen Monat)</span>
 
 <div lang="en" markdown="1">
 
@@ -413,7 +413,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 </div>
 
-### Mid-Term (Q2 2026) / Mittelfristig (Q2 2026)
+### <span lang="en">Mid-Term (Q2 2026)</span><span lang="de">Mittelfristig (Q2 2026)</span>
 
 <div lang="en" markdown="1">
 
@@ -433,7 +433,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 ---
 
-## Next Action / Nächste Aktion
+## <span lang="en">Next Action</span><span lang="de">Nächste Aktion</span>
 
 <div lang="en" markdown="1">
 
