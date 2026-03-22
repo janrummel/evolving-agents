@@ -94,7 +94,7 @@ Seven actionable design principles derived from evolutionary theory: [principles
 | Document | What It Contains |
 |----------|-----------------|
 | [Research Process Learnings](meta/learnings-research-process.md) | 8 findings: rate limiting, CJK search, awesome lists, arXiv reliability |
-| [Agent Systems = Prelife](meta/learning-agentfield-prelife.md) | The central insight — and the 4-phase upgrade path |
+| [AgentField = Prelife](meta/learning-agentfield-prelife.md) | The central insight — and the 4-phase upgrade path |
 
 ## Key Discovery: EvoFlow
 

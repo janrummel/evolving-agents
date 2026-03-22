@@ -73,7 +73,7 @@ nav_order: 5
 
 **Practical consequence:** When we say "Skills replicate through SKILL.md inheritance," that's a weak analogy. A SKILL.md isn't automatically copied and varied — it's manually edited or rewritten by an LLM. That's more "design" than "replication."
 
-**Assessment:** Partially valid. EvoFlow comes closer: Workflows are automatically generated from parent workflows through crossover/mutation — that IS a form of reproduction. But in practice it's manual. We should clearly distinguish between "designed evolution" and "autonomous evolution."
+**Assessment:** Partially valid. EvoFlow comes closer: Workflows are automatically generated from parent workflows through crossover/mutation — that IS a form of reproduction. But in our AgentField system it's manual. We should clearly distinguish between "designed evolution" and "autonomous evolution."
 
 </div>
 
@@ -83,7 +83,7 @@ nav_order: 5
 
 **Praktische Konsequenz:** Wenn wir sagen "Skills replizieren sich durch SKILL.md-Vererbung", dann ist das eine schwache Analogie. Ein SKILL.md wird nicht automatisch kopiert und variiert — es wird manuell editiert oder von einem LLM umgeschrieben. Das ist eher "Design" als "Replikation".
 
-**Bewertung:** Trifft teilweise zu. EvoFlow kommt näher: Workflows werden automatisch aus Eltern-Workflows durch Crossover/Mutation erzeugt — das IST eine Form von Reproduktion. Aber in der Praxis ist es manuell. Wir sollten klar zwischen "designed evolution" und "autonomous evolution" unterscheiden.
+**Bewertung:** Trifft teilweise zu. EvoFlow kommt näher: Workflows werden automatisch aus Eltern-Workflows durch Crossover/Mutation erzeugt — das IST eine Form von Reproduktion. Aber in unserem AgentField-System ist es manuell. Wir sollten klar zwischen "designed evolution" und "autonomous evolution" unterscheiden.
 
 </div>
 
@@ -179,7 +179,7 @@ nav_order: 5
 
 **Objection:** Population-based methods (MAP-Elites, EvoFlow) require many evaluations. Each evaluation of an agent workflow costs tokens = money. Monte Carlo Tree Search and similar search methods are "fundamentally bottlenecked by costly execution-based rollouts." ([arXiv:2401.10510](https://arxiv.org/abs/2401.10510))
 
-**Practical consequence:** EvoFlow's "12.4% of o1-preview costs" applies to inference — but the training/evolution itself required many evaluation rounds. For a small agent system, the overhead of evolution could exceed its benefits.
+**Practical consequence:** EvoFlow's "12.4% of o1-preview costs" applies to inference — but the training/evolution itself required many evaluation rounds. For a small system like AgentField, the overhead of evolution could exceed its benefits.
 
 **Assessment:** Justified. Phase 1 (Measuring) is cheap. But Phase 3 (Population Management) becomes expensive. We need to keep the cost-benefit ratio in mind — evolution only pays off above a certain system size.
 
@@ -189,7 +189,7 @@ nav_order: 5
 
 **Einwand:** Populationsbasierte Methoden (MAP-Elites, EvoFlow) brauchen viele Evaluierungen. Jede Evaluierung eines Agent-Workflows kostet Token = Geld. Monte Carlo Tree Search und ähnliche Suchverfahren sind "fundamentally bottlenecked by costly execution-based rollouts." ([arXiv:2401.10510](https://arxiv.org/abs/2401.10510))
 
-**Praktische Konsequenz:** EvoFlow's "12.4% der Kosten von o1-preview" gilt für die Inferenz — aber das Training/die Evolution selbst kostete viele Evaluierungsrunden. Für ein kleines Agent-System könnte der Overhead der Evolution den Nutzen übersteigen.
+**Praktische Konsequenz:** EvoFlow's "12.4% der Kosten von o1-preview" gilt für die Inferenz — aber das Training/die Evolution selbst kostete viele Evaluierungsrunden. Für ein kleines System wie AgentField könnte der Overhead der Evolution den Nutzen übersteigen.
 
 **Bewertung:** Berechtigt. Phase 1 (Messen) ist billig. Aber Phase 3 (Populations-Management) wird teuer. Wir müssen das Kosten-Nutzen-Verhältnis im Auge behalten — Evolution lohnt sich erst ab einer bestimmten Systemgröße.
 

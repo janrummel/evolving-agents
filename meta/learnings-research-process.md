@@ -8,7 +8,7 @@ nav_order: 2
 # Research Process Learnings
 
 Erkenntnisse aus der ersten Recherche-Runde (2026-03-19).
-Jedes Learning ist für Agent-Systeme nutzbar.
+Jedes Learning ist für unser AgentField-System nutzbar.
 
 ---
 
@@ -123,12 +123,12 @@ Jedes Learning ist für Agent-Systeme nutzbar.
 
 ---
 
-## L7: Meta Context Engineering = formalisierte Agent-Systeme
+## L7: Meta Context Engineering = formalisiertes AgentField
 
-**Was passiert ist:** MCE Paper (2601.21557) beschreibt genau das, was Agent-Systeme manuell tun: Skills und Context-Artefakte ko-evolvieren. Meta-Agent verfeinert Skills durch deliberative Search, Base-Agent führt aus. 5.6-53.8% Verbesserung über SOTA.
+**Was passiert ist:** MCE Paper (2601.21557) beschreibt genau das, was AgentField manuell tut: Skills und Context-Artefakte ko-evolvieren. Meta-Agent verfeinert Skills durch deliberative Search, Base-Agent führt aus. 5.6-53.8% Verbesserung über SOTA.
 
 **Praktische Implikation:**
-- Ein solches System IST bereits ein (manuelles) MCE-System
+- AgentField IST bereits ein (manuelles) MCE-System
 - Der Schritt von manuell zu automatisiert ist formalisiert — wir müssen das Rad nicht neu erfinden
 - Die "deliberative search over historical skills, executions, and evaluations" ist genau das, was unser improve-Skill ansatzweise tut
 
@@ -154,7 +154,7 @@ Jedes Learning ist für Agent-Systeme nutzbar.
 
 ---
 
-## Zusammenfassung: Was in Agent-Systeme zurückfließen sollte
+## Zusammenfassung: Was ins AgentField-System zurückfließen sollte
 
 ### research-pipeline Verbesserungen
 1. Awesome-Listen als Einstiegsheuristik

@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "Agent Systems = Prelife"
+title: "AgentField = Prelife"
 parent: Meta
 nav_order: 3
 ---
 
-# Learning L9: Agent-Systeme in der Prelife-Phase
+# Learning L9: AgentField ist in der Prelife-Phase
 
 **Erkannt:** 2026-03-19, während EvoFlow/MCE/AgentFactory Deep Dive
 
 ## Erkenntnis
 
-Nach Nowaks Terminologie befinden sich die meisten Agent-Systeme in der **"Prelife"-Phase**: Es gibt Diversität (~30 Skills) und Selektion (Quality-Gate), aber keine **Replikation** — keine automatische Vererbung erfolgreicher Muster.
+Nach Nowaks Terminologie befindet sich AgentField in der **"Prelife"-Phase**: Es gibt Diversität (~30 Skills) und Selektion (Quality-Gate), aber keine **Replikation** — keine automatische Vererbung erfolgreicher Muster.
 
 Das ist nicht schlimm. Prelife ist bereits generativ. Aber es fehlt der Schritt zum "Life"-Modus: der geschlossene evolutionäre Loop.
 
