@@ -15,7 +15,7 @@ Syntheses, paper notes, open questions, and deep dives.
 | Document | What It Contains |
 |:---------|:-----------------|
 | [Nowak Synthesis](nowak-synthesis) | Originator equation, phase transitions, error threshold — mapped to agents |
-| [Paper Registry](paper-registry) | 55+ papers across 9 categories, 15 must-reads |
+| [Paper Registry](paper-registry) | 50+ papers across 9 categories, 15 must-reads |
 | [Deep Dive: EvoFlow, MCE, AgentFactory](deep-dive-evoflow-mce-agentfactory) | The 3 bridge papers analyzed and compared |
 | [Open Questions](open-questions) | 7 research questions, from tractable to speculative |
 | [Counter-Arguments](counter-arguments) | 9 critiques of the Nowak-agent analogy, 3 rated STRONG |
@@ -32,7 +32,7 @@ Synthesen, Paper-Notizen, offene Fragen und Deep Dives.
 | Dokument | Inhalt |
 |:---------|:-------|
 | [Nowak-Synthese](nowak-synthesis) | Originator-Gleichung, Phasenübergänge, Error Threshold — auf Agents übertragen |
-| [Paper-Registry](paper-registry) | 55+ Papers in 9 Kategorien, 15 Must-Reads |
+| [Paper-Registry](paper-registry) | 50+ Papers in 9 Kategorien, 15 Must-Reads |
 | [Deep Dive: EvoFlow, MCE, AgentFactory](deep-dive-evoflow-mce-agentfactory) | Die 3 Bridge-Papers analysiert und verglichen |
 | [Offene Fragen](open-questions) | 7 Forschungsfragen, von machbar bis spekulativ |
 | [Gegenargumente](counter-arguments) | 9 Kritiken der Nowak-Agent-Analogie, 3 als STARK bewertet |

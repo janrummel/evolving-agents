@@ -12,6 +12,20 @@ nav_order: 1
 {: .note }
 > **Reading: 1 of 5** · After reading this, you'll understand Nowak's Originator equation, the phase transition from Prelife to Life, the error threshold concept, and how these map structurally onto AI agent systems.
 
+<details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
+<summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 On this page</summary>
+<div style="columns:2;column-gap:24px;font-size:0.85em;margin-top:8px" markdown="1">
+
+1. [Nowak's Mathematics](#1-nowaks-mathematics--the-originator-equation)
+2. [Evolvability in AI](#2-evolvability-in-ai--current-research)
+3. [Multi-Agent Systems](#3-multi-agent-systems--from-trial-and-error-to-rigorous-science)
+4. [Synthesis: The Bridge](#4-synthesis--the-bridge-from-nowak-to-agent-architectures)
+5. [Prioritization](#5-prioritization--what-is-most-relevant)
+6. [Sources](#6-sources)
+
+</div>
+</details>
+
 ## A Research Synthesis at the Intersection of Evolutionary Dynamics, Self-Evolving Agents and Multi-Agent Systems
 
 ---
@@ -30,6 +44,20 @@ nav_order: 1
 
 {: .note }
 > **Lesehinweis: 1 von 5** · Nach der Lektüre verstehst du Nowak's Originator equation, den Phasenübergang von Prelife zu Life, das Error-Threshold-Konzept, und wie sich diese strukturell auf KI-Agent-Systeme übertragen lassen.
+
+<details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
+<summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 Auf dieser Seite</summary>
+<div style="columns:2;column-gap:24px;font-size:0.85em;margin-top:8px" markdown="1">
+
+1. [Nowaks Mathematik](#1-nowaks-mathematik--die-originator-gleichung)
+2. [Evolvierbarkeit in der KI](#2-evolvierbarkeit-in-der-ki--aktuelle-forschung)
+3. [Multi-Agent-Systeme](#3-multi-agent-systeme--von-trial-and-error-zu-rigoroser-wissenschaft)
+4. [Synthese: Die Brücke](#4-synthese--die-brücke-von-nowak-zu-agent-architekturen)
+5. [Priorisierung](#5-priorisierung--was-ist-am-relevantesten)
+6. [Quellen](#6-quellen)
+
+</div>
+</details>
 
 ## Eine Recherche an der Schnittstelle von Evolutionsdynamik, Self-Evolving Agents und Multi-Agent-Systemen
 

@@ -22,6 +22,7 @@ nav_order: 1
 .bridge-col.bio{border-right:none}
 .bridge-col.arrow{display:flex;align-items:center;justify-content:center;font-size:1.5em;color:#1f6feb}
 .bridge-col.agent{border-left:none}
+@media(max-width:600px){.bridge-grid{grid-template-columns:1fr;gap:8px}.bridge-col.arrow{transform:rotate(90deg);padding:4px}}
 .bridge-item{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 16px;margin-bottom:8px;font-size:0.9em}
 .bridge-item .term{color:#58a6ff;font-weight:600}
 .bridge-item .desc{color:#8b949e;font-size:0.85em;margin-top:4px}
@@ -41,12 +42,12 @@ nav_order: 1
 <!-- HERO -->
 <div lang="en" markdown="1">
 <p class="hero-question">Why do some AI agent systems get <em>better</em> over time — while others just get more complex?</p>
-<p class="hero-answer">Martin Nowak answered this question for biology 20 years ago. The math already exists. We mapped it to AI agents.</p>
+<p class="hero-answer">Martin Nowak answered this question for biology 20 years ago. The math already exists. We explored how it maps to AI agents.</p>
 </div>
 
 <div lang="de" markdown="1">
 <p class="hero-question">Warum werden manche KI-Agent-Systeme mit der Zeit <em>besser</em> — während andere nur komplexer werden?</p>
-<p class="hero-answer">Martin Nowak hat diese Frage für die Biologie vor 20 Jahren beantwortet. Die Mathematik existiert bereits. Wir haben sie auf KI-Agents übertragen.</p>
+<p class="hero-answer">Martin Nowak hat diese Frage für die Biologie vor 20 Jahren beantwortet. Die Mathematik existiert bereits. Wir untersuchen, wie sie sich auf KI-Agents übertragen lässt.</p>
 </div>
 
 ---
@@ -62,30 +63,9 @@ nav_order: 1
 <p>Nowaks Originator-Gleichung beschreibt, wann ein System von zufälliger Diversität (<strong>Prelife</strong>) zu gerichteter Evolution (<strong>Life</strong>) übergeht.</p>
 </div>
 
-<div style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border-color,#30363d);border-radius:8px;font-size:0.85em;margin-bottom:16px">
-  <div lang="en">
-    <strong style="color:#e6edf3">How to read the chart:</strong>
-    <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
-      <li><strong style="color:#c9d1d9">80 bars</strong> = 80 molecular sequences competing in a chemical soup</li>
-      <li><strong style="color:#c9d1d9">Bar height</strong> = frequency (share of the population)</li>
-      <li><strong style="color:#c9d1d9">Bar color</strong>: <span style="color:#f59e0b">■ amber</span> = Prelife dominates · <span style="color:#34d399">■ green</span> = Selection dominates · brighter = fitter</li>
-      <li><strong style="color:#c9d1d9">Slider r</strong> = replication rate — how much template-directed copying happens</li>
-    </ul>
-    <div style="margin-top:8px;color:#8b949e"><strong>Try it:</strong> At r = 0, all bars are similar height (random diversity). Drag right — watch one champion emerge. That's Nowak's phase transition.</div>
-  </div>
-  <div lang="de">
-    <strong style="color:#e6edf3">So liest du die Grafik:</strong>
-    <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
-      <li><strong style="color:#c9d1d9">80 Balken</strong> = 80 molekulare Sequenzen, die in einer chemischen Suppe konkurrieren</li>
-      <li><strong style="color:#c9d1d9">Balkenhöhe</strong> = Häufigkeit (Anteil an der Population)</li>
-      <li><strong style="color:#c9d1d9">Balkenfarbe</strong>: <span style="color:#f59e0b">■ amber</span> = Prelife dominiert · <span style="color:#34d399">■ grün</span> = Selektion dominiert · heller = fitter</li>
-      <li><strong style="color:#c9d1d9">Regler r</strong> = Replikationsrate — wie viel template-gesteuerte Kopierung stattfindet</li>
-    </ul>
-    <div style="margin-top:8px;color:#8b949e"><strong>Probier es:</strong> Bei r = 0 sind alle Balken ähnlich hoch (zufällige Diversität). Schiebe nach rechts — beobachte wie ein Champion entsteht. Das ist Nowaks Phasenübergang.</div>
-  </div>
-</div>
-
 <div class="sim-container">
+  <div lang="en" style="text-align:center;color:#8b949e;font-size:0.9em;margin-bottom:8px">Drag the slider to see the phase transition →</div>
+  <div lang="de" style="text-align:center;color:#8b949e;font-size:0.9em;margin-bottom:8px">Ziehe den Regler, um den Phasenübergang zu sehen →</div>
   <canvas id="originator-canvas"></canvas>
   <div class="sim-controls">
     <label for="r-slider"><span lang="en">Replication rate</span><span lang="de">Replikationsrate</span> <code>r</code></label>
@@ -94,6 +74,28 @@ nav_order: 1
   </div>
   <div id="phase-label">◀ Prelife — no replication, random diversity</div>
 </div>
+
+<details style="margin:12px 0;font-size:0.85em">
+  <summary style="cursor:pointer;color:#8b949e"><span lang="en"><strong style="color:#e6edf3">ℹ How to read this chart</strong></span><span lang="de"><strong style="color:#e6edf3">ℹ So liest du die Grafik</strong></span></summary>
+  <div style="padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid var(--border-color,#30363d);border-radius:0 0 8px 8px">
+    <div lang="en">
+      <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
+        <li><strong style="color:#c9d1d9">80 bars</strong> = 80 molecular sequences competing in a chemical soup</li>
+        <li><strong style="color:#c9d1d9">Bar height</strong> = frequency (share of the population)</li>
+        <li><strong style="color:#c9d1d9">Bar color</strong>: <span style="color:#f59e0b">■ amber</span> = Prelife dominates · <span style="color:#34d399">■ green</span> = Selection dominates · brighter = fitter</li>
+        <li><strong style="color:#c9d1d9">Slider r</strong> = replication rate — how much template-directed copying happens</li>
+      </ul>
+    </div>
+    <div lang="de">
+      <ul style="margin:6px 0 0;padding-left:18px;color:#8b949e;line-height:1.7">
+        <li><strong style="color:#c9d1d9">80 Balken</strong> = 80 molekulare Sequenzen, die in einer chemischen Suppe konkurrieren</li>
+        <li><strong style="color:#c9d1d9">Balkenhöhe</strong> = Häufigkeit (Anteil an der Population)</li>
+        <li><strong style="color:#c9d1d9">Balkenfarbe</strong>: <span style="color:#f59e0b">■ amber</span> = Prelife dominiert · <span style="color:#34d399">■ grün</span> = Selektion dominiert · heller = fitter</li>
+        <li><strong style="color:#c9d1d9">Regler r</strong> = Replikationsrate — wie viel template-gesteuerte Kopierung stattfindet</li>
+      </ul>
+    </div>
+  </div>
+</details>
 
 <div class="eq-highlight">
   <code style="font-size:1.1em">ẋᵢ = <span style="color:#f59e0b;font-weight:700">aᵢ · xᵢ'</span> − <span style="color:#f87171;font-weight:700">(d + aᵢ₀ + aᵢ₁) · xᵢ</span> + <span style="color:#34d399;font-weight:700">r · xᵢ · (fᵢ − φ)</span></code>
@@ -290,7 +292,7 @@ nav_order: 1
 
 <div class="stat-row">
   <div class="stat-item">
-    <span class="stat-number">55+</span>
+    <span class="stat-number">50+</span>
     <span class="stat-label">Papers</span>
   </div>
   <div class="stat-item">
@@ -315,7 +317,7 @@ nav_order: 1
     <a href="/evolving-agents/research/nowak-synthesis">Read →</a>
   </div>
   <div class="feature-card">
-    <h3>📄 55+ Papers</h3>
+    <h3>📄 50+ Papers</h3>
     <p>9 categories, 15 must-reads. Prioritized and linked to arXiv.</p>
     <a href="/evolving-agents/research/paper-registry">Browse →</a>
   </div>
@@ -351,7 +353,7 @@ nav_order: 1
     <a href="/evolving-agents/research/nowak-synthesis">Lesen →</a>
   </div>
   <div class="feature-card">
-    <h3>📄 55+ Papers</h3>
+    <h3>📄 50+ Papers</h3>
     <p>9 Kategorien, 15 Must-Reads. Priorisiert und mit arXiv verlinkt.</p>
     <a href="/evolving-agents/research/paper-registry">Durchsuchen →</a>
   </div>
@@ -392,7 +394,7 @@ nav_order: 1
 </details>
 <details>
 <summary><strong>What can I DO with this?</strong></summary>
-<p>Use the <a href="/evolving-agents/principles/">7 principles</a> as a design checklist. Implement the <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase 1 feedback loop</a>. Read the <a href="/evolving-agents/research/paper-registry">55+ papers</a>.</p>
+<p>Use the <a href="/evolving-agents/principles/">7 principles</a> as a design checklist. Implement the <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase 1 feedback loop</a>. Read the <a href="/evolving-agents/research/paper-registry">50+ papers</a>.</p>
 </details>
 </div>
 
@@ -408,18 +410,18 @@ nav_order: 1
 </details>
 <details>
 <summary><strong>Was kann ich damit machen?</strong></summary>
-<p>Die <a href="/evolving-agents/principles/">7 Prinzipien</a> als Design-Checkliste nutzen. Den <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase-1-Feedback-Loop</a> implementieren. Die <a href="/evolving-agents/research/paper-registry">55+ Papers</a> lesen.</p>
+<p>Die <a href="/evolving-agents/principles/">7 Prinzipien</a> als Design-Checkliste nutzen. Den <a href="/evolving-agents/specs/phase-1-feedback-loop">Phase-1-Feedback-Loop</a> implementieren. Die <a href="/evolving-agents/research/paper-registry">50+ Papers</a> lesen.</p>
 </details>
 </div>
 
 ---
 
 <div lang="en" markdown="1">
-> This is a **research synthesis**, not a systematic review. Analysis is based on abstracts, summaries, and cross-verified data from 55+ papers. Counter-arguments [documented](/evolving-agents/research/counter-arguments). [Full limitations →](/evolving-agents/meta/limitations)
+> This is a **research synthesis**, not a systematic review. Analysis is based on abstracts, summaries, and cross-verified data from 50+ papers. Counter-arguments [documented](/evolving-agents/research/counter-arguments). [Full limitations →](/evolving-agents/meta/limitations)
 {: .warning }
 </div>
 <div lang="de" markdown="1">
-> Dies ist eine **Forschungssynthese**, kein systematisches Review. Die Analyse basiert auf Abstracts, Zusammenfassungen und kreuzverifizierten Daten aus 55+ Papers. Gegenargumente [dokumentiert](/evolving-agents/research/counter-arguments). [Vollständige Limitationen →](/evolving-agents/meta/limitations)
+> Dies ist eine **Forschungssynthese**, kein systematisches Review. Die Analyse basiert auf Abstracts, Zusammenfassungen und kreuzverifizierten Daten aus 50+ Papers. Gegenargumente [dokumentiert](/evolving-agents/research/counter-arguments). [Vollständige Limitationen →](/evolving-agents/meta/limitations)
 {: .warning }
 </div>
 

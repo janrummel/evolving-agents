@@ -31,14 +31,14 @@ Current AI agent systems are fundamentally static. Martin Nowak's work on evolut
 > There is a structural analogy between biological evolution and agent system improvement.
 > Replication, mutation, and selection map onto workflow reuse, prompt variation, and evaluation.
 
-This repo connects the math to the practice — through 55+ papers, 7 actionable principles, and a concrete engineering spec for making agent systems evolvable.
+This repo connects the math to the practice — through 50+ papers, 7 actionable principles, and a concrete engineering spec for making agent systems evolvable.
 
 ## Who Is This For?
 
 | You are... | You'll get... | Start here |
 |:---|:---|:---|
 | **An agent system builder** | Design checklist + engineering spec | [7 Principles](principles/README.md) → [Phase 1 Spec](specs/phase-1-feedback-loop.md) |
-| **An AI/ML researcher** | 55+ categorized papers + open questions | [Paper Registry](research/paper-registry.md) → [Open Questions](research/open-questions.md) |
+| **An AI/ML researcher** | 50+ categorized papers + open questions | [Paper Registry](research/paper-registry.md) → [Open Questions](research/open-questions.md) |
 | **Curious about biology × AI** | Accessible synthesis with glossary | [Nowak Synthesis](research/nowak-synthesis.md) |
 
 **Prerequisites:** None for the principles and synthesis (glossary included). Familiarity with LLM-based agent systems helps for the engineering spec. No math background needed — the equations are explained in plain language.
@@ -66,7 +66,7 @@ See the [full FAQ on the website](https://janrummel.github.io/evolving-agents/#f
 | Document | What It Contains |
 |----------|-----------------|
 | [Nowak Synthesis](research/nowak-synthesis.md) | Originator equation, phase transitions, error threshold — mapped to agents |
-| [Paper Registry](research/paper-registry.md) | 55+ papers across 9 categories, 15 must-reads, prioritized |
+| [Paper Registry](research/paper-registry.md) | 50+ papers across 9 categories, 15 must-reads, prioritized |
 | [Deep Dive: EvoFlow, MCE, AgentFactory](research/deep-dive-evoflow-mce-agentfactory.md) | The 3 bridge papers analyzed and compared |
 | [Open Questions](research/open-questions.md) | 7 research questions, from tractable to speculative |
 
@@ -132,7 +132,7 @@ meta/               Research methodology, toolkit audit, learnings, monitoring
 
 **If you build agent systems:** The 5 principles give you a checklist. Are you optimizing for evolvability or just current performance? Do you have a feedback loop? Are you changing more than you can measure? Start with [Phase 1](specs/phase-1-feedback-loop.md) — it's a SQL schema and 3 views.
 
-**If you research agent evolution:** The [paper registry](research/paper-registry.md) organizes 55+ papers into 9 categories with priority ratings. The [open questions](research/open-questions.md) identify 7 tractable research directions, starting with the error threshold for agentic workflows.
+**If you research agent evolution:** The [paper registry](research/paper-registry.md) organizes 50+ papers into 9 categories with priority ratings. The [open questions](research/open-questions.md) identify 7 tractable research directions, starting with the error threshold for agentic workflows.
 
 **If you're curious about the intersection of biology and AI:** The [synthesis](research/nowak-synthesis.md) walks through Nowak's math and maps it to agent systems — with a glossary that explains every term.
 

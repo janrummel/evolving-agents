@@ -108,7 +108,7 @@ Das Mapping zwischen Nowaks Evolutionary Dynamics und Agent-Systemen ist **die I
 
 <div lang="en" markdown="1">
 
-Of 55+ papers listed:
+Of 50+ papers listed:
 - ~40 have verified arXiv IDs with clickable links
 - ~15 have incomplete metadata (missing authors or IDs, sourced from the [Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) list)
 - Sources without verified permanent links are marked with ⚠
@@ -117,7 +117,7 @@ Of 55+ papers listed:
 
 <div lang="de" markdown="1">
 
-Von 55+ gelisteten Papers:
+Von 50+ gelisteten Papers:
 - ~40 haben verifizierte arXiv-IDs mit klickbaren Links
 - ~15 haben unvollständige Metadaten (fehlende Autoren oder IDs, stammen aus der [Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents)-Liste)
 - Quellen ohne verifizierte permanente Links sind mit ⚠ markiert
@@ -184,7 +184,7 @@ Die 7 Design-Prinzipien sind **aus der Theorie abgeleitet, nicht empirisch valid
 
 1. **Read the 15 must-read papers in full** and verify the abstract-based summaries
 2. **Actively search for counter-arguments** to the Nowak-agent analogy
-3. **Verify all 55+ paper registry entries** with full metadata (authors, venues, DOIs)
+3. **Verify all 50+ paper registry entries** with full metadata (authors, venues, DOIs)
 4. **Translate and analyze the Chinese-language sources** in depth
 5. **Empirically test the principles** on a real agent system (Phase 1 of the feedback loop is a start)
 6. **Get peer review** from someone in evolutionary computation AND someone in agent systems
@@ -195,7 +195,7 @@ Die 7 Design-Prinzipien sind **aus der Theorie abgeleitet, nicht empirisch valid
 
 1. **Die 15 Must-Read Papers vollständig lesen** und die Abstract-basierten Zusammenfassungen verifizieren
 2. **Aktiv nach Gegenargumenten suchen** zur Nowak-Agent-Analogie
-3. **Alle 55+ Paper-Registry-Einträge verifizieren** mit vollständigen Metadaten (Autoren, Venues, DOIs)
+3. **Alle 50+ Paper-Registry-Einträge verifizieren** mit vollständigen Metadaten (Autoren, Venues, DOIs)
 4. **Die chinesischsprachigen Quellen übersetzen und tiefgehend analysieren**
 5. **Die Prinzipien empirisch testen** an einem realen Agent-System (Phase 1 des Feedback Loops ist ein Anfang)
 6. **Peer Review einholen** von jemandem aus Evolutionary Computation UND jemandem aus Agent Systems

@@ -10,7 +10,7 @@ nav_order: 2
 # Paper Registry
 
 {: .note }
-> **Reading: 2 of 5** · After browsing this, you'll have a categorized map of the field — 55+ papers across 9 categories, with priority ratings to guide what to read first.
+> **Reading: 2 of 5** · After browsing this, you'll have a categorized map of the field — 50+ papers across 9 categories, with priority ratings to guide what to read first.
 
 <div class="section-summary">
 <h4>Quick Navigation</h4>
@@ -32,7 +32,7 @@ All identified papers, categorized and prioritized. As of: 2026-03-19.
 # Paper-Registry
 
 {: .note }
-> **Lesehinweis: 2 von 5** · Nach dem Durchstöbern hast du eine kategorisierte Übersicht des Feldes — 55+ Papers in 9 Kategorien, mit Prioritätsbewertungen als Leseleitfaden.
+> **Lesehinweis: 2 von 5** · Nach dem Durchstöbern hast du eine kategorisierte Übersicht des Feldes — 50+ Papers in 9 Kategorien, mit Prioritätsbewertungen als Leseleitfaden.
 
 <div class="section-summary">
 <h4>Schnellnavigation</h4>
@@ -315,7 +315,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 
 ## Statistics
 
-- **Total Papers:** 55+
+- **Total Papers:** 50+
 - **!!! (Must-Read):** 15
 - **Chinese involvement:** ~20 papers (marked CN)
 - **2026 Papers:** 18 (12 of which from March 2026)
@@ -327,7 +327,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 
 ## Statistik
 
-- **Total Papers:** 55+
+- **Total Papers:** 50+
 - **!!! (Must-Read):** 15
 - **Chinesische Beteiligung:** ~20 Papers (CN markiert)
 - **2026 Papers:** 18 (davon 12 aus März 2026)

@@ -44,7 +44,7 @@
 - ✅ "Strukturelle Analogie, kein formaler Beweis" explizit
 - ✅ Counter-Arguments verlinkt
 - 🟡 EvoFlow-Claim "12.4% der Kosten von o1-preview" — Quelle nicht direkt verlinkt an der Stelle
-- 🟡 "55+ Papers" Zahl sollte verifiziert werden (Paper Registry hat ~25 eingetragene, Rest in welcher Quelle?)
+- 🟡 "50+ Papers" Zahl sollte verifiziert werden (Paper Registry hat ~25 eingetragene, Rest in welcher Quelle?)
 
 #### 🎓 Didaktiker — 🟡 VERBESSERBAR
 - ✅ Hero-Frage als Hook — exzellent
@@ -76,7 +76,7 @@
 - 🟡 **Canvas hardcoded 600×240** — skaliert per CSS, aber wird auf Retina-Displays unscharf
 - 🟡 **Farbkontrast im Simulator** — amber auf dunklem Hintergrund ist grenzwertig (WCAG AA nicht geprüft)
 - 🟡 **Kein Loading State** für den Simulator — Canvas ist kurz weiß bevor JS lädt
-- 🟡 **Stats-Row (55+ / 7 / 9) ohne Kontext** — Zahlen ohne erklärenden Satz wirken wie Marketing
+- 🟡 **Stats-Row (50+ / 7 / 9) ohne Kontext** — Zahlen ohne erklärenden Satz wirken wie Marketing
 
 ---
 
@@ -217,7 +217,7 @@ _(Nicht vollständig gelesen in dieser Session, aber basierend auf Struktur und 
 - **Fix:** Kurze Übersicht + Links zu Unterseiten mit 1-Satz-Beschreibung.
 
 ### Paper Registry — 🟡
-- Gute Struktur, aber "55+ Papers" zählen und verifizieren
+- Gute Struktur, aber "50+ Papers" zählen und verifizieren
 - Einige Links mit ⚠ — sollten aufgelöst oder entfernt werden
 
 ### Research Toolkit + Research Learnings — 🟡
@@ -248,7 +248,7 @@ _(Nicht vollständig gelesen in dieser Session, aber basierend auf Struktur und 
 | 5 | **Nowak §2-§3 verlieren sich in Paper-Beschreibungen** ohne "So what?" | Nowak | 🎓 | 🟡 |
 | 6 | **Analogie-Tabelle kommt zu spät** (nach 4000 Wörtern) | Nowak | 🎓 | 🟡 |
 | 7 | **Keine Spannungen zwischen Prinzipien** diskutiert | Principles | ⚔️ | 🟡 |
-| 8 | **"55+ Papers" nicht verifiziert** — tatsächliche Zahl prüfen | Überall | 🔬 | 🟡 |
+| 8 | **"50+ Papers" nicht verifiziert** — tatsächliche Zahl prüfen | Überall | 🔬 | 🟡 |
 | 9 | **OG-Images/Meta-Descriptions fehlen** | Überall | 🌐 | 🟡 |
 | 10 | **Hero-Text "We mapped it" zu definitiv** | Homepage | ⚔️ | 🟡 |
 
@@ -260,7 +260,7 @@ _(Nicht vollständig gelesen in dieser Session, aber basierend auf Struktur und 
 - [ ] Hub-Seiten füllen (research/index, specs/index)
 - [ ] Hero-Text abschwächen ("We mapped" → "We explored the mapping")
 - [ ] Simulator-Erklärung UNTER die Grafik verschieben (erst spielen!)
-- [ ] "55+" Zahl verifizieren
+- [ ] "50+" Zahl verifizieren
 
 ### Kurzfristig (1-3h)
 - [ ] ToC-Komponente für lange Seiten (just-the-docs hat `toc: true`)
