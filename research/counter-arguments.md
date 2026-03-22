@@ -22,7 +22,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 <details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 On this page</summary>
-<div style="font-size:0.85em;margin-top:8px">
+<div style="font-size:0.85em;margin-top:8px" markdown="1">
 
 - 🔴 [G1: Lamarckian, not Darwinian](#g1) — STRONG
 - 🔴 [G2: No True Reproduction](#g2) — STRONG
@@ -56,7 +56,7 @@ description: "9 critiques of the Nowak-agent analogy. 3 rated STRONG. Where the 
 
 <details style="margin:1em 0;padding:8px 16px;background:rgba(31,111,235,.05);border-radius:8px">
 <summary style="cursor:pointer;font-weight:600;color:#58a6ff">📑 Auf dieser Seite</summary>
-<div style="font-size:0.85em;margin-top:8px">
+<div style="font-size:0.85em;margin-top:8px" markdown="1">
 
 - 🔴 [G1: Lamarckisch, nicht Darwinistisch](#g1) — STARK
 - 🔴 [G2: Keine echte Reproduktion](#g2) — STARK
