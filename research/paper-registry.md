@@ -164,7 +164,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MermaidFlow: Safety-constrained Evolutionary Workflow Programming | — | arXiv | 2025 | — |
 | !! | EvolveR: Self-Evolving LLM Agents through Experience-Driven Lifecycle | — | arXiv | 2025 | 2510.16079 |
 | !! | AgentEvolver: Efficient Self-Evolving Agent System | — | arXiv | 2025 | 2511.10395 |
-| !!! | **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** | Zhang, Hu, Lu, Lange, **Clune** | arXiv | 2025 | **2505.22954** |
+| !!! | **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** | Zhang, Hu, Lu, Lange, **Clune** (Sakana AI) | arXiv | 2025 | **2505.22954** |
 | !! | EvoRL: Evolution of Agentic Workflows Using Reinforcement Learning | Attota, X | BigData Conf | 2025 | — |
 | !! | Polymath: Self-Optimizing Agent with Dynamic Hierarchical Workflow | — | arXiv | 2025 | 2508.02959 |
 | ! | Self-Organizing Agent Network for LLM-based Workflow Automation | — | arXiv | 2025 | 2508.13732 |
@@ -186,7 +186,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MermaidFlow: Safety-constrained Evolutionary Workflow Programming | — | arXiv | 2025 | — |
 | !! | EvolveR: Self-Evolving LLM Agents through Experience-Driven Lifecycle | — | arXiv | 2025 | 2510.16079 |
 | !! | AgentEvolver: Efficient Self-Evolving Agent System | — | arXiv | 2025 | 2511.10395 |
-| !!! | **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** | Zhang, Hu, Lu, Lange, **Clune** | arXiv | 2025 | **2505.22954** |
+| !!! | **Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents** | Zhang, Hu, Lu, Lange, **Clune** (Sakana AI) | arXiv | 2025 | **2505.22954** |
 | !! | EvoRL: Evolution of Agentic Workflows Using Reinforcement Learning | Attota, X | BigData Conf | 2025 | — |
 | !! | Polymath: Self-Optimizing Agent with Dynamic Hierarchical Workflow | — | arXiv | 2025 | 2508.02959 |
 | ! | Self-Organizing Agent Network for LLM-based Workflow Automation | — | arXiv | 2025 | 2508.13732 |
@@ -208,7 +208,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MAS-GPT: Training LLMs to Construct Multi-Agent Systems | — | ICML | 2025 | — |
 | !! | MAS-ZERO: Designing MAS with Zero Supervision | — | arXiv | 2025 | — |
 | !! | Evolving Interpretable Constitutions for Multi-Agent Coordination | Kumar et al. | arXiv | 2026 | 2602.00755 |
-| !!! | **CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards** | Xue et al. (CN) | arXiv | 2025 | **2510.08529** |
+| !!! | **CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards** | Xue et al. (CN) | **ICLR** | **2026** | **2510.08529** |
 | !! | EvoScientist: Multi-Agent Evolving AI Scientists for Scientific Discovery | Lyu et al. (CN) | arXiv | 2026 | 2603.08127 |
 | !! | Learning to Deliberate: Meta-policy Collaboration for Agentic LLMs | — | arXiv | 2025 | 2509.03817 |
 
@@ -229,7 +229,7 @@ Alle identifizierten Papers, kategorisiert und priorisiert. Stand: 2026-03-19.
 | !! | MAS-GPT: Training LLMs to Construct Multi-Agent Systems | — | ICML | 2025 | — |
 | !! | MAS-ZERO: Designing MAS with Zero Supervision | — | arXiv | 2025 | — |
 | !! | Evolving Interpretable Constitutions for Multi-Agent Coordination | Kumar et al. | arXiv | 2026 | 2602.00755 |
-| !!! | **CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards** | Xue et al. (CN) | arXiv | 2025 | **2510.08529** |
+| !!! | **CoMAS: Co-Evolving Multi-Agent Systems via Interaction Rewards** | Xue et al. (CN) | **ICLR** | **2026** | **2510.08529** |
 | !! | EvoScientist: Multi-Agent Evolving AI Scientists for Scientific Discovery | Lyu et al. (CN) | arXiv | 2026 | 2603.08127 |
 | !! | Learning to Deliberate: Meta-policy Collaboration for Agentic LLMs | — | arXiv | 2025 | 2509.03817 |
 

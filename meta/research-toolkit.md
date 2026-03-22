@@ -299,7 +299,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="en" markdown="1">
 
-<div class="key-box amber"><h4>⚠️ Gap</h4><p>No PapersWithCode integration, no systematic codebase review, no local experiment reproduction or benchmarking infrastructure.</p></div>
+<div class="key-box green"><h4>✅ Partially Addressed (2026-03-22)</h4><p>Scanned open-source repos: <strong>CoMAS</strong> (ICLR 2026, Python, requires 2×A100), <strong>Darwin Gödel Machine</strong> (Sakana AI, Python+Docker, SWE-bench eval), <strong>EvoAgentX</strong> (public). EvoFlow has no public repo. No local reproduction yet — hardware requirements exceed our Mac mini.</p></div>
 
 **Problem:** Many papers we reference have open-source implementations we've never looked at.
 
@@ -318,7 +318,7 @@ PubMed, bioRxiv, ChEMBL, ClinicalTrials.gov, Open Targets (ToS-Audit vom 13.03.2
 
 <div lang="de" markdown="1">
 
-<div class="key-box amber"><h4>⚠️ Lücke</h4><p>Keine PapersWithCode-Integration, kein systematisches Codebase-Review, keine lokale Experiment-Reproduktion oder Benchmarking-Infrastruktur.</p></div>
+<div class="key-box green"><h4>✅ Teilweise adressiert (22.03.2026)</h4><p>Open-Source-Repos gescannt: <strong>CoMAS</strong> (ICLR 2026, Python, braucht 2×A100), <strong>Darwin Gödel Machine</strong> (Sakana AI, Python+Docker, SWE-bench Eval), <strong>EvoAgentX</strong> (öffentlich). EvoFlow hat kein öffentliches Repo. Noch keine lokale Reproduktion — Hardware-Anforderungen übersteigen unseren Mac mini.</p></div>
 
 **Problem:** Viele Papers, die wir referenzieren, haben Open-Source-Implementierungen, die wir nie angeschaut haben.
 
