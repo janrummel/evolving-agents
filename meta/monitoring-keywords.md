@@ -7,6 +7,11 @@ nav_order: 4
 
 # Research Monitoring Keywords
 
+<div class="section-summary">
+<h4><span lang="en">Purpose</span><span lang="de">Zweck</span></h4>
+<p><span lang="en">Curated search terms for weekly arXiv scans. 3 tiers: Primary (weekly), Secondary (monthly), Negative (exclude). Last updated: 2026-03-19.</span><span lang="de">Kuratierte Suchbegriffe für wöchentliche arXiv-Scans. 3 Stufen: Primär (wöchentlich), Sekundär (monatlich), Negativ (ausschließen). Letztes Update: 2026-03-19.</span></p>
+</div>
+
 <div lang="en" markdown="1">
 
 Search terms for regular paper tracking. Goal: weekly arXiv scan.

@@ -35,13 +35,18 @@ Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erste
 
 </div>
 
+<div class="section-summary">
+<h4><span lang="en">Honest Assessment</span><span lang="de">Ehrliche Einordnung</span></h4>
+<p><span lang="en">This is a structured research synthesis with engineering output — not a peer-reviewed paper. Core papers verified in full text, broader corpus via abstracts. The structural analogy is an interpretation, not a proof.</span><span lang="de">Dies ist eine strukturierte Forschungssynthese mit Engineering-Output — kein Peer-reviewed Paper. Kern-Papers im Volltext verifiziert, breiterer Corpus via Abstracts. Die strukturelle Analogie ist eine Interpretation, kein Beweis.</span></p>
+</div>
+
 ## What This Is NOT / Was das hier NICHT ist
 
 <div lang="en" markdown="1">
 
 - A peer-reviewed publication
 - A rigorous formal proof of isomorphism between biological evolution and agent systems
-- A comprehensive literature review (no paper was read in full)
+- A comprehensive literature review (core papers read in full text; broader corpus based on abstracts and summaries)
 
 </div>
 
@@ -49,7 +54,7 @@ Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erste
 
 - Eine Peer-reviewed Publikation
 - Ein rigoroser formaler Beweis für Isomorphismus zwischen biologischer Evolution und Agent-Systemen
-- Ein umfassendes Literature Review (kein Paper wurde vollständig gelesen)
+- Ein umfassendes Literature Review (Kern-Papers im Volltext gelesen; breiterer Corpus basierend auf Abstracts und Zusammenfassungen)
 
 </div>
 
@@ -64,7 +69,7 @@ Eine strukturierte Research Collection mit umsetzbarem Engineering-Output, erste
 - Third-party summaries (EmergentMind, alphaXiv)
 - GitHub README files and documentation
 
-Numbers cited from papers (e.g., "12.4% of inference cost" for EvoFlow) were cross-checked against at least 2 independent sources but not verified against the original paper text.
+Core papers (Nowak & Ohtsuki 2008, EvoFlow 2025) were read in full text and key claims verified against the original data. Numbers cited from other papers (e.g., MCE, AgentFactory) were cross-checked against at least 2 independent sources.
 
 </div>
 
@@ -75,7 +80,7 @@ Numbers cited from papers (e.g., "12.4% of inference cost" for EvoFlow) were cro
 - Zusammenfassungen Dritter (EmergentMind, alphaXiv)
 - GitHub README-Dateien und Dokumentation
 
-Aus Papers zitierte Zahlen (z. B. „12,4 % der Inference-Kosten" für EvoFlow) wurden gegen mindestens 2 unabhängige Quellen geprüft, aber nicht gegen den Originaltext des Papers verifiziert.
+Kern-Papers (Nowak & Ohtsuki 2008, EvoFlow 2025) wurden im Volltext gelesen und Kernaussagen gegen die Originaldaten verifiziert. Zahlen aus anderen Papers (z.B. MCE, AgentFactory) wurden gegen mindestens 2 unabhängige Quellen geprüft.
 
 </div>
 

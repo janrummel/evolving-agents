@@ -9,6 +9,11 @@ nav_order: 3
 
 # Learning L9: AgentField Is in the Prelife Phase
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>AgentField has diversity and selection, but no replication — the feedback loop is open. Closing it is the transition from Prelife to Life (Nowak's terminology). Phase 1 measures fitness. Phase 2 closes the loop.</p>
+</div>
+
 **Identified:** 2026-03-19, during EvoFlow/MCE/AgentFactory Deep Dive
 
 ## Insight
@@ -49,6 +54,11 @@ Not everything at once. Phase 1 (closing the feedback loop) is the only next ste
 <div lang='de' markdown='1'>
 
 # Learning L9: AgentField ist in der Prelife-Phase
+
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>AgentField hat Diversität und Selektion, aber keine Replikation — der Feedback-Loop ist offen. Ihn zu schließen ist der Übergang von Prelife zu Life (Nowaks Terminologie). Phase 1 misst Fitness. Phase 2 schließt den Loop.</p>
+</div>
 
 **Erkannt:** 2026-03-19, während EvoFlow/MCE/AgentFactory Deep Dive
 

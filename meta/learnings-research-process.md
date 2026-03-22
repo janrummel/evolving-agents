@@ -84,6 +84,48 @@ nav_order: 2
     font-size: 0.9em;
     margin: 0.5em 0;
   }
+  .section-summary {
+    background: linear-gradient(135deg, #e8eaf6 0%, #f3e5f5 100%);
+    border: 1px solid #b39ddb;
+    border-radius: 8px;
+    padding: 1em 1.4em;
+    margin: 0.8em 0 1.5em 0;
+  }
+  .section-summary h4 {
+    margin: 0 0 0.4em 0;
+    color: #4a148c;
+    font-size: 1em;
+  }
+  .section-summary p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #37474f;
+  }
+  .key-box {
+    border-radius: 8px;
+    padding: 0.9em 1.3em;
+    margin: 1em 0;
+  }
+  .key-box h4 {
+    margin: 0 0 0.3em 0;
+    font-size: 1em;
+  }
+  .key-box p {
+    margin: 0;
+    font-size: 0.95em;
+  }
+  .key-box.green {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 1px solid #66bb6a;
+  }
+  .key-box.green h4 { color: #2e7d32; }
+  .key-box.green p { color: #33691e; }
+  .key-box.amber {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border: 1px solid #ffb300;
+  }
+  .key-box.amber h4 { color: #e65100; }
+  .key-box.amber p { color: #bf360c; }
 </style>
 
 # Research Process Learnings
@@ -110,6 +152,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 ## L1: Semantic Scholar API — Rate Limiting ist aggressiv
 
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> Parallel API calls to Semantic Scholar hit aggressive rate limits (429). Sequential calls with cooldown or an API key are required. arXiv serves as a reliable fallback.<br/>
+<strong>DE:</strong> Parallele API-Calls an Semantic Scholar treffen auf aggressives Rate Limiting (429). Sequentielle Calls mit Cooldown oder ein API Key sind nötig. arXiv dient als zuverlässiger Fallback.</p>
+</div>
+
 <span class="lang-toggle lang-en">EN</span>
 
 <div lang="en" markdown="1">
@@ -135,6 +183,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 </div>
 
 <div class="key-insight">Never bombard external APIs in parallel without a rate-limit check.</div>
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>Never bombard external APIs in parallel without a rate-limit check. Always check docs for rate limits before integrating.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>Assuming APIs handle parallel load gracefully is a common mistake. Even "open" academic APIs enforce strict limits without API keys.</p>
+</div>
 
 </div>
 
@@ -164,6 +222,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">Externe APIs niemals parallel bombardieren ohne Rate-Limit-Check.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Externe APIs niemals parallel bombardieren ohne Rate-Limit-Check. Immer zuerst die Docs nach Rate Limits prüfen.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>Anzunehmen, dass APIs parallele Last vertragen, ist ein häufiger Fehler. Selbst "offene" akademische APIs erzwingen strikte Limits ohne API Keys.</p>
+</div>
+
 </div>
 
 </div>
@@ -173,6 +241,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <div class="learning-card" markdown="1">
 
 ## L2: GitHub Awesome Lists > Direct API Search as Entry Point
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> Curated GitHub Awesome lists deliver structured, categorized overviews far more efficiently than individual API calls. They should be the first step in any research pipeline.<br/>
+<strong>DE:</strong> Kuratierte GitHub Awesome-Listen liefern strukturierte, kategorisierte Übersichten weit effizienter als einzelne API-Calls. Sie sollten der erste Schritt jeder Research-Pipeline sein.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 
@@ -198,6 +272,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 </div>
 
 <div class="key-insight">Curated community overviews first, then custom search for gaps.</div>
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>Curated community overviews first, then custom search for gaps. One good Awesome list = dozens of API calls saved.</p>
+</div>
 
 </div>
 
@@ -226,6 +305,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">Kuratierte Community-Übersichten zuerst, dann eigene Suche für Lücken.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Kuratierte Community-Übersichten zuerst, dann eigene Suche für Lücken. Eine gute Awesome-Liste = dutzende API-Calls gespart.</p>
+</div>
+
 </div>
 
 </div>
@@ -235,6 +319,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <div class="learning-card" markdown="1">
 
 ## L3: arXiv API — Reliable, No Rate Limit, XML-Based
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> arXiv's API handles parallel requests flawlessly with no rate limiting — making it the most robust entry point for paper discovery. It should be the primary source in any research pipeline.<br/>
+<strong>DE:</strong> Die arXiv-API verarbeitet parallele Requests problemlos ohne Rate Limiting — das macht sie zum robustesten Einstiegspunkt für Paper-Discovery. Sie sollte die primäre Quelle jeder Research-Pipeline sein.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 
@@ -260,6 +350,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 </div>
 
 <div class="key-insight">Prefer public, unlimited APIs. arXiv > Semantic Scholar for discovery.</div>
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>Prefer public, unlimited APIs. arXiv > Semantic Scholar for discovery. Reliability beats features.</p>
+</div>
 
 </div>
 
@@ -288,6 +383,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">Öffentliche, unlimitierte APIs bevorzugen. arXiv > Semantic Scholar für Discovery.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Öffentliche, unlimitierte APIs bevorzugen. arXiv > Semantic Scholar für Discovery. Zuverlässigkeit schlägt Features.</p>
+</div>
+
 </div>
 
 </div>
@@ -297,6 +397,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <div class="learning-card" markdown="1">
 
 ## L4: Multilingual Research Confirmed — Chinese Search Yields DIFFERENT Results
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> Searching in Chinese uncovered ~30-50% of relevant work invisible to English-only queries — including Tsinghua talks, CAICT reports, and Zhihu discussions. Multilingual search is not optional, it's essential.<br/>
+<strong>DE:</strong> Suche auf Chinesisch enthüllte ~30-50% relevanter Arbeiten, die bei reiner Englisch-Suche unsichtbar blieben — inkl. Tsinghua-Talks, CAICT-Reports und Zhihu-Diskussionen. Multilinguale Suche ist kein Nice-to-have, sondern essentiell.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 
@@ -330,6 +436,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 </div>
 
 <div class="key-insight">If you only search in English, you find only half the truth. Language diversity = knowledge diversity.</div>
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>Language diversity = knowledge diversity. English-only research systematically misses 30-50% of relevant work, especially from China's booming AI scene.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>We initially skipped non-English search entirely. This blind spot could have led to duplicating existing Chinese research or missing critical approaches.</p>
+</div>
 
 </div>
 
@@ -366,6 +482,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">Wer nur auf Englisch sucht, findet nur die halbe Wahrheit. Sprach-Diversität = Wissens-Diversität.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Sprach-Diversität = Wissens-Diversität. Rein englische Recherche übersieht systematisch 30-50% relevanter Arbeiten, besonders aus Chinas boomender AI-Szene.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>Wir haben anfangs nicht-englische Suche komplett übersprungen. Dieser blinde Fleck hätte dazu führen können, existierende chinesische Forschung zu duplizieren oder kritische Ansätze zu verpassen.</p>
+</div>
+
 </div>
 
 </div>
@@ -375,6 +501,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <div class="learning-card" markdown="1">
 
 ## L5: The Field Moves at Weekly Speed
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> 12 relevant papers appeared in just two weeks. Static literature reviews are obsolete within days. Continuous monitoring (weekly digests) is essential in fast-moving fields.<br/>
+<strong>DE:</strong> 12 relevante Papers erschienen in nur zwei Wochen. Statische Literaturreviews sind innerhalb von Tagen veraltet. Kontinuierliches Monitoring (Weekly Digests) ist essentiell in schnellen Feldern.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 
@@ -400,6 +532,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 </div>
 
 <div class="key-insight">In fast-moving fields, monitoring is more important than one-time research.</div>
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>In fast-moving fields, monitoring is more important than one-time research. Build the pipeline, not just the report.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>A comprehensive literature review done today becomes incomplete by next week. Without automated digests, we're always playing catch-up.</p>
+</div>
 
 </div>
 
@@ -428,6 +570,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">In schnellen Feldern ist Monitoring wichtiger als einmalige Recherche.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>In schnellen Feldern ist Monitoring wichtiger als einmalige Recherche. Baue die Pipeline, nicht nur den Report.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>Ein umfassendes Literaturreview von heute wird bis nächste Woche unvollständig. Ohne automatisierte Digests spielen wir immer Aufholjagd.</p>
+</div>
+
 </div>
 
 </div>
@@ -437,6 +589,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <div class="learning-card" markdown="1">
 
 ## L6: Bridge Papers Exist — EvoFlow Is the Missing Link
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> EvoFlow directly bridges evolutionary algorithms and agent workflow optimization — proving the Nowak→Agent-Systems connection is implementable, not just theoretical. It beat o1-preview at a fraction of the cost.<br/>
+<strong>DE:</strong> EvoFlow verbindet direkt evolutionäre Algorithmen mit Agent-Workflow-Optimierung — und beweist, dass die Nowak→Agent-Systems Verbindung implementierbar ist, nicht nur theoretisch. Es schlug o1-preview zu einem Bruchteil der Kosten.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 
@@ -462,6 +620,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 </div>
 
 <div class="key-insight">Always search for the paper that explicitly bridges two fields. It almost always exists.</div>
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>Always search for bridge papers between two fields. They almost always exist, and finding them saves months of reinvention.</p>
+</div>
 
 </div>
 
@@ -490,6 +653,11 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">Suche immer nach dem Paper, das zwei Felder explizit verbindet. Es existiert fast immer.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Suche immer nach Brückenpapern zwischen zwei Feldern. Sie existieren fast immer, und sie zu finden spart Monate an Neuerfindung.</p>
+</div>
+
 </div>
 
 </div>
@@ -499,6 +667,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <div class="learning-card" markdown="1">
 
 ## L7: Meta Context Engineering = Formalized AgentField
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> The MCE paper formalizes exactly what AgentField does manually: skills and context artifacts co-evolving via meta-agent refinement. This isn't a coincidence — it's validation that our approach is on the right track.<br/>
+<strong>DE:</strong> Das MCE-Paper formalisiert genau das, was AgentField manuell tut: Skills und Context-Artefakte ko-evolvieren durch Meta-Agent-Verfeinerung. Das ist kein Zufall — es validiert, dass unser Ansatz auf dem richtigen Weg ist.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 
@@ -525,6 +699,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 </div>
 
 <div class="key-insight">If someone has formalized what you do manually → study it. It accelerates the next step.</div>
+
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>If someone has formalized what you do manually → study it. It accelerates the leap from manual to automated by years.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>We almost missed this paper because we searched for "evolving agents" but not "meta context engineering." Terminological gaps between fields can hide the most relevant work.</p>
+</div>
 
 </div>
 
@@ -554,6 +738,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 
 <div class="key-insight">Wenn jemand das formalisiert hat was du manuell tust → studiere es. Es beschleunigt den nächsten Schritt.</div>
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Wenn jemand das formalisiert hat, was du manuell tust → studiere es. Es beschleunigt den Sprung von manuell zu automatisiert um Jahre.</p>
+</div>
+
+<div class="key-box amber">
+<h4>⚠️ Lesson Learned</h4>
+<p>Wir hätten dieses Paper fast verpasst, weil wir nach "evolving agents" suchten, aber nicht nach "meta context engineering." Terminologische Lücken zwischen Feldern können die relevanteste Arbeit verstecken.</p>
+</div>
+
 </div>
 
 </div>
@@ -563,6 +757,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 <div class="learning-card" markdown="1">
 
 ## L8: The Nowak-Agent Isomorphism Is NOT Unique — Others See It Too
+
+<div class="section-summary">
+<h4>📋 Section Summary / Abschnitt-Zusammenfassung</h4>
+<p><strong>EN:</strong> Others are independently arriving at the same evolutionary→AI transfer insight, validating our direction. But nobody has yet mapped Nowak's Originator equation to agent systems — that's our unique opening.<br/>
+<strong>DE:</strong> Andere kommen unabhängig zum gleichen Evolutionäres→AI Transfer-Insight, was unsere Richtung validiert. Aber niemand hat bisher Nowaks Originator-Gleichung auf Agent-Systeme abgebildet — das ist unsere einzigartige Öffnung.</p>
+</div>
 
 <span class="lang-toggle lang-en">EN</span>
 

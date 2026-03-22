@@ -9,6 +9,11 @@ nav_order: 2
 
 # Phase 1 Implementation
 
+<div class="section-summary">
+<h4>TL;DR</h4>
+<p>SQLite schema + shell scripts to measure skill fitness across 5 agents. 3 commands to start: create DB, log executions, view metrics. Pareto classification after ≥3 uses per skill.</p>
+</div>
+
 **Status:** ✅ Deployed (2026-03-22)
 **Platform:** Multi-agent system (5 agents: main + α/β/γ/δ)
 **Spec:** [Phase 1: Feedback Loop](../../specs/phase-1-feedback-loop.md)
@@ -105,6 +110,11 @@ This implements the **measurement apparatus** — Nowak's `fᵢ` (fitness per in
 <div lang='de' markdown='1'>
 
 # Phase 1 Implementierung
+
+<div class="section-summary">
+<h4>Kurzfassung</h4>
+<p>SQLite-Schema + Shell-Scripts zur Messung der Skill-Fitness über 5 Agents. 3 Befehle zum Start: DB erstellen, Ausführungen loggen, Metriken anzeigen. Pareto-Klassifikation ab ≥3 Nutzungen pro Skill.</p>
+</div>
 
 **Status:** ✅ Deployed (2026-03-22)
 **Plattform:** Multi-Agent-System (5 Agents: main + α/β/γ/δ)
