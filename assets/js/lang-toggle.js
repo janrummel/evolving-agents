@@ -1,7 +1,7 @@
 // Language Toggle for Evolving Agents
 (function() {
-  // Nav translations
-  var navTranslations = {
+  // Nav + breadcrumb translations (EN → DE)
+  var translations = {
     'Home': 'Startseite',
     'Research': 'Forschung',
     'Principles': 'Prinzipien',
@@ -18,8 +18,22 @@
     'Research Toolkit Audit': 'Research-Toolkit-Audit',
     'Research Learnings': 'Research-Learnings',
     'AgentField = Prelife': 'AgentField = Prelife',
-    'Monitoring Keywords': 'Monitoring-Keywords'
+    'Monitoring Keywords': 'Monitoring-Keywords',
+    // Site title
+    'Evolving Agents': 'Evolving Agents'
   };
+
+  // Translate a single text node
+  function tr(el, lang) {
+    var text = el.textContent.trim();
+    if (!el.dataset.origText) el.dataset.origText = text;
+    var orig = el.dataset.origText;
+    if (lang === 'de' && translations[orig]) {
+      el.textContent = translations[orig];
+    } else if (lang === 'en') {
+      el.textContent = orig;
+    }
+  }
 
   function createToggle() {
     if (document.getElementById('lang-toggle-el')) return;
@@ -35,26 +49,28 @@
     });
   }
 
-  function translateNav(lang) {
-    document.querySelectorAll('.nav-list-link').forEach(function(link) {
-      var text = link.textContent.trim();
-      if (!link.dataset.origText) link.dataset.origText = text;
-      if (lang === 'de' && navTranslations[link.dataset.origText]) {
-        link.textContent = navTranslations[link.dataset.origText];
-      } else if (lang === 'en' && link.dataset.origText) {
-        link.textContent = link.dataset.origText;
-      }
-    });
+  function translateAll(lang) {
+    // Sidebar nav links
+    document.querySelectorAll('.nav-list-link').forEach(function(el) { tr(el, lang); });
 
-    // Also translate the breadcrumb / page heading if it exists outside lang divs
-    var breadcrumbs = document.querySelectorAll('.breadcrumb-nav-list-item a');
-    breadcrumbs.forEach(function(bc) {
-      var text = bc.textContent.trim();
-      if (!bc.dataset.origText) bc.dataset.origText = text;
-      if (lang === 'de' && navTranslations[bc.dataset.origText]) {
-        bc.textContent = navTranslations[bc.dataset.origText];
-      } else if (lang === 'en' && bc.dataset.origText) {
-        bc.textContent = bc.dataset.origText;
+    // Breadcrumbs — both <a> links AND <span> (current page)
+    document.querySelectorAll('.breadcrumb-nav-list-item a, .breadcrumb-nav-list-item span').forEach(function(el) { tr(el, lang); });
+
+    // Site title in sidebar
+    var siteTitle = document.querySelector('.site-title');
+    if (siteTitle) tr(siteTitle, lang);
+
+    // aria-labels on expander buttons (e.g. "toggle items in Research category")
+    document.querySelectorAll('.nav-list-expander').forEach(function(btn) {
+      var label = btn.getAttribute('aria-label') || '';
+      if (!btn.dataset.origLabel) btn.dataset.origLabel = label;
+      if (lang === 'de') {
+        var m = btn.dataset.origLabel.match(/toggle items in (.+) category/);
+        if (m && translations[m[1]]) {
+          btn.setAttribute('aria-label', 'Elemente in Kategorie ' + translations[m[1]] + ' umschalten');
+        }
+      } else {
+        btn.setAttribute('aria-label', btn.dataset.origLabel);
       }
     });
   }
@@ -65,10 +81,9 @@
     document.querySelectorAll('.lang-btn').forEach(function(b) {
       b.classList.toggle('active', b.dataset.lang === lang);
     });
-    translateNav(lang);
+    translateAll(lang);
   };
 
-  // Run when DOM is ready
   function init() {
     createToggle();
     var saved = localStorage.getItem('ea-lang');
@@ -82,9 +97,9 @@
     init();
   }
 
-  // Re-translate after Just-the-Docs finishes loading (it may modify nav)
+  // Re-translate after Just-the-Docs finishes rendering
   window.addEventListener('load', function() {
     var lang = localStorage.getItem('ea-lang') || 'en';
-    translateNav(lang);
+    translateAll(lang);
   });
 })();

@@ -204,12 +204,22 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 **Question:** Can AgentField evolve its own skill library? Skills that perform well get reinforced, poor performers get mutated or removed, new skills emerge from combinations.
 **Connection:** This is the full loop — Nowak's evolution applied to a live agent system.
 
+<div class="key-box amber">
+<h4>⚠️ Caveat</h4>
+<p>Self-evolution without human oversight risks skill drift and unintended emergent behaviors. Any implementation must include kill switches and rollback capabilities.</p>
+</div>
+
 </div>
 
 <div lang="de" markdown="1">
 
 **Frage:** Kann AgentField seine eigene Skill-Bibliothek evolvieren? Gut performende Skills werden verstärkt, schlecht performende mutiert oder entfernt, neue Skills entstehen durch Kombination.
 **Verbindung:** Das ist der vollständige Loop — Nowaks Evolution angewandt auf ein Live-Agent-System.
+
+<div class="key-box amber">
+<h4>⚠️ Caveat</h4>
+<p>Selbstevolution ohne menschliche Aufsicht riskiert Skill-Drift und unbeabsichtigtes emergentes Verhalten. Jede Implementierung braucht Kill Switches und Rollback-Fähigkeiten.</p>
+</div>
 
 </div>
 
@@ -220,11 +230,21 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 **Question:** How do design choices in one project (C2C, CloakCode) transfer evolutionary fitness to another? Is there an "ecosystem fitness" beyond individual project fitness?
 **Connection:** Nowak's spatial evolution / evolutionary graph theory on project networks.
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>If cross-system fitness transfer exists, shared skill libraries become evolutionary accelerators — each project benefits from the selective pressure of all others.</p>
+</div>
+
 </div>
 
 <div lang="de" markdown="1">
 
 **Frage:** Wie übertragen sich Design-Entscheidungen eines Projekts (C2C, CloakCode) als evolutionäre Fitness auf ein anderes? Gibt es eine „Ökosystem-Fitness" jenseits der Fitness einzelner Projekte?
 **Verbindung:** Nowaks räumliche Evolution / Evolutionary Graph Theory auf Projektnetzwerke angewandt.
+
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Wenn systemübergreifender Fitness-Transfer existiert, werden geteilte Skill-Bibliotheken zu evolutionären Beschleunigern — jedes Projekt profitiert vom Selektionsdruck aller anderen.</p>
+</div>
 
 </div>

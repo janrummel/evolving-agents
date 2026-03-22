@@ -49,6 +49,11 @@ nav_order: 1
 
 **The Problem:** These 4 data streams are not connected. We don't know: "Skill X costs on average Y tokens and delivers quality score Z."
 
+<div class="key-box amber">
+<h4>⚠️ Caveat</h4>
+<p>Without connecting these data streams, any "improvement" to skills is guesswork. We're optimizing blind — changing things without knowing if they got better or worse.</p>
+</div>
+
 </div>
 
 <div lang='de' markdown='1'>
@@ -69,6 +74,11 @@ nav_order: 1
 
 **Das Problem:** Diese 4 Datenströme sind nicht verbunden. Wir wissen nicht: "Skill X kostet durchschnittlich Y Tokens und liefert Quality-Score Z."
 
+<div class="key-box amber">
+<h4>⚠️ Caveat</h4>
+<p>Ohne die Verbindung dieser Datenströme ist jede „Verbesserung" von Skills Raterei. Wir optimieren blind — ändern Dinge, ohne zu wissen, ob sie besser oder schlechter wurden.</p>
+</div>
+
 </div>
 
 ---
@@ -76,6 +86,11 @@ nav_order: 1
 <div lang='en' markdown='1'>
 
 ## What Needs to Be Built (TARGET)
+
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>4 components: (1) a central SQL table logging every skill execution, (2) an aggregated metrics view, (3) a Pareto classification query (quality vs. cost), and (4) advisory alert triggers. Total build estimate: ~2 hours.</p>
+</div>
 
 ### 1. Skill Performance Log (Core)
 
@@ -142,6 +157,11 @@ WHERE total_uses >= 3  -- At least 3 uses for reliable data
 ORDER BY avg_quality DESC;
 ```
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>The Pareto view is the evolutionary "selection lens" — it instantly reveals which skills deliver the best quality-cost trade-off. DOMINATED skills are candidates for mutation or retirement.</p>
+</div>
+
 ### 4. Automatic Triggers (Alerts, Not Actions)
 
 | Trigger | Condition | Action |
@@ -158,6 +178,11 @@ ORDER BY avg_quality DESC;
 <div lang='de' markdown='1'>
 
 ## Was gebaut werden muss (SOLL)
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>4 Komponenten: (1) eine zentrale SQL-Tabelle für jede Skill-Ausführung, (2) eine aggregierte Metriken-View, (3) eine Pareto-Klassifikations-Abfrage (Qualität vs. Kosten) und (4) beratende Alert-Trigger. Geschätzter Aufwand: ~2 Stunden.</p>
+</div>
 
 ### 1. Skill-Performance-Log (Kern)
 
@@ -224,6 +249,11 @@ WHERE total_uses >= 3  -- Mindestens 3 Nutzungen für belastbare Daten
 ORDER BY avg_quality DESC;
 ```
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Die Pareto-Ansicht ist die evolutionäre „Selektionslinse" — sie zeigt sofort, welche Skills das beste Qualitäts-Kosten-Verhältnis liefern. DOMINATED Skills sind Kandidaten für Mutation oder Ruhestand.</p>
+</div>
+
 ### 4. Automatische Trigger (Alerts, nicht Aktionen)
 
 | Trigger | Bedingung | Aktion |
@@ -242,6 +272,11 @@ ORDER BY avg_quality DESC;
 <div lang='en' markdown='1'>
 
 ## Integration into Existing Components
+
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>4 existing components need changes: orchestrator-routing (write performance data), Quality-Gate (feed scores into SQL), Pulse (read token data), and the improve skill (consume metrics for suggestions). No new tools — only new connections between existing ones.</p>
+</div>
 
 ### orchestrator-routing (modify)
 
@@ -266,6 +301,11 @@ The improve skill ("improve routing") gets access to the `skill_metrics` view. I
 <div lang='de' markdown='1'>
 
 ## Integration in bestehende Komponenten
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>4 bestehende Komponenten brauchen Änderungen: orchestrator-routing (Performance-Daten schreiben), Quality-Gate (Scores in SQL einspeisen), Pulse (Token-Daten lesen) und der improve-Skill (Metriken für Vorschläge nutzen). Keine neuen Tools — nur neue Verbindungen zwischen bestehenden.</p>
+</div>
 
 ### orchestrator-routing (anpassen)
 
@@ -292,6 +332,11 @@ Der improve-Skill ("Routing verbessern") bekommt Zugriff auf `skill_metrics` Vie
 <div lang='en' markdown='1'>
 
 ## Implementation Plan
+
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>6 steps over ~2 hours of active work + 2 weeks of data collection. Steps 1–4 can be done in a single session. Step 5 requires the improve skill. Step 6 is a 2-week observation period targeting ≥50 logged executions.</p>
+</div>
 
 ### Step 1: Create Schema (5 min)
 ```bash
@@ -327,6 +372,11 @@ UPDATE skills_usage SET outcome = '<success|partial|failure>' WHERE id = <last_i
 <div lang='de' markdown='1'>
 
 ## Implementierungsplan
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>6 Schritte über ~2 Stunden aktive Arbeit + 2 Wochen Datensammlung. Schritte 1–4 können in einer Session erledigt werden. Schritt 5 erfordert den improve-Skill. Schritt 6 ist eine 2-wöchige Beobachtungsphase mit Ziel ≥50 geloggte Ausführungen.</p>
+</div>
 
 ### Schritt 1: Schema erstellen (5 Min)
 ```bash
@@ -400,6 +450,11 @@ All das ist Phase 2+. Phase 1 liefert die **Datenbasis**, ohne die keine Evoluti
 
 ## Success Criteria
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>The final success criterion — "at least 1 skill change based on performance data" — is the proof that the feedback loop actually closes. Data without action is just logging.</p>
+</div>
+
 | Criterion | Measurement |
 |-----------|-------------|
 | Performance data is being collected | ≥ 50 entries after 2 weeks |
@@ -413,6 +468,11 @@ All das ist Phase 2+. Phase 1 liefert die **Datenbasis**, ohne die keine Evoluti
 <div lang='de' markdown='1'>
 
 ## Erfolgskriterien
+
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>Das letzte Erfolgskriterium — „mindestens 1 Skill-Änderung basierend auf Performance-Daten" — ist der Beweis, dass der Feedback-Loop tatsächlich geschlossen wird. Daten ohne Aktion sind nur Logging.</p>
+</div>
 
 | Kriterium | Messung |
 |-----------|---------|
@@ -430,6 +490,11 @@ All das ist Phase 2+. Phase 1 liefert die **Datenbasis**, ohne die keine Evoluti
 
 ## Connection to Nowak
 
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p>Phase 1 maps to Nowak's fitness measurement (fᵢ and φ). The Pareto view implements multi-objective selection from EvoFlow. Triggers create selection pressure without forcing action — the first step of the evolutionary phase transition.</p>
+</div>
+
 This Phase 1 implements the **measurement apparatus** — Nowak's `fᵢ` (fitness per individual) and `φ` (population average). Without this measurement there is no selection pressure, only drift.
 
 The Pareto view (Quality vs. Cost) is the first step toward multi-objective selection — EvoFlow's core idea, applied in practice.
@@ -441,6 +506,11 @@ The triggers are the **selection pressure** — they don't force change, but the
 <div lang='de' markdown='1'>
 
 ## Verbindung zu Nowak
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p>Phase 1 bildet Nowaks Fitness-Messung ab (fᵢ und φ). Die Pareto-Ansicht implementiert Multi-Objective-Selektion aus EvoFlow. Trigger erzeugen Selektionsdruck ohne Aktionszwang — der erste Schritt des evolutionären Phasenübergangs.</p>
+</div>
 
 Diese Phase 1 implementiert den **Messapparat** — Nowaks `fᵢ` (Fitness pro Individuum) und `φ` (Populations-Durchschnitt). Ohne diese Messung gibt es keinen Selektionsdruck, nur Drift.
 
