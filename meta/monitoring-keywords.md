@@ -61,6 +61,14 @@ Suchbegriffe für regelmäßiges Paper-Tracking. Ziel: Wöchentlicher arXiv-Scan
 | `自进化 智能体 大模型` | Zhihu, CNKI, ChinaXiv |
 | `多智能体 进化 协作` | Zhihu, Baidu Scholar |
 | `质量多样性 进化算法 智能体` | Baidu Scholar |
+| `工作流进化 大语言模型` | arXiv, Baidu Scholar |
+| `智能体 协同进化 奖励` | arXiv (CoMAS-related) |
+
+### Japanese (quarterly)
+| Query | Platforms |
+|-------|-----------|
+| `進化的エージェント LLM` | arXiv, CiNii, J-STAGE |
+| `マルチエージェント 進化 協調` | arXiv, CiNii |
 
 </div>
 
@@ -72,6 +80,14 @@ Suchbegriffe für regelmäßiges Paper-Tracking. Ziel: Wöchentlicher arXiv-Scan
 | `自进化 智能体 大模型` | Zhihu, CNKI, ChinaXiv |
 | `多智能体 进化 协作` | Zhihu, Baidu Scholar |
 | `质量多样性 进化算法 智能体` | Baidu Scholar |
+| `工作流进化 大语言模型` | arXiv, Baidu Scholar |
+| `智能体 协同进化 奖励` | arXiv (CoMAS-verwandt) |
+
+### Japanisch (quartalsweise)
+| Query | Plattformen |
+|-------|-----------|
+| `進化的エージェント LLM` | arXiv, CiNii, J-STAGE |
+| `マルチエージェント 進化 協調` | arXiv, CiNii |
 
 </div>
 
@@ -86,6 +102,9 @@ Suchbegriffe für regelmäßiges Paper-Tracking. Ziel: Wöchentlicher arXiv-Scan
 | `meta context engineering` | MCE evolution |
 | `error threshold AND agent` | Our own thesis |
 | `collaboration gain metric` | MAS evaluation progress |
+| `Darwin Godel Machine` | Clune's new direction |
+| `MemEvolve OR memory evolution agent` | Memory as heredity mechanism |
+| `co-evolving multi-agent` | CoMAS follow-ups |
 
 </div>
 
@@ -98,6 +117,9 @@ Suchbegriffe für regelmäßiges Paper-Tracking. Ziel: Wöchentlicher arXiv-Scan
 | `meta context engineering` | MCE-Weiterentwicklung |
 | `error threshold AND agent` | Unsere eigene These |
 | `collaboration gain metric` | MAS-Evaluationsfortschritt |
+| `Darwin Godel Machine` | Clunes neue Richtung |
+| `MemEvolve OR memory evolution agent` | Memory als Vererbungsmechanismus |
+| `co-evolving multi-agent` | CoMAS-Nachfolger |
 
 </div>
 
@@ -115,6 +137,8 @@ Suchbegriffe für regelmäßiges Paper-Tracking. Ziel: Wöchentlicher arXiv-Scan
 | Guibin Zhang | Agent Workflows | EvoFlow |
 | Zaiqiao Meng | Agent Evolution | EvoAgentX |
 | Haoran Ye | Context Engineering | MCE |
+| Jenny Zhang | Open-ended Evolution | Darwin Gödel Machine |
+| Robert Lange | Evolutionary AI | Darwin Gödel Machine |
 
 </div>
 
@@ -123,13 +147,15 @@ Suchbegriffe für regelmäßiges Paper-Tracking. Ziel: Wöchentlicher arXiv-Scan
 | Autor | Feld | Warum relevant |
 |-------|------|---------------|
 | Martin A. Nowak | Evolutionary Dynamics | Fundamentaltheorie |
-| Jeff Clune | AI + Evolution | Evolvability ES, QD |
+| Jeff Clune | AI + Evolution | Evolvability ES, QD, Darwin Gödel Machine |
 | Kenneth O. Stanley | Open-endedness | Novelty Search, QD |
 | Joel Lehman | AI Safety + Evolution | Evolvability ES |
 | Jean-Baptiste Mouret | QD Algorithms | MAP-Elites |
 | Guibin Zhang | Agent Workflows | EvoFlow |
 | Zaiqiao Meng | Agent Evolution | EvoAgentX |
 | Haoran Ye | Context Engineering | MCE |
+| Jenny Zhang | Open-ended Evolution | Darwin Gödel Machine |
+| Robert Lange | Evolutionary AI | Darwin Gödel Machine |
 
 </div>
 

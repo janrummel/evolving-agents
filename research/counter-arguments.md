@@ -380,6 +380,11 @@ The **structural analogy** remains valid as a **thinking aid and design heuristi
 2. **New principle P6: "The fitness function is the most fragile part"** — artificial selection requires metric robustness
 3. **Evo-Devo as a second research direction** to include — not just population genetics
 
+### New evidence (2026-03-22):
+
+- **[Rethinking the Value of Multi-Agent Workflow](https://arxiv.org/abs/2601.12307)** (2026) argues that a strong single agent can match multi-agent systems — challenging the assumption that population-based evolution is always superior. This reinforces G6 (cost) and adds nuance: multi-agent may only outperform single-agent above a complexity threshold.
+- **[Darwin Gödel Machine](https://arxiv.org/abs/2505.22954)** (Clune et al., 2025) shows open-ended self-improvement IS achievable — partially addressing G5 (open-ended evolution only in biology).
+
 </div>
 
 <div lang="de" markdown="1">
@@ -409,6 +414,11 @@ Die **strukturelle Analogie** bleibt gültig als **Denkhilfe und Design-Heuristi
 1. **"Nowaks Gleichung auf Agent-Systeme abbilden"** → eher: "Nowaks Konzepte als Denkhilfe nutzen, mit Bewusstsein für die Bruchstellen"
 2. **Neues Prinzip P6: "Die Fitness-Funktion ist der fragilste Teil"** — künstliche Selektion erfordert Metrik-Robustheit
 3. **Evo-Devo als zweite Forschungsrichtung** aufnehmen — nicht nur Populationsgenetik
+
+### Neue Evidenz (22.03.2026):
+
+- **[Rethinking the Value of Multi-Agent Workflow](https://arxiv.org/abs/2601.12307)** (2026) argumentiert, dass ein starker einzelner Agent Multi-Agent-Systeme erreichen kann — stellt die Annahme in Frage, dass populationsbasierte Evolution immer überlegen ist. Verstärkt G6 (Kosten) und fügt Nuance hinzu: Multi-Agent übertrifft Single-Agent möglicherweise erst ab einem Komplexitäts-Threshold.
+- **[Darwin Gödel Machine](https://arxiv.org/abs/2505.22954)** (Clune et al., 2025) zeigt, dass offene Selbstverbesserung erreichbar IST — adressiert teilweise G5 (Open-Ended Evolution nur in der Biologie).
 
 </div>
 

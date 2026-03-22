@@ -575,6 +575,10 @@ This would be a formal justification for the practice of making changes incremen
 
 4. **What is the Error Threshold for agentic workflows?** Maximum number of simultaneous workflow changes before the evaluation pipeline loses the improvement direction?
 
+5. **Can self-improving agents achieve open-ended evolution?** The [Darwin Gödel Machine](https://arxiv.org/abs/2505.22954) (Zhang, Hu, Lu, Lange & Clune, 2025) directly tackles this — agents that rewrite their own code in an open-ended evolutionary loop. This is the logical endpoint of our Prelife→Life trajectory.
+
+6. **Does multi-agent co-evolution require interaction-based rewards?** [CoMAS](https://arxiv.org/abs/2510.08529) (Xue et al., 2025) shows that intrinsic rewards from inter-agent discussions can drive co-evolution without external supervision — a fundamentally different selection mechanism than fitness-based evaluation.
+
 </div>
 
 <div lang="de" markdown="1">
@@ -638,6 +642,10 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 3. **Kann die Collaboration Gain Metric (Γ) als evolutionäre Fitness-Funktion für Multi-Agent-Topologien dienen?** Statt Topologien manuell zu designen, könnten sie evolviert werden — mit Γ als Selektionsdruck.
 
 4. **Was ist der Error Threshold für agentic workflows?** Maximale Anzahl simultaner Workflow-Änderungen, bevor die Evaluation-Pipeline die Verbesserungsrichtung verliert?
+
+5. **Können selbstverbessernde Agents Open-Ended Evolution erreichen?** Die [Darwin Gödel Machine](https://arxiv.org/abs/2505.22954) (Zhang, Hu, Lu, Lange & Clune, 2025) geht diese Frage direkt an — Agents, die ihren eigenen Code in einem offenen evolutionären Loop umschreiben. Das ist der logische Endpunkt unserer Prelife→Life-Trajektorie.
+
+6. **Braucht Multi-Agent Ko-Evolution interaktionsbasierte Rewards?** [CoMAS](https://arxiv.org/abs/2510.08529) (Xue et al., 2025) zeigt, dass intrinsische Rewards aus Inter-Agent-Diskussionen Ko-Evolution ohne externe Supervision treiben können — ein fundamental anderer Selektionsmechanismus als fitnessbasierte Evaluation.
 
 </div>
 
