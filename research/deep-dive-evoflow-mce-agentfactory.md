@@ -5,6 +5,20 @@ parent: Research
 nav_order: 3
 ---
 
+<div lang='en' markdown='1'>
+
+# Deep Dive: EvoFlow, MCE, AgentFactory — and What AgentField Can Learn From Them
+
+{: .note }
+> **Reading: 3 of 5** · After reading this, you'll understand how EvoFlow implements niching selection for workflows, how MCE formalizes skill co-evolution, and a concrete 4-phase upgrade path from Prelife to full agent evolution.
+
+**Date:** 2026-03-19
+**Type:** Comparative Analysis (3 Papers → 1 System)
+
+</div>
+
+<div lang='de' markdown='1'>
+
 # Deep Dive: EvoFlow, MCE, AgentFactory — und was AgentField daraus lernen kann
 
 {: .note }
@@ -13,7 +27,81 @@ nav_order: 3
 **Datum:** 2026-03-19
 **Typ:** Vergleichsanalyse (3 Papers → 1 System)
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## 1. The Three Papers at a Glance
+
+### EvoFlow (2502.07373) — Population-Based Workflow Evolution
+
+**Core Idea:** Instead of searching for ONE optimal workflow, evolve a POPULATION of heterogeneous workflows. Use niching selection (related to MAP-Elites) to maintain diversity and quality simultaneously.
+
+**Architecture (3 Levels):**
+
+```
+Workflow G = (O, Eᵃ)     ← Directed graph of operator nodes
+  └── Operator Oⱼ = (Iⱼ, ξⱼ) ← Collection of Invoking Nodes + internal connectivity
+       └── Invoking Node Iᵢ = (Mᵢ, Pᵢ, τᵢ) ← LLM model + Prompt + Temperature
+```
+
+**Evolutionary Cycle:**
+1. **Tag-based Retrieval:** Select parent workflows from the population based on task tags
+2. **Crossover:** Combine elements of two parent workflows
+3. **Mutation (3 Types):**
+   - LLM Mutation: Switch to a different model
+   - Prompt Mutation: Refine template
+   - Operator Mutation: Modify workflow structure
+4. **Niching Selection:** Retain diverse, high-performing workflows along the Pareto front (Quality vs. Cost)
+
+**Optimization:** Multi-Objective: `max{u(G,q), -c(G,q)}` — maximize Utility, minimize Cost.
+
+**Seed Population:** 4 initial workflow types (Reflective Agent I/O, Arithmetic Collaborator, Lightweight Programmer, Advanced Multi-programmer).
+
+**Results:**
+- Outperformed o1-preview at **12.4% of the cost** (using open-source models: LLaMa-3.1-70b, Qwen-2.5-72b)
+- 1.23%–29.86% improvement over handcrafted workflows
+- Training: $0.45 vs. $1.23 (AFlow), Inference: $0.51 vs. $2.62
+
+---
+
+### MCE — Meta Context Engineering (2601.21557) — Skill Co-evolution
+
+**Core Idea:** Context Engineering (CE) should not be designed manually. Instead: A Meta-Agent that automatically refines CE skills while a Base-Agent executes those skills.
+
+**Bi-Level Architecture:**
+
+```
+Meta-Agent (upper level)
+  ├── Deliberative Search over: historical skills, executions, evaluations
+  ├── "Agentic Crossover": Combine successful skill elements
+  └── Refine skills iteratively
+
+Base-Agent (lower level)
+  ├── Executes skills
+  ├── Optimizes context artifacts
+  └── Provides feedback to Meta-Agent
+```
+
+**Results:** 5.6–53.8% improvement over SOTA CE methods (mean: 16.9%), tested across 5 domains, offline + online.
+
+---
+
+### AgentFactory (2603.18000) — Executable Subagent Accumulation
+
+**Core Idea:** Don't store successful solutions as text experience (fragile), but as **executable subagent code** (Python). These subagents are continuously refined and reused.
+
+**Key Innovation:**
+- Textual reflection (e.g., "do it differently next time") ≠ reliable re-execution
+- Executable code = deterministically repeatable
+- Standardized Python documentation → portability across systems
+- Library grows over time → progressive effort reduction
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## 1. Die drei Papers im Überblick
 
@@ -81,7 +169,33 @@ Base-Agent (untere Ebene)
 - Standardisierte Python-Dokumentation → Portabilität über Systeme hinweg
 - Bibliothek wächst über Zeit → progressive Aufwandsreduktion
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## 2. The Isomorphism Table: EvoFlow → MCE → AgentFactory → AgentField
+
+| Concept | EvoFlow | MCE | AgentFactory | AgentField | Our Status |
+|---------|---------|-----|-------------|------------|------------|
+| **Base Unit** | Invoking Node (M, P, τ) | CE Skill | Executable Subagent (Python) | Skill (SKILL.md) | ✅ Available |
+| **Composition** | Operator Node (node cluster) | Skill chain | Subagent library | Skill-Chain (max 4) | ✅ Available |
+| **Overall System** | Workflow (DAG) | Meta+Base-Agent | Growing library | Orchestrator + Skills | ✅ Available |
+| **Selection** | Niching (Pareto: Quality/Cost) | Evaluation + Deliberative Search | Execution Feedback | Quality-Gate | ⚠️ Quality only, no Cost |
+| **Mutation** | LLM/Prompt/Operator Mutation | Skill refinement | Code refinement via feedback | Manual skill editing | ❌ Not automated |
+| **Crossover** | Workflow recombination | "Agentic Crossover" | — | — | ❌ Missing entirely |
+| **Retrieval** | Tag-based (κ tags/individual) | History-based | Code search in library | orchestrator-routing | ⚠️ Intent-based, not tag-based |
+| **Population** | N workflows in parallel | Skill variants | Subagent library | ~30 Skills | ⚠️ Static, no evolution |
+| **Diversity** | Niching Selection enforces diversity | Domain diversity | Natural growth | Manually curated | ❌ No diversity mechanism |
+| **Feedback Loop** | Benchmark evaluation → Selection | Meta-Agent evaluation | Execution feedback → Refinement | Pulse metrics + Quality-Gate | ⚠️ Feedback exists, loop missing |
+| **Cost Awareness** | Multi-Objective (Quality + Cost) | Efficiency as secondary goal | Effort reduction as goal | — | ❌ No token cost tracking |
+
+**Legend:** ✅ = we have it, ⚠️ = partial, ❌ = missing
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## 2. Die Isomorphie-Tabelle: EvoFlow → MCE → AgentFactory → AgentField
 
@@ -101,7 +215,60 @@ Base-Agent (untere Ebene)
 
 **Legende:** ✅ = haben wir, ⚠️ = teilweise, ❌ = fehlt
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## 3. What AgentField Can Concretely Learn
+
+### 3.1 Immediately Actionable: Cost Tracking as a Second Optimization Axis
+
+**EvoFlow Insight:** Multi-Objective (Quality + Cost) is better than Single-Objective (Quality only).
+
+**For Us:** Pulse already tracks token usage. Integrate this signal as a second axis in Quality-Gate:
+- Quality score ≥ threshold AND token cost ≤ budget → Keep
+- Alternatively: Pareto visualization per skill (Quality vs. Cost)
+
+**Effort:** Low. Pulse data exists, Quality-Gate just needs to be extended.
+
+### 3.2 Short-term: Tag-based Skill Retrieval
+
+**EvoFlow Insight:** Tag-based Retrieval (κ tags per workflow) is better than free text search for skill selection. Ablation: -3–4% performance without tags.
+
+**For Us:** orchestrator-routing works intent-based (text classification). Supplement with structured tags:
+- Each skill gets tags: `domain`, `complexity`, `input-type`, `output-type`
+- Routing uses tag matching as first stage, intent classification as fallback
+
+**Effort:** Medium. Define tag schema, tag skills, adjust routing.
+
+### 3.3 Medium-term: Automated Skill Mutation
+
+**MCE Insight:** A Meta-Agent can automatically refine skills through "deliberative search over history of skills, executions, and evaluations."
+
+**AgentFactory Insight:** Executable code > textual reflection for reliable reuse.
+
+**For Us:** Our skills ARE already semi-structured code (SKILL.md with workflow steps). The step toward automatic mutation:
+1. **Prompt Mutation:** Small variations in skill instructions, A/B test via Pulse metrics
+2. **Workflow Mutation:** Add/remove steps, change ordering
+3. **Evaluation:** Quality-Gate + token cost as fitness
+
+**Effort:** High. Requires: skill versioning, A/B testing infrastructure, automatic evaluation.
+
+### 3.4 Long-term: Crossover — Combining Existing Skills into New Ones
+
+**EvoFlow Insight:** Crossover (combining elements of two parent workflows) produces solutions that neither parent could achieve alone.
+
+**MCE Insight:** "Agentic Crossover" = not random recombination, but deliberative search over historical successes.
+
+**For Us:** Could we, for example, cross research-pipeline + challenge into an "adversarial research" skill? Or express + signal-check into a "self-checked writing" skill?
+
+**Prerequisite:** Skill mutation must work first. Crossover is the next step.
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## 3. Was AgentField konkret lernen kann
 
@@ -148,7 +315,31 @@ Base-Agent (untere Ebene)
 
 **Voraussetzung:** Skill-Mutation muss erst funktionieren. Crossover ist der nächste Schritt.
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## 4. The Nowak Bridge — Formal Correspondences
+
+| Nowak | EvoFlow | AgentField (Current) | AgentField (Target) |
+|-------|---------|----------------------|---------------------|
+| Sequence/Replicator | Invoking Node (M,P,τ) | Skill (SKILL.md) | Skill with version + tags |
+| Fitness fᵢ | Utility u(G,q) | Quality score | Quality + Cost (Pareto) |
+| Mutation | 3 mutation types | Manual editing | Automated skill mutation |
+| Selection (φ) | Niching (Pareto) | Quality-Gate (binary) | Multi-Objective Niching |
+| Replication | Seed population → inheritance | SKILL.md remains static | Skill versioning + inheritance |
+| Population size | N workflows | ~30 Skills | 30+ Skills, actively managed |
+| Error Threshold | Max. mutations/iteration | Deviation Rules (max 3 fixes) | Formalized: 1 change/iteration |
+| Prelife → Life | Seed → evolved population | Manual → ? | Manual → automatic |
+| Cooperation (Γ) | Workflow composition | Skill chains | Measurable cooperation gains |
+
+**Key Observation:** AgentField is currently in the **"Prelife" phase** according to Nowak's terminology — there is diversity and selection (Quality-Gate), but no **replication** (automatic inheritance of successful patterns). EvoFlow shows what the phase transition to "Life" could look like.
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## 4. Die Nowak-Brücke — formale Entsprechungen
 
@@ -166,7 +357,43 @@ Base-Agent (untere Ebene)
 
 **Schlüsselbeobachtung:** AgentField befindet sich derzeit in der **"Prelife"-Phase** nach Nowaks Terminologie — es gibt Diversität und Selektion (Quality-Gate), aber keine **Replikation** (automatische Vererbung erfolgreicher Muster). EvoFlow zeigt, wie der Phasenübergang zu "Life" aussehen könnte.
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## 5. The Upgrade Path: Prelife → Life for AgentField
+
+```
+Phase 0 (NOW): Prelife
+  - Skills exist, are manually curated
+  - Quality-Gate selects, but without consequences for skills themselves
+  - Pulse measures, but metrics don't flow into skill changes
+
+Phase 1: Close the Feedback Loop
+  - Cost tracking as second axis (Pulse → Quality-Gate)
+  - Tag-based retrieval in the Orchestrator
+  - Skill performance history (which skill, which task, which score)
+
+Phase 2: Automated Mutation
+  - Automatically test prompt variations (A/B)
+  - MCE pattern: Meta-Agent proposes skill changes
+  - Human decides (keep/discard) → Human-in-the-Loop selection
+
+Phase 3: Population Management
+  - Multiple skill variants per task type
+  - Niching: Explicitly preserve diversity
+  - Crossover: Generate new skills from existing ones
+
+Phase 4: Full Evolution (= "Life")
+  - Automatic cycle: Task → Skill selection → Execution → Evaluation → Mutation/Selection
+  - The phase transition rₓ: From here, the system improves faster through evolution than through manual curation
+```
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## 5. Der Upgrade-Pfad: Prelife → Life für AgentField
 
@@ -196,7 +423,41 @@ Phase 4: Full Evolution (= "Life")
   - Der Phasenübergang rₓ: Ab hier verbessert sich das System schneller durch Evolution als durch manuelle Kuration
 ```
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## 6. Critical Assessment
+
+### What EvoFlow Does NOT Address (and We Must Consider)
+
+1. **No persistent memory:** EvoFlow evaluates on benchmarks, has no session history. AgentField's memory system is a fundamental advantage.
+2. **No Human-in-the-Loop:** EvoFlow is fully automatic. Our human feedback is a richer signal than automatic evaluation.
+3. **No context:** EvoFlow works on isolated tasks. Our projects have rich context (project state, Vault, Episodic Memory).
+4. **Benchmark ≠ Real World:** EvoFlow's 29.86% improvement is on MATH/GSM8K. Whether this transfers to open, creative tasks (our core domain) remains unclear.
+
+### What MCE Does NOT Address
+
+1. **No population diversity:** MCE co-evolves ONE skill set, not a population. No niching.
+2. **No cost optimization:** Only performance as a goal.
+
+### What AgentFactory Does NOT Address
+
+1. **Code tasks only:** Executable subagents = Python code. Our skills are broader (Research, Writing, Analysis).
+2. **No composition:** Subagents are accumulated individually, not combined.
+
+### Our Unique Position
+
+AgentField sits at an intersection that none of the three papers covers:
+- **Population diversity** (EvoFlow) + **Skill co-evolution** (MCE) + **Persistent Memory** (us)
+- Additionally: **Human-in-the-Loop** as the richest feedback signal
+- And: **Project context** as information that none of the benchmark papers have
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## 6. Kritische Einordnung
 
@@ -224,7 +485,23 @@ AgentField sitzt an einer Kreuzung, die keines der drei Papers abdeckt:
 - Dazu: **Human-in-the-Loop** als reichstes Feedback-Signal
 - Und: **Projektkontext** als Information, die keines der Benchmark-Papers hat
 
+</div>
+
 ---
+
+<div lang='en' markdown='1'>
+
+## References
+
+- [EvoFlow Paper](https://arxiv.org/abs/2502.07373) | [EmergentMind Analysis](https://www.emergentmind.com/papers/2502.07373)
+- [MCE Paper](https://arxiv.org/abs/2601.21557)
+- [AgentFactory Paper](https://arxiv.org/abs/2603.18000)
+- [EvoAgentX GitHub](https://github.com/EvoAgentX/EvoAgentX)
+- [OpenReview: EvoFlow](https://openreview.net/forum?id=gdmiLfXZG5)
+
+</div>
+
+<div lang='de' markdown='1'>
 
 ## Quellen
 
@@ -233,3 +510,5 @@ AgentField sitzt an einer Kreuzung, die keines der drei Papers abdeckt:
 - [AgentFactory Paper](https://arxiv.org/abs/2603.18000)
 - [EvoAgentX GitHub](https://github.com/EvoAgentX/EvoAgentX)
 - [OpenReview: EvoFlow](https://openreview.net/forum?id=gdmiLfXZG5)
+
+</div>

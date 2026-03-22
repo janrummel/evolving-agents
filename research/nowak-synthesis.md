@@ -5,6 +5,27 @@ parent: Research
 nav_order: 1
 ---
 
+<div lang="en" markdown="1">
+
+# From Nowak's Evolvability Equation to AI Agent Architectures
+
+{: .note }
+> **Reading: 1 of 5** · After reading this, you'll understand Nowak's Originator equation, the phase transition from Prelife to Life, the error threshold concept, and how these map structurally onto AI agent systems.
+
+## A Research Synthesis at the Intersection of Evolutionary Dynamics, Self-Evolving Agents and Multi-Agent Systems
+
+---
+
+**Author:** Jan Rummel (with Claude)
+**Date:** March 2026
+**Status:** Initial synthesis — to be expanded
+
+> **Transparency note on research depth:** This document is based on paper abstracts, summaries, and third-party sources (EmergentMind, alphaXiv, GitHub). No paper was read in full text. Numbers (e.g., "12.4% of costs") come from abstracts and were verified across at least 2 independent sources. All arXiv IDs are linked and directly verifiable. The synthesis in Section 4 is an independent interpretation — not a published finding.
+
+</div>
+
+<div lang="de" markdown="1">
+
 # Von Nowaks Evolvierbarkeits-Gleichung zu KI-Agent-Architekturen
 
 {: .note }
@@ -20,7 +41,30 @@ nav_order: 1
 
 > **Transparenzhinweis zur Recherche-Tiefe:** Dieses Dokument basiert auf Paper-Abstracts, Summaries und Drittquellen (EmergentMind, alphaXiv, GitHub). Kein Paper wurde im Volltext gelesen. Zahlen (z.B. "12.4% der Kosten") stammen aus Abstracts und wurden über mindestens 2 unabhängige Quellen geprüft. Alle arXiv-IDs sind verlinkt und direkt prüfbar. Die Synthese in Abschnitt 4 ist eine eigenständige Interpretation — keine publizierte Erkenntnis.
 
+</div>
+
 ---
+
+<div lang="en" markdown="1">
+
+## Glossary
+
+| Term | Explanation |
+|------|-------------|
+| **Originator Equation** | Nowak's mathematical model for the transition from "Prelife" (chemistry without heredity) to "Life" (evolution with heredity). Describes from which replication rate selection takes effect. |
+| **Prelife** | State of a system that has variation and selection, but no heredity (replication). It generates novelty, but does not improve cumulatively. |
+| **Error Threshold** | From quasispecies theory: The maximum mutation rate at which information can still be maintained. Above it → "mutational meltdown", all information is lost. |
+| **Quality-Diversity (QD)** | Optimization paradigm: Instead of searching for THE one best solution, a diverse repertoire of high-performing solutions is maintained. |
+| **MAP-Elites** | QD algorithm: Discretizes the behavior space into niches and stores only the best solution ("elite") per niche. New solutions compete within their niche. |
+| **Niching** | Evolutionary strategy for diversity maintenance: Individuals are grouped by similarity, selection occurs within groups — prevents a single solution from dominating the entire population. |
+| **Fitness Landscape** | Metaphor: Solutions as points on a landscape, height = quality. Hills = local optima, valleys = poor solutions. Evolution "climbs" this landscape. |
+| **Pareto Front** | Set of all solutions where one dimension (e.g., quality) cannot be improved without worsening another (e.g., cost). |
+| **TextGrad** | Optimization method for natural language: Uses backpropagation-like mechanisms to iteratively refine prompts. |
+| **Collaboration Gain (Γ)** | Metric: Measures the true cooperation gain of a multi-agent system = Quality(Multi-Agent) − Quality(Single-Agent at same token budget). |
+
+</div>
+
+<div lang="de" markdown="1">
 
 ## Glossar
 
@@ -37,7 +81,70 @@ nav_order: 1
 | **TextGrad** | Optimierungsverfahren für natürliche Sprache: Nutzt Backpropagation-ähnliche Mechanismen, um Prompts iterativ zu verfeinern. |
 | **Collaboration Gain (Γ)** | Metrik: Misst den echten Kooperationsgewinn eines Multi-Agent-Systems = Qualität(Multi-Agent) − Qualität(Single-Agent bei gleichem Token-Budget). |
 
+</div>
+
 ---
+
+<div lang="en" markdown="1">
+
+## 1. Nowak's Mathematics — The Originator Equation
+
+### 1.1 Core Idea
+
+Martin A. Nowak, Professor of Mathematics and Biology at Harvard University and Director of the Program for Evolutionary Dynamics, has formalized a fundamental question with his work: **When do chemical kinetics become evolutionary dynamics?**
+
+His central insight: Evolution requires three fundamental principles — **Replication, Mutation, and Selection**. Nowak has proposed that cooperation is the third fundamental principle of evolution. His book *Evolutionary Dynamics: Exploring the Equations of Life* (2006) lays the mathematical foundation, his later work *Prevolutionary Dynamics and the Origin of Evolution* (PNAS, 2008, with Hisashi Ohtsuki) introduces the so-called **Originator Equation**.
+
+### 1.2 The Originator Equation
+
+The equation describes the transition from "Prelife" (generative chemistry without replication) to "Life" (systems with replication):
+
+```
+ẋᵢ = aᵢ · xᵢ' − (d + aᵢ₀ + aᵢ₁) · xᵢ + r · xᵢ · (fᵢ − φ)
+```
+
+**Where:**
+
+- **First term** (`aᵢ · xᵢ'`): Prelife dynamics — sequences arise from precursors through addition of activated monomers
+- **Second term** (`(d + aᵢ₀ + aᵢ₁) · xᵢ`): Decay and processing into longer sequences
+- **Third term** (`r · xᵢ · (fᵢ − φ)`): Standard selection equation of evolutionary dynamics
+
+**Critical parameters:**
+
+- `r` scales the ratio of template-directed replication to template-independent sequence growth
+- `fᵢ` is the fitness of sequence i
+- `φ` is the average fitness of the population (frequency-dependent death rate)
+
+**The two limiting cases:**
+
+- **r → 0**: No replication → pure Prelife dynamics (mutation and selection without heredity)
+- **r → ∞**: Replication dominates → standard selection equation of evolutionary dynamics
+
+### 1.3 The Phase Transition
+
+Between Prelife and Life there exists a **phase transition**. The critical replication rate `rₓ` is defined by the condition that the net reproduction rate of the replicators becomes positive:
+
+```
+gᵢ = r · (fᵢ − φ) − (d + aᵢ₀ + aᵢ₁)
+```
+
+Below `rₓ`, Prelife dominates — longer sequences are exponentially rarer than shorter ones. Above `rₓ`, the fastest replicator dominates the population. There is selection *for and against* replication itself.
+
+### 1.4 Key Insights from Nowak's Work
+
+- **Prelife is already generative**: Even without replication, a system produces information, diversity, and is subject to selection
+- **Replication is not a prerequisite for selection**, but a prerequisite for cumulative evolution
+- **The error rate has a threshold** (Error Threshold from quasispecies theory): Adaptation is only possible when the mutation rate per bit is less than the inverse of the sequence length
+- **Cooperation as the third principle**: In finite populations, a single cooperator (e.g., with a tit-for-tat strategy) can invade a population of defectors — with a probability that corresponds to a net selection advantage
+- **Evolutionary graph theory**: The structure of the network (who interacts with whom) massively influences which strategies survive
+
+### 1.5 Nowak's Toolkit
+
+Beyond the Originator Equation, Nowak's framework offers a range of analytical tools: fitness landscapes, mutation matrices, genomic sequence space, random drift, quasispecies, replicator dynamics, the Prisoner's Dilemma, games in finite and infinite populations, evolutionary graph theory, games on lattices, evolutionary kaleidoscopes, fractals, and spatial chaos.
+
+</div>
+
+<div lang="de" markdown="1">
 
 ## 1. Nowaks Mathematik — Die Originator-Gleichung
 
@@ -94,7 +201,74 @@ Unterhalb von `rₓ` dominiert Prelife — längere Sequenzen sind exponentiell 
 
 Über die Originator-Gleichung hinaus bietet Nowaks Framework eine Reihe analytischer Werkzeuge: Fitness-Landschaften, Mutationsmatrizen, genomischer Sequenzraum, Random Drift, Quasispezies, Replikator-Dynamik, das Prisoner's Dilemma, Spiele in endlichen und unendlichen Populationen, evolutionäre Graphentheorie, Spiele auf Gittern, evolutionäre Kaleidoskope, Fraktale und räumliches Chaos.
 
+</div>
+
 ---
+
+<div lang="en" markdown="1">
+
+## 2. Evolvability in AI — Current Research
+
+### 2.1 Evolvability ES (Evolutionary Strategies)
+
+Gajewski, Clune, Stanley, and Lehman (2019) developed **Evolvability ES**, an evolutionary algorithm that explicitly optimizes for evolvability — i.e., the ability to quickly adapt to different tasks after random mutations.
+
+**Core idea:** It is possible to derive a novel objective function in the spirit of Natural Evolution Strategies that maximizes the diversity of behaviors an individual exhibits under random mutations. The algorithm scales efficiently with compute.
+
+**Connection to Meta-Learning:** Evolvability ES shows a direct connection to the meta-learning algorithm MAML (Model-Agnostic Meta-Learning): Both optimize for rapid adaptability, but Evolvability ES discovers solutions with distinct properties — it finds representations that are inherently more adaptable.
+
+### 2.2 Quality-Diversity (QD) Algorithms
+
+QD algorithms, particularly **MAP-Elites** (Multi-dimensional Archive of Phenotypic Elites), represent a paradigmatic break with classical optimization:
+
+- **Classical optimization:** Find the one best solution
+- **QD optimization:** Find a diverse collection of high-performing solutions — fill a space of possibilities with the best example of each reachable behavior class
+
+MAP-Elites discretizes the behavior space into niches ("cells") and stores only the elite solution in each cell. New individuals (through genetic variation) compete within their niche with the existing elite.
+
+**Recent developments:**
+
+- **PGA-MAP-Elites and DCG-MAP-Elites**: Combination of actor-critic methods from reinforcement learning with MAP-Elites for drastically improved sample efficiency in high-dimensional tasks
+- **ME-ES (MAP-Elites with Evolution Strategies)**: Scaling to high-dimensional controllers with deep neural networks
+- **Surrogate-Assisted Illumination (SAIL)**: Use of Gaussian Process surrogates to reduce expensive evaluations by orders of magnitude
+
+**Significance:** QD algorithms solve a fundamental problem — in complex landscapes with many local optima, pure fitness optimization gets stuck. Diversity as an optimization objective produces a repertoire of strategies that are immediately available when the environment changes.
+
+### 2.3 Self-Evolving Agents — The Current Wave (2024–2026)
+
+A comprehensive survey by Gao et al. (2025/2026, arXiv:2507.21046) systematizes the field of **Self-Evolving Agents** for the first time along three dimensions: **What, When, and How** to evolve.
+
+**Core problem:** LLMs are fundamentally static — they cannot adapt their internal parameters to new tasks, evolving knowledge domains, or dynamic interaction contexts. This static character becomes a critical bottleneck as soon as agents are deployed in open, interactive environments.
+
+**Evolving dimensions:**
+
+1. **Parameter Evolution**: SFT + RL for continuous improvement of model weights
+2. **Prompt Evolution**: Iterative refinement of instructions (TextGrad, MIPRO)
+3. **Workflow Evolution**: Automatic adaptation of agent topology and task distribution (AFlow)
+4. **Tool Evolution**: Agents learn to use new tools or use existing ones more effectively
+5. **Memory Evolution**: Building and curation of long-term knowledge
+
+**Key patterns:**
+
+- **Self-Challenging Agent (SCA)**: Agent autonomously generates novel tasks, executes them, filters successful trajectories for retraining
+- **EXIF Framework**: Exploration Agent (Alice) trains Target Agent (Bob) through iterative feedback loops — Alice evaluates Bob's performance and adjusts her next exploration round. Interestingly: Even when Alice uses the same model as Bob, performance improves significantly
+- **AgentGen**: Synthesizes diverse simulation worlds from an initial corpus and implements a bidirectional evolution loop with progressive difficulty adjustment
+
+### 2.4 EvoAgentX — Evolving Agent Workflows (EMNLP 2025)
+
+EvoAgentX (Wang et al., 2025) is an open-source platform that unifies automated generation, execution, and evolutionary optimization of multi-agent workflows. The architecture consists of five core layers:
+
+1. **Basic Components Layer**: Configuration, logging, storage
+2. **Agent Layer**: Individual agent configuration
+3. **Workflow Layer**: Graph-based workflow structures
+4. **Evolving Layer**: Integration of TextGrad, AFlow, and MIPRO as optimization algorithms
+5. **Evaluation Layer**: Automatic evaluation of agent performance
+
+**Results:** Consistent performance improvements — up to 20% accuracy increase on the GAIA benchmark. The Evolving Layer iteratively refines agent prompts, tool configurations, and workflow topologies.
+
+</div>
+
+<div lang="de" markdown="1">
 
 ## 2. Evolvierbarkeit in der KI — Aktuelle Forschung
 
@@ -155,7 +329,57 @@ EvoAgentX (Wang et al., 2025) ist eine Open-Source-Plattform, die automatisierte
 
 **Ergebnisse:** Konsistente Performance-Verbesserungen — bis zu 20% Genauigkeitssteigerung auf dem GAIA-Benchmark. Die Evolving Layer verfeinert iterativ Agent-Prompts, Tool-Konfigurationen und Workflow-Topologien.
 
+</div>
+
 ---
+
+<div lang="en" markdown="1">
+
+## 3. Multi-Agent Systems — From Trial-and-Error to Rigorous Science
+
+### 3.1 The Attribution Problem
+
+A central paper (arXiv:2602.05289, Feb 2026) argues that LLM-based multi-agent systems suffer from a fundamental **ambiguity of attribution**:
+
+**Problem 1 — Unguided search in the factor space:** A structured taxonomy of influencing factors is missing. Researchers are limited to unguided adjustments — like a blind search in a vast design space.
+
+**Problem 2 — Metrics do not distinguish between genuine cooperation gain and resource accumulation:** Conventional metrics measure end results, but they conflate intrinsic cooperation gain (capability growth through agent collaboration) with improvements that merely result from increased compute budget (more tokens, more agents).
+
+**Proposed solution:** Establishment of a **Collaboration Gain Metric (Γ)** that serves as a diagnostic signal, combined with a **Factor Attribution Paradigm** that systematically identifies which factors actually lead to cooperation gains.
+
+The factors are structured in two levels:
+
+- **Control Level**: Static architecture presets (topology, roles, communication structure) — the foundation that limits cooperation potential
+- **Information Level**: Dynamic execution mechanisms — how this potential is activated and transformed into actual gains
+
+### 3.2 MAST — Why Multi-Agent Systems Fail
+
+Empirical analysis of MAS failures identifies systematic failure patterns:
+
+- **Premature Execution Termination**: Agents terminate tasks too early
+- **Insufficient Task Verification**: Inadequate mechanisms for accuracy, completeness, and reliability
+- **Coordination Failures**: Missed opportunities for collaboration, suboptimal decisions
+
+Evaluation of six popular multi-agent frameworks (including MetaGPT) shows that none systematically addresses the identified failure modes. The MAST dataset is the first empirically derived, comprehensive taxonomy specific to MAS failures.
+
+### 3.3 Google's Lessons from 2025
+
+Google's Office of the CTO draws central conclusions from the broad agent deployment experience of 2025:
+
+- **Evaluation as an active architecture component**: Evaluation evolved from a passive metric to an integrated component of agentic pipelines — an autorater (LLM as Judge) evaluates every output in real-time and provides corrective feedback
+- **Self-correction solves the cascading error problem**: When an agent makes an error in step 2, traditional evaluation only catches it after step 10 fails. Real-time autoraters correct errors at the source
+- **Dynamic simulation instead of static benchmarks**: Game arena approach where agents compete against each other in complex scenarios — with a game-theoretic framework for credit attribution
+- **On-the-job learning**: Agents don't need to be perfect at launch — the critical building block is the learning loop that integrates signals from the environment and humans in production
+
+### 3.4 Benchmarks for Multi-Agent Collaboration
+
+**MultiAgentBench** (ACL 2025, Zhu et al.) evaluates LLM-based multi-agent systems across diverse scenarios with novel, milestone-based KPIs. It tests various coordination protocols (Star, Chain, Tree, Graph topologies) and strategies such as Group Discussion and Cognitive Planning.
+
+New metrics capture cooperation through: cooperation and coordination rates, trust scores for agent reliability, consensus metrics after multiple negotiation rounds, and communication efficiency (protocol compliance and temporal synchronization).
+
+</div>
+
+<div lang="de" markdown="1">
 
 ## 3. Multi-Agent-Systeme — Von Trial-and-Error zu rigoroser Wissenschaft
 
@@ -173,7 +397,6 @@ Die Faktoren werden in zwei Ebenen strukturiert:
 
 - **Control Level**: Statische Architektur-Presets (Topologie, Rollen, Kommunikationsstruktur) — das Fundament, das Kooperationspotential begrenzt
 - **Information Level**: Dynamische Ausführungsmechanismen — wie dieses Potential aktiviert und in tatsächliche Gewinne transformiert wird
-
 ### 3.2 MAST — Warum Multi-Agent-Systeme scheitern
 
 Empirische Analyse von MAS-Fehlern identifiziert systematische Failure Patterns:
@@ -199,7 +422,75 @@ Google's Office of the CTO zieht aus der breiten Agent-Deployment-Erfahrung 2025
 
 Neue Metriken erfassen Kooperation über: Kooperations- und Koordinationsraten, Trust-Scores für Agent-Zuverlässigkeit, Konsens-Metriken nach mehreren Verhandlungsrunden und Kommunikationseffizienz (Protokoll-Compliance und temporale Synchronisation).
 
+</div>
+
 ---
+
+<div lang="en" markdown="1">
+
+## 4. Synthesis — The Bridge from Nowak to Agent Architectures
+
+### 4.1 Structural Analogy
+
+> **Transparency note:** The following table shows *structural analogies*, not a mathematically proven isomorphism. The mappings are plausible and heuristically useful, but not formally verified. Whether the structures are actually isomorphic is an open research question.
+
+Nowak's concepts can be mapped onto AI agent systems — as a thinking aid, not as proof:
+
+| Nowak (Biology) | AI Agent System | Example |
+|---|---|---|
+| **Sequence / Replicator** | Agent configuration (Prompt + Tools + Memory) | A Claude subagent with specific SKILL.md |
+| **Fitness fᵢ** | Performance metric (Quality Score) | Karpathy's Measure phase |
+| **Mutation** | Prompt variation, tool swap, workflow restructuring | TextGrad optimization |
+| **Selection (φ)** | Evaluation Layer + Keep/Discard decision | Quality-Gate Agent |
+| **Replication** | Persistent context / Workflow template reuse | CLAUDE.md / AGENTS.md inheritance |
+| **Prelife** | Explorative phase without fixed workflows | Initial agent configuration search |
+| **Phase transition (rₓ)** | Point at which structured workflows emerge | From manual to automated orchestration |
+| **Error Threshold** | Maximum complexity before quality collapse | Context window limits in agent chains |
+| **Fitness landscape** | Context-as-Infrastructure | The overall system as a navigable possibility space |
+| **Evolutionary graph theory** | Agent topology (Star, Chain, Graph) | MultiAgentBench topologies |
+| **Cooperation vs. Defection** | Genuine cooperation gains vs. resource accumulation | Collaboration Gain Metric Γ |
+
+### 4.2 Three Principles Derivable from Nowak
+
+**Principle 1 — Evolvability over Performance**
+
+Nowak shows that systems whose evolvability *itself evolves* are more successful in the long run than those that only optimize for momentary fitness. Experimental evidence: [Barnett, Meister & Rainey, *Science*, 2024](https://www.biorxiv.org/content/10.1101/2024.05.01.592015v2) at the Max Planck Institute for Evolutionary Biology in Plön showed that bacterial lineages under selection pressure developed mutation-prone sequences in a key gene — with a locally increased mutation rate of up to 10,000-fold, enabling rapid phenotypic state switching.
+
+*Transfer:* An agent system should not only be optimized for the current task, but architecturally built so that it can easily adapt to new task types. Progressive Disclosure (AGENTS.md as table of contents) and modular skills are exactly this property — they make the system *evolvable*, not just performant.
+
+**Principle 2 — Diversity as a Strategic Resource (not a Byproduct)**
+
+QD algorithms like MAP-Elites show: Maintaining a diverse repertoire of high-performing solutions is superior to searching for a single optimal solution. When the environment changes, an alternative behavior is immediately available.
+
+*Transfer:* Isolated context windows for subagents (as in the Quality-Gate Agent) are formally analogous to MAP-Elites niches — each subagent explores a different region of the solution space. The orchestrator selects the best contributions, just as MAP-Elites keeps the elite per niche.
+
+**Principle 3 — Feedback Loops as Selection Pressure are the Actual Differentiator**
+
+Nowak's equation shows: Without the selection term (`fᵢ − φ`) there is no cumulative improvement — only random drift. The strength of selection pressure (`r`) determines whether the system remains in the Prelife phase or transitions to full evolutionary mode.
+
+*Transfer:* Karpathy's Modify → Run → Measure → Keep/Discard → Repeat is a discrete implementation of Nowak's selection equation. Code is the ideal use case because compilation/testing provides objective, binary selection pressure. The Evaluation-as-Architecture insight (Google 2025) confirms this: real-time autoraters as selection mechanism in the pipeline.
+
+### 4.3 Nowak's Error Threshold and Agent Systems
+
+A direct, still barely explored parallel: Nowak's Error Threshold from quasispecies theory states that adaptation is only possible when the mutation rate per bit is less than the inverse of the sequence length. If the mutation rate becomes too high, information is lost through "mutational meltdown."
+
+For agent systems, an analogous Error Threshold could exist: When the **variation rate** (prompt changes, workflow restructurings, tool swaps per iteration) exceeds the **observability capacity** of the evaluation system, the system loses the ability for directed improvement. You change more than you can measure.
+
+This would be a formal justification for the practice of making changes incrementally and in isolation — not because it is more convenient, but because there is a mathematical limit beyond which evolution collapses into noise.
+
+### 4.4 Open Research Questions
+
+1. **Can the phase transition (rₓ) be formally calculated for agent systems?** At what point does directed workflow improvement emerge from random configuration search?
+
+2. **Is there an optimal population diversity for subagent pools?** MAP-Elites research suggests the answer is task-dependent — but are there general heuristics?
+
+3. **Can the Collaboration Gain Metric (Γ) serve as an evolutionary fitness function for multi-agent topologies?** Instead of manually designing topologies, they could be evolved — with Γ as selection pressure.
+
+4. **What is the Error Threshold for agentic workflows?** Maximum number of simultaneous workflow changes before the evaluation pipeline loses the improvement direction?
+
+</div>
+
+<div lang="de" markdown="1">
 
 ## 4. Synthese — Die Brücke von Nowak zu Agent-Architekturen
 
@@ -261,7 +552,36 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 
 4. **Was ist der Error Threshold für agentic workflows?** Maximale Anzahl simultaner Workflow-Änderungen, bevor die Evaluation-Pipeline die Verbesserungsrichtung verliert?
 
+</div>
+
 ---
+
+<div lang="en" markdown="1">
+
+## 5. Prioritization — What is Most Relevant?
+
+### Tier 1: Directly Applicable to Existing Architecture
+
+- **Feedback loops as selection pressure** — already implemented through the Karpathy pattern in the Quality-Gate Agent
+- **Isolated context windows as niches** — MAP-Elites analogy validates the subagent design
+- **Error Threshold as a design principle** — formal justification for incremental changes
+- **Evaluation-as-Architecture** — autorater integration into the pipeline
+
+### Tier 2: Explorable in the Medium Term
+
+- **EvoAgentX patterns** (TextGrad + AFlow + MIPRO) as inspiration for automated skill optimization
+- **Collaboration Gain Metric Γ** as a basis for Quality-Gate evaluation: Does the multi-agent approach measure genuine cooperation gain or just resource accumulation?
+- **Self-Evolving Workflows** — automatic adaptation of agent topology based on task feedback
+
+### Tier 3: Long-term Research Direction
+
+- **Formal calculation of the phase transition** for agent systems
+- **Quality-Diversity for prompt repertoires** — MAP-Elites for skill libraries
+- **Evolutionary Graph Theory for agent topologies** — which network structures favor which cooperation patterns?
+
+</div>
+
+<div lang="de" markdown="1">
 
 ## 5. Priorisierung — Was ist am relevantesten?
 
@@ -284,7 +604,52 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 - **Quality-Diversity für Prompt-Repertoires** — MAP-Elites für Skill-Bibliotheken
 - **Evolutionary Graph Theory für Agent-Topologien** — welche Netzwerkstrukturen favorisieren welche Kooperationsmuster?
 
+</div>
+
 ---
+
+<div lang="en" markdown="1">
+
+## 6. Sources
+
+> All arXiv links are directly clickable. Sources without a link could not be assigned a unique URL — these are marked with ⚠.
+
+### Nowak — Core Works
+- Nowak, M.A. (2006). *Evolutionary Dynamics: Exploring the Equations of Life*. Harvard University Press. [Harvard UP](https://www.hup.harvard.edu/books/9780674023383)
+- Nowak, M.A. & Ohtsuki, H. (2008). "Prevolutionary dynamics and the origin of evolution." *PNAS*, 105(39), 14924–14927. [DOI:10.1073/pnas.0806714105](https://www.pnas.org/doi/10.1073/pnas.0806714105)
+- Manapat, M., Ohtsuki, H., Bürger, R. & Nowak, M.A. (2009). "Originator dynamics." *Journal of Theoretical Biology*, 256(4), 586–595. ⚠ No open access link available
+- Barnett, M., Meister, L. & Rainey, P. (2024). "Experimental evolution of evolvability." *Science*. [bioRxiv:2024.05.01.592015](https://www.biorxiv.org/content/10.1101/2024.05.01.592015v2) | [MPI Press Release](https://www.evolbio.mpg.de/3807853/news_publication_24229222_transferred)
+
+### Evolvability in AI
+- Gajewski, A., Clune, J., Stanley, K.O. & Lehman, J. (2019). "Evolvability ES: Scalable and Direct Optimization of Evolvability." *GECCO 2019*. [arXiv:1907.06077](https://arxiv.org/abs/1907.06077)
+- Mouret, J.-B. & Clune, J. (2015). "Illuminating search spaces by mapping elites." [arXiv:1504.04909](https://arxiv.org/abs/1504.04909)
+- Pugh, J.K., Soros, L.B. & Stanley, K.O. (2016). "Quality Diversity: A New Frontier for Evolutionary Computation." *Frontiers in Robotics and AI*, 3:40. ⚠ No direct link verified
+
+### Self-Evolving Agents
+- Gao, H. et al. (2025). "A Survey of Self-Evolving Agents." [arXiv:2507.21046](https://arxiv.org/abs/2507.21046)
+- Fang, J. et al. (2025). "A Comprehensive Survey of Self-Evolving AI Agents." [arXiv:2508.07407](https://arxiv.org/abs/2508.07407) | [GitHub: Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents)
+- Wang, Y. et al. (2025). "EvoAgentX: An Automated Framework for Evolving Agentic Workflows." *EMNLP 2025 Demos*. [arXiv:2507.03616](https://arxiv.org/abs/2507.03616) | [GitHub](https://github.com/EvoAgentX/EvoAgentX)
+- Liu, S. et al. (2025). "SEW: Self-Evolving Agentic Workflows for Automated Code Generation." [arXiv:2505.18646](https://arxiv.org/abs/2505.18646)
+
+### Evolving Agent Workflows (Core of Our Topic)
+- Zhang, G. et al. (2025). "EvoFlow: Evolving Diverse Agentic Workflows On The Fly." [arXiv:2502.07373](https://arxiv.org/abs/2502.07373) | [OpenReview](https://openreview.net/forum?id=gdmiLfXZG5)
+- Ye, H. et al. (2026). "Meta Context Engineering via Agentic Skill Evolution." [arXiv:2601.21557](https://arxiv.org/abs/2601.21557)
+- Zhang, Z. et al. (2026). "AgentFactory: Self-Evolving via Executable Subagent Accumulation." [arXiv:2603.18000](https://arxiv.org/abs/2603.18000)
+
+### Multi-Agent Systems — Scientific Foundations
+- "Towards a Science of Collective AI" (2026). [arXiv:2602.05289](https://arxiv.org/abs/2602.05289) — Collaboration Gain Metric and Factor Attribution
+- Zhu, K. et al. (2025). "MultiAgentBench: Evaluating the Collaboration and Competition of LLM agents." *ACL 2025*. ⚠ arXiv ID not verified
+- Tran, K.-T. et al. (2025). "Multi-Agent Collaboration Mechanisms: A Survey of LLMs." [arXiv:2501.06322](https://arxiv.org/abs/2501.06322)
+- Cemri, M. et al. (2025). "Why Do Multi-Agent LLM Systems Fail?" (MAST taxonomy). [arXiv:2503.13657](https://arxiv.org/abs/2503.13657)
+- Google Cloud (2025). "Lessons from 2025 on Agents and Trust." ⚠ No permanent link available
+
+### Quality-Diversity
+- Flageat, M. et al. (2023). "Evolving Populations of Diverse RL Agents with MAP-Elites." [arXiv:2303.12803](https://arxiv.org/abs/2303.12803)
+- Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. ⚠ arXiv ID not verified
+
+</div>
+
+<div lang="de" markdown="1">
 
 ## 6. Quellen
 
@@ -323,6 +688,10 @@ Dies wäre eine formale Begründung für die Praxis, Änderungen inkrementell un
 - Flageat, M. et al. (2023). "Evolving Populations of Diverse RL Agents with MAP-Elites." [arXiv:2303.12803](https://arxiv.org/abs/2303.12803)
 - Colas, C. et al. (2020). "Scaling MAP-Elites to Deep Neuroevolution." *GECCO 2020*. ⚠ arXiv-ID nicht verifiziert
 
+</div>
+
 ---
+
+*This document is conceived as a living reference and will be further developed as part of the Evolving Agents project.*
 
 *Dieses Dokument ist als lebende Referenz konzipiert und wird im Rahmen des Evolving Agents Projekts weiterentwickelt.*
