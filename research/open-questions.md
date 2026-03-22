@@ -32,6 +32,11 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 
 ## Priority 1 — Directly Tractable / Direkt bearbeitbar
 
+<div class="key-box green">
+<h4><span lang="en">🎯 Start Here</span><span lang="de">🎯 Hier anfangen</span></h4>
+<p><span lang="en">These 3 questions can be investigated with existing data and infrastructure. No new tools needed.</span><span lang="de">Diese 3 Fragen können mit bestehenden Daten und Infrastruktur untersucht werden. Keine neuen Tools nötig.</span></p>
+</div>
+
 ### Q1: Error Threshold for Agentic Workflows
 
 <div lang="en">
@@ -131,6 +136,11 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 </div>
 
 ## Priority 3 — Long-Term / Speculative / Langfristig / Spekulativ
+
+<div class="key-box amber">
+<h4><span lang="en">🔮 Speculative</span><span lang="de">🔮 Spekulativ</span></h4>
+<p><span lang="en">These require fundamental progress in the field. Worth tracking, not worth building for yet.</span><span lang="de">Diese erfordern fundamentalen Fortschritt im Feld. Wert zu beobachten, noch nicht wert dafür zu bauen.</span></p>
+</div>
 
 ### Q6: Self-Evolving AgentField
 

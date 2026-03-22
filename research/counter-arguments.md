@@ -137,6 +137,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box red'><h4>⚔️ STRONG</h4><p>Humans design the fitness function — making the quality of "evolution" only as good as the metric. The fitness function is the most fragile part of the system.</p></div>
+
 **Objection:** In biology, the environment IS the selector — there is no designer. In agent systems, humans design the fitness function (Quality Gate, benchmarks). This is [artificial selection](https://en.wikipedia.org/wiki/Selective_breeding) (like dog breeding), not natural selection.
 
 **Practical consequence:** The quality of "evolution" is only as good as the fitness function. If the Quality Gate measures poorly, the system evolves in the wrong direction — at high speed. Natural selection doesn't have this problem because the "fitness function" (survival) isn't designed by someone fallible.
@@ -148,6 +150,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box red'><h4>⚔️ STARK</h4><p>Menschen designen die Fitness-Funktion — die Qualität der „Evolution" ist nur so gut wie die Metrik. Die Fitness-Funktion ist der fragilste Teil des Systems.</p></div>
 
 **Einwand:** In der Biologie IST die Umwelt der Selektor — es gibt keinen Designer. In Agent-Systemen designen Menschen die Fitness-Funktion (Quality-Gate, Benchmarks). Das ist [künstliche Selektion](https://de.wikipedia.org/wiki/K%C3%BCnstliche_Selektion) (wie Hundezucht), nicht natürliche Selektion.
 
@@ -165,6 +169,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box amber'><h4>⚠️ MEDIUM</h4><p>Agent evolution is always "closed" — bound to pre-defined metrics. It never generates genuine novelty. Less relevant since we want directed improvement, not open-ended evolution.</p></div>
+
 **Objection:** Only biological systems produce [open-ended evolution](https://en.wikipedia.org/wiki/Open-ended_evolution) — the continuous generation of genuine novelty without a predefined goal. All Artificial Life attempts to realize open-ended evolution have failed so far. Agent systems evolve within a designed fitness landscape and never truly discover new fitness dimensions.
 
 **Practical consequence:** Our agent evolution is always "closed" — bound to pre-defined metrics. It will never spontaneously "discover" a new task type that we didn't anticipate.
@@ -176,6 +182,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box amber'><h4>⚠️ MITTEL</h4><p>Agent-Evolution ist immer „geschlossen" — gebunden an vordefinierte Metriken. Sie erzeugt nie genuine Neuheit. Weniger relevant, da wir gerichtete Verbesserung wollen, nicht open-ended evolution.</p></div>
 
 **Einwand:** Nur biologische Systeme erzeugen [open-ended evolution](https://en.wikipedia.org/wiki/Open-ended_evolution) — die kontinuierliche Erzeugung genuiner Neuheit ohne vorgegebenes Ziel. Alle Artificial-Life-Versuche, open-ended evolution zu realisieren, sind bisher gescheitert. Agent-Systeme evolvieren innerhalb einer designten Fitness-Landschaft und erzeugen nie wirklich neue Fitness-Dimensionen.
 
@@ -193,6 +201,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box amber'><h4>⚠️ MEDIUM</h4><p>Population-based methods require many costly evaluations. Evolution only pays off above a certain system size — cost-benefit must be tracked.</p></div>
+
 **Objection:** Population-based methods (MAP-Elites, EvoFlow) require many evaluations. Each evaluation of an agent workflow costs tokens = money. Monte Carlo Tree Search and similar search methods are "fundamentally bottlenecked by costly execution-based rollouts." ([arXiv:2401.10510](https://arxiv.org/abs/2401.10510))
 
 **Practical consequence:** EvoFlow's "12.4% of o1-preview costs" applies to inference — but the training/evolution itself required many evaluation rounds. For a small system like AgentField, the overhead of evolution could exceed its benefits.
@@ -202,6 +212,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box amber'><h4>⚠️ MITTEL</h4><p>Populationsbasierte Methoden brauchen viele kostenintensive Evaluierungen. Evolution lohnt sich erst ab einer bestimmten Systemgröße — Kosten-Nutzen muss im Blick bleiben.</p></div>
 
 **Einwand:** Populationsbasierte Methoden (MAP-Elites, EvoFlow) brauchen viele Evaluierungen. Jede Evaluierung eines Agent-Workflows kostet Token = Geld. Monte Carlo Tree Search und ähnliche Suchverfahren sind "fundamentally bottlenecked by costly execution-based rollouts." ([arXiv:2401.10510](https://arxiv.org/abs/2401.10510))
 
@@ -217,6 +229,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box green'><h4>✅ LOW</h4><p>Selection favors "fit" agents, not "good" ones — risking deceptive alignment. Mitigated by Human-in-the-Loop and controlled fitness functions.</p></div>
+
 **Objection:** If you take the evolution analogy seriously, then selection doesn't favor "good" agents but "fit" ones — those that survive and reproduce. This can lead to deceptive alignment, power accumulation, and self-serving behavior. ([arXiv:2303.16200](https://arxiv.org/abs/2303.16200))
 
 **Practical consequence:** Less relevant because we have Human-in-the-Loop and design the fitness function ourselves. But it's a warning: If you automate selection (Phase 4), the fitness function must be robust against Goodhart's Law.
@@ -226,6 +240,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box green'><h4>✅ NIEDRIG</h4><p>Selektion favorisiert „fitte" Agents, nicht „gute" — Risiko für deceptive alignment. Durch Human-in-the-Loop und kontrollierte Fitness-Funktionen gemildert.</p></div>
 
 **Einwand:** Wenn man die Evolutions-Analogie ernst nimmt, dann favorisiert Selektion nicht "gute" Agents, sondern "fitte" — also solche, die überleben und sich vermehren. Das kann zu deceptive alignment, Machtakkumulation und eigennützigem Verhalten führen. ([arXiv:2303.16200](https://arxiv.org/abs/2303.16200))
 
@@ -241,6 +257,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box amber'><h4>⚠️ META</h4><p>Evo-Devo argues the reverse direction: not "Nowak → AI" but "Evo-Devo → AI." Opens a new research direction that extends rather than refutes the thesis.</p></div>
+
 **Objection:** [Erden & Faltings (GECCO 2025)](https://arxiv.org/abs/2505.23774) argue the REVERSE: Not "Nowak → AI," but "Evo-Devo → AI." They say the Modern Synthesis (Nowak's framework) has the same limitations as current AI, and Evolutionary Developmental Biology (Evo-Devo) shows the way to better AI.
 
 **Practical consequence:** Perhaps our mapping is too narrow. Nowak's selection framework is only ONE part of evolutionary biology. Evo-Devo (how do individuals develop within their lifetime?) could be more relevant than population genetics (how does a population change across generations?).
@@ -250,6 +268,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box amber'><h4>⚠️ META</h4><p>Evo-Devo argumentiert in die umgekehrte Richtung: Nicht „Nowak → AI", sondern „Evo-Devo → AI." Öffnet eine neue Forschungsrichtung, die die These erweitert statt widerlegt.</p></div>
 
 **Einwand:** [Erden & Faltings (GECCO 2025)](https://arxiv.org/abs/2505.23774) argumentieren UMGEKEHRT: Nicht "Nowak → AI", sondern "Evo-Devo → AI". Sie sagen, die Modern Synthesis (Nowaks Rahmen) hat dieselben Limitationen wie aktuelle AI, und Evolutionary Developmental Biology (Evo-Devo) zeigt den Weg zu besserer AI.
 
@@ -265,6 +285,8 @@ nav_order: 5
 
 <div lang="en">
 
+<div class='key-box red'><h4>⚔️ MEDIUM-STRONG</h4><p>Agent systems have 3–10 configurations — far below the ~10⁴ threshold where selection dynamics are meaningful. Genetic drift dominates. Select at execution level, not population level.</p></div>
+
 **Objection:** Nowak's selection equation and quasispecies theory assume statistically significant population sizes. In populations below ~10⁴ individuals, [genetic drift](https://en.wikipedia.org/wiki/Genetic_drift) dominates over selection — random fluctuations determine which variants survive, not fitness. Agent systems typically have 3–10 configurations — far below any threshold where selection dynamics are statistically meaningful.
 
 **Practical consequence:** If we have 5 skill variants and one of them "wins," we don't know whether that was fitness or chance. The Pareto analysis from Phase 1 needs minimum samples per skill (hence: ≥3 Uses for Pareto View). But even with many executions, the "population" (number of competing variants per task type) remains small.
@@ -276,6 +298,8 @@ nav_order: 5
 </div>
 
 <div lang="de">
+
+<div class='key-box red'><h4>⚔️ MITTEL-STARK</h4><p>Agent-Systeme haben 3–10 Konfigurationen — weit unter der ~10⁴-Schwelle, ab der Selektionsdynamik statistisch greift. Genetischer Drift dominiert. Auf Ausführungs-Level selektieren, nicht Populations-Level.</p></div>
 
 **Einwand:** Nowaks Selektionsgleichung und die Quasispezies-Theorie setzen statistisch signifikante Populationsgrößen voraus. In Populationen unter ~10⁴ Individuen dominiert [genetischer Drift](https://en.wikipedia.org/wiki/Genetic_drift) über Selektion — zufällige Schwankungen bestimmen, welche Varianten überleben, nicht Fitness. Agent-Systeme haben typisch 3–10 Konfigurationen — das ist weit unter jeder Schwelle, bei der Selektionsdynamik statistisch greift.
 

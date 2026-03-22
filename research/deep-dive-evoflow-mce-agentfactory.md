@@ -35,6 +35,11 @@ nav_order: 3
 
 ## 1. The Three Papers at a Glance
 
+<div class="section-summary">
+<h4>Section Summary</h4>
+<p><strong>EvoFlow</strong> evolves a population of workflows (beat o1-preview at 12.4% cost). <strong>MCE</strong> co-evolves skills via meta-agent (+16.9% avg). <strong>AgentFactory</strong> stores solutions as executable code, not text. Together they show three independent paths from manual to evolutionary agent design.</p>
+</div>
+
 ### EvoFlow (2502.07373) — Population-Based Workflow Evolution
 
 **Core Idea:** Instead of searching for ONE optimal workflow, evolve a POPULATION of heterogeneous workflows. Use niching selection (related to MAP-Elites) to maintain diversity and quality simultaneously.
@@ -79,6 +84,11 @@ Workflow G = (O, Eᵃ)     ← Directed graph of operator nodes
 
 **Ablation** (what matters most): Tag-based Retrieval and LLM Mutation are critical — removing either causes significant performance drops + variance increase. Operator Mutation contributes 3.5–7.3%.
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>EvoFlow beat o1-preview on MATH at just 12.4% of the cost — by evolving a population of heterogeneous workflows with open-source models. Population diversity + multi-objective selection is the key mechanism.</p>
+</div>
+
 ---
 
 ### MCE — Meta Context Engineering (2601.21557) — Skill Co-evolution
@@ -101,6 +111,11 @@ Base-Agent (lower level)
 
 **Results:** 5.6–53.8% improvement over SOTA CE methods (mean: 16.9%), tested across 5 domains, offline + online.
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>MCE's bi-level architecture (Meta-Agent refines skills, Base-Agent executes them) is directly applicable to AgentField: our Quality-Gate + Pulse already provide the evaluation signal — we just need to close the loop.</p>
+</div>
+
 ---
 
 ### AgentFactory (2603.18000) — Executable Subagent Accumulation
@@ -113,11 +128,21 @@ Base-Agent (lower level)
 - Standardized Python documentation → portability across systems
 - Library grows over time → progressive effort reduction
 
+<div class="key-box green">
+<h4>💡 Key Insight</h4>
+<p>AgentFactory's core lesson: executable code beats textual reflection for reliable reuse. Our SKILL.md files are already semi-structured code — we're closer to this pattern than it seems.</p>
+</div>
+
 </div>
 
 <div lang='de' markdown='1'>
 
 ## 1. Die drei Papers im Überblick
+
+<div class="section-summary">
+<h4>Abschnitt-Zusammenfassung</h4>
+<p><strong>EvoFlow</strong> evolviert eine Population von Workflows (o1-preview geschlagen bei 12,4% der Kosten). <strong>MCE</strong> ko-evolviert Skills via Meta-Agent (+16,9% Ø). <strong>AgentFactory</strong> speichert Lösungen als ausführbaren Code, nicht Text. Zusammen zeigen sie drei unabhängige Wege von manuellem zu evolutionärem Agent-Design.</p>
+</div>
 
 ### EvoFlow (2502.07373) — Populationsbasierte Workflow-Evolution
 
@@ -163,6 +188,11 @@ Workflow G = (O, Eᵃ)     ← Gerichteter Graph von Operator-Knoten
 
 **Ablation** (was am meisten zählt): Tag-based Retrieval und LLM-Mutation sind kritisch — das Entfernen einer Komponente verursacht signifikante Performance-Einbrüche + Varianzanstieg. Operator-Mutation trägt 3,5–7,3% bei.
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>EvoFlow schlägt o1-preview auf MATH bei nur 12,4% der Kosten — durch Evolution einer Population heterogener Workflows mit Open-Source-Modellen. Populationsdiversität + Multi-Objective-Selektion ist der Schlüsselmechanismus.</p>
+</div>
+
 ---
 
 ### MCE — Meta Context Engineering (2601.21557) — Skill-Koevolution
@@ -185,6 +215,11 @@ Base-Agent (untere Ebene)
 
 **Ergebnisse:** 5.6–53.8% Verbesserung über SOTA CE-Methoden (Mittel: 16.9%), getestet in 5 Domänen, offline + online.
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>MCEs Bi-Level-Architektur (Meta-Agent verfeinert Skills, Base-Agent führt sie aus) ist direkt auf AgentField übertragbar: Unser Quality-Gate + Pulse liefern bereits das Evaluationssignal — wir müssen nur den Loop schließen.</p>
+</div>
+
 ---
 
 ### AgentFactory (2603.18000) — Executable Subagent Accumulation
@@ -197,6 +232,11 @@ Base-Agent (untere Ebene)
 - Standardisierte Python-Dokumentation → Portabilität über Systeme hinweg
 - Bibliothek wächst über Zeit → progressive Aufwandsreduktion
 
+<div class="key-box green">
+<h4>💡 Kernerkenntnis</h4>
+<p>AgentFactorys Kernlektion: Ausführbarer Code schlägt textuelle Reflexion für zuverlässige Wiederverwendung. Unsere SKILL.md-Dateien sind bereits semi-strukturierter Code — wir sind diesem Pattern näher als gedacht.</p>
+</div>
+
 </div>
 
 ---
@@ -204,6 +244,11 @@ Base-Agent (untere Ebene)
 <div lang='en' markdown='1'>
 
 ## 2. The Isomorphism Table: EvoFlow → MCE → AgentFactory → AgentField
+
+<div class="key-box amber">
+<h4>⚠️ Gap Analysis</h4>
+<p>5 of 11 concepts are missing or partial: Mutation (not automated), Crossover (missing entirely), Diversity mechanism (none), Cost awareness (no tracking), and Feedback loop (open). These are the targets for Phases 1–3.</p>
+</div>
 
 | Concept | EvoFlow | MCE | AgentFactory | AgentField | Status |
 |---------|---------|-----|-------------|------------|------------|
@@ -226,6 +271,11 @@ Base-Agent (untere Ebene)
 <div lang='de' markdown='1'>
 
 ## 2. Die Isomorphie-Tabelle: EvoFlow → MCE → AgentFactory → AgentField
+
+<div class="key-box amber">
+<h4>⚠️ Gap-Analyse</h4>
+<p>5 von 11 Konzepten fehlen oder sind unvollständig: Mutation (nicht automatisiert), Crossover (fehlt komplett), Diversitäts-Mechanismus (keiner), Cost-Awareness (kein Tracking), Feedback-Loop (offen). Das sind die Ziele für Phase 1–3.</p>
+</div>
 
 | Konzept | EvoFlow | MCE | AgentFactory | AgentField | Status |
 |---------|---------|-----|-------------|------------|----------------|
@@ -393,6 +443,11 @@ Base-Agent (untere Ebene)
 
 ## 5. The Upgrade Path: Prelife → Life for AgentField
 
+<div class="key-box green">
+<h4>💡 The Roadmap</h4>
+<p>4 phases: (0) Manual curation → (1) Close the feedback loop → (2) Automated mutation → (3) Population management. Each phase builds on the previous one. Phase 1 is specified and ready to implement.</p>
+</div>
+
 ```
 Phase 0 (NOW): Prelife
   - Skills exist, are manually curated
@@ -424,6 +479,11 @@ Phase 4: Full Evolution (= "Life")
 <div lang='de' markdown='1'>
 
 ## 5. Der Upgrade-Pfad: Prelife → Life für AgentField
+
+<div class="key-box green">
+<h4>💡 Die Roadmap</h4>
+<p>4 Phasen: (0) Manuelle Kuration → (1) Feedback-Loop schließen → (2) Automatisierte Mutation → (3) Populationsmanagement. Jede Phase baut auf der vorherigen auf. Phase 1 ist spezifiziert und implementierungsbereit.</p>
+</div>
 
 ```
 Phase 0 (JETZT): Prelife

@@ -33,6 +33,11 @@ nav_order: 1
 
 <div lang='en' markdown='1'>
 
+<div class="section-summary">
+<h4>TL;DR</h4>
+<p>Phase 1 closes the evolutionary feedback loop by measuring skill fitness (quality + cost). SQL schema with 3 views: per-skill metrics, Pareto classification, and per-agent breakdown. Advisory alerts only — no automatic changes.</p>
+</div>
+
 ## Current State (AS-IS)
 
 | Component | Tool | What It Provides | Where It Ends |
@@ -47,6 +52,11 @@ nav_order: 1
 </div>
 
 <div lang='de' markdown='1'>
+
+<div class="section-summary">
+<h4>Kurzfassung</h4>
+<p>Phase 1 schließt den evolutionären Feedback-Loop durch Messung der Skill-Fitness (Qualität + Kosten). SQL-Schema mit 3 Views: Pro-Skill-Metriken, Pareto-Klassifikation und Pro-Agent-Aufschlüsselung. Nur beratende Alerts — keine automatischen Änderungen.</p>
+</div>
 
 ## Was existiert (IST)
 
@@ -352,6 +362,11 @@ UPDATE skills_usage SET outcome = '<success|partial|failure>' WHERE id = <last_i
 ---
 
 <div lang='en' markdown='1'>
+
+<div class="key-box amber">
+<h4><span lang="en">⚠️ Scope Boundary</span><span lang="de">⚠️ Scope-Grenze</span></h4>
+<p><span lang="en">Phase 1 is measurement only. No automatic changes, no mutations, no A/B testing. That's Phase 2.</span><span lang="de">Phase 1 ist nur Messung. Keine automatischen Änderungen, keine Mutationen, kein A/B-Testing. Das ist Phase 2.</span></p>
+</div>
 
 ## What Phase 1 Does NOT Do
 
