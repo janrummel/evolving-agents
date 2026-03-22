@@ -18,7 +18,6 @@ Research methodology, toolkit audit, learnings, and monitoring.
 | [Research Toolkit Audit](research-toolkit) | Tools, methods, and quality assessment of our research process |
 | [Research Learnings](learnings-research-process) | What we learned about doing research with AI agents |
 | [AgentField = Prelife](learning-agentfield-prelife) | Why current agent systems are in the Prelife phase |
-| [Monitoring Keywords](monitoring-keywords) | Search terms for tracking new developments |
 
 </div>
 
@@ -35,6 +34,5 @@ Forschungsmethodik, Toolkit-Audit, Learnings und Monitoring.
 | [Research-Toolkit-Audit](research-toolkit) | Werkzeuge, Methoden und Qualitätsbewertung unseres Forschungsprozesses |
 | [Forschungs-Learnings](learnings-research-process) | Was wir über das Forschen mit KI-Agents gelernt haben |
 | [AgentField = Prelife](learning-agentfield-prelife) | Warum aktuelle Agent-Systeme in der Prelife-Phase sind |
-| [Monitoring Keywords](monitoring-keywords) | Suchbegriffe zum Tracking neuer Entwicklungen |
 
 </div>

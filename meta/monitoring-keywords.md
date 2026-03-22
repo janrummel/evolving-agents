@@ -3,6 +3,7 @@ layout: default
 title: Monitoring Keywords
 parent: Meta
 nav_order: 4
+nav_exclude: true
 ---
 
 # Research Monitoring Keywords
