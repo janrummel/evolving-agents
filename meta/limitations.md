@@ -5,15 +5,17 @@ parent: Meta
 nav_order: 0
 ---
 
-# Limitations and Honest Assessment / Einschränkungen und ehrliche Einordnung
+<div lang="en" markdown="1">
 
-<div lang="en">
+# Limitations and Honest Assessment
 
 This page documents what this research collection is, what it isn't, and where the gaps are.
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
+
+# Einschränkungen und ehrliche Einordnung
 
 Diese Seite dokumentiert, was diese Research Collection ist, was sie nicht ist, und wo die Lücken liegen.
 

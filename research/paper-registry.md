@@ -24,7 +24,7 @@ All identified papers, categorized and prioritized. As of: 2026-03-19.
 
 <div lang='de' markdown='1'>
 
-# Paper Registry
+# Paper-Registry
 
 {: .note }
 > **Reading: 2 of 5** · After browsing this, you'll have a categorized map of the field — 55+ papers across 9 categories, with priority ratings to guide what to read first.

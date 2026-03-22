@@ -5,66 +5,337 @@ parent: Meta
 nav_order: 2
 ---
 
+<style>
+  .learning-card {
+    border-left: 4px solid #4A90D9;
+    background: #f0f4fa;
+    border-radius: 6px;
+    padding: 1.2em 1.5em;
+    margin: 1.5em 0 2em 0;
+  }
+  .learning-card h2 {
+    margin-top: 0;
+    color: #2c3e6b;
+  }
+  .key-insight {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
+    border: 1px solid #f5c542;
+    border-radius: 6px;
+    padding: 0.8em 1.2em;
+    margin: 1em 0;
+    font-style: italic;
+  }
+  .key-insight::before {
+    content: "💡 ";
+  }
+  .implication-box {
+    border-left: 4px solid #28a745;
+    background: #eafbef;
+    border-radius: 4px;
+    padding: 0.8em 1.2em;
+    margin: 0.8em 0;
+  }
+  .implication-box-en {
+    border-left: 4px solid #17a2b8;
+    background: #e8f6f9;
+    border-radius: 4px;
+    padding: 0.8em 1.2em;
+    margin: 0.8em 0;
+  }
+  .system-improvement {
+    border: 2px dashed #6c757d;
+    border-radius: 6px;
+    padding: 0.8em 1.2em;
+    margin: 0.8em 0;
+    background: #fafafa;
+  }
+  .lang-toggle {
+    display: inline-block;
+    background: #e9ecef;
+    border-radius: 4px;
+    padding: 0.15em 0.6em;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+  .lang-en { color: #17a2b8; }
+  .lang-de { color: #28a745; }
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin: 1em 0;
+  }
+  @media (max-width: 600px) {
+    .summary-grid { grid-template-columns: 1fr; }
+  }
+  .summary-card {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 1em;
+    background: #fff;
+  }
+  .principle-badge {
+    display: inline-block;
+    background: #2c3e6b;
+    color: #fff;
+    border-radius: 20px;
+    padding: 0.3em 1em;
+    font-size: 0.9em;
+    margin: 0.5em 0;
+  }
+</style>
+
 # Research Process Learnings
+
+<div lang="en" markdown="1">
+
+Insights from the first research round (2026-03-19).
+Each learning is applicable to our AgentField system.
+
+</div>
+
+<div lang="de" markdown="1">
 
 Erkenntnisse aus der ersten Recherche-Runde (2026-03-19).
 Jedes Learning ist für unser AgentField-System nutzbar.
 
+</div>
+
 ---
+
+<!-- ═══════════════════════════════════════════════════ L1 ═══ -->
+
+<div class="learning-card" markdown="1">
 
 ## L1: Semantic Scholar API — Rate Limiting ist aggressiv
 
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** 3 parallel WebFetch calls to the Semantic Scholar API → 2 out of 3 returned HTTP 429 (Too Many Requests). Even sequential retries after a few seconds → 429 again.
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- Semantic Scholar allows ~1 request/second without an API key
+- With an API key (free, via email) → 100 requests/second
+- Our research-pipeline must make calls sequentially with cooldown, or better: obtain an API key
+
+</div>
+
+<div class="system-improvement" markdown="1">
+
+**System Improvement:**
+- [ ] Apply for Semantic Scholar API key (free)
+- [ ] Add rate-limiter to research-pipeline for API calls (1/s default, 100/s with key)
+- [ ] Fallback strategy: if API blocks → use arXiv API as alternative
+
+</div>
+
+<div class="key-insight">Never bombard external APIs in parallel without a rate-limit check.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
+
 **Was passiert ist:** 3 parallele WebFetch-Calls an Semantic Scholar API → 2 von 3 gaben HTTP 429 (Too Many Requests). Auch sequentieller Retry nach wenigen Sekunden → erneut 429.
+
+<div class="implication-box" markdown="1">
 
 **Praktische Implikation:**
 - Semantic Scholar erlaubt ~1 Request/Sekunde ohne API Key
 - Mit API Key (kostenlos, per Mail) → 100 Requests/Sekunde
 - Unsere research-pipeline muss Calls sequentiell mit Cooldown machen, oder besser: API Key holen
 
+</div>
+
+<div class="system-improvement" markdown="1">
+
 **Systemverbesserung:**
 - [ ] Semantic Scholar API Key beantragen (kostenlos)
 - [ ] In research-pipeline: Rate-Limiter einbauen für API-Calls (1/s default, 100/s mit Key)
 - [ ] Fallback-Strategie: Wenn API blockt → arXiv API als Alternative
 
-**Prinzip:** *Externe APIs niemals parallel bombardieren ohne Rate-Limit-Check.*
+</div>
 
----
+<div class="key-insight">Externe APIs niemals parallel bombardieren ohne Rate-Limit-Check.</div>
 
-## L2: GitHub Awesome-Listen > direkte API-Suche als Einstieg
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════ L2 ═══ -->
+
+<div class="learning-card" markdown="1">
+
+## L2: GitHub Awesome Lists > Direct API Search as Entry Point
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** A single WebFetch on the [Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) list immediately delivered ~30 categorized papers with taxonomy — far more efficient than 10 individual API calls.
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- Awesome lists are curated, structured, and current (community-maintained)
+- They provide taxonomy for free — how the field organizes itself
+- For new topics: first search "awesome-[topic]" on GitHub, then dive deeper
+
+</div>
+
+<div class="system-improvement" markdown="1">
+
+**System Improvement:**
+- [ ] Add step 1 to research-pipeline: "Check if awesome-[topic] exists on GitHub"
+- [ ] learn-from-the-best skill: add GitHub Awesome lists as heuristic source
+
+</div>
+
+<div class="key-insight">Curated community overviews first, then custom search for gaps.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
 
 **Was passiert ist:** Ein einziger WebFetch auf die [Awesome-Self-Evolving-Agents](https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents) Liste lieferte sofort ~30 kategorisierte Papers mit Taxonomie, deutlich effizienter als 10 einzelne API-Calls.
+
+<div class="implication-box" markdown="1">
 
 **Praktische Implikation:**
 - Awesome-Listen sind kuratiert, strukturiert, aktuell (Community-maintained)
 - Sie geben Taxonomie gratis mit — wie das Feld sich selbst organisiert
 - Für neue Themen: Erst "awesome-[topic]" auf GitHub suchen, dann vertiefen
 
+</div>
+
+<div class="system-improvement" markdown="1">
+
 **Systemverbesserung:**
 - [ ] In research-pipeline Schritt 1 ergänzen: "Prüfe ob awesome-[topic] auf GitHub existiert"
 - [ ] learn-from-the-best Skill: GitHub Awesome-Listen als Heuristik-Quelle aufnehmen
 
-**Prinzip:** *Kuratierte Community-Übersichten zuerst, dann eigene Suche für Lücken.*
+</div>
 
----
+<div class="key-insight">Kuratierte Community-Übersichten zuerst, dann eigene Suche für Lücken.</div>
 
-## L3: arXiv API — zuverlässig, kein Rate Limit, XML-basiert
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════ L3 ═══ -->
+
+<div class="learning-card" markdown="1">
+
+## L3: arXiv API — Reliable, No Rate Limit, XML-Based
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** 3 parallel arXiv API calls → all 3 successful, yielding 35 papers total. No rate limiting, instant results.
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- arXiv API is the most robust access point for paper discovery
+- XML format is well-handled by WebFetch
+- Sorting by submittedDate immediately returns the newest papers
+
+</div>
+
+<div class="system-improvement" markdown="1">
+
+**System Improvement:**
+- [ ] Integrate arXiv as primary paper discovery source in research-pipeline
+- [ ] Define standard queries for core topics (monitoring-ready)
+
+</div>
+
+<div class="key-insight">Prefer public, unlimited APIs. arXiv > Semantic Scholar for discovery.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
 
 **Was passiert ist:** 3 parallele arXiv-API-Calls → alle 3 erfolgreich, zusammen 35 Papers. Kein Rate Limiting, sofort Ergebnisse.
+
+<div class="implication-box" markdown="1">
 
 **Praktische Implikation:**
 - arXiv API ist der robusteste Zugang für Paper-Discovery
 - XML-Format wird von WebFetch gut verarbeitet
 - Sortierung nach submittedDate gibt sofort die neuesten Papers
 
+</div>
+
+<div class="system-improvement" markdown="1">
+
 **Systemverbesserung:**
 - [ ] arXiv als primäre Paper-Discovery-Quelle in research-pipeline einbauen
 - [ ] Standard-Queries definieren für die Kern-Themen (monitoring-ready)
 
-**Prinzip:** *Öffentliche, unlimitierte APIs bevorzugen. arXiv > Semantic Scholar für Discovery.*
+</div>
 
----
+<div class="key-insight">Öffentliche, unlimitierte APIs bevorzugen. arXiv > Semantic Scholar für Discovery.</div>
 
-## L4: Multilinguale Recherche bestätigt — chinesische Suche liefert ANDERE Ergebnisse
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════ L4 ═══ -->
+
+<div class="learning-card" markdown="1">
+
+## L4: Multilingual Research Confirmed — Chinese Search Yields DIFFERENT Results
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** WebSearch with Chinese characters (自进化 智能体 多智能体 进化算法 大模型) returned results that appeared in no English search:
+- Tsinghua AIR Talk by 刘洋 on "LLM-Driven Evolvable Agents"
+- CAICT + Huawei Report on Agent Technology (June 2025)
+- Zhihu discussions with unique perspectives
+- Foundation Agents Survey (MetaGPT + Mila, 47 authors)
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- ~30-50% of relevant work is only discoverable through Chinese search
+- Zhihu (知乎) is China's StackOverflow/Medium equivalent — researchers discuss informally there
+- CAICT Reports are China's equivalent of NIST/EU whitepapers
+
+</div>
+
+<div class="system-improvement" markdown="1">
+
+**System Improvement:**
+- [ ] Extend research-pipeline with CJK module:
+  1. Auto-translate core keywords to ZH/JA/KO
+  2. Run separate search in each language
+  3. Translate results back to German/English
+- [ ] Add Zhihu (知乎) as source for informal research discussion
+- [ ] Track CAICT, Tsinghua AIR, PKU as monitored institutions
+
+</div>
+
+<div class="key-insight">If you only search in English, you find only half the truth. Language diversity = knowledge diversity.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
 
 **Was passiert ist:** WebSearch mit chinesischen Zeichen (自进化 智能体 多智能体 进化算法 大模型) lieferte Ergebnisse, die in keiner englischen Suche auftauchten:
 - Tsinghua AIR Talk von 刘洋 über "LLM-Driven Evolvable Agents"
@@ -72,10 +343,16 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 - Zhihu-Diskussionen mit eigenen Perspektiven
 - Foundation Agents Survey (MetaGPT + Mila, 47 Autoren)
 
+<div class="implication-box" markdown="1">
+
 **Praktische Implikation:**
 - ~30-50% der relevanten Arbeit ist nur über chinesische Suche auffindbar
 - Zhihu (知乎) ist Chinas StackOverflow/Medium-Äquivalent — dort diskutieren Forscher informell
 - CAICT Reports sind Chinas Äquivalent zu NIST/EU-Whitepapers
+
+</div>
+
+<div class="system-improvement" markdown="1">
 
 **Systemverbesserung:**
 - [ ] research-pipeline um CJK-Modul erweitern:
@@ -85,92 +362,330 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 - [ ] Zhihu (知乎) als Quelle für informelle Forschungsdiskussion aufnehmen
 - [ ] CAICT, Tsinghua AIR, PKU als tracked institutions hinzufügen
 
-**Prinzip:** *Wer nur auf Englisch sucht, findet nur die halbe Wahrheit. Sprach-Diversität = Wissens-Diversität.*
+</div>
 
----
+<div class="key-insight">Wer nur auf Englisch sucht, findet nur die halbe Wahrheit. Sprach-Diversität = Wissens-Diversität.</div>
 
-## L5: Das Feld bewegt sich mit Wochengeschwindigkeit
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════ L5 ═══ -->
+
+<div class="learning-card" markdown="1">
+
+## L5: The Field Moves at Weekly Speed
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** 12 relevant new papers in the first half of March 2026 alone. AgentFactory (day before yesterday!), SEMAG, SAGE, OpenHospital — all brand new.
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- Static literature lists are outdated after 2 weeks
+- Without automatic monitoring, we quickly miss important developments
+- The Awesome list is updated community-maintained
+
+</div>
+
+<div class="system-improvement" markdown="1">
+
+**System Improvement:**
+- [ ] Set up arXiv RSS/API-based weekly digest for relevant keywords
+- [ ] Awareness metric: "How old is our newest entry?" as monitoring signal
+
+</div>
+
+<div class="key-insight">In fast-moving fields, monitoring is more important than one-time research.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
 
 **Was passiert ist:** 12 relevante neue Papers allein in der ersten Märzhälfte 2026. AgentFactory (vorgestern!), SEMAG, SAGE, OpenHospital — alles brandneu.
+
+<div class="implication-box" markdown="1">
 
 **Praktische Implikation:**
 - Statische Literaturlisten sind nach 2 Wochen veraltet
 - Ohne automatisches Monitoring verpassen wir schnell wichtige Entwicklungen
 - Die Awesome-Liste wird community-maintained aktualisiert
 
+</div>
+
+<div class="system-improvement" markdown="1">
+
 **Systemverbesserung:**
 - [ ] arXiv RSS/API-basiertes Weekly Digest für die relevanten Keywords einrichten
 - [ ] Awareness-Metrik: "Wie alt ist unser neuester Eintrag?" als Monitoring-Signal
 
-**Prinzip:** *In schnellen Feldern ist Monitoring wichtiger als einmalige Recherche.*
+</div>
 
----
+<div class="key-insight">In schnellen Feldern ist Monitoring wichtiger als einmalige Recherche.</div>
 
-## L6: Brückenpaper existieren — EvoFlow ist der Missing Link
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════ L6 ═══ -->
+
+<div class="learning-card" markdown="1">
+
+## L6: Bridge Papers Exist — EvoFlow Is the Missing Link
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** EvoFlow (2502.07373, 31 citations) explicitly uses Niching Evolutionary Algorithms (related to MAP-Elites/Quality-Diversity) for agent workflow evolution. It outperformed o1-preview by 2.7% at 12.4% of the cost.
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- The bridge from Nowak → agent systems is NOT merely theoretical — EvoFlow implements it
+- Niching-based selection = Nowak's population diversity in practice
+- Open-source models + evolution > single large model (cost/performance argument)
+
+</div>
+
+<div class="system-improvement" markdown="1">
+
+**Practical Consequence:**
+- Study EvoFlow's architecture: tag-based retrieval + crossover + mutation + niching selection
+- Check if our skill system shows similar patterns (skills as "individuals", quality-gate as "selection")
+
+</div>
+
+<div class="key-insight">Always search for the paper that explicitly bridges two fields. It almost always exists.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
 
 **Was passiert ist:** EvoFlow (2502.07373, 31 Zitationen) nutzt explizit Niching Evolutionary Algorithms (verwandt mit MAP-Elites/Quality-Diversity) für Agent-Workflow-Evolution. Es übertraf o1-preview um 2.7% bei 12.4% der Kosten.
+
+<div class="implication-box" markdown="1">
 
 **Praktische Implikation:**
 - Die Brücke Nowak → Agent-Systeme ist NICHT nur theoretisch — EvoFlow implementiert sie
 - Niching-basierte Selektion = Nowaks Populationsdiversität in der Praxis
 - Open-Source-Modelle + Evolution > einzelnes großes Modell (Kosten-/Performance-Argument)
 
+</div>
+
+<div class="system-improvement" markdown="1">
+
 **Praktische Konsequenz:**
 - EvoFlow's Architektur studieren: Tag-basiertes Retrieval + Crossover + Mutation + Niching Selection
 - Prüfen ob unser Skill-System ähnliche Muster zeigt (Skills als "Individuen", Quality-Gate als "Selection")
 
-**Prinzip:** *Suche immer nach dem Paper, das zwei Felder explizit verbindet. Es existiert fast immer.*
+</div>
 
----
+<div class="key-insight">Suche immer nach dem Paper, das zwei Felder explizit verbindet. Es existiert fast immer.</div>
 
-## L7: Meta Context Engineering = formalisiertes AgentField
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════ L7 ═══ -->
+
+<div class="learning-card" markdown="1">
+
+## L7: Meta Context Engineering = Formalized AgentField
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** The MCE paper (2601.21557) describes exactly what AgentField does manually: skills and context artifacts co-evolve. A meta-agent refines skills through deliberative search, a base-agent executes. 5.6-53.8% improvement over SOTA.
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- AgentField IS already a (manual) MCE system
+- The step from manual to automated is formalized — we don't need to reinvent the wheel
+- The "deliberative search over historical skills, executions, and evaluations" is exactly what our improve-skill does in rudimentary form
+
+</div>
+
+<div class="system-improvement" markdown="1">
+
+**Practical Consequence:**
+- Study MCE paper in detail
+- Check which MCE elements we can automate
+- Use pulse metrics as "evaluation signal" for skill evolution
+
+</div>
+
+<div class="key-insight">If someone has formalized what you do manually → study it. It accelerates the next step.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
 
 **Was passiert ist:** MCE Paper (2601.21557) beschreibt genau das, was AgentField manuell tut: Skills und Context-Artefakte ko-evolvieren. Meta-Agent verfeinert Skills durch deliberative Search, Base-Agent führt aus. 5.6-53.8% Verbesserung über SOTA.
+
+<div class="implication-box" markdown="1">
 
 **Praktische Implikation:**
 - AgentField IST bereits ein (manuelles) MCE-System
 - Der Schritt von manuell zu automatisiert ist formalisiert — wir müssen das Rad nicht neu erfinden
 - Die "deliberative search over historical skills, executions, and evaluations" ist genau das, was unser improve-Skill ansatzweise tut
 
+</div>
+
+<div class="system-improvement" markdown="1">
+
 **Praktische Konsequenz:**
 - MCE-Paper im Detail studieren
 - Prüfen welche MCE-Elemente wir automatisieren können
 - Pulse-Metriken als "evaluation signal" für Skill-Evolution nutzen
 
-**Prinzip:** *Wenn jemand das formalisiert hat was du manuell tust → studiere es. Es beschleunigt den nächsten Schritt.*
+</div>
 
----
+<div class="key-insight">Wenn jemand das formalisiert hat was du manuell tust → studiere es. Es beschleunigt den nächsten Schritt.</div>
 
-## L8: Die Nowak-Agent-Isomorphie ist NICHT einzigartig — andere sehen sie auch
+</div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════ L8 ═══ -->
+
+<div class="learning-card" markdown="1">
+
+## L8: The Nowak-Agent Isomorphism Is NOT Unique — Others See It Too
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+**What happened:** "Evolutionary Systems Thinking" (2602.15957) explicitly argues for transferring evolutionary dynamics to complex adaptive systems including AI. "Evolving Interpretable Constitutions" (2602.00755) connects Constitutional AI with evolutionary approaches for multi-agent coordination.
+
+<div class="implication-box-en" markdown="1">
+
+**Practical Implication:**
+- Our Nowak synthesis is not esoteric — there is a growing community
+- But: nobody has yet explicitly mapped Nowak's Originator equation to agent systems (our unique contribution?)
+- The isomorphism table from our synthesis could become a standalone contribution
+
+</div>
+
+<div class="key-insight">If others think similarly: validation. If nobody has the same angle: opportunity.</div>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
 
 **Was passiert ist:** "Evolutionary Systems Thinking" (2602.15957) argumentiert explizit für die Übertragung von Evolutionsdynamik auf komplexe adaptive Systeme inkl. AI. "Evolving Interpretable Constitutions" (2602.00755) verbindet Constitutional AI mit evolutionären Ansätzen für Multi-Agent-Koordination.
+
+<div class="implication-box" markdown="1">
 
 **Praktische Implikation:**
 - Unsere Nowak-Synthese ist nicht esoterisch — es gibt eine wachsende Community
 - Aber: Niemand hat bisher Nowaks Originator-Gleichung explizit auf Agent-Systeme abgebildet (unsere unique contribution?)
 - Die Isomorphie-Tabelle aus unserer Synthese könnte ein eigenständiger Beitrag werden
 
-**Prinzip:** *Wenn andere ähnliches denken: Validierung. Wenn niemand den gleichen Winkel hat: Chance.*
+</div>
+
+<div class="key-insight">Wenn andere ähnliches denken: Validierung. Wenn niemand den gleichen Winkel hat: Chance.</div>
+
+</div>
+
+</div>
 
 ---
 
-## Zusammenfassung: Was ins AgentField-System zurückfließen sollte
+<!-- ═══════════════════════════════════════════ SUMMARY ═══ -->
 
-### research-pipeline Verbesserungen
+## Summary / Zusammenfassung
+
+<span class="lang-toggle lang-en">EN</span>
+
+<div lang="en" markdown="1">
+
+### What Should Flow Back Into the AgentField System
+
+<div class="summary-grid">
+
+<div class="summary-card" markdown="1">
+
+#### 🔧 research-pipeline Improvements
+1. Awesome lists as entry heuristic
+2. arXiv API as primary discovery source
+3. Rate-limiter for Semantic Scholar
+4. CJK module for multilingual search
+5. Automatic monitoring (weekly digest)
+
+</div>
+
+<div class="summary-card" markdown="1">
+
+#### 🛠️ New Tool Requirements
+- Semantic Scholar API key → research-pipeline integration
+- Translation-aware search wrapper
+- Citation graph builder (paper → references → citations)
+- arXiv RSS digest via Trigger.dev
+
+</div>
+
+</div>
+
+#### Design Principles (Newly Derived)
+
+<span class="principle-badge">Language diversity = knowledge diversity</span>
+<span class="principle-badge">Curated lists first, custom search for gaps</span>
+<span class="principle-badge">In fast fields: monitoring > one-time research</span>
+<span class="principle-badge">Search for bridge papers between fields</span>
+
+</div>
+
+<span class="lang-toggle lang-de">DE</span>
+
+<div lang="de" markdown="1">
+
+### Was ins AgentField-System zurückfließen sollte
+
+<div class="summary-grid">
+
+<div class="summary-card" markdown="1">
+
+#### 🔧 research-pipeline Verbesserungen
 1. Awesome-Listen als Einstiegsheuristik
 2. arXiv API als primäre Discovery-Quelle
 3. Rate-Limiter für Semantic Scholar
 4. CJK-Modul für multilinguale Suche
 5. Automatisches Monitoring (weekly digest)
 
-### Neue Werkzeug-Anforderungen
+</div>
+
+<div class="summary-card" markdown="1">
+
+#### 🛠️ Neue Werkzeug-Anforderungen
 - Semantic Scholar API Key → research-pipeline Integration
 - Translation-aware Search Wrapper
 - Citation Graph Builder (Paper → Referenzen → Zitationen)
 - arXiv RSS Digest via Trigger.dev
 
-### Designprinzipien (neu abgeleitet)
-- "Sprach-Diversität = Wissens-Diversität"
-- "Kuratierte Listen zuerst, eigene Suche für Lücken"
-- "In schnellen Feldern: Monitoring > einmalige Recherche"
-- "Suche nach Brückenpapern zwischen Feldern"
+</div>
+
+</div>
+
+#### Designprinzipien (neu abgeleitet)
+
+<span class="principle-badge">Sprach-Diversität = Wissens-Diversität</span>
+<span class="principle-badge">Kuratierte Listen zuerst, eigene Suche für Lücken</span>
+<span class="principle-badge">In schnellen Feldern: Monitoring > einmalige Recherche</span>
+<span class="principle-badge">Suche nach Brückenpapern zwischen Feldern</span>
+
+</div>

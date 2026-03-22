@@ -4,13 +4,23 @@ title: Principles
 nav_order: 3
 ---
 
-# Design Principles
+<div lang="en" markdown="1">
 
-<div lang="en">
+# Design Principles
 
 Actionable principles derived from evolutionary dynamics research, applicable to agent architectures.
 
 Each principle follows the format: **What** (the rule), **Why** (the evolutionary basis), **How** (concrete application).
+
+</div>
+
+<div lang="de" markdown="1">
+
+# Design-Prinzipien
+
+Handlungsorientierte Prinzipien aus der Forschung zu Evolutionsdynamik, anwendbar auf Agent-Architekturen.
+
+Jedes Prinzip folgt dem Format: **Was** (die Regel), **Warum** (die evolutionäre Basis), **Wie** (konkrete Anwendung).
 
 </div>
 

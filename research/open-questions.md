@@ -5,9 +5,9 @@ parent: Research
 nav_order: 4
 ---
 
-# Open Questions
+<div lang="en" markdown="1">
 
-<div lang="en">
+# Open Questions
 
 {: .note }
 > **Reading: 4 of 5** · After reading this, you'll know the 7 most tractable research questions at the intersection of evolutionary dynamics and agent systems — and which ones you could start working on today.
@@ -16,7 +16,12 @@ Research questions that need investigation. Prioritized by tractability and rele
 
 </div>
 
-<div lang="de">
+<div lang="de" markdown="1">
+
+# Offene Fragen
+
+{: .note }
+> **Reading: 4 von 5** · Nach der Lektüre kennst du die 7 am besten angehbaren Forschungsfragen an der Schnittstelle von Evolutionsdynamik und Agent-Systemen — und welche du heute schon bearbeiten könntest.
 
 {: .note }
 > **Lesezeit: 4 von 5** · Nach der Lektüre kennst du die 7 am besten bearbeitbaren Forschungsfragen an der Schnittstelle von Evolutionsdynamik und Agent-Systemen — und weißt, an welchen du heute schon arbeiten könntest.
