@@ -3,6 +3,7 @@ layout: default
 title: "AgentField = Prelife"
 parent: Meta
 nav_order: 3
+nav_exclude: true
 ---
 
 # Learning L9: AgentField ist in der Prelife-Phase

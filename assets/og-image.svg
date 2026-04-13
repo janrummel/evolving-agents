@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1629"/>
+      <stop offset="50%" stop-color="#1a1f3a"/>
+      <stop offset="100%" stop-color="#0f1629"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="arrow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="0.5" fill="rgba(99,102,241,0.06)"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Tag -->
+  <rect x="462" y="40" width="276" height="28" rx="14" fill="rgba(99,102,241,0.1)" stroke="rgba(99,102,241,0.2)" stroke-width="1"/>
+  <text x="600" y="59" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#818cf8" letter-spacing="2.5">RESEARCH SYNTHESIS</text>
+
+  <!-- Title -->
+  <text x="600" y="110" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="42" font-weight="800" fill="url(#titleGrad)">Evolving Agents</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="145" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="16" fill="#94a3b8">From Nowak's Evolvability Equations to AI Agent Architectures</text>
+
+  <!-- Bridge section -->
+  <!-- Biology box -->
+  <rect x="80" y="185" width="440" height="230" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <rect x="96" y="200" width="32" height="32" rx="8" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.3)" stroke-width="1"/>
+  <text x="140" y="222" font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#10b981" letter-spacing="1.5">BIOLOGY (NOWAK)</text>
+
+  <text x="112" y="262" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Replication</text>
+  <text x="112" y="296" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Mutation</text>
+  <text x="112" y="330" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Selection</text>
+  <text x="112" y="364" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Fitness</text>
+  <text x="112" y="398" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Error Threshold</text>
+
+  <!-- Arrows -->
+  <line x1="540" y1="262" x2="580" y2="262" stroke="url(#arrow)" stroke-width="2"/>
+  <polygon points="580,258 588,262 580,266" fill="#818cf8"/>
+  <line x1="540" y1="296" x2="580" y2="296" stroke="url(#arrow)" stroke-width="2"/>
+  <polygon points="580,292 588,296 580,300" fill="#818cf8"/>
+  <line x1="540" y1="330" x2="580" y2="330" stroke="url(#arrow)" stroke-width="2"/>
+  <polygon points="580,326 588,330 580,334" fill="#818cf8"/>
+  <line x1="540" y1="364" x2="580" y2="364" stroke="url(#arrow)" stroke-width="2"/>
+  <polygon points="580,360 588,364 580,368" fill="#818cf8"/>
+  <line x1="540" y1="398" x2="580" y2="398" stroke="url(#arrow)" stroke-width="2"/>
+  <polygon points="580,394 588,398 580,402" fill="#818cf8"/>
+
+  <!-- AI Agents box -->
+  <rect x="680" y="185" width="440" height="230" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <rect x="696" y="200" width="32" height="32" rx="8" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+  <text x="740" y="222" font-family="Inter,-apple-system,sans-serif" font-size="12" font-weight="700" fill="#818cf8" letter-spacing="1.5">AI AGENTS</text>
+
+  <text x="712" y="262" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Config Reuse</text>
+  <text x="712" y="296" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Prompt Variation</text>
+  <text x="712" y="330" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Quality Gate</text>
+  <text x="712" y="364" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Score + Cost</text>
+  <text x="712" y="398" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="500" fill="#cbd5e1">Context Limits</text>
+
+  <!-- Phase path -->
+  <text x="80" y="460" font-family="Inter,-apple-system,sans-serif" font-size="11" font-weight="600" fill="#64748b" letter-spacing="2">THE UPGRADE PATH</text>
+
+  <!-- Phase boxes -->
+  <rect x="80" y="478" width="200" height="56" rx="8" fill="rgba(251,191,36,0.08)" stroke="rgba(251,191,36,0.2)" stroke-width="1"/>
+  <circle cx="95" cy="490" r="3" fill="#fbbf24"/>
+  <text x="180" y="500" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#fbbf24">Prelife</text>
+  <text x="180" y="522" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" fill="#64748b">Manual curation</text>
+
+  <text x="300" y="507" font-family="Inter,-apple-system,sans-serif" font-size="14" fill="#334155">&rarr;</text>
+
+  <rect x="320" y="478" width="180" height="56" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="410" y="500" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#cbd5e1">Feedback</text>
+  <text x="410" y="522" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" fill="#64748b">Measure quality + cost</text>
+
+  <text x="520" y="507" font-family="Inter,-apple-system,sans-serif" font-size="14" fill="#334155">&rarr;</text>
+
+  <rect x="540" y="478" width="180" height="56" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="630" y="500" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#cbd5e1">Mutation</text>
+  <text x="630" y="522" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" fill="#64748b">A/B test variations</text>
+
+  <text x="740" y="507" font-family="Inter,-apple-system,sans-serif" font-size="14" fill="#334155">&rarr;</text>
+
+  <rect x="760" y="478" width="180" height="56" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="850" y="500" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#cbd5e1">Population</text>
+  <text x="850" y="522" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" fill="#64748b">Niching + diversity</text>
+
+  <text x="960" y="507" font-family="Inter,-apple-system,sans-serif" font-size="14" fill="#334155">&rarr;</text>
+
+  <rect x="980" y="478" width="140" height="56" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <text x="1050" y="500" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#10b981">Life</text>
+  <text x="1050" y="522" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="11" fill="#64748b">Full evolution</text>
+
+  <!-- Stats -->
+  <text x="240" y="580" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#818cf8">60+</text>
+  <text x="240" y="600" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="12" fill="#64748b">Papers</text>
+
+  <text x="480" y="580" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#10b981">7</text>
+  <text x="480" y="600" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="12" fill="#64748b">Principles</text>
+
+  <text x="720" y="580" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#fbbf24">5</text>
+  <text x="720" y="600" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="12" fill="#64748b">Phases</text>
+
+  <text x="960" y="580" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#f87171">9</text>
+  <text x="960" y="600" text-anchor="middle" font-family="Inter,-apple-system,sans-serif" font-size="12" fill="#64748b">Counter-Arguments</text>
+</svg>

@@ -33,6 +33,18 @@ This project connects Nowak's mathematical framework for evolutionary dynamics t
 - **Originator Simulator** — watch populations shift from Prelife to Life as replication rate increases
 - **Error Threshold Explorer** — adjust mutation rate and sequence length to find the boundary between Life and information loss
 
+## Example: What You Get
+
+The site includes two interactive simulations. The **Originator Simulator** lets you drag a slider to increase replication rate and watch a population shift from Prelife (no evolution) to Life (fittest replicators dominate):
+
+```
+r = 0.0  ████████████████████  Prelife — no replication, random drift
+r = 0.5  ████████▓▓▓▓▓▓██████  Phase transition — fittest begin to replicate
+r = 1.5  ▓▓▓▓▓▓▓▓▓▓██████████  Life — selection pressure drives improvement
+```
+
+The **Error Threshold Explorer** shows exactly how much mutation an agent system can tolerate before quality collapses — Nowak's error threshold, applied to prompt variation.
+
 ## The Core Bridge
 
 | Biology (Nowak) | Agent System | Example |
@@ -51,6 +63,14 @@ This project connects Nowak's mathematical framework for evolutionary dynamics t
 - [Mermaid](https://mermaid.js.org/) for diagrams
 - Bilingual (EN/DE) with client-side language toggle
 - Custom interactive simulations (vanilla JS + Canvas)
+
+## FAQ
+
+**Is this a formal proof?** No. It's a structural analogy — a design heuristic, not a mathematical proof. Where the analogy breaks, it's documented in the [Counter-Arguments](https://janrummel.github.io/evolving-agents/research/counter-arguments).
+
+**What can I DO with this?** Start with the [7 Principles](https://janrummel.github.io/evolving-agents/principles/) as a design checklist. If you want to implement, the [Phase 1 Spec](https://janrummel.github.io/evolving-agents/specs/phase-1-feedback-loop) is a SQL schema you can build in an afternoon.
+
+**Were papers actually read?** Core bridge papers (EvoFlow, MCE, AgentFactory) in full. The broader corpus via abstracts, reviews, and cross-verification. All limitations are documented transparently.
 
 ## Limitations
 
