@@ -88,7 +88,7 @@ The original spec targets `knowledge.db` and post_tool_call hooks. This implemen
 | knowledge.db | metrics.db (already existed) |
 | post_tool_call hook | Manual logging via AGENTS.md instruction |
 | Single agent | 5 agents (main + α/β/γ/δ) with agent_id tracking |
-| improve-Skill | skill-metrics.sh alerts command |
+| Improvement Loop | skill-metrics.sh alerts command |
 
 ## Connection to Nowak
 
@@ -250,7 +250,7 @@ Die ursprüngliche Spec zielt auf `knowledge.db` und post_tool_call Hooks. Diese
 | knowledge.db | metrics.db (existierte bereits) |
 | post_tool_call Hook | Manuelles Logging via AGENTS.md-Anweisung |
 | Einzelner Agent | 5 Agents (main + α/β/γ/δ) mit agent_id-Tracking |
-| improve-Skill | skill-metrics.sh alerts Befehl |
+| Improvement Loop | skill-metrics.sh alerts Befehl |
 
 ## Verbindung zu Nowak
 

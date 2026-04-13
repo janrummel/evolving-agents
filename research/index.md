@@ -13,6 +13,9 @@ has_children: true
 Syntheses, paper notes, open questions, and deep dives.
 {: .fs-6 .fw-300 }
 
+> **Note:** These are working research notes from an active implementation effort. Some documents are in German and reflect the iterative thinking process behind the synthesis.
+{: .note }
+
 | Document | What It Contains |
 |:---------|:-----------------|
 | [Nowak Synthesis](nowak-synthesis) | Originator equation, phase transitions, error threshold — mapped to agents |

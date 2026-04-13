@@ -411,12 +411,12 @@ Jedes Learning ist für unser AgentField-System nutzbar.
 **Praktische Konsequenz:**
 - AgentField IST bereits ein (manuelles) MCE-System
 - Der Schritt von manuell zu automatisiert ist formalisiert — wir müssen das Rad nicht neu erfinden
-- Die "deliberative search over historical skills, executions, and evaluations" ist genau das, was unser improve-Skill ansatzweise tut
+- Die "deliberative search over historical skills, executions, and evaluations" ist genau das, was ein Improvement-Loop in einem Agent-System ansatzweise tut
 
 **System-Verbesserung:**
 - MCE-Paper im Detail studieren
 - Prüfen welche MCE-Elemente wir automatisieren können
-- Pulse-Metriken als "evaluation signal" für Skill-Evolution nutzen
+- Usage-Metriken als "evaluation signal" für Skill-Evolution nutzen
 
 <div class="key-box amber"><h4>⚠️ Lesson Learned</h4><p>Wir hätten dieses Paper fast verpasst, weil wir nach "evolving agents" suchten, aber nicht nach "meta context engineering." Terminologische Lücken zwischen Feldern können die relevanteste Arbeit verstecken.</p></div>
 
