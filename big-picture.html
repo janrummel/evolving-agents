@@ -11,74 +11,67 @@
 
   body {
     font-family: 'Inter', -apple-system, sans-serif;
-    background: #0a0e1a;
+    background: #0f1629;
     color: #e2e8f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
 
-  /* LinkedIn optimal: 1200 x 627 (1.91:1) */
+  /* LinkedIn: 1200 x 627 */
   .canvas {
     width: 1200px;
     height: 627px;
     background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
-    border-radius: 0;
-    padding: 44px 56px 36px;
+    padding: 36px 52px 28px;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Subtle grid */
   .canvas::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-      radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.05) 1px, transparent 0);
-    background-size: 28px 28px;
+    background-image: radial-gradient(circle at 1px 1px, rgba(99,102,241,0.04) 1px, transparent 0);
+    background-size: 30px 30px;
     pointer-events: none;
   }
 
-  /* Glow accents */
   .glow-1 {
-    position: absolute;
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
-    top: -80px; right: -40px;
-    pointer-events: none;
+    position: absolute; width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%);
+    top: -100px; right: -50px; pointer-events: none;
   }
   .glow-2 {
-    position: absolute;
-    width: 250px; height: 250px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
-    bottom: -40px; left: -20px;
-    pointer-events: none;
+    position: absolute; width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);
+    bottom: -50px; left: -30px; pointer-events: none;
   }
 
   /* Header */
   .header {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     position: relative;
+    flex-shrink: 0;
   }
   .header .tag {
     display: inline-block;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: #818cf8;
-    background: rgba(99, 102, 241, 0.1);
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    padding: 5px 14px;
+    background: rgba(99,102,241,0.1);
+    border: 1px solid rgba(99,102,241,0.25);
+    padding: 5px 16px;
     border-radius: 100px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .header h1 {
-    font-size: 34px;
+    font-size: 42px;
     font-weight: 800;
     letter-spacing: -0.5px;
     background: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #10b981 100%);
@@ -86,64 +79,46 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 6px;
+    line-height: 1.1;
   }
   .header .subtitle {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 16px;
     color: #94a3b8;
-    line-height: 1.4;
-  }
-  .header .subtitle em {
-    color: #cbd5e1;
-    font-style: normal;
-    font-weight: 500;
+    line-height: 1.3;
   }
 
-  /* Bridge Section */
+  /* Bridge */
   .bridge {
     display: grid;
     grid-template-columns: 1fr 48px 1fr;
-    gap: 0;
-    margin-bottom: 24px;
-    position: relative;
+    margin-bottom: 20px;
+    flex-shrink: 0;
   }
 
   .domain {
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 12px;
-    padding: 18px 24px 14px;
+    padding: 14px 22px 10px;
   }
 
   .domain-header {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
   .domain-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px; height: 30px;
     border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 15px;
   }
-  .domain-icon.bio {
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.3);
-  }
-  .domain-icon.ai {
-    background: rgba(99, 102, 241, 0.15);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-  }
-  .domain-title {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
+  .domain-icon.bio { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); }
+  .domain-icon.ai { background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); }
+  .domain-title { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
   .domain-title.bio { color: #10b981; }
   .domain-title.ai { color: #818cf8; }
 
@@ -151,171 +126,93 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
   }
   .mapping-row:last-child { border-bottom: none; }
+  .mapping-label { font-size: 15px; font-weight: 600; color: #e2e8f0; }
+  .mapping-detail { font-size: 12px; color: #64748b; }
 
-  .mapping-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: #cbd5e1;
-  }
-  .mapping-detail {
-    font-size: 11px;
-    color: #64748b;
-    font-weight: 400;
-  }
-
-  /* Arrow column */
+  /* Arrows */
   .arrow-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 14px;
-    padding-top: 50px;
+    gap: 12px;
+    padding-top: 46px;
   }
-  .arrow {
-    width: 32px;
-    height: 2px;
-    position: relative;
-  }
-  .arrow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, #10b981, #818cf8);
-    border-radius: 2px;
-  }
-  .arrow::after {
-    content: '';
-    position: absolute;
-    right: -1px;
-    top: -3px;
-    width: 0; height: 0;
-    border-left: 5px solid #818cf8;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-  }
+  .arrow { width: 32px; height: 2px; position: relative; }
+  .arrow::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #10b981, #818cf8); border-radius: 2px; }
+  .arrow::after { content: ''; position: absolute; right: -1px; top: -3px; width: 0; height: 0; border-left: 5px solid #818cf8; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
 
   /* Phase Path */
   .phase-section {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    flex-shrink: 0;
   }
   .section-label {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #64748b;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   .phases {
     display: flex;
     align-items: center;
-    gap: 0;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 14px 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 12px 18px;
   }
-  .phase {
-    flex: 1;
-    text-align: center;
-    position: relative;
-  }
-  .phase-num {
-    font-size: 10px;
-    font-weight: 700;
-    color: #475569;
-    margin-bottom: 2px;
-  }
-  .phase-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: #cbd5e1;
-    margin-bottom: 2px;
-  }
-  .phase-desc {
-    font-size: 10px;
-    color: #64748b;
-    line-height: 1.3;
-  }
+  .phase { flex: 1; text-align: center; position: relative; }
+  .phase-num { font-size: 11px; font-weight: 700; color: #475569; margin-bottom: 1px; }
+  .phase-name { font-size: 14px; font-weight: 600; color: #cbd5e1; margin-bottom: 1px; }
+  .phase-desc { font-size: 11px; color: #64748b; line-height: 1.2; }
   .phase.active .phase-name { color: #fbbf24; }
   .phase.active .phase-num { color: #fbbf24; }
   .phase.active::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5px;
-    height: 5px;
-    background: #fbbf24;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+    content: ''; position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
+    width: 5px; height: 5px; background: #fbbf24; border-radius: 50%;
+    box-shadow: 0 0 10px rgba(251,191,36,0.5);
   }
-  .phase-arrow {
-    width: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #334155;
-    font-size: 14px;
-    flex-shrink: 0;
-  }
+  .phase-arrow { width: 20px; display: flex; align-items: center; justify-content: center; color: #334155; font-size: 13px; flex-shrink: 0; }
 
-  /* Stats bar */
+  /* Stats */
   .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
+    flex-shrink: 0;
   }
   .stat {
     text-align: center;
-    padding: 12px 10px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 8px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.05);
     border-radius: 10px;
   }
-  .stat-num {
-    font-size: 24px;
-    font-weight: 800;
-    margin-bottom: 2px;
-  }
+  .stat-num { font-size: 28px; font-weight: 800; line-height: 1; margin-bottom: 2px; }
   .stat-num.purple { color: #818cf8; }
   .stat-num.green { color: #10b981; }
   .stat-num.amber { color: #fbbf24; }
   .stat-num.red { color: #f87171; }
-  .stat-label {
-    font-size: 10px;
-    color: #64748b;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
+  .stat-label { font-size: 12px; color: #64748b; font-weight: 500; }
 
   /* Footer */
   .footer {
-    margin-top: 16px;
+    margin-top: auto;
+    padding-top: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
   }
-  .footer-left {
-    font-size: 11px;
-    color: #475569;
-  }
-  .footer-left a {
-    color: #818cf8;
-    text-decoration: none;
-  }
-  .footer-right {
-    font-size: 10px;
-    color: #334155;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
+  .footer-left { font-size: 13px; color: #475569; }
+  .footer-left a { color: #818cf8; text-decoration: none; }
+  .footer-right { font-size: 11px; color: #334155; font-weight: 600; letter-spacing: 1.5px; }
 </style>
 </head>
 <body>
@@ -328,37 +225,21 @@
   <div class="header">
     <div class="tag">Research Synthesis</div>
     <h1>Evolving Agents</h1>
-    <div class="subtitle">From Nowak's Evolvability Equations to AI Agent Architectures<br>
-    <em>The math for how systems improve already exists. Biology solved it.</em></div>
+    <div class="subtitle">From Nowak's Evolvability Equations to AI Agent Architectures</div>
   </div>
 
-  <!-- Bridge Mapping -->
+  <!-- Bridge -->
   <div class="bridge">
     <div class="domain">
       <div class="domain-header">
         <div class="domain-icon bio">&#x1F9EC;</div>
         <div class="domain-title bio">Biology (Nowak)</div>
       </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Replication</div>
-        <div class="mapping-detail">Sequence copying</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Mutation</div>
-        <div class="mapping-detail">Random variation</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Selection</div>
-        <div class="mapping-detail">Environmental pressure</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Fitness</div>
-        <div class="mapping-detail">Reproductive success</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Error Threshold</div>
-        <div class="mapping-detail">Max complexity limit</div>
-      </div>
+      <div class="mapping-row"><div class="mapping-label">Replication</div><div class="mapping-detail">Sequence copying</div></div>
+      <div class="mapping-row"><div class="mapping-label">Mutation</div><div class="mapping-detail">Random variation</div></div>
+      <div class="mapping-row"><div class="mapping-label">Selection</div><div class="mapping-detail">Environmental pressure</div></div>
+      <div class="mapping-row"><div class="mapping-label">Fitness</div><div class="mapping-detail">Reproductive success</div></div>
+      <div class="mapping-row"><div class="mapping-label">Error Threshold</div><div class="mapping-detail">Complexity limit</div></div>
     </div>
 
     <div class="arrow-col">
@@ -374,26 +255,11 @@
         <div class="domain-icon ai">&#x1F916;</div>
         <div class="domain-title ai">AI Agents</div>
       </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Config Reuse</div>
-        <div class="mapping-detail">Skill / prompt inheritance</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Prompt Variation</div>
-        <div class="mapping-detail">TextGrad, A/B tests</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Quality Gate</div>
-        <div class="mapping-detail">Evaluate + keep/discard</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Score + Cost</div>
-        <div class="mapping-detail">Quality &times; token efficiency</div>
-      </div>
-      <div class="mapping-row">
-        <div class="mapping-label">Context Limits</div>
-        <div class="mapping-detail">Window &amp; complexity cap</div>
-      </div>
+      <div class="mapping-row"><div class="mapping-label">Config Reuse</div><div class="mapping-detail">Skill inheritance</div></div>
+      <div class="mapping-row"><div class="mapping-label">Prompt Variation</div><div class="mapping-detail">TextGrad, A/B tests</div></div>
+      <div class="mapping-row"><div class="mapping-label">Quality Gate</div><div class="mapping-detail">Evaluate + keep/discard</div></div>
+      <div class="mapping-row"><div class="mapping-label">Score + Cost</div><div class="mapping-detail">Quality x efficiency</div></div>
+      <div class="mapping-row"><div class="mapping-label">Context Limits</div><div class="mapping-detail">Window cap</div></div>
     </div>
   </div>
 
@@ -445,7 +311,7 @@
     </div>
     <div class="stat">
       <div class="stat-num amber">5</div>
-      <div class="stat-label">Engineering Phases</div>
+      <div class="stat-label">Phases to Life</div>
     </div>
     <div class="stat">
       <div class="stat-num red">9</div>

@@ -22,22 +22,62 @@ $accent-red: #f87171;
 $accent-blue: #60a5fa;
 
 // --- Theme Overrides ---
-// Override just-the-docs dark background to match big-picture palette
+// Force just-the-docs dark background to match big-picture palette
 :root {
-  --body-background-color: #{$bg-deep};
-  --sidebar-color: #{$bg-mid};
-  --search-background-color: #{$bg-mid};
-  --border-color: #{$border-subtle};
-  --feedback-color: #{$accent-indigo};
+  --body-background-color: #{$bg-deep} !important;
+  --sidebar-color: #{$bg-mid} !important;
+  --search-background-color: #{$bg-mid} !important;
+  --border-color: #{$border-subtle} !important;
+  --feedback-color: #{$accent-indigo} !important;
+  --body-heading-color: #{$text-primary} !important;
+  --body-text-color: #{$text-secondary} !important;
+  --nav-child-link-color: #{$text-muted} !important;
+  --link-color: #{$accent-indigo} !important;
+  --btn-primary-color: #{$accent-indigo} !important;
+  --search-result-preview-color: #{$text-muted} !important;
+}
+
+body,
+html {
+  background-color: $bg-deep !important;
 }
 
 .side-bar {
-  background-color: $bg-mid;
+  background-color: $bg-mid !important;
   border-right: 1px solid $border-subtle;
 }
 
+.main,
 .main-content-wrap {
-  background: linear-gradient(180deg, $bg-deep 0%, darken($bg-deep, 2%) 100%);
+  background-color: $bg-deep !important;
+  background: $bg-deep !important;
+}
+
+// Search input
+.search-input {
+  background-color: $bg-mid !important;
+  border-color: $border-subtle !important;
+  color: $text-primary !important;
+}
+
+// Navigation
+.nav-list .nav-list-link {
+  color: $text-secondary !important;
+  &:hover { color: $text-primary !important; }
+  &.active { color: $text-primary !important; font-weight: 600; }
+}
+
+// Site header/footer
+.site-header,
+.site-footer {
+  background-color: $bg-mid !important;
+  border-color: $border-subtle !important;
+}
+
+// Code blocks
+code {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: $text-primary !important;
 }
 
 // --- Section Color Labels (sidebar nav) ---
