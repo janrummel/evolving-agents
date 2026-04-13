@@ -1,76 +1,141 @@
-// Apple HIG-inspired customizations for Evolving Agents
-// More whitespace, better typography, visual hierarchy
+// Evolving Agents — Design System
+// Aligned with big-picture.html palette
+// Background: #0f1629 → #1a1f3a | Accents: #818cf8, #10b981, #fbbf24, #f87171
+
+// --- Color Palette Variables ---
+$bg-deep: #0f1629;
+$bg-mid: #161d35;
+$bg-surface: rgba(255, 255, 255, 0.025);
+$bg-surface-hover: rgba(255, 255, 255, 0.05);
+$border-subtle: rgba(255, 255, 255, 0.06);
+$border-hover: rgba(99, 102, 241, 0.4);
+
+$text-primary: #e2e8f0;
+$text-secondary: #cbd5e1;
+$text-muted: #94a3b8;
+$text-dim: #64748b;
+
+$accent-indigo: #818cf8;
+$accent-green: #10b981;
+$accent-amber: #fbbf24;
+$accent-red: #f87171;
+$accent-blue: #60a5fa;
+
+// --- Theme Overrides ---
+// Override just-the-docs dark background to match big-picture palette
+:root {
+  --body-background-color: #{$bg-deep};
+  --sidebar-color: #{$bg-mid};
+  --search-background-color: #{$bg-mid};
+  --border-color: #{$border-subtle};
+  --feedback-color: #{$accent-indigo};
+}
+
+.side-bar {
+  background-color: $bg-mid;
+  border-right: 1px solid $border-subtle;
+}
+
+.main-content-wrap {
+  background: linear-gradient(180deg, $bg-deep 0%, darken($bg-deep, 2%) 100%);
+}
 
 // --- Section Color Labels (sidebar nav) ---
-// Research = blue, Principles = green, Engineering = purple, Meta = gray
 .nav-list .nav-list-item {
-  // Research section
   &:nth-child(2) > .nav-list-link {
-    border-left: 3px solid #60a5fa;
+    border-left: 3px solid $accent-blue;
     padding-left: 0.5rem;
   }
-  // Principles section
   &:nth-child(3) > .nav-list-link {
-    border-left: 3px solid #34d399;
+    border-left: 3px solid $accent-green;
     padding-left: 0.5rem;
   }
-  // Engineering section
   &:nth-child(4) > .nav-list-link {
     border-left: 3px solid #a78bfa;
     padding-left: 0.5rem;
   }
-  // Meta section
   &:nth-child(5) > .nav-list-link {
     border-left: 3px solid #6b7280;
     padding-left: 0.5rem;
   }
 }
 
-// --- Whitespace & Breathing Room ---
+// --- Whitespace & Typography ---
 .main-content {
-  h1 { margin-top: 2.5rem; margin-bottom: 1.25rem; }
-  h2 { margin-top: 2rem; margin-bottom: 1rem; }
-  h3 { margin-top: 1.5rem; margin-bottom: 0.75rem; }
+  h1 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: $text-primary;
+  }
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: $text-primary;
+  }
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: $text-secondary;
+  }
 
-  // Looser paragraph spacing
-  p { margin-bottom: 1rem; line-height: 1.7; }
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: $text-secondary;
+  }
 
-  // Tables — more breathing room
+  strong { color: $text-primary; }
+
   table {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
 
-    th, td { padding: 0.6rem 0.8rem; }
+    th {
+      color: $text-muted;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+    th, td {
+      padding: 0.6rem 0.8rem;
+      border-color: $border-subtle;
+    }
   }
 
-  // Blockquotes — used as key-insight callouts
   blockquote {
     margin: 1.5rem 0;
     padding: 1rem 1.25rem;
-    border-left: 4px solid #6366f1;
+    border-left: 4px solid $accent-indigo;
     border-radius: 0 8px 8px 0;
+    background: rgba(99, 102, 241, 0.05);
     font-style: normal;
 
     p { margin-bottom: 0.5rem; }
     p:last-child { margin-bottom: 0; }
   }
 
-  // Code blocks — more space around them
   pre {
     margin: 1.25rem 0;
     padding: 1rem;
     border-radius: 8px;
+    background: $bg-mid;
+    border: 1px solid $border-subtle;
   }
 
-  // Horizontal rules — section separators with space
   hr {
     margin: 2.5rem 0;
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid $border-subtle;
+  }
+
+  // Links — indigo accent
+  a {
+    color: $accent-indigo;
+    &:hover { color: lighten($accent-indigo, 10%); }
   }
 }
 
-// --- Landing Page Feature Cards ---
+// --- Feature Cards ---
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -79,35 +144,38 @@
 }
 
 .feature-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: $bg-surface;
+  border: 1px solid $border-subtle;
   border-radius: 12px;
   padding: 1.5rem;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease;
 
   &:hover {
-    border-color: rgba(99, 102, 241, 0.4);
+    border-color: $border-hover;
+    background: $bg-surface-hover;
   }
 
   h3 {
     margin-top: 0 !important;
     margin-bottom: 0.5rem !important;
     font-size: 1.1rem;
+    color: $text-primary;
   }
 
   p {
     font-size: 0.9rem;
-    opacity: 0.8;
+    color: $text-muted;
     margin-bottom: 0.5rem;
   }
 
   a {
     font-size: 0.85rem;
     font-weight: 600;
+    color: $accent-indigo;
   }
 }
 
-// --- Mermaid diagrams — constrained width ---
+// --- Mermaid diagrams ---
 .mermaid {
   margin: 1.5rem auto;
   max-width: 100%;
@@ -116,14 +184,14 @@
 
 // --- Principle blocks ---
 .principle-block {
-  background: rgba(99, 102, 241, 0.06);
-  border-left: 3px solid #6366f1;
+  background: rgba(99, 102, 241, 0.04);
+  border-left: 3px solid $accent-indigo;
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.25rem;
   margin: 1rem 0;
 
   strong:first-child {
-    color: #818cf8;
+    color: $accent-indigo;
   }
 }
 
@@ -139,18 +207,34 @@
   text-align: center;
   flex: 1;
   min-width: 100px;
+  padding: 16px 12px;
+  background: $bg-surface;
+  border: 1px solid $border-subtle;
+  border-radius: 10px;
 
   .stat-number {
     font-size: 2rem;
     font-weight: 700;
-    color: #818cf8;
+    color: $accent-indigo;
     display: block;
   }
 
   .stat-label {
     font-size: 0.8rem;
-    opacity: 0.6;
+    color: $text-dim;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
+}
+
+// --- Colored stat numbers (matching big-picture palette) ---
+.stat-item:nth-child(1) .stat-number { color: $accent-indigo; }
+.stat-item:nth-child(2) .stat-number { color: $accent-green; }
+.stat-item:nth-child(3) .stat-number { color: $accent-amber; }
+.stat-item:nth-child(4) .stat-number { color: $accent-red; }
+
+// --- Footer ---
+.site-footer {
+  border-top: 1px solid $border-subtle;
+  color: $text-dim;
 }

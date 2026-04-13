@@ -17,115 +17,118 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 40px;
+    padding: 20px;
   }
 
+  /* LinkedIn optimal: 1200 x 627 (1.91:1) */
   .canvas {
     width: 1200px;
-    min-height: 900px;
-    background: linear-gradient(135deg, #0f1629 0%, #1a1f3a 50%, #0f1629 100%);
-    border-radius: 24px;
-    padding: 56px 64px;
+    height: 627px;
+    background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
+    border-radius: 0;
+    padding: 44px 56px 36px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 0 80px rgba(99, 102, 241, 0.08), 0 0 200px rgba(99, 102, 241, 0.04);
   }
 
-  /* Subtle grid background */
+  /* Subtle grid */
   .canvas::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.06) 1px, transparent 0);
-    background-size: 32px 32px;
+      radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.05) 1px, transparent 0);
+    background-size: 28px 28px;
     pointer-events: none;
   }
 
   /* Glow accents */
   .glow-1 {
     position: absolute;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
-    top: -100px; right: -50px;
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+    top: -80px; right: -40px;
     pointer-events: none;
   }
   .glow-2 {
     position: absolute;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
-    bottom: -50px; left: -30px;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    bottom: -40px; left: -20px;
     pointer-events: none;
   }
 
   /* Header */
   .header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 28px;
     position: relative;
   }
   .header .tag {
     display: inline-block;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: #818cf8;
     background: rgba(99, 102, 241, 0.1);
     border: 1px solid rgba(99, 102, 241, 0.2);
-    padding: 6px 16px;
+    padding: 5px 14px;
     border-radius: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
   .header h1 {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 800;
     letter-spacing: -0.5px;
     background: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #10b981 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
   .header .subtitle {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: #94a3b8;
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1.4;
+  }
+  .header .subtitle em {
+    color: #cbd5e1;
+    font-style: normal;
+    font-weight: 500;
   }
 
   /* Bridge Section */
   .bridge {
     display: grid;
-    grid-template-columns: 1fr 64px 1fr;
+    grid-template-columns: 1fr 48px 1fr;
     gap: 0;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
     position: relative;
   }
 
   .domain {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.025);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 28px 32px;
+    border-radius: 12px;
+    padding: 18px 24px 14px;
   }
 
   .domain-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 12px;
   }
   .domain-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 14px;
   }
   .domain-icon.bio {
     background: rgba(16, 185, 129, 0.15);
@@ -136,7 +139,7 @@
     border: 1px solid rgba(99, 102, 241, 0.3);
   }
   .domain-title {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -147,19 +150,19 @@
   .mapping-row {
     display: flex;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   }
   .mapping-row:last-child { border-bottom: none; }
 
   .mapping-label {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: #cbd5e1;
-    flex: 1;
   }
   .mapping-detail {
-    font-size: 12px;
+    font-size: 11px;
     color: #64748b;
     font-weight: 400;
   }
@@ -170,11 +173,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 18px;
-    padding-top: 70px;
+    gap: 14px;
+    padding-top: 50px;
   }
   .arrow {
-    width: 40px;
+    width: 32px;
     height: 2px;
     position: relative;
   }
@@ -191,31 +194,31 @@
     right: -1px;
     top: -3px;
     width: 0; height: 0;
-    border-left: 6px solid #818cf8;
+    border-left: 5px solid #818cf8;
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
   }
 
   /* Phase Path */
   .phase-section {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
   .section-label {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #64748b;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
   .phases {
     display: flex;
     align-items: center;
     gap: 0;
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 20px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 14px 20px;
   }
   .phase {
     flex: 1;
@@ -223,116 +226,84 @@
     position: relative;
   }
   .phase-num {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     color: #475569;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .phase-name {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     color: #cbd5e1;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
   .phase-desc {
-    font-size: 11px;
+    font-size: 10px;
     color: #64748b;
     line-height: 1.3;
   }
-
-  .phase.active .phase-name {
-    color: #fbbf24;
-  }
-  .phase.active .phase-num {
-    color: #fbbf24;
-  }
+  .phase.active .phase-name { color: #fbbf24; }
+  .phase.active .phase-num { color: #fbbf24; }
   .phase.active::before {
     content: '';
     position: absolute;
-    top: -12px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     background: #fbbf24;
     border-radius: 50%;
-    box-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
   }
-
   .phase-arrow {
-    width: 32px;
+    width: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #334155;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-
-  /* The Gap callout */
-  .gap-callout {
-    background: linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, rgba(251, 191, 36, 0.03) 100%);
-    border: 1px solid rgba(251, 191, 36, 0.15);
-    border-radius: 12px;
-    padding: 16px 24px;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .gap-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-  }
-  .gap-text {
     font-size: 14px;
-    color: #fbbf24;
-    font-weight: 500;
-  }
-  .gap-text span {
-    color: #94a3b8;
-    font-weight: 400;
+    flex-shrink: 0;
   }
 
   /* Stats bar */
   .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 12px;
   }
   .stat {
     text-align: center;
-    padding: 20px 16px;
+    padding: 12px 10px;
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
   }
   .stat-num {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 800;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .stat-num.purple { color: #818cf8; }
   .stat-num.green { color: #10b981; }
   .stat-num.amber { color: #fbbf24; }
   .stat-num.red { color: #f87171; }
   .stat-label {
-    font-size: 12px;
+    font-size: 10px;
     color: #64748b;
     font-weight: 500;
+    letter-spacing: 0.5px;
   }
 
   /* Footer */
   .footer {
-    margin-top: 32px;
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
   }
   .footer-left {
-    font-size: 12px;
+    font-size: 11px;
     color: #475569;
   }
   .footer-left a {
@@ -340,29 +311,10 @@
     text-decoration: none;
   }
   .footer-right {
-    font-size: 11px;
+    font-size: 10px;
     color: #334155;
     font-weight: 500;
     letter-spacing: 1px;
-  }
-
-  /* Key insight */
-  .insight {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 0 40px;
-  }
-  .insight-text {
-    font-size: 18px;
-    font-weight: 400;
-    color: #94a3b8;
-    line-height: 1.6;
-    font-style: italic;
-  }
-  .insight-text strong {
-    color: #e2e8f0;
-    font-weight: 600;
-    font-style: normal;
   }
 </style>
 </head>
@@ -376,20 +328,12 @@
   <div class="header">
     <div class="tag">Research Synthesis</div>
     <h1>Evolving Agents</h1>
-    <div class="subtitle">From Nowak's Evolvability Equations to AI Agent Architectures</div>
-  </div>
-
-  <!-- Central Insight -->
-  <div class="insight">
-    <div class="insight-text">
-      The math for <strong>how systems improve</strong> already exists.<br>
-      Biology solved it. AI agents can reuse the same structure.
-    </div>
+    <div class="subtitle">From Nowak's Evolvability Equations to AI Agent Architectures<br>
+    <em>The math for how systems improve already exists. Biology solved it.</em></div>
   </div>
 
   <!-- Bridge Mapping -->
   <div class="bridge">
-    <!-- Biology side -->
     <div class="domain">
       <div class="domain-header">
         <div class="domain-icon bio">&#x1F9EC;</div>
@@ -417,7 +361,6 @@
       </div>
     </div>
 
-    <!-- Arrows -->
     <div class="arrow-col">
       <div class="arrow"></div>
       <div class="arrow"></div>
@@ -426,7 +369,6 @@
       <div class="arrow"></div>
     </div>
 
-    <!-- AI Agents side -->
     <div class="domain">
       <div class="domain-header">
         <div class="domain-icon ai">&#x1F916;</div>
@@ -434,7 +376,7 @@
       </div>
       <div class="mapping-row">
         <div class="mapping-label">Config Reuse</div>
-        <div class="mapping-detail">SKILL.md inheritance</div>
+        <div class="mapping-detail">Skill / prompt inheritance</div>
       </div>
       <div class="mapping-row">
         <div class="mapping-label">Prompt Variation</div>
@@ -442,7 +384,7 @@
       </div>
       <div class="mapping-row">
         <div class="mapping-label">Quality Gate</div>
-        <div class="mapping-detail">Evaluation + keep/discard</div>
+        <div class="mapping-detail">Evaluate + keep/discard</div>
       </div>
       <div class="mapping-row">
         <div class="mapping-label">Score + Cost</div>
@@ -455,14 +397,6 @@
     </div>
   </div>
 
-  <!-- The Gap -->
-  <div class="gap-callout">
-    <div class="gap-icon">&#x26A0;&#xFE0F;</div>
-    <div class="gap-text">
-      Most agent systems are stuck in "Prelife" &mdash; <span>diversity exists, but the feedback loop is open. Evaluation results die after scoring instead of driving improvement.</span>
-    </div>
-  </div>
-
   <!-- Phase Path -->
   <div class="phase-section">
     <div class="section-label">The Upgrade Path: Prelife &rarr; Life</div>
@@ -470,31 +404,31 @@
       <div class="phase active">
         <div class="phase-num">Phase 0</div>
         <div class="phase-name">Prelife</div>
-        <div class="phase-desc">Manual curation,<br>no feedback loop</div>
+        <div class="phase-desc">Manual curation</div>
       </div>
       <div class="phase-arrow">&rarr;</div>
       <div class="phase">
         <div class="phase-num">Phase 1</div>
         <div class="phase-name">Feedback</div>
-        <div class="phase-desc">Measure quality<br>+ cost per skill</div>
+        <div class="phase-desc">Measure quality + cost</div>
       </div>
       <div class="phase-arrow">&rarr;</div>
       <div class="phase">
         <div class="phase-num">Phase 2</div>
         <div class="phase-name">Mutation</div>
-        <div class="phase-desc">A/B test prompt<br>variations</div>
+        <div class="phase-desc">A/B test variations</div>
       </div>
       <div class="phase-arrow">&rarr;</div>
       <div class="phase">
         <div class="phase-num">Phase 3</div>
         <div class="phase-name">Population</div>
-        <div class="phase-desc">Niching, diversity<br>management</div>
+        <div class="phase-desc">Niching + diversity</div>
       </div>
       <div class="phase-arrow">&rarr;</div>
       <div class="phase">
         <div class="phase-num">Phase 4</div>
         <div class="phase-name">Life</div>
-        <div class="phase-desc">Full evolution,<br>faster than manual</div>
+        <div class="phase-desc">Full evolution</div>
       </div>
     </div>
   </div>
@@ -502,19 +436,19 @@
   <!-- Stats -->
   <div class="stats">
     <div class="stat">
-      <div class="stat-num purple">55+</div>
+      <div class="stat-num purple">60+</div>
       <div class="stat-label">Papers Curated</div>
     </div>
     <div class="stat">
-      <div class="stat-num green">6</div>
+      <div class="stat-num green">7</div>
       <div class="stat-label">Design Principles</div>
     </div>
     <div class="stat">
-      <div class="stat-num amber">4</div>
+      <div class="stat-num amber">5</div>
       <div class="stat-label">Engineering Phases</div>
     </div>
     <div class="stat">
-      <div class="stat-num red">8</div>
+      <div class="stat-num red">9</div>
       <div class="stat-label">Counter-Arguments</div>
     </div>
   </div>
@@ -522,7 +456,7 @@
   <!-- Footer -->
   <div class="footer">
     <div class="footer-left">
-      Jan Rummel &middot; <a href="https://github.com/janrummel/evolving-agents">github.com/janrummel/evolving-agents</a> &middot; CC BY-SA 4.0
+      Jan Rummel &middot; <a href="https://janrummel.github.io/evolving-agents/">janrummel.github.io/evolving-agents</a> &middot; CC BY-SA 4.0
     </div>
     <div class="footer-right">BUILT WITH CLAUDE CODE</div>
   </div>
