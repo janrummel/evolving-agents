@@ -84,12 +84,12 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 
 **Source:** Nowak's phase transition (rₓ) → agent systems (Section 4.4, Q1)
 **Question:** Can we define a critical "replication rate" for agent workflows — the point at which template reuse (AGENTS.md, SKILL.md) begins to dominate over ad-hoc configuration?
-**Approach:** Observational study on AgentField usage patterns. Track when skills stabilize vs. keep changing.
+**Approach:** Observational study on agent system usage patterns. Track when skills stabilize vs. keep changing.
 **Status:** Not started
 
 <div class="key-box green">
 <h4>💡 Key Insight</h4>
-<p>This is the "origin of life" question for agent systems: the phase transition from random configuration to structured templates. Observable in existing AgentField deployments.</p>
+<p>This is the "origin of life" question for agent systems: the phase transition from random configuration to structured templates. Observable in any production agent deployment.</p>
 </div>
 
 </div>
@@ -98,12 +98,12 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 
 **Quelle:** Nowaks Phasenübergang (rₓ) → Agent-Systeme (Abschnitt 4.4, Q1)
 **Frage:** Lässt sich eine kritische „Replikationsrate" für Agent-Workflows definieren — der Punkt, ab dem Template-Wiederverwendung (AGENTS.md, SKILL.md) gegenüber Ad-hoc-Konfiguration dominiert?
-**Ansatz:** Beobachtungsstudie zu AgentField-Nutzungsmustern. Verfolgen, wann Skills sich stabilisieren vs. weiter verändern.
+**Ansatz:** Beobachtungsstudie zu Agent-System-Nutzungsmustern. Verfolgen, wann Skills sich stabilisieren vs. weiter verändern.
 **Status:** Nicht begonnen
 
 <div class="key-box green">
 <h4>💡 Kernerkenntnis</h4>
-<p>Die „Origin of Life"-Frage für Agent-Systeme: der Phasenübergang von zufälliger Konfiguration zu strukturierten Templates. Beobachtbar in bestehenden AgentField-Deployments.</p>
+<p>Die „Origin of Life"-Frage für Agent-Systeme: der Phasenübergang von zufälliger Konfiguration zu strukturierten Templates. Beobachtbar in jedem produktiven Agent-Deployment.</p>
 </div>
 
 </div>
@@ -198,11 +198,11 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 <p><span lang="en">These require fundamental progress in the field. Worth tracking, not worth building for yet.</span><span lang="de">Diese erfordern fundamentalen Fortschritt im Feld. Wert zu beobachten, noch nicht wert dafür zu bauen.</span></p>
 </div>
 
-### Q6: Self-Evolving AgentField
+### Q6: Self-Evolving Agent Systems
 
 <div lang="en" markdown="1">
 
-**Question:** Can AgentField evolve its own skill library? Skills that perform well get reinforced, poor performers get mutated or removed, new skills emerge from combinations.
+**Question:** Can an agent system evolve its own skill library? Skills that perform well get reinforced, poor performers get mutated or removed, new skills emerge from combinations.
 **Connection:** This is the full loop — Nowak's evolution applied to a live agent system.
 
 <div class="key-box amber">
@@ -214,7 +214,7 @@ Forschungsfragen, die untersucht werden müssen. Priorisiert nach Bearbeitbarkei
 
 <div lang="de" markdown="1">
 
-**Frage:** Kann AgentField seine eigene Skill-Bibliothek evolvieren? Gut performende Skills werden verstärkt, schlecht performende mutiert oder entfernt, neue Skills entstehen durch Kombination.
+**Frage:** Kann ein Agent-System seine eigene Skill-Bibliothek evolvieren? Gut performende Skills werden verstärkt, schlecht performende mutiert oder entfernt, neue Skills entstehen durch Kombination.
 **Verbindung:** Das ist der vollständige Loop — Nowaks Evolution angewandt auf ein Live-Agent-System.
 
 <div class="key-box amber">

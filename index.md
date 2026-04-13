@@ -136,10 +136,10 @@ description: "Why do some AI agent systems get better over time? Nowak's math, 6
 <summary style="cursor:pointer;padding:12px 0;font-size:1.05em"><strong>🔬 Why Current Agent Systems Are in the Prelife Phase</strong></summary>
 <div markdown="1" style="padding-bottom:12px">
 
-Following Nowak's terminology, most agent systems today — including AgentField — are in the **"Prelife" phase**:
+Following Nowak's terminology, most agent systems today are in the **"Prelife" phase**:
 
-- ✅ **Diversity** exists (~30 skills)
-- ✅ **Selection** exists (Quality Gate)
+- ✅ **Diversity** exists (many skills, prompts, workflows)
+- ✅ **Selection** exists (quality gates, evaluations)
 - ❌ **Replication** is missing — no automatic inheritance of successful patterns
 
 This is not a problem. Prelife is already generative. But the step to "Life" mode is missing: **the closed evolutionary loop.**
@@ -174,10 +174,10 @@ EvoFlow shows empirically: The step from Phase 0 (manual workflows) to Phase 3 (
 <summary style="cursor:pointer;padding:12px 0;font-size:1.05em"><strong>🔬 Warum aktuelle Agent-Systeme in der Prelife-Phase sind</strong></summary>
 <div markdown="1" style="padding-bottom:12px">
 
-Nach Nowaks Terminologie befinden sich die meisten Agent-Systeme heute — einschließlich AgentField — in der **"Prelife"-Phase**:
+Nach Nowaks Terminologie befinden sich die meisten Agent-Systeme heute in der **"Prelife"-Phase**:
 
-- ✅ **Diversität** vorhanden (~30 Skills)
-- ✅ **Selektion** vorhanden (Quality-Gate)
+- ✅ **Diversität** vorhanden (viele Skills, Prompts, Workflows)
+- ✅ **Selektion** vorhanden (Quality-Gates, Evaluierungen)
 - ❌ **Replikation** fehlt — keine automatische Vererbung erfolgreicher Muster
 
 Das ist nicht schlimm. Prelife ist bereits generativ. Aber es fehlt der Schritt zum "Life"-Modus: **der geschlossene evolutionäre Loop.**

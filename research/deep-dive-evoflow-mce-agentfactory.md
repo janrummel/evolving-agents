@@ -5,7 +5,7 @@ parent: Research
 nav_order: 3
 ---
 
-# Deep Dive: EvoFlow, MCE, AgentFactory — und was AgentField daraus lernen kann
+# Deep Dive: EvoFlow, MCE, AgentFactory — und was Agent-Systeme daraus lernen können
 
 {: .note }
 > **Reading: 3 of 5** · After reading this, you'll understand how EvoFlow implements niching selection for workflows, how MCE formalizes skill co-evolution, and a concrete 4-phase upgrade path from Prelife to full agent evolution.
@@ -83,9 +83,9 @@ Base-Agent (untere Ebene)
 
 ---
 
-## 2. Die Isomorphie-Tabelle: EvoFlow → MCE → AgentFactory → AgentField
+## 2. Die Isomorphie-Tabelle: EvoFlow → MCE → AgentFactory → Dein System
 
-| Konzept | EvoFlow | MCE | AgentFactory | AgentField | Status bei uns |
+| Konzept | EvoFlow | MCE | AgentFactory | Dein System | Typischer Status |
 |---------|---------|-----|-------------|------------|----------------|
 | **Basiseinheit** | Invoking Node (M, P, τ) | CE Skill | Executable Subagent (Python) | Skill (SKILL.md) | ✅ Vorhanden |
 | **Komposition** | Operator Node (Knoten-Cluster) | Skill-Kette | Subagent-Bibliothek | Skill-Chain (max 4) | ✅ Vorhanden |
@@ -99,11 +99,11 @@ Base-Agent (untere Ebene)
 | **Feedback-Loop** | Benchmark-Evaluation → Selection | Meta-Agent-Evaluation | Execution Feedback → Refinement | Usage-Metriken + Quality-Gate | ⚠️ Feedback existiert, Loop fehlt |
 | **Cost-Awareness** | Multi-Objective (Quality + Cost) | Effizienz als Nebenziel | Aufwandsreduktion als Ziel | — | ❌ Kein Token-Cost-Tracking |
 
-**Legende:** ✅ = haben wir, ⚠️ = teilweise, ❌ = fehlt
+**Legende:** ✅ = typischerweise vorhanden, ⚠️ = teilweise, ❌ = fehlt meist
 
 ---
 
-## 3. Was AgentField konkret lernen kann
+## 3. Was Agent-Systeme daraus lernen können
 
 ### 3.1 Sofort umsetzbar: Cost-Tracking als zweite Optimierungsachse
 
@@ -152,7 +152,7 @@ Base-Agent (untere Ebene)
 
 ## 4. Die Nowak-Brücke — formale Entsprechungen
 
-| Nowak | EvoFlow | AgentField (Ist) | AgentField (Soll) |
+| Nowak | EvoFlow | Typisches System (Ist) | Ziel (Soll) |
 |-------|---------|-------------------|-------------------|
 | Sequenz/Replikator | Invoking Node (M,P,τ) | Skill (SKILL.md) | Skill mit Version + Tags |
 | Fitness fᵢ | Utility u(G,q) | Quality-Score | Quality + Cost (Pareto) |
@@ -164,11 +164,11 @@ Base-Agent (untere Ebene)
 | Prelife → Life | Seed → evolvierte Population | Manuell → ? | Manuell → automatisch |
 | Kooperation (Γ) | Workflow-Komposition | Skill-Chains | Messbare Kooperationsgewinne |
 
-**Schlüsselbeobachtung:** AgentField befindet sich derzeit in der **"Prelife"-Phase** nach Nowaks Terminologie — es gibt Diversität und Selektion (Quality-Gate), aber keine **Replikation** (automatische Vererbung erfolgreicher Muster). EvoFlow zeigt, wie der Phasenübergang zu "Life" aussehen könnte.
+**Schlüsselbeobachtung:** Die meisten Agent-Systeme befinden sich derzeit in der **"Prelife"-Phase** nach Nowaks Terminologie — es gibt Diversität und Selektion, aber keine **Replikation** (automatische Vererbung erfolgreicher Muster). EvoFlow zeigt, wie der Phasenübergang zu "Life" aussehen könnte.
 
 ---
 
-## 5. Der Upgrade-Pfad: Prelife → Life für AgentField
+## 5. Der Upgrade-Pfad: Prelife → Life
 
 ```
 Phase 0 (JETZT): Prelife
