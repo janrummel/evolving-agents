@@ -31,5 +31,11 @@ for n in 1 2 3 4 5 6; do
 done
 
 echo ""
+echo "Cropping PNGs to exact 1080x1350 (LinkedIn carousel spec)…"
+for png in "$DIR"/slide-*.png; do
+  sips -c 1350 1080 "$png" >/dev/null 2>&1 || true
+done
+
+echo ""
 echo "Done. PNGs:"
 ls -lh "$DIR"/slide-*.png
