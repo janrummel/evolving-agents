@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-# Renders all six slides to 1200x627 PNG using Headless Chrome.
+# Renders all six slides to 1080x1350 PNG (4:5 portrait) using Headless Chrome.
+# Window-size includes 30px buffer (1080x1380) to prevent footer clipping.
 # Usage: ./render-all.sh
 
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
@@ -24,7 +25,7 @@ for n in 1 2 3 4 5 6; do
     --headless=new \
     --disable-gpu \
     --hide-scrollbars \
-    --window-size=1200,627 \
+    --window-size=1080,1380 \
     --screenshot="$PNG" \
     "file://$HTML"
 done

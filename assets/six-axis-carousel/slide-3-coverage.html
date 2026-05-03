@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Six-Axis Carousel — Slide 3: Coverage</title>
+<title>Six-Axis Carousel — Slide 3: Coverage Heatmap</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -10,9 +10,9 @@
   body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1629; margin: 0; padding: 0; }
 
   .canvas {
-    width: 1200px; height: 627px;
+    width: 1080px; height: 1350px;
     background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
-    padding: 56px 72px;
+    padding: 64px 72px;
     position: relative;
     overflow: hidden;
   }
@@ -23,59 +23,179 @@
     background-size: 28px 28px; pointer-events: none;
   }
 
-  h1, h2, h3 { color: #ffffff; font-weight: 700; }
-  h1 { font-size: 44px; line-height: 1.15; letter-spacing: -0.02em; }
-  h2 { font-size: 32px; line-height: 1.2; letter-spacing: -0.015em; }
-  p, li { color: #cbd5e1; font-size: 18px; line-height: 1.55; }
+  h1 { color: #ffffff; font-weight: 700; font-size: 42px; line-height: 1.18; letter-spacing: -0.02em; }
   .accent { color: #818cf8; }
-  .accent-strong { color: #6366f1; }
-  code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #a5b4fc; }
 
   .footer {
-    position: absolute; bottom: 24px; right: 32px;
-    font-size: 13px; color: #64748b; font-weight: 500;
-    letter-spacing: 0.05em;
+    position: absolute; bottom: 32px; right: 40px;
+    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
   }
   .brand {
-    position: absolute; bottom: 24px; left: 32px;
-    font-size: 13px; color: #64748b; font-weight: 500;
-    letter-spacing: 0.05em;
+    position: absolute; bottom: 32px; left: 40px;
+    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
+  }
+
+  table.heat {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 6px;
+    font-size: 14px;
+  }
+  table.heat th {
+    text-align: center;
+    color: #818cf8;
+    font-weight: 700;
+    padding: 14px 4px;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  table.heat th.fw {
+    text-align: left;
+    color: #cbd5e1;
+    text-transform: none;
+    letter-spacing: 0;
+    padding-left: 4px;
+  }
+  table.heat td.fw-cell {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 14px 12px;
+    background: rgba(30, 27, 75, 0.4);
+    border-radius: 8px;
+    line-height: 1.3;
+  }
+  table.heat td.fw-cell .sub {
+    display: block;
+    font-size: 12px;
+    color: #94a3b8;
+    margin-top: 3px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  td.cell {
+    width: 100px;
+    height: 64px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  td.cell.direct {
+    background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+    color: #6ee7b7;
+    border: 1px solid #10b981;
+  }
+  td.cell.indirect {
+    background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+    color: #fde68a;
+    border: 1px solid #f59e0b;
+  }
+  td.cell.none {
+    background: #1e293b;
+    color: #475569;
+    border: 1px solid #334155;
   }
 </style>
 </head>
 <body>
 <div class="canvas">
-  <div style="display: flex; flex-direction: column; height: 100%;">
-    <h1 style="font-size: 30px; margin-bottom: 20px;">No single framework covers more than <span class="accent">1–2 axes</span>.</h1>
-    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 24px;">
+    <div style="font-size: 14px; color: #818cf8; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">
+      Coverage Heatmap
+    </div>
+    <h1 style="margin-bottom: 32px;">No framework covers more than <span class="accent">1–2 axes</span>.</h1>
+
+    <table class="heat">
       <thead>
-        <tr style="border-bottom: 2px solid #312e81;">
-          <th style="padding: 8px 10px; text-align: left; color: #cbd5e1; font-weight: 600;">Framework</th>
-          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Arch</th>
-          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Trust</th>
-          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Gov</th>
-          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Domain</th>
-          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Strategy</th>
-          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Ops</th>
+        <tr>
+          <th class="fw" style="width: 280px;">Framework</th>
+          <th>Arch</th>
+          <th>Trust</th>
+          <th>Gov</th>
+          <th>Domain</th>
+          <th>Strat</th>
+          <th>Ops</th>
         </tr>
       </thead>
-      <tbody style="color: #cbd5e1;">
-        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">arXiv 2601.12560 (Arunkumar)</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td></tr>
-        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">arXiv 2602.04261 (Luo, SIGMOD)</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td></tr>
-        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">AAGMM (Acharya)</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td></tr>
-        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">ATF (Cloud Security Alliance)</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#f59e0b;">◐</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td></tr>
-        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">Microsoft Copilot Studio CMM</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td><td style="text-align:center; color:#10b981;">●</td></tr>
-        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">Sema4.ai</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#f59e0b;">◐</td></tr>
-        <tr><td style="padding: 10px;">Salesforce AMM</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td></tr>
+      <tbody>
+        <tr>
+          <td class="fw-cell">arXiv 2601<span class="sub">Arunkumar</span></td>
+          <td class="cell direct">Direct</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+        </tr>
+        <tr>
+          <td class="fw-cell">arXiv 2602<span class="sub">Luo · SIGMOD</span></td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell direct">Direct</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+        </tr>
+        <tr>
+          <td class="fw-cell">AAGMM<span class="sub">Acharya</span></td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell direct">Direct</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell indirect">Indir.</td>
+        </tr>
+        <tr>
+          <td class="fw-cell">ATF<span class="sub">Cloud Sec. Alliance</span></td>
+          <td class="cell none">—</td>
+          <td class="cell direct">Direct</td>
+          <td class="cell indirect">Indir.</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+        </tr>
+        <tr>
+          <td class="fw-cell">MS Copilot CMM<span class="sub">Microsoft</span></td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell indirect">Indir.</td>
+          <td class="cell none">—</td>
+          <td class="cell indirect">Indir.</td>
+          <td class="cell direct">Direct</td>
+        </tr>
+        <tr>
+          <td class="fw-cell">Sema4.ai<span class="sub">vendor</span></td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell direct">Direct</td>
+          <td class="cell indirect">Indir.</td>
+        </tr>
+        <tr>
+          <td class="fw-cell">Salesforce AMM<span class="sub">vendor</span></td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell none">—</td>
+          <td class="cell indirect">Indir.</td>
+        </tr>
       </tbody>
     </table>
-    <div style="margin-top: 18px; font-size: 14px; color: #94a3b8;">
-      <span style="color: #10b981;">●</span> direct &nbsp;·&nbsp;
-      <span style="color: #f59e0b;">◐</span> indirect &nbsp;·&nbsp;
-      <span style="color: #475569;">○</span> not addressed
+
+    <div style="margin-top: 28px; display: flex; gap: 28px; font-size: 14px; color: #94a3b8;">
+      <span><span style="display: inline-block; width: 14px; height: 14px; background: #047857; border-radius: 3px; vertical-align: middle; margin-right: 8px;"></span>Direct coverage</span>
+      <span><span style="display: inline-block; width: 14px; height: 14px; background: #92400e; border-radius: 3px; vertical-align: middle; margin-right: 8px;"></span>Indirect / partial</span>
+      <span><span style="display: inline-block; width: 14px; height: 14px; background: #1e293b; border: 1px solid #334155; border-radius: 3px; vertical-align: middle; margin-right: 8px;"></span>Not addressed</span>
     </div>
-    <div style="margin-top: 14px; font-size: 16px; color: #cbd5e1; font-style: italic;">
-      Each framework was developed for one perspective. Together they cover the field.
+
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #312e81; font-size: 18px; color: #cbd5e1; font-style: italic; line-height: 1.5;">
+      Each framework was built for one perspective. <br>
+      No single one gives you the whole picture — you need the full map.
     </div>
   </div>
   <div class="brand">evolving-agents · janrummel</div>

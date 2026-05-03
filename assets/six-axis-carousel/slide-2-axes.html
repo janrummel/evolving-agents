@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Six-Axis Carousel — Slide 2: The 6 Axes</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1629; margin: 0; padding: 0; }
+
+  .canvas {
+    width: 1080px; height: 1350px;
+    background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
+    padding: 64px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .canvas::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(99,102,241,0.04) 1px, transparent 0);
+    background-size: 28px 28px; pointer-events: none;
+  }
+
+  h1 { color: #ffffff; font-weight: 700; font-size: 42px; line-height: 1.18; letter-spacing: -0.02em; }
+  .accent { color: #818cf8; }
+
+  .footer {
+    position: absolute; bottom: 32px; right: 40px;
+    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
+  }
+  .brand {
+    position: absolute; bottom: 32px; left: 40px;
+    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
+  }
+
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    flex: 1;
+  }
+
+  .card {
+    border: 1px solid #312e81;
+    border-radius: 14px;
+    padding: 26px 24px;
+    background: rgba(30, 27, 75, 0.32);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #6366f1;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.1em;
+  }
+  .card-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .card-question {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    flex: 1;
+  }
+  .card-fw {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #a5b4fc;
+    background: #1e1b4b;
+    border: 1px solid #4338ca;
+    border-radius: 999px;
+    padding: 4px 12px;
+    align-self: flex-start;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 24px;">
+    <div style="font-size: 14px; color: #818cf8; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">
+      The Six-Axis Map
+    </div>
+    <h1 style="margin-bottom: 36px;">Each axis answers <span class="accent">one question</span>.</h1>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-num">01 · Architecture</div>
+        <div class="card-title">Which components exist?</div>
+        <div class="card-question">Perception · Memory · Action · Profiling · Planning · Reflection — does the agent have all six?</div>
+        <div class="card-fw">arXiv 2601</div>
+      </div>
+      <div class="card">
+        <div class="card-num">02 · Trust</div>
+        <div class="card-title">How much autonomy is justified?</div>
+        <div class="card-question">From Intern to Principal — is the agent trustworthy enough to act unsupervised?</div>
+        <div class="card-fw">ATF (CSA)</div>
+      </div>
+      <div class="card">
+        <div class="card-num">03 · Governance</div>
+        <div class="card-title">How controlled is the portfolio?</div>
+        <div class="card-question">5 levels × 12 domains — risk, audit, NIST AI RMF, ISO 42001 alignment.</div>
+        <div class="card-fw">AAGMM</div>
+      </div>
+      <div class="card">
+        <div class="card-num">04 · Domain</div>
+        <div class="card-title">How mature per sub-domain?</div>
+        <div class="card-question">L0 to L5, SAE-J3016-style — from manual review to full self-direction in one task type.</div>
+        <div class="card-fw">arXiv 2602</div>
+      </div>
+      <div class="card">
+        <div class="card-num">05 · Strategy</div>
+        <div class="card-title">How strategically embedded?</div>
+        <div class="card-question">5 pillars × 5 stages — does the agent serve a clear business strategy or live in a sandbox?</div>
+        <div class="card-fw">Sema4.ai</div>
+      </div>
+      <div class="card">
+        <div class="card-num">06 · Operations</div>
+        <div class="card-title">How organizationally ready?</div>
+        <div class="card-question">5 pillars × 5 levels — people, process, platform readiness for scaled deployment.</div>
+        <div class="card-fw">MS CMM</div>
+      </div>
+    </div>
+  </div>
+  <div class="brand">evolving-agents · janrummel</div>
+  <div class="footer">2 / 6</div>
+</div>
+</body>
+</html>

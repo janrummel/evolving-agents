@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Six-Axis Carousel — Slide 5: Empirie</title>
+<title>Six-Axis Carousel — Slide 5: Reality Check</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -10,9 +10,9 @@
   body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1629; margin: 0; padding: 0; }
 
   .canvas {
-    width: 1200px; height: 627px;
+    width: 1080px; height: 1350px;
     background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
-    padding: 56px 72px;
+    padding: 64px 72px;
     position: relative;
     overflow: hidden;
   }
@@ -23,45 +23,155 @@
     background-size: 28px 28px; pointer-events: none;
   }
 
-  h1, h2, h3 { color: #ffffff; font-weight: 700; }
-  h1 { font-size: 44px; line-height: 1.15; letter-spacing: -0.02em; }
-  h2 { font-size: 32px; line-height: 1.2; letter-spacing: -0.015em; }
-  p, li { color: #cbd5e1; font-size: 18px; line-height: 1.55; }
+  h1 { color: #ffffff; font-weight: 700; font-size: 42px; line-height: 1.18; letter-spacing: -0.02em; }
   .accent { color: #818cf8; }
-  .accent-strong { color: #6366f1; }
-  code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #a5b4fc; }
 
   .footer {
-    position: absolute; bottom: 24px; right: 32px;
-    font-size: 13px; color: #64748b; font-weight: 500;
-    letter-spacing: 0.05em;
+    position: absolute; bottom: 32px; right: 40px;
+    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
   }
   .brand {
-    position: absolute; bottom: 24px; left: 32px;
-    font-size: 13px; color: #64748b; font-weight: 500;
-    letter-spacing: 0.05em;
+    position: absolute; bottom: 32px; left: 40px;
+    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
+  }
+
+  .green-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .check-card {
+    border: 1px solid #047857;
+    border-radius: 12px;
+    padding: 18px 20px;
+    background: rgba(20, 83, 45, 0.18);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .check-card .mark {
+    color: #34d399;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .check-card .label {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .check-card .sub {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .x-card {
+    margin-top: 22px;
+    border: 2px solid #dc2626;
+    border-radius: 16px;
+    padding: 30px 32px;
+    background: linear-gradient(135deg, rgba(127, 29, 29, 0.38) 0%, rgba(127, 29, 29, 0.18) 100%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    box-shadow: 0 0 60px rgba(220, 38, 38, 0.12);
+  }
+  .x-card .x-mark {
+    color: #f87171;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .x-card .x-content {
+    flex: 1;
+  }
+  .x-card .x-label {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .x-card .x-sub {
+    color: #fca5a5;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .x-card .x-stat {
+    background: #7f1d1d;
+    color: #fecaca;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 1px solid #b91c1c;
   }
 </style>
 </head>
 <body>
 <div class="canvas">
-  <div style="display: flex; flex-direction: column; height: 100%;">
-    <div style="font-size: 14px; color: #818cf8; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px;">
-      Real-world example
+  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 24px;">
+    <div style="font-size: 14px; color: #818cf8; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">
+      Reality Check · Production Agent
     </div>
-    <h1 style="font-size: 36px; margin-bottom: 24px;">Nous Research's <span class="accent">Hermes Agent</span>.</h1>
-    <div style="font-size: 17px; color: #cbd5e1; margin-bottom: 24px;">
-      Production agent system, scored against the academic framework (arXiv 2601):
+    <h1 style="margin-bottom: 18px;">A real production agent <br>confirms the <span class="accent">gap</span>.</h1>
+
+    <div style="font-size: 17px; color: #cbd5e1; margin-bottom: 32px; line-height: 1.55;">
+      Nous Research's <strong style="color: #ffffff;">Hermes Agent</strong> — open source, in production — scored against the academic 6-component model (arXiv 2601):
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; margin-bottom: 24px;">
-      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Perception</div>
-      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Memory</div>
-      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Action &amp; Tools</div>
-      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Profiling</div>
-      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Planning</div>
-      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #fca5a5; font-weight: 700;"><span style="color: #ef4444; font-size: 22px;">✗</span> Reflection — <span style="color: #94a3b8; font-weight: 400;">0 / 3 sub-components</span></div>
+
+    <div class="green-grid">
+      <div class="check-card">
+        <span class="mark">✓</span>
+        <div>
+          <div class="label">Perception</div>
+          <div class="sub">input parsing, context</div>
+        </div>
+      </div>
+      <div class="check-card">
+        <span class="mark">✓</span>
+        <div>
+          <div class="label">Memory</div>
+          <div class="sub">short + long term</div>
+        </div>
+      </div>
+      <div class="check-card">
+        <span class="mark">✓</span>
+        <div>
+          <div class="label">Action &amp; Tools</div>
+          <div class="sub">tool use, side effects</div>
+        </div>
+      </div>
+      <div class="check-card">
+        <span class="mark">✓</span>
+        <div>
+          <div class="label">Profiling</div>
+          <div class="sub">role, persona, scope</div>
+        </div>
+      </div>
+      <div class="check-card" style="grid-column: 1 / -1;">
+        <span class="mark">✓</span>
+        <div>
+          <div class="label">Planning</div>
+          <div class="sub">decomposition, sequencing of sub-goals</div>
+        </div>
+      </div>
     </div>
-    <div style="border-top: 1px solid #312e81; padding-top: 16px; font-size: 16px; color: #cbd5e1; font-style: italic; line-height: 1.5;">
+
+    <div class="x-card">
+      <span class="x-mark">✗</span>
+      <div class="x-content">
+        <div class="x-label">Reflection</div>
+        <div class="x-sub">No self-evaluation. No learning from own mistakes. <br>No self-refine loop in production code.</div>
+      </div>
+      <div class="x-stat">0 / 3 sub-components</div>
+    </div>
+
+    <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #312e81; font-size: 17px; color: #cbd5e1; font-style: italic; line-height: 1.5;">
       A real production agent falls in exactly the gap that industry frameworks fail to measure.
     </div>
   </div>
