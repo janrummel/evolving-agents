@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Six-Axis Carousel — Slide 5: Empirie</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1629; margin: 0; padding: 0; }
+
+  .canvas {
+    width: 1200px; height: 627px;
+    background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
+    padding: 56px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .canvas::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(99,102,241,0.04) 1px, transparent 0);
+    background-size: 28px 28px; pointer-events: none;
+  }
+
+  h1, h2, h3 { color: #ffffff; font-weight: 700; }
+  h1 { font-size: 44px; line-height: 1.15; letter-spacing: -0.02em; }
+  h2 { font-size: 32px; line-height: 1.2; letter-spacing: -0.015em; }
+  p, li { color: #cbd5e1; font-size: 18px; line-height: 1.55; }
+  .accent { color: #818cf8; }
+  .accent-strong { color: #6366f1; }
+  code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #a5b4fc; }
+
+  .footer {
+    position: absolute; bottom: 24px; right: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .brand {
+    position: absolute; bottom: 24px; left: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div style="display: flex; flex-direction: column; height: 100%;">
+    <div style="font-size: 14px; color: #818cf8; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px;">
+      Real-world example
+    </div>
+    <h1 style="font-size: 36px; margin-bottom: 24px;">Nous Research's <span class="accent">Hermes Agent</span>.</h1>
+    <div style="font-size: 17px; color: #cbd5e1; margin-bottom: 24px;">
+      Production agent system, scored against the academic framework (arXiv 2601):
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 32px; margin-bottom: 24px;">
+      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Perception</div>
+      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Memory</div>
+      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Action &amp; Tools</div>
+      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Profiling</div>
+      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #cbd5e1;"><span style="color: #10b981; font-size: 22px;">✓</span> Planning</div>
+      <div style="display: flex; align-items: center; gap: 10px; font-size: 17px; color: #fca5a5; font-weight: 700;"><span style="color: #ef4444; font-size: 22px;">✗</span> Reflection — <span style="color: #94a3b8; font-weight: 400;">0 / 3 sub-components</span></div>
+    </div>
+    <div style="border-top: 1px solid #312e81; padding-top: 16px; font-size: 16px; color: #cbd5e1; font-style: italic; line-height: 1.5;">
+      A real production agent falls in exactly the gap that industry frameworks fail to measure.
+    </div>
+  </div>
+  <div class="brand">evolving-agents · janrummel</div>
+  <div class="footer">5 / 6</div>
+</div>
+</body>
+</html>

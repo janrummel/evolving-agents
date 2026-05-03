@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Six-Axis Carousel — Slide 2: Frame</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1629; margin: 0; padding: 0; }
+
+  .canvas {
+    width: 1200px; height: 627px;
+    background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
+    padding: 56px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .canvas::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(99,102,241,0.04) 1px, transparent 0);
+    background-size: 28px 28px; pointer-events: none;
+  }
+
+  h1, h2, h3 { color: #ffffff; font-weight: 700; }
+  h1 { font-size: 44px; line-height: 1.15; letter-spacing: -0.02em; }
+  h2 { font-size: 32px; line-height: 1.2; letter-spacing: -0.015em; }
+  p, li { color: #cbd5e1; font-size: 18px; line-height: 1.55; }
+  .accent { color: #818cf8; }
+  .accent-strong { color: #6366f1; }
+  code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #a5b4fc; }
+
+  .footer {
+    position: absolute; bottom: 24px; right: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .brand {
+    position: absolute; bottom: 24px; left: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div style="display: flex; flex-direction: column; height: 100%;">
+    <h1 style="font-size: 38px; margin-bottom: 32px;">Agent maturity is <span class="accent">6-dimensional</span>.</h1>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px 36px; flex: 1;">
+      <div>
+        <div style="color: #818cf8; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">1 · Architecture</div>
+        <div style="color: #cbd5e1; font-size: 16px; line-height: 1.45;">Which components exist? Perception · Memory · Action · Profiling · Planning · Reflection</div>
+      </div>
+      <div>
+        <div style="color: #818cf8; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">2 · Trust</div>
+        <div style="color: #cbd5e1; font-size: 16px; line-height: 1.45;">How much autonomy is justified? Intern → Junior → Senior → Principal</div>
+      </div>
+      <div>
+        <div style="color: #818cf8; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">3 · Governance</div>
+        <div style="color: #cbd5e1; font-size: 16px; line-height: 1.45;">How controlled is the portfolio? 5 levels × 12 domains, NIST + ISO 42001</div>
+      </div>
+      <div>
+        <div style="color: #818cf8; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">4 · Domain</div>
+        <div style="color: #cbd5e1; font-size: 16px; line-height: 1.45;">How mature per sub-domain? L0–L5, SAE-J3016-style autonomy levels</div>
+      </div>
+      <div>
+        <div style="color: #818cf8; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">5 · Strategy</div>
+        <div style="color: #cbd5e1; font-size: 16px; line-height: 1.45;">How strategically embedded? 5 pillars × 5 stages</div>
+      </div>
+      <div>
+        <div style="color: #818cf8; font-weight: 700; font-size: 16px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px;">6 · Operations</div>
+        <div style="color: #cbd5e1; font-size: 16px; line-height: 1.45;">How organizationally ready? 5 pillars × 5 levels</div>
+      </div>
+    </div>
+  </div>
+  <div class="brand">evolving-agents · janrummel</div>
+  <div class="footer">2 / 6</div>
+</div>
+</body>
+</html>

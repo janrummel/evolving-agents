@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Six-Axis Carousel — Slide 3: Coverage</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1629; margin: 0; padding: 0; }
+
+  .canvas {
+    width: 1200px; height: 627px;
+    background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
+    padding: 56px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .canvas::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(99,102,241,0.04) 1px, transparent 0);
+    background-size: 28px 28px; pointer-events: none;
+  }
+
+  h1, h2, h3 { color: #ffffff; font-weight: 700; }
+  h1 { font-size: 44px; line-height: 1.15; letter-spacing: -0.02em; }
+  h2 { font-size: 32px; line-height: 1.2; letter-spacing: -0.015em; }
+  p, li { color: #cbd5e1; font-size: 18px; line-height: 1.55; }
+  .accent { color: #818cf8; }
+  .accent-strong { color: #6366f1; }
+  code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #a5b4fc; }
+
+  .footer {
+    position: absolute; bottom: 24px; right: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .brand {
+    position: absolute; bottom: 24px; left: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div style="display: flex; flex-direction: column; height: 100%;">
+    <h1 style="font-size: 30px; margin-bottom: 20px;">No single framework covers more than <span class="accent">1–2 axes</span>.</h1>
+    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+      <thead>
+        <tr style="border-bottom: 2px solid #312e81;">
+          <th style="padding: 8px 10px; text-align: left; color: #cbd5e1; font-weight: 600;">Framework</th>
+          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Arch</th>
+          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Trust</th>
+          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Gov</th>
+          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Domain</th>
+          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Strategy</th>
+          <th style="padding: 8px 6px; text-align: center; color: #818cf8; font-weight: 600;">Ops</th>
+        </tr>
+      </thead>
+      <tbody style="color: #cbd5e1;">
+        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">arXiv 2601.12560 (Arunkumar)</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td></tr>
+        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">arXiv 2602.04261 (Luo, SIGMOD)</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td></tr>
+        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">AAGMM (Acharya)</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td></tr>
+        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">ATF (Cloud Security Alliance)</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#f59e0b;">◐</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td></tr>
+        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">Microsoft Copilot Studio CMM</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td><td style="text-align:center; color:#10b981;">●</td></tr>
+        <tr style="border-bottom: 1px solid #1e293b;"><td style="padding: 10px;">Sema4.ai</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#10b981;">●</td><td style="text-align:center; color:#f59e0b;">◐</td></tr>
+        <tr><td style="padding: 10px;">Salesforce AMM</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#475569;">○</td><td style="text-align:center; color:#f59e0b;">◐</td></tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 18px; font-size: 14px; color: #94a3b8;">
+      <span style="color: #10b981;">●</span> direct &nbsp;·&nbsp;
+      <span style="color: #f59e0b;">◐</span> indirect &nbsp;·&nbsp;
+      <span style="color: #475569;">○</span> not addressed
+    </div>
+    <div style="margin-top: 14px; font-size: 16px; color: #cbd5e1; font-style: italic;">
+      Each framework was developed for one perspective. Together they cover the field.
+    </div>
+  </div>
+  <div class="brand">evolving-agents · janrummel</div>
+  <div class="footer">3 / 6</div>
+</div>
+</body>
+</html>

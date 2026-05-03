@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Six-Axis Carousel — Slide 6: Take-Away</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: #0f1629; margin: 0; padding: 0; }
+
+  .canvas {
+    width: 1200px; height: 627px;
+    background: linear-gradient(145deg, #0f1629 0%, #161d35 40%, #1a1f3a 70%, #0f1629 100%);
+    padding: 56px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .canvas::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(99,102,241,0.04) 1px, transparent 0);
+    background-size: 28px 28px; pointer-events: none;
+  }
+
+  h1, h2, h3 { color: #ffffff; font-weight: 700; }
+  h1 { font-size: 44px; line-height: 1.15; letter-spacing: -0.02em; }
+  h2 { font-size: 32px; line-height: 1.2; letter-spacing: -0.015em; }
+  p, li { color: #cbd5e1; font-size: 18px; line-height: 1.55; }
+  .accent { color: #818cf8; }
+  .accent-strong { color: #6366f1; }
+  code, .mono { font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #a5b4fc; }
+
+  .footer {
+    position: absolute; bottom: 24px; right: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .brand {
+    position: absolute; bottom: 24px; left: 32px;
+    font-size: 13px; color: #64748b; font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div style="display: flex; flex-direction: column; height: 100%;">
+    <h1 style="font-size: 34px; margin-bottom: 24px; line-height: 1.2;">
+      Methodological depth correlates with <span class="accent">peer-review</span>, <br>not with vendor budget.
+    </h1>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: 28px;">
+      <div style="border: 1px solid #14532d; border-radius: 10px; padding: 16px; background: rgba(20, 83, 45, 0.18);">
+        <div style="color: #6ee7b7; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">Top tier</div>
+        <div style="color: #ffffff; font-size: 28px; font-weight: 800;">6.85</div>
+        <div style="color: #94a3b8; font-size: 14px; margin-top: 4px;">2 academic frameworks</div>
+      </div>
+      <div style="border: 1px solid #1e3a8a; border-radius: 10px; padding: 16px; background: rgba(30, 58, 138, 0.18);">
+        <div style="color: #93c5fd; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">Mid tier</div>
+        <div style="color: #ffffff; font-size: 28px; font-weight: 800;">6.33</div>
+        <div style="color: #94a3b8; font-size: 14px; margin-top: 4px;">3 industry frameworks</div>
+      </div>
+      <div style="border: 1px solid #7f1d1d; border-radius: 10px; padding: 16px; background: rgba(127, 29, 29, 0.15);">
+        <div style="color: #fca5a5; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">Bottom tier</div>
+        <div style="color: #ffffff; font-size: 28px; font-weight: 800;">5.35</div>
+        <div style="color: #94a3b8; font-size: 14px; margin-top: 4px;">2 vendor-marketing frameworks</div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #312e81; padding-top: 24px; flex: 1; display: flex; flex-direction: column; justify-content: flex-end;">
+      <div style="font-size: 24px; color: #ffffff; font-weight: 600; line-height: 1.4;">
+        What does <span class="accent">your framework</span> measure — <br>and what does it overlook?
+      </div>
+    </div>
+  </div>
+  <div class="brand">evolving-agents · janrummel</div>
+  <div class="footer">6 / 6</div>
+</div>
+</body>
+</html>
