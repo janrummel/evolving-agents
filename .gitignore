@@ -12,3 +12,6 @@ Gemfile.lock
 assets/post-*.html
 assets/post-*-check.png
 assets/post-subscription-stack.png
+
+# Six-Axis-Carousel generated PNGs (regenerated via render-all.sh)
+assets/six-axis-carousel/slide-*.png
