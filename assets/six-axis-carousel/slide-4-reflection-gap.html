@@ -23,21 +23,16 @@
     background-size: 28px 28px; pointer-events: none;
   }
 
-  h1 { color: #ffffff; font-weight: 700; font-size: 42px; line-height: 1.18; letter-spacing: -0.02em; }
+  h1 { color: #ffffff; font-weight: 700; font-size: 48px; line-height: 1.18; letter-spacing: -0.02em; }
   .accent { color: #818cf8; }
 
-  .footer {
-    position: absolute; bottom: 32px; right: 40px;
-    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
-  }
-  .brand {
-    position: absolute; bottom: 32px; left: 40px;
-    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
-  }
+  .footer { position: absolute; bottom: 32px; right: 40px; font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em; }
+  .brand { position: absolute; bottom: 32px; left: 40px; font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em; }
+  .cliffhanger { position: absolute; bottom: 80px; right: 56px; font-size: 14px; color: #818cf8; letter-spacing: 0.1em; font-weight: 500; display: flex; align-items: center; gap: 8px; }
 
   .panel {
     border-radius: 18px;
-    padding: 36px 32px;
+    padding: 32px 28px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -51,7 +46,7 @@
     background: linear-gradient(155deg, rgba(20, 83, 45, 0.32) 0%, rgba(20, 83, 45, 0.12) 100%);
   }
   .panel-tag {
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     font-weight: 700;
@@ -61,17 +56,17 @@
   .tag-green { color: #6ee7b7; }
   .panel-num {
     color: #ffffff;
-    font-size: 88px;
+    font-size: 96px;
     font-weight: 800;
     line-height: 0.95;
     letter-spacing: -0.04em;
     margin-bottom: 6px;
   }
   .panel-num-label {
-    font-size: 16px;
+    font-size: 18px;
     color: #cbd5e1;
     font-weight: 500;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
   .panel-list {
     list-style: none;
@@ -81,9 +76,9 @@
   }
   .panel-list li {
     color: #e2e8f0;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
-    padding: 8px 0;
+    padding: 9px 0;
     display: flex;
     align-items: flex-start;
     gap: 10px;
@@ -91,7 +86,7 @@
   .panel-list .mark {
     flex-shrink: 0;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 20px;
     width: 22px;
   }
   .mark-red { color: #f87171; }
@@ -100,7 +95,7 @@
     margin-top: 18px;
     padding-top: 18px;
     border-top: 1px solid rgba(203, 213, 225, 0.15);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.5;
     font-style: italic;
   }
@@ -110,12 +105,12 @@
 </head>
 <body>
 <div class="canvas">
-  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 24px;">
-    <div style="font-size: 14px; color: #f59e0b; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">
+  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 80px;">
+    <div style="font-size: 16px; color: #f59e0b; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px;">
       ⚠ The Blind Spot
     </div>
     <h1 style="margin-bottom: 14px;"><span class="accent">Reflection</span> is the industry's blind spot.</h1>
-    <div style="font-size: 17px; color: #94a3b8; font-style: italic; margin-bottom: 32px; line-height: 1.5;">
+    <div style="font-size: 19px; color: #94a3b8; font-style: italic; margin-bottom: 28px; line-height: 1.5;">
       Reflection = the mechanism through which agents learn from their own mistakes <br>
       (Reflexion · Self-Refine · CRITIC).
     </div>
@@ -140,14 +135,32 @@
         <div class="panel-num">2/2</div>
         <div class="panel-num-label">treat Reflection explicitly</div>
         <ul class="panel-list">
-          <li><span class="mark mark-green">✓</span><span>arXiv 2601<br><span style="font-family:'JetBrains Mono',monospace; font-size: 12px; color: #94a3b8;">architecture component</span></span></li>
-          <li><span class="mark mark-green">✓</span><span>arXiv 2602<br><span style="font-family:'JetBrains Mono',monospace; font-size: 12px; color: #94a3b8;">sub-task type</span></span></li>
+          <li>
+            <span class="mark mark-green">✓</span>
+            <span style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <img src="https://cdn.simpleicons.org/arxiv/ffffff" alt="arXiv" style="width: 20px; height: 20px;">
+              <span>arXiv 2601</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size: 13px; color: #94a3b8; width: 100%; padding-left: 28px;">architecture component</span>
+            </span>
+          </li>
+          <li>
+            <span class="mark mark-green">✓</span>
+            <span style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <img src="https://cdn.simpleicons.org/arxiv/ffffff" alt="arXiv" style="width: 20px; height: 20px;">
+              <span>arXiv 2602</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size: 13px; color: #94a3b8; width: 100%; padding-left: 28px;">sub-task type</span>
+            </span>
+          </li>
         </ul>
         <div class="panel-conclusion conclusion-green">
           Peer review forces the question industry skips.
         </div>
       </div>
     </div>
+  </div>
+  <div class="cliffhanger">
+    <span>Next: Reality check</span>
+    <span style="font-size: 18px;">→</span>
   </div>
   <div class="brand">evolving-agents · janrummel</div>
   <div class="footer">4 / 6</div>

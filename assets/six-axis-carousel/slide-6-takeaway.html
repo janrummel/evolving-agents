@@ -23,18 +23,12 @@
     background-size: 28px 28px; pointer-events: none;
   }
 
-  h1 { color: #ffffff; font-weight: 700; font-size: 38px; line-height: 1.22; letter-spacing: -0.02em; }
+  h1 { color: #ffffff; font-weight: 700; font-size: 44px; line-height: 1.18; letter-spacing: -0.02em; }
   .accent { color: #818cf8; }
   .accent-warm { color: #f59e0b; }
 
-  .footer {
-    position: absolute; bottom: 32px; right: 40px;
-    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
-  }
-  .brand {
-    position: absolute; bottom: 32px; left: 40px;
-    font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em;
-  }
+  .footer { position: absolute; bottom: 32px; right: 40px; font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em; }
+  .brand { position: absolute; bottom: 32px; left: 40px; font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.05em; }
 
   .tier-grid {
     display: grid; grid-template-columns: 1fr 1fr 1fr;
@@ -42,7 +36,7 @@
   }
   .tier {
     border-radius: 14px;
-    padding: 26px 22px;
+    padding: 28px 22px;
     text-align: center;
   }
   .tier-top {
@@ -58,7 +52,7 @@
     background: linear-gradient(155deg, rgba(127, 29, 29, 0.32) 0%, rgba(127, 29, 29, 0.12) 100%);
   }
   .tier-tag {
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 700;
@@ -69,15 +63,15 @@
   .tag-bot { color: #fca5a5; }
   .tier-num {
     color: #ffffff;
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     letter-spacing: -0.03em;
   }
   .tier-sub {
     color: #cbd5e1;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
   }
 
@@ -85,7 +79,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 16px 0 12px;
+    flex: 1;
   }
 
   .cta-block {
@@ -94,20 +88,20 @@
   }
   .cta-headline {
     color: #ffffff;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.32;
     letter-spacing: -0.01em;
   }
 </style>
 </head>
 <body>
 <div class="canvas">
-  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 24px;">
-    <div style="font-size: 14px; color: #818cf8; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px;">
+  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 60px;">
+    <div style="font-size: 16px; color: #818cf8; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px;">
       Take-Away
     </div>
-    <h1 style="margin-bottom: 30px;">Methodological depth correlates with <span class="accent">peer-review</span>, <br>not with vendor budget.</h1>
+    <h1 style="margin-bottom: 28px;">Methodological depth correlates with <span class="accent">peer-review</span>, <br>not with vendor budget.</h1>
 
     <div class="tier-grid">
       <div class="tier tier-top">
@@ -127,9 +121,8 @@
       </div>
     </div>
 
-    <!-- Echo of cover hexagon -->
     <div class="echo-wrap">
-      <svg viewBox="0 0 480 480" width="480" height="480" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 480 480" width="460" height="460" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="echoFill" cx="50%" cy="50%" r="55%">
             <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.5"/>
@@ -140,7 +133,6 @@
             <stop offset="100%" stop-color="#7c2d12" stop-opacity="0"/>
           </radialGradient>
         </defs>
-        <!-- pointy-top hexagon centered at 240,240, radius 160 -->
         <polygon
           points="240,80 378.56,160 378.56,320 240,400 101.44,320 101.44,160"
           fill="url(#echoFill)"
@@ -167,8 +159,7 @@
         <circle cx="240" cy="240" r="62" fill="url(#echoCenter)" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4 4" stroke-opacity="0.8"/>
         <text x="240" y="244" text-anchor="middle" style="font-size: 14px; fill: #f59e0b; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Inter', sans-serif;">⚠ Reflection</text>
 
-        <!-- Tiny axis labels -->
-        <g style="font-family: 'Inter', sans-serif; font-size: 10px; fill: #cbd5e1; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
+        <g style="font-family: 'Inter', sans-serif; font-size: 11px; fill: #cbd5e1; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">
           <text x="240" y="62" text-anchor="middle">Architecture</text>
           <text x="395" y="156" text-anchor="start">Trust</text>
           <text x="395" y="328" text-anchor="start">Governance</text>

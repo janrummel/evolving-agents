@@ -38,18 +38,24 @@
     letter-spacing: 0.05em;
   }
 
+  .cliffhanger {
+    position: absolute; bottom: 80px; right: 56px;
+    font-size: 14px; color: #818cf8; letter-spacing: 0.1em;
+    font-weight: 500; display: flex; align-items: center; gap: 8px;
+  }
+
   .tagline {
-    font-size: 14px; color: #818cf8; letter-spacing: 0.18em;
+    font-size: 16px; color: #818cf8; letter-spacing: 0.18em;
     text-transform: uppercase; font-weight: 600; text-align: center;
   }
 
   .hex-wrap {
     display: flex; justify-content: center; align-items: center;
-    margin: 28px 0 20px 0;
+    flex: 1;
   }
 
   .axis-label {
-    font-size: 14px;
+    font-size: 16px;
     fill: #ffffff;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -62,7 +68,7 @@
     font-weight: 500;
   }
   .center-label {
-    font-size: 22px;
+    font-size: 24px;
     fill: #f59e0b;
     font-weight: 800;
     letter-spacing: 0.12em;
@@ -70,7 +76,7 @@
     text-anchor: middle;
   }
   .center-sublabel {
-    font-size: 12px;
+    font-size: 13px;
     fill: #fbbf24;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -79,26 +85,28 @@
     font-style: italic;
   }
   .headline {
-    font-size: 38px; color: #ffffff; font-weight: 700;
-    line-height: 1.18; text-align: center; letter-spacing: -0.015em;
-    margin-top: 8px;
+    font-size: 44px; color: #ffffff; font-weight: 800;
+    line-height: 1.15; text-align: center; letter-spacing: -0.02em;
   }
   .subline {
-    font-size: 19px; color: #cbd5e1; font-weight: 400;
+    font-size: 22px; color: #cbd5e1; font-weight: 400;
     line-height: 1.5; text-align: center; max-width: 880px;
-    margin: 18px auto 0;
+    margin: 14px auto 0;
+  }
+  .bridge {
+    font-size: 15px; color: #94a3b8; font-style: italic;
+    text-align: center; max-width: 820px; margin: 14px auto 0;
+    line-height: 1.5;
   }
 </style>
 </head>
 <body>
 <div class="canvas">
-  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 32px;">
-    <div class="tagline" style="margin-top: 8px;">AI Agent Maturity · A Six-Axis Map</div>
+  <div style="display: flex; flex-direction: column; height: 100%; padding-bottom: 80px;">
+    <div class="tagline">AI Agent Maturity · A Six-Axis Map</div>
 
     <div class="hex-wrap">
-      <svg viewBox="0 0 880 880" width="880" height="880" xmlns="http://www.w3.org/2000/svg">
-        <!-- Hexagon vertices (regular hexagon, flat-top orientation rotated so vertex is on top)
-             Center 440,440. Radius 280. Pointy-top hexagon vertices at angles -90, -30, 30, 90, 150, 210. -->
+      <svg viewBox="0 0 880 760" width="880" height="760" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="hexFill" cx="50%" cy="50%" r="55%">
             <stop offset="0%" stop-color="#1e1b4b" stop-opacity="0.6"/>
@@ -112,92 +120,98 @@
           </radialGradient>
         </defs>
 
-        <!-- Hexagon shape -->
         <polygon
-          points="440,160 682.49,300 682.49,580 440,720 197.51,580 197.51,300"
+          points="440,100 682.49,240 682.49,520 440,660 197.51,520 197.51,240"
           fill="url(#hexFill)"
           stroke="#6366f1"
           stroke-width="2.5"
           stroke-opacity="0.85"
         />
 
-        <!-- Connecting spokes from center to each vertex -->
         <g stroke="#312e81" stroke-width="1.2" stroke-opacity="0.55">
-          <line x1="440" y1="440" x2="440" y2="160"/>
-          <line x1="440" y1="440" x2="682.49" y2="300"/>
-          <line x1="440" y1="440" x2="682.49" y2="580"/>
-          <line x1="440" y1="440" x2="440" y2="720"/>
-          <line x1="440" y1="440" x2="197.51" y2="580"/>
-          <line x1="440" y1="440" x2="197.51" y2="300"/>
+          <line x1="440" y1="380" x2="440" y2="100"/>
+          <line x1="440" y1="380" x2="682.49" y2="240"/>
+          <line x1="440" y1="380" x2="682.49" y2="520"/>
+          <line x1="440" y1="380" x2="440" y2="660"/>
+          <line x1="440" y1="380" x2="197.51" y2="520"/>
+          <line x1="440" y1="380" x2="197.51" y2="240"/>
         </g>
 
-        <!-- Vertex dots -->
         <g fill="#818cf8">
-          <circle cx="440" cy="160" r="6"/>
-          <circle cx="682.49" cy="300" r="6"/>
-          <circle cx="682.49" cy="580" r="6"/>
-          <circle cx="440" cy="720" r="6"/>
-          <circle cx="197.51" cy="580" r="6"/>
-          <circle cx="197.51" cy="300" r="6"/>
+          <circle cx="440" cy="100" r="6"/>
+          <circle cx="682.49" cy="240" r="6"/>
+          <circle cx="682.49" cy="520" r="6"/>
+          <circle cx="440" cy="660" r="6"/>
+          <circle cx="197.51" cy="520" r="6"/>
+          <circle cx="197.51" cy="240" r="6"/>
         </g>
 
-        <!-- Center blindspot zone -->
-        <circle cx="440" cy="440" r="115" fill="url(#centerWarn)" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5" stroke-opacity="0.85"/>
-        <text x="440" y="420" class="center-label">⚠ Reflection</text>
-        <text x="440" y="450" class="center-sublabel">the blind spot</text>
-        <text x="440" y="475" class="center-sublabel" style="font-size: 11px; fill: #fde68a;">0 / 4 industry frameworks</text>
+        <circle cx="440" cy="380" r="115" fill="url(#centerWarn)" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 5" stroke-opacity="0.85"/>
+        <text x="440" y="362" class="center-label">⚠ Reflection</text>
+        <text x="440" y="392" class="center-sublabel">the blind spot</text>
+        <text x="440" y="418" class="center-sublabel" style="font-size: 12px; fill: #fde68a;">0 / 4 industry frameworks</text>
 
-        <!-- ========= Vertex 1: TOP — Architecture ========= -->
-        <text x="440" y="120" class="axis-label" text-anchor="middle">Architecture</text>
-        <g transform="translate(440,135)">
+        <!-- Vertex 1: TOP — Architecture -->
+        <text x="440" y="60" class="axis-label" text-anchor="middle">Architecture</text>
+        <g transform="translate(440,75)">
           <rect x="-58" y="-2" width="116" height="22" rx="11" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
           <text x="0" y="13" class="axis-pill-text" text-anchor="middle">arXiv 2601</text>
         </g>
 
-        <!-- ========= Vertex 2: TOP-RIGHT — Trust ========= -->
-        <text x="710" y="270" class="axis-label" text-anchor="start">Trust</text>
-        <g transform="translate(710,285)">
+        <!-- Vertex 2: TOP-RIGHT — Trust -->
+        <text x="710" y="210" class="axis-label" text-anchor="start">Trust</text>
+        <g transform="translate(710,225)">
           <rect x="0" y="-2" width="116" height="22" rx="11" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
           <text x="58" y="13" class="axis-pill-text" text-anchor="middle">ATF (CSA)</text>
         </g>
 
-        <!-- ========= Vertex 3: BOTTOM-RIGHT — Governance ========= -->
-        <text x="710" y="610" class="axis-label" text-anchor="start">Governance</text>
-        <g transform="translate(710,625)">
+        <!-- Vertex 3: BOTTOM-RIGHT — Governance -->
+        <text x="710" y="550" class="axis-label" text-anchor="start">Governance</text>
+        <g transform="translate(710,565)">
           <rect x="0" y="-2" width="116" height="22" rx="11" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
           <text x="58" y="13" class="axis-pill-text" text-anchor="middle">AAGMM</text>
         </g>
 
-        <!-- ========= Vertex 4: BOTTOM — Domain ========= -->
-        <text x="440" y="763" class="axis-label" text-anchor="middle">Domain</text>
-        <g transform="translate(440,778)">
+        <!-- Vertex 4: BOTTOM — Domain -->
+        <text x="440" y="703" class="axis-label" text-anchor="middle">Domain</text>
+        <g transform="translate(440,718)">
           <rect x="-58" y="-2" width="116" height="22" rx="11" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
           <text x="0" y="13" class="axis-pill-text" text-anchor="middle">arXiv 2602</text>
         </g>
 
-        <!-- ========= Vertex 5: BOTTOM-LEFT — Strategy ========= -->
-        <text x="170" y="610" class="axis-label" text-anchor="end">Strategy</text>
-        <g transform="translate(54,625)">
+        <!-- Vertex 5: BOTTOM-LEFT — Strategy -->
+        <text x="170" y="550" class="axis-label" text-anchor="end">Strategy</text>
+        <g transform="translate(54,565)">
           <rect x="0" y="-2" width="116" height="22" rx="11" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
           <text x="58" y="13" class="axis-pill-text" text-anchor="middle">Sema4.ai</text>
         </g>
 
-        <!-- ========= Vertex 6: TOP-LEFT — Operations ========= -->
-        <text x="170" y="270" class="axis-label" text-anchor="end">Operations</text>
-        <g transform="translate(54,285)">
+        <!-- Vertex 6: TOP-LEFT — Operations -->
+        <text x="170" y="210" class="axis-label" text-anchor="end">Operations</text>
+        <g transform="translate(54,225)">
           <rect x="0" y="-2" width="116" height="22" rx="11" fill="#1e1b4b" stroke="#4338ca" stroke-width="1"/>
           <text x="58" y="13" class="axis-pill-text" text-anchor="middle">MS CMM</text>
         </g>
       </svg>
     </div>
 
-    <div class="headline">
-      Six axes. <span class="accent-warm">One blind spot</span> in the middle.
+    <div class="bridge">
+      Reflection = the mechanism through which agents learn from their own mistakes<br>
+      (Reflexion · Self-Refine · CRITIC patterns from academic literature).
     </div>
-    <div class="subline">
-      What you measure depends on which framework you pick — <br>
-      and what no framework measures, no agent improves.
+
+    <div style="margin-top: auto;">
+      <div class="headline">
+        Most AI agent maturity frameworks <br>are blind to <span class="accent-warm">the same gap</span>.
+      </div>
+      <div class="subline">
+        I read all 7 cover-to-cover. The pattern is unmistakable.
+      </div>
     </div>
+  </div>
+  <div class="cliffhanger">
+    <span>Next: The 6 axes</span>
+    <span style="font-size: 18px;">→</span>
   </div>
   <div class="brand">evolving-agents · janrummel</div>
   <div class="footer">1 / 6</div>
